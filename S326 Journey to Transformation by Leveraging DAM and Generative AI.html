@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S206 ABM and Buying Group Orchestration with Journey Optimizer B2B Edition at AWS</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 35px;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 25px;
+            color: #333;
+        }
+        
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .summary {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        
+        .important {
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 25px 0;
+            color: #0f3c78;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f5f5f5;
+        }
+        
+        .faq-container {
+            margin-top: 15px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .faq-question {
+            position: relative;
+            cursor: pointer;
+            padding: 10px;
+            padding-right: 30px;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .faq-question.active::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>アカウントベースマーケティングと購買グループオーケストレーション<br>Adobe Journey Optimizer B2B Edition</h1>
+        
+        <div class="section">
+            <div class="summary">
+                AWSのマーケティングチームは、Adobeの「Journey Optimizer B2B Edition」を導入し、個別リードベースのマーケティングからアカウントベースのアプローチへ移行。購買グループの概念を活用して、B2B企業向けのカスタマージャーニーを効果的にパーソナライズする戦略と実装事例を紹介します。
+            </div>
+            
+            <p>アドビのB2Bソリューションは、アカウントの360度ビューを提供し、サイロ化されたデータを統合。購買グループとアカウント、ジャーニーオーケストレーション、コンテンツのパーソナライゼーション、セールスインテリジェンス、ジャーニーインサイトの5つの柱に基づく統合マーケティングプラットフォームを実現します。</p>
+        </div>
+        
+        <div class="section">
+            <h2>B2Bマーケティングの課題と変革</h2>
+            
+            <div class="summary">
+                B2B企業は変化する環境の中で収益性と成長の両立を目指しています。伝統的な営業主導モデルから脱却し、新しいチャネルを活用しながら予算制約とのバランスを取る必要があります。
+            </div>
+            
+            <h3>B2B企業が直面する主な課題</h3>
+            <ul>
+                <li>リーダーシップ、チーム、テクノロジーの変化への対応</li>
+                <li>「少ないリソースでより多くを」という要求</li>
+                <li>新旧システムの統合と連携</li>
+                <li>獲得からアップセル、クロスセル、維持までの顧客ライフサイクル全体の管理</li>
+            </ul>
+            
+            <h3>テクノロジー購入の複雑さ</h3>
+            <ul>
+                <li>複数の意思決定者（IT部門、財務リーダー、ビジネス/マーケティングリーダー、法務・コンプライアンス）</li>
+                <li>各役割ごとに異なるニーズと優先事項</li>
+                <li>サイロ化されたデータシステムと分散化された組織構造</li>
+                <li>マーケティングとセールスの連携不足</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ従来のリードベースマーケティングでは不十分なのですか？</div>
+                    <div class="faq-answer">リードベースマーケティングは幅広いリードをキャプチャしますが、実際の意思決定者を特定できません。例えばイベントでバッジをスキャンしてリードを獲得しても、その人が数百万ドル規模の技術購入を決定する立場とは限りません。真の意思決定者を特定し、効果的にアプローチするためには、より焦点を絞ったアプローチが必要です。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. アカウントベースマーケティング(ABM)の限界は何ですか？</div>
+                    <div class="faq-answer">アカウントベースマーケティングはビジネスエンティティ全体を対象としますが、同じアカウントに属する全員が同じメッセージを受け取ります。これでは誰が本当の意思決定者なのか、誰が購入プロセスの鍵となる役割を担っているのかを特定できません。特に大企業では、誰にどのようなメッセージを届けるべきかを正確に把握する必要があります。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. マーケティングとセールスの連携が難しい理由は？</div>
+                    <div class="faq-answer">マーケティングは幅広いアプローチでリードを生成し、セールスは直接的なアウトリーチと特定の意思決定者との関係構築に焦点を当てています。両者のアプローチとゴールが異なるため、シームレスな連携が難しくなっています。購買グループという概念を導入することで、マーケティングがセールスにより質の高いリードを提供し、最終的な成約につなげることが可能になります。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>購買グループ：新しいアプローチ</h2>
+            
+            <div class="summary">
+                Adobe Journey Optimizer B2B Editionは「<span class="highlight">購買グループ</span>」の概念を導入し、リードベースとアカウントベースのマーケティングの両方の利点を組み合わせた新たなアプローチを提供します。
+            </div>
+            
+            <h3>購買グループの特徴と利点</h3>
+            <ul>
+                <li>リードからアカウント、そして特定の購買グループへと絞り込みが可能</li>
+                <li>役割テンプレートに基づいて購買グループを形成</li>
+                <li>マーケティングとセールスの連携強化</li>
+                <li>高価値ターゲットアカウントと意思決定者に焦点を当てたアプローチ</li>
+            </ul>
+            
+            <div class="important">
+                購買グループはリードベースとアカウントベースマーケティングを繋ぐ<span class="underline">ミッシングリンク</span>です
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 購買グループとは具体的に何ですか？</div>
+                    <div class="faq-answer">購買グループとは、企業内で特定の製品やサービスの購入決定に関わる人々のグループです。意思決定者、影響力を持つ人、チャンピオン、技術評価者など、異なる役割を持つメンバーで構成されます。Adobe Journey Optimizer B2B Editionでは、これらの役割を定義し、アカウント内の適切な人物を自動的に特定して、役割に合わせたパーソナライズされたメッセージを届けることができます。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 購買グループを活用するために必要なデータは？</div>
+                    <div class="faq-answer">購買グループを効果的に活用するには、統合されたデータプラットフォームが不可欠です。顧客のメール、ウェブサイト、イベント、ウェビナー、LinkedInの投稿、ホワイトペーパーのダウンロードなど、あらゆる接点からのデータを一元管理することで、顧客が何に関心を持っているかを把握できます。Adobe Experience Platformはこれらのデータを統合し、統一された顧客ビューを提供します。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. パラダイムシフトとは何を意味しますか？</div>
+                    <div class="faq-answer">パラダイムシフトとは、マーケティングの考え方と実践方法の根本的な変化を指します。単に多くのリードを獲得することから、特定の意思決定者に焦点を当てた戦略への転換です。マーケティングコンテンツも、最新のキャンペーンや局所的な目標から、ビジネス全体の成果に焦点を当てたものへと変わります。これには組織文化の変革も必要で、マーケティングとセールスの連携方法も大きく変わります。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>AWSでの実装事例</h2>
+            
+            <div class="summary">
+                AWSは、Deloitte DigitalとAdobeの協力のもと、Adobe Experience PlatformとJourney Optimizer B2B Editionを導入し、購買グループベースのマーケティングへの移行を実現しました。
+            </div>
+            
+            <h3>実装プロセスと成果</h3>
+            <ul>
+                <li>2023年のAdobe Summitで戦略的パートナーシップを開始</li>
+                <li>Adobe Experience Platform（CDP）を導入し、データを統合</li>
+                <li>Web SDKを実装し、リアルタイムのタッチポイントデータを取得</li>
+                <li>高価値ターゲットアカウント向けの購買グループを作成</li>
+                <li>Marketo Engageと連携し、役割ベースのパーソナライズされたジャーニーを提供</li>
+                <li>意思決定エンジンにより、適切なメッセージを適切なタイミングで配信</li>
+            </ul>
+            
+            <h3>使用例：エンタープライズグリーンフィールドアカウント向けジャーニー</h3>
+            <ul>
+                <li>対象：一定の収益しきい値を超え、AWSでの支出が少ないエンタープライズアカウントでAI/ML製品に興味を示している企業</li>
+                <li>異なるデータソースから意図シグナルを収集し、統合</li>
+                <li>ビジネス意思決定者と技術意思決定者の2つの購買グループ役割を定義</li>
+                <li>各役割に対して異なるパーソナライズされたメッセージを配信</li>
+                <li>エンゲージメントスコアに基づき、セールスアラートを生成</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 購買グループの完全性スコアとは何ですか？</div>
+                    <div class="faq-answer">購買グループの完全性スコアとは、定義された購買グループ内の必要な役割がどれだけ埋まっているかを示す指標です。例えば、ビジネス意思決定者と技術意思決定者の両方が特定されている場合、完全性スコアは高くなります。このスコアは、マーケティングチームがアカウントへの浸透度を把握し、必要な利害関係者を特定できているかを評価するのに役立ちます。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. Marketo EngageとJourney Optimizer B2B Editionはどのように連携しますか？</div>
+                    <div class="faq-answer">Journey Optimizer B2B Editionでアカウントレベルのジャーニーと購買グループを定義し、特定のタッチポイントでMarketoのナーチャーキャンペーンにシームレスに送ることができます。AWSの事例では、メール優先順位付けツールがMarketoに組み込まれているため、Journey Optimizerでジャーニーをオーケストレーションし、実際のメール配信はMarketoを通じて行っています。これにより、既存のインフラと新しい機能を組み合わせた柔軟なアプローチが可能になります。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 予想される具体的な成果は何ですか？</div>
+                    <div class="faq-answer">業界ベンチマークに基づくと、ターゲットアカウントの平均収益が約15%増加し、インテントシグナルは2倍に、セールス適格購買グループメンバーは15%増加すると予想されています。また、中小企業向けサービスのパーソナライズドエンゲージメントでは、購買グループメンバーのコンバージョンが15%増加、メールのクリックスルー率が20%向上、購買グループメンバーの配信停止が20%減少すると見込まれています。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>主な教訓と今後の展望</h2>
+            
+            <div class="summary">
+                AWSの実装から得られた主な教訓と、Adobe Journey Optimizer B2B EditionにおけるAIと自動化の今後の展望を紹介します。
+            </div>
+            
+            <h3>実装から得られた主な教訓</h3>
+            <ul>
+                <li>アカウントジャーニーのダイナミクスを理解する重要性</li>
+                <li>マーケティングとセールスの緊密な連携の必要性</li>
+                <li>文化的シフトとオペレーティングモデルの変更</li>
+                <li>シンプルさとスケーラビリティを考慮した設計</li>
+                <li>データの整合性と十分なテストの重要性</li>
+                <li>自社開発ツールへの固執を避け、最適なソリューションを採用する柔軟性</li>
+            </ul>
+            
+            <h3>AIと自動化の今後の展望</h3>
+            <ul>
+                <li><span class="underline">データと洞察のためのAI</span>：購買グループの発見と作成、進捗インサイト</li>
+                <li><span class="underline">ジャーニーとコンテンツのためのAI</span>：ジャーニー作成エージェント、画像からHTMLへの変換、GenAIメールとウェブデザイナー</li>
+                <li><span class="underline">セールスのためのAI</span>：ブランドコンシェルジュB2Bエディション、アカウント適格性エージェント、セールスモバイルアプリ</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 新しいツールを導入する際の最大の課題は何ですか？</div>
+                    <div class="faq-answer">新しいツールの導入における最大の課題は、技術的な実装だけでなく、組織文化と運用モデルの変更です。多くの組織は新しいプラットフォームに投資しても、運用モデルやプロセスを変更しないため、期待した結果が得られません。AWSでは、正しい運用モデル、変更管理、コミュニケーション戦略を構築するための別のワークストリームを設け、ジャーニーマインドセットへの移行をサポートしています。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. AWS上でのAdobe Experience Platformの利点は何ですか？</div>
+                    <div class="faq-answer">AWS上でAEPを実行することで、既存のAWSインフラストラクチャとのシームレスな統合が可能になります。データ主権やアクセスの問題を心配する必要がなく、イベント時に2万人がシステムに追加されるような大規模なスケーラビリティも確保できます。また、AWSの顧客としては、クラウドサービスとマーケティングツールの親和性が高く、一貫したエクスペリエンスを提供できるメリットがあります。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 購買グループのアプローチはどのような企業に最適ですか？</div>
+                    <div class="faq-answer">購買グループのアプローチは、複雑な意思決定プロセスを持つ大企業、特にフォーチュン500や1000企業に最適です。複数の意思決定者が関与し、各部門や役割ごとに異なるニーズがある場合に効果を発揮します。中小企業でも意思決定が集中している場合はアカウントベースのアプローチが機能しますが、企業規模が大きくなるほど、購買グループの概念を取り入れることで、より効果的なマーケティングが可能になります。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>重要用語と概念</h2>
+            
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>ABM (アカウントベースマーケティング)</td>
+                    <td>企業アカウント全体を対象としたマーケティングアプローチ。個々のリードよりもビジネスエンティティ全体に焦点を当てる。</td>
+                </tr>
+                <tr>
+                    <td>購買グループ</td>
+                    <td>企業内で特定の製品・サービスの購入決定に関わる人々のグループ。意思決定者、影響力者、技術評価者などの役割を含む。</td>
+                </tr>
+                <tr>
+                    <td>役割テンプレート</td>
+                    <td>購買グループ内の特定の役割（ビジネス意思決定者、技術意思決定者など）を定義するテンプレート。</td>
+                </tr>
+                <tr>
+                    <td>完全性スコア</td>
+                    <td>購買グループ内の必要な役割がどれだけ埋まっているかを示す指標。</td>
+                </tr>
+                <tr>
+                    <td>インテントシグナル</td>
+                    <td>顧客が特定の製品やサービスに関心を持っていることを示す行動データ。ウェブサイト訪問、コンテンツダウンロード、検索クエリなど。</td>
+                </tr>
+                <tr>
+                    <td>エンゲージメントスコア</td>
+                    <td>購買グループメンバーのエンゲージメントレベルを数値化したもの。セールスへの引き渡しタイミングを判断する指標となる。</td>
+                </tr>
+                <tr>
+                    <td>CDP (顧客データプラットフォーム)</td>
+                    <td>Adobe Experience Platform等の顧客データを統合・管理するプラットフォーム。様々なデータソースからの情報を統合し、統一されたプロファイルを構築。</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            Source: S206 ABM and Buying Group Orchestration with Journey Optimizer B2B Edition at AWS.mov.txt
+        </footer>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+                const answer = question.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

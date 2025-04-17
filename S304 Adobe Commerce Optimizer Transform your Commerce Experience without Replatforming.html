@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adobe Commerce Optimizer</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 16px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #0f3c78;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 32px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 24px;
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .summary {
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            display: inline-block;
+        }
+        .important {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 24px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .faq-container {
+            margin-top: 16px;
+        }
+        .faq-item {
+            margin-bottom: 12px;
+        }
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 12px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .faq-question.active::after {
+            content: "-";
+        }
+        .faq-answer {
+            padding: 12px;
+            display: none;
+            background-color: #f5f5f5;
+            border-radius: 0 0 4px 4px;
+        }
+        .faq-question.active + .faq-answer {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Adobe Commerce Optimizer</h1>
+        
+        <div class="section">
+            <div class="summary">
+                Adobe Commerce Optimizerは、既存のコマースバックエンドを活かしながら、エクスペリエンス層を最適化するソリューションです。リプラットフォームなしでパーソナライズされた高性能なストアフロントを実現します。
+            </div>
+            
+            <h2>概要</h2>
+            <p>Commerce Optimizerは、既存のコマースプラットフォームを維持しながら、エクスペリエンス層を強化するための包括的なソリューションです。複雑な統合や高コストのリプラットフォームを回避しつつ、最新のパーソナライズ機能と高性能なストアフロントを実現します。</p>
+            
+            <h3>主な特徴</h3>
+            <ul>
+                <li>既存のコマースバックエンドを活用（リプラットフォーム不要）</li>
+                <li>商品データとカタログデータのインジェスト（複数ソースから）</li>
+                <li>高性能でパーソナライズされたストアフロントの提供</li>
+                <li>AIを活用した高度なパーソナライゼーション機能</li>
+                <li>単一のSKUで完全統合された製品として提供</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Commerce Optimizerはどのような課題を解決しますか？</div>
+                    <div class="faq-answer">
+                        リプラットフォームの高コストと複雑さを避けながら、パーソナライズされた最適なストアフロントを提供します。既存の投資を維持しつつ、トラフィックの増加、コンバージョン率の向上、複雑なユースケースのサポートを実現します。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 既存のシステムとの統合はどうなりますか？</div>
+                    <div class="faq-answer">
+                        既存のコマースバックエンド、ERP、PIM、CRMなどとのシームレスな統合が可能です。データは複数ソースからインジェストされ、Commerce Optimizerのカタログサービスで処理されます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. いつから利用できますか？</div>
+                    <div class="faq-answer">
+                        Commerce Optimizerは2023年6月に正式リリース予定です。現在はアーリーアクセス段階で、参加メンバーを募集しています。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>コンポーネントと構成</h2>
+            <div class="summary">
+                Commerce Optimizerは、マーチャンダイジングサービス、カタログサービス、ストアフロント、商品ビジュアル、パフォーマンスエージェント、レポートといった複数のコンポーネントで構成されています。
+            </div>
+            
+            <h3>マーチャンダイジングサービス</h3>
+            <ul>
+                <li>新しい<span class="highlight">コンポーザブルカタログデータモデル</span>を活用</li>
+                <li>カタログチャネルとポリシーによる柔軟な商品管理</li>
+                <li>製品発見（Product Discovery）とレコメンデーション機能</li>
+                <li>Adobe Senseiによる機械学習対応の検索機能</li>
+            </ul>
+            
+            <h3>ストアフロント</h3>
+            <ul>
+                <li>Edge Deliveryによる高性能なストアフロント</li>
+                <li>ビジュアルエディターとドキュメントエディター</li>
+                <li>ボイラープレート（テンプレート）</li>
+                <li>カスタムコンポーネント作成用SDK</li>
+                <li>実験機能（A/Bテスト）</li>
+            </ul>
+            
+            <h3>その他のコンポーネント</h3>
+            <ul>
+                <li>AEMアセットによる商品ビジュアル管理</li>
+                <li>Site Optimizerによるパフォーマンス最適化</li>
+                <li>導入前後のメトリクスとレポート機能</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Edge Deliveryの利用は必須ですか？</div>
+                    <div class="faq-answer">
+                        いいえ、必須ではありません。Commerce Optimizerはヘッドレスでも提供されるため、独自のストアフロントを使用することも可能です。ただし、Edge Deliveryを使用しない場合、そのパフォーマンス上の利点は得られません。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Site Optimizerとは何ですか？</div>
+                    <div class="faq-answer">
+                        AIを活用したパフォーマンス最適化ツールで、ストアフロントの問題（リンク切れ、アクセシビリティ問題、高いバウンス率など）を特定し、修正案を提案します。将来のバージョンでは自動修正機能も追加される予定です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 追加契約は必要ですか？</div>
+                    <div class="faq-answer">
+                        いいえ、すべての機能が単一のSKUに含まれています。個別の契約や統合作業は不要です。すべてが完全に統合された状態で提供されます。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>新カタログデータモデル</h2>
+            <div class="summary">
+                Commerce Optimizerの中核となる新しいカタログデータモデルは、カタログチャネルとポリシーの概念を導入し、スケーラビリティと柔軟性を実現します。
+            </div>
+            
+            <h3>主な特徴</h3>
+            <ul>
+                <li>単一ベースカタログでの効率的な管理（データ重複なし）</li>
+                <li>2億5000万以上のSKUをサポート</li>
+                <li>SKUあたり最大30,000の価格設定</li>
+                <li>1時間あたり数百万SKUのプロモーション処理能力</li>
+                <li>属性駆動型カタログモデリング</li>
+                <li>価格ブック（Price Book）の概念導入</li>
+            </ul>
+            
+            <h3>ユースケース例</h3>
+            <ul>
+                <li><span class="underline">自動車部品ディーラー</span>：複数ブランドと地域に対応</li>
+                <li><span class="underline">化粧品メーカー</span>：地域ごとにカタログを拡張</li>
+                <li><span class="underline">マーケットプレイス</span>：複数ソースからのデータ集約</li>
+            </ul>
+            
+            <div class="important">
+                「有効SKU」の概念から脱却し、単一ベースカタログで複数チャネルをサポート
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 価格ブック（Price Book）とは何ですか？</div>
+                    <div class="faq-answer">
+                        価格ブックはSKUから価格の概念を切り離したものです。1つのSKUに複数の価格ブックを関連付けることができ、地域やビジネスユニットごとに独自の価格設定が可能になります。カタログを複製することなく柔軟な価格戦略を実現します。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. カタログのインテグレーションはどのように行いますか？</div>
+                    <div class="faq-answer">
+                        SalesforceやSAPなどの戦略的パートナーとの事前構築されたスターターキットが用意されています。独自システムの場合は、開発SDKを使用して統合を加速することが可能です。API MeshやApp Builderもセッション引き渡しをサポートします。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. カタログの可視性はどのように確保されますか？</div>
+                    <div class="faq-answer">
+                        Data Insightsモジュールにより、複数ソースからインジェストされたカタログデータの完全な可視性を提供します。価格の検証、SKUソースの確認、パーソナライゼーションの健全性チェックなどが可能です。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>パフォーマンスと導入効果</h2>
+            <div class="summary">
+                Commerce Optimizerは、パフォーマンス向上とビジネス成果の改善に特化した機能を備えています。
+            </div>
+            
+            <h3>実績と効果</h3>
+            <ul>
+                <li>Edge Deliveryによる高速ページロード</li>
+                <li>オーガニックトラフィック15%増加</li>
+                <li>Lighthouseスコア90以上</li>
+                <li>Site Optimizerによる1ヶ月でのオーガニックトラフィック4%増加</li>
+                <li>Core Web Vitalsの90%改善</li>
+            </ul>
+            
+            <h3>レポートと分析</h3>
+            <ul>
+                <li>導入前後のメトリクス比較</li>
+                <li>主要KPIの追跡と可視化</li>
+                <li>プロモーション効果の測定</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのような企業に適していますか？</div>
+                    <div class="faq-answer">
+                        リプラットフォームのコストと複雑さを避けたい企業、複数地域や複数ブランドを展開する企業、B2B取引を行う企業、パーソナライゼーションを強化したい企業に特に適しています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. アセットの管理はどうなりますか？</div>
+                    <div class="faq-answer">
+                        AEMアセットとの統合により、製品ビジュアルの管理が可能です。Adobe ExpressとFireflyによるAI生成機能を活用して、バリエーションを簡単に作成できます。これにより、パーソナライズされた視覚体験を数分で更新できます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. アーリーアクセスはどのように申し込めますか？</div>
+                    <div class="faq-answer">
+                        Commerce Optimizerは2023年6月に正式リリース予定ですが、現在アーリーアクセスプログラムを実施中です。参加希望の場合は、専用フォームから申し込むことができます。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>重要用語・概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>コンポーザブルカタログデータモデル</td>
+                    <td>カタログチャネルとポリシーを活用した新しいデータモデル。柔軟性とスケーラビリティを実現する。</td>
+                </tr>
+                <tr>
+                    <td>カタログチャネル</td>
+                    <td>特定の地域やビジネスユニットなど、高レベルの抽象化を表現する概念。複数のポリシーを含むことができる。</td>
+                </tr>
+                <tr>
+                    <td>カタログポリシー</td>
+                    <td>属性ベースのフィルタリング概念。特定の条件に基づいてSKUの可視性を制御する。</td>
+                </tr>
+                <tr>
+                    <td>価格ブック（Price Book）</td>
+                    <td>SKUから価格を分離した概念。1つのSKUに複数の価格設定を関連付け可能。</td>
+                </tr>
+                <tr>
+                    <td>Edge Delivery</td>
+                    <td>高性能なストアフロントを提供するAdobeのテクノロジー。</td>
+                </tr>
+                <tr>
+                    <td>Site Optimizer</td>
+                    <td>AIを活用したストアフロントの問題検出・修正提案ツール。</td>
+                </tr>
+                <tr>
+                    <td>Product Discovery</td>
+                    <td>旧Live Search。Adobe Senseiによる高度な検索機能。</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            © 2023 Adobe Inc. All rights reserved.
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

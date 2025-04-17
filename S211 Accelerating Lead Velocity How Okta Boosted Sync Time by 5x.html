@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S211 Accelerating Lead Velocity How Okta Boosted Sync Time by 5x</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .summary {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        .important {
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .faq-container {
+            margin-top: 20px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 20px;
+        }
+        .faq-question.active::after {
+            content: '-';
+        }
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-question.active + .faq-answer {
+            max-height: 500px;
+            padding: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Marketo最適化プロジェクト: リードのシンク時間を5倍高速化</h1>
+        </header>
+
+        <div class="section">
+            <div class="summary">
+                本資料は、Oktaのシニアマーケティングオペレーションマネージャーであるヴィクトリア・ジャバー氏によるプレゼンテーションの要約です。OktaがMarketoとSalesforceの連携時間を80%削減し、リードの処理速度を5倍に高速化した取り組みについて解説しています。
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>プロジェクト概要: Project Charlotte</h2>
+            <div class="summary">
+                Oktaは2021年にAuth0を買収後、二つのMarketo環境を統合しました。「Project Charlotte」はこの統合されたインスタンスを最適化し、リードのシンク時間を大幅に短縮することを目的としたプロジェクトです。
+            </div>
+            <h3>プロジェクトの背景</h3>
+            <ul>
+                <li>Oktaは<span class="highlight">2021年にAuth0を買収</span>し、2022年に両社のMarketo環境を統合</li>
+                <li>統合後の環境は複雑で非効率な状態になっていた</li>
+                <li>リードがMarketoからSalesforceに同期されるまでの時間が<span class="underline">約6分</span>もかかっていた</li>
+            </ul>
+            <h3>プロジェクトの目標</h3>
+            <ul>
+                <li>MarketoからSalesforceへのレコード同期時間を短縮する</li>
+                <li>リードの処理フローを整理し、トラブルシューティングを容易にする</li>
+                <li>ファネル下部のコンバージョン率を向上させる</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Oktaとは、どのような会社ですか？</div>
+                    <div class="faq-answer">
+                        Oktaは2009年に創業した世界的なIDマネジメント企業です。5000人以上の従業員、15のグローバルオフィスを持ち、19,600以上の顧客に対してサービスを提供しています。現在、年間26億ドル以上の売上を上げています。OktaプラットフォームとAuth0プラットフォームの2つの製品ラインがあります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Project Charlotteという名前の由来は？</div>
+                    <div class="faq-answer">
+                        蜘蛛の巣からインスピレーションを得ています。遠くから見ると複雑に絡み合っているように見えますが、実は蜘蛛は周囲の環境に適応して巣を張る優れた建築家です。このプロジェクトでも、Marketoの運用環境をビジネスニーズに合わせて柔軟に設計することを目指しました。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. プロジェクト前のMarketoの状態はどうでしたか？</div>
+                    <div class="faq-answer">
+                        プロジェクト前は、レコード作成時のトリガーキャンペーンが非常に複雑でした。多くの処理が同時並行で行われ、トラブルシューティングが困難で、システムに大きな負荷がかかっていました。また、Salesforceへのレコードシンクが分散しており、一部のレコードが同期されないという問題も発生していました。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>運用プログラム最適化のための5ステップチェックリスト</h2>
+            <div class="summary">
+                効果的な運用プログラムを設計・実装するための5つのステップについて解説します。これらのステップに従うことで、スケーラブルで保守が容易なMarketoインスタンスを構築できます。
+            </div>
+            <h3>ステップ1: 目標を明確に定義する</h3>
+            <ul>
+                <li>プログラムの<span class="highlight">明確な目標を設定</span>し、それを「北極星」として活用</li>
+                <li>目標に関連しない作業を排除することで、効率的に進める</li>
+                <li>Oktaの例: MarketoからSalesforceへの同期時間の短縮</li>
+            </ul>
+            <h3>ステップ2: 解決すべき問題を特定する</h3>
+            <ul>
+                <li>トラブルシューティングの難しさ（複雑すぎるアクティビティログ）</li>
+                <li>変更の困難さ（「ダムに絆創膏を重ねる」ような状態）</li>
+                <li>処理順序の制御不能（レース条件の発生）</li>
+                <li>Salesforceへのシンクがバラバラでレコードの取りこぼしが発生</li>
+            </ul>
+            <h3>ステップ3: 現状を監査する</h3>
+            <ul>
+                <li>現在の状態を<span class="underline">完全に理解</span>するための監査を実施</li>
+                <li>既存の問題点や隠れたギャップを特定</li>
+                <li>うまく機能している要素を特定し、再利用する</li>
+            </ul>
+            <h3>ステップ4: フレームワークを設計する</h3>
+            <ul>
+                <li>将来のスケールを考慮した設計</li>
+                <li>後任者が理解しやすい構造</li>
+                <li>視覚的なフレームワーク図を作成し、関係者と共有</li>
+            </ul>
+            <h3>ステップ5: 実装と共有</h3>
+            <ul>
+                <li>時間的依存関係を考慮した実装計画</li>
+                <li>何をいつ行うべきかの詳細なチェックリスト</li>
+                <li>成果を共有し、自身の貢献を祝う</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 目標定義はなぜ重要なのですか？</div>
+                    <div class="faq-answer">
+                        運用担当者はシステム構築に熱心なあまり、すぐに実装作業に入りがちです。明確な目標を設定することで、全ての作業が目的に沿っているかを常に確認でき、無駄な作業を削減できます。また、プロジェクトの成功を測定する基準にもなります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 監査はどのように行えばよいですか？</div>
+                    <div class="faq-answer">
+                        現在のシステムの全ての側面を調査します。既存のキャンペーンフロー、データの流れ、ボトルネック、エラーが発生しやすい箇所などを特定します。特に重要なのは、異なるシステム間のデータ移動に要する時間を測定することです。これにより改善すべき箇所が明確になります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 実装計画の「時間的依存関係」とは何ですか？</div>
+                    <div class="faq-answer">
+                        Marketoではサンドボックス環境からの本番移行ができないため、作業の順序と依存関係を明確にすることが重要です。タスクを「プログラム稼働前に実施できるもの」「稼働時に実施すべきもの」「後続対応でよいもの」に分類し、リスクを最小化します。複雑な実装では他のチームメンバーの支援が必要な場合もあります。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>実行可能キャンペーンの活用</h2>
+            <div class="summary">
+                OktaはMarketo内でのリード処理を最適化するために、従来のリクエストキャンペーンから実行可能キャンペーン（Executable Campaigns）に移行しました。この変更により処理の順序を制御し、ボトルネックを解消しました。
+            </div>
+            
+            <h3>実行可能キャンペーンとリクエストキャンペーンの比較</h3>
+            <ul>
+                <li><span class="highlight">実行可能キャンペーン</span>: 親キャンペーンと直列に実行され、順序制御が可能</li>
+                <li><span class="highlight">リクエストキャンペーン</span>: 並列に実行され、トリガーと同様に制御困難</li>
+                <li>実行可能キャンペーンではアクティビティログがフロー通りの順序で表示される</li>
+                <li>実行可能キャンペーンは3レベルまでの呼び出し制限があり、設計をシンプルに保つ効果がある</li>
+            </ul>
+            
+            <h3>3レベルフレームワーク構造</h3>
+            <ul>
+                <li><span class="underline">T1 (ルーター)</span>: レコードを適切なグループに振り分けるスタート地点</li>
+                <li><span class="underline">T2 (処理グループ)</span>: データポイントに基づいてさらにグループ分け</li>
+                <li><span class="underline">T3 (アクション)</span>: 実際にフィールド更新などのアクションを実行</li>
+            </ul>
+            
+            <h3>主要な処理プログラム例</h3>
+            <ul>
+                <li><strong>リードソース管理プログラム</strong>: UTMパラメータなどに基づいてリードソースを特定・更新</li>
+                <li><strong>プライバシーとコンプライアンスプログラム</strong>: 地域に基づくコンプライアンス処理</li>
+                <li><strong>Salesforce同期プログラム</strong>: 一元化されたSalesforceへのデータ同期</li>
+            </ul>
+            
+            <div class="important">
+                新しいフレームワークにより、レコード同期時間を80%削減（5倍の高速化）に成功
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 実行可能キャンペーンの最大の利点は何ですか？</div>
+                    <div class="faq-answer">
+                        最大の利点は処理の順序を制御できることです。実行可能キャンペーンは親キャンペーンと直列に実行されるため、前のステップが完了してから次のステップが実行されます。これにより「レース条件」（複数の処理が同時に行われることで発生する問題）を回避できます。また、トラブルシューティングが容易になり、アクティビティログが理解しやすくなります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. リードソース管理でOriginal Source Typeフィールドを使う利点は？</div>
+                    <div class="faq-answer">
+                        Original Source Typeフィールドは、レコード作成時に既に値が入っているMarketo管理フィールドです。選択リスト値が固定されているため、値の追加や更新を心配する必要がありません。このフィールドを基にリードソースを管理することで、一貫性のある処理が可能になります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 実行可能キャンペーンの制限はありますか？</div>
+                    <div class="faq-answer">
+                        実行可能キャンペーンは最大3レベルまでしか呼び出せません（親→子→孫）。また、Webhookを直接呼び出すことができないため、サードパーティサービスと連携する場合はリクエストキャンペーンを使用する必要があります。しかし、3レベルの制限はむしろ設計をシンプルに保つのに役立ちます。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ビジネス価値への変換</h2>
+            <div class="summary">
+                技術的な改善を測定可能なビジネス価値に変換し、関係者や経営陣に効果的に伝えることが重要です。スピード・トゥ・リード（リード到達速度）の改善は、リード獲得からコンバージョンまでの効率を高めます。
+            </div>
+            
+            <h3>スピード・トゥ・リードの重要性</h3>
+            <ul>
+                <li>最初の30分以内にフォローアップすると、リード獲得の可能性が<span class="highlight">21倍向上</span></li>
+                <li>平均的なB2B営業チームはリード対応に約42時間かけている</li>
+                <li>初回対応の38%は返信がなく、通常4.3日の往復が必要</li>
+            </ul>
+            
+            <h3>リードライフサイクルの全体像を把握</h3>
+            <ul>
+                <li><strong>作成段階</strong>: MarketoからSalesforceへの同期</li>
+                <li><strong>ファネル管理</strong>: サードパーティツールでの処理</li>
+                <li><strong>ルーティング</strong>: 適切な営業担当者へのアサイン</li>
+                <li>各段階の所要時間を測定し、最適化機会を特定</li>
+            </ul>
+            
+            <h3>成果の共有と可視化</h3>
+            <ul>
+                <li>プロジェクト文書化: ビジネス要件や目標設定の共有</li>
+                <li>関係者の早期巻き込み: 意思決定者やリソース提供者を特定</li>
+                <li>タイムラインの設定と共有: 自己責任の維持</li>
+                <li>進捗の定期的な共有: 5分以内の短い動画が効果的</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 同期時間の改善をどのように測定しましたか？</div>
+                    <div class="faq-answer">
+                        データ分析チームと協力して、MarketoのレコードCreated DateとSalesforceのCreated Dateの時間差を抽出し、平均化しました。改善前に基準値を測定し（約6分）、新プログラム導入後の値と比較しました。同期時間が80%削減され、新しいベースラインとなりました。継続的にモニタリングして異常値を検出しています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜリード対応速度がビジネスに重要なのですか？</div>
+                    <div class="faq-answer">
+                        リードが生成されてから30分以内に対応すると、獲得確率が21倍向上するというデータがあります。B2B販売では、初回コンタクトから商談成立までに平均で10営業日以上かかるため、プロセスの初期段階で時間を短縮することが全体の効率向上に大きく貢献します。これは直接的に収益向上につながります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. プロジェクトの成果をどのように共有すべきですか？</div>
+                    <div class="faq-answer">
+                        成果共有の効果的な方法として、1)プロジェクト文書の作成と共有、2)主要な関係者への定期的な更新、3)明確なタイムラインの設定、4)短い動画形式での進捗報告があります。専門的な内容をビジネス価値に変換して伝えることが重要です。例えば「同期時間80%削減」より「リード対応時間の短縮によるコンバージョン率向上」のように伝えます。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>重要な用語・概念解説</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>解説</th>
+                </tr>
+                <tr>
+                    <td>スピード・トゥ・リード</td>
+                    <td>レコードがデータベースに入ってから営業担当者が対応できる状態になるまでの時間</td>
+                </tr>
+                <tr>
+                    <td>実行可能キャンペーン</td>
+                    <td>親キャンペーンと直列に処理される、順序制御が可能なMarketoのキャンペーンタイプ</td>
+                </tr>
+                <tr>
+                    <td>リクエストキャンペーン</td>
+                    <td>並列に処理される、トリガーと同様の動作をするMarketoのキャンペーンタイプ</td>
+                </tr>
+                <tr>
+                    <td>3レベルフレームワーク</td>
+                    <td>T1(ルーター)、T2(処理グループ)、T3(アクション)の階層構造を持つ実行可能キャンペーン設計</td>
+                </tr>
+                <tr>
+                    <td>レース条件</td>
+                    <td>複数の処理が同時並行で実行され、予測不能な結果を引き起こす状態</td>
+                </tr>
+                <tr>
+                    <td>Original Source Type</td>
+                    <td>レコード作成方法を示すMarketo管理フィールド（フォーム送信、インポートなど）</td>
+                </tr>
+            </table>
+        </div>
+
+        <footer>
+            プレゼンター: Victoria Jabar（Okta シニアマーケティングオペレーションマネージャー）
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', () => {
+                    question.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S305 Boost Storefront Performance with Edge Delivery as a Progressive Migration</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #0f3c78;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 2px;
+        }
+        
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #0f3c78;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .faq-container {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>エッジデリバリーを活用した段階的ストアフロント改善</h1>
+        </header>
+        
+        <div class="summary">
+            <h2>概要</h2>
+            <p>Visual Comfort社は、デコラティブ照明の市場リーダーとして、Adobe Commerceからエッジデリバリーサービスへの段階的移行を実施。プロジェクト管理アプローチと段階的な移行によって、ウェブサイトのパフォーマンスを大幅に向上させ、ビジネス目標を達成しました。この事例は、リスクを最小限に抑えながら、イノベーションと俊敏性を高める方法を示しています。</p>
+        </div>
+        
+        <div class="section">
+            <h2>Visual Comfort社について</h2>
+            <p>Visual Comfort社は1987年に設立された、デコラティブ照明、建築照明、シーリングファンの高級リソースとして世界的に有名なデザイナーとコラボレーションしている企業です。</p>
+            
+            <h3>企業の特徴</h3>
+            <ul>
+                <li><span class="underline">B2BとB2C</span>：小売、卸売、トレード顧客をカバーし、B2Bが基盤</li>
+                <li><span class="underline">オムニチャネル</span>：eコマースとショールームの両方を運営</li>
+                <li><span class="underline">デザイン重視</span>：Ralph Laurenなど一流デザイナーと提携</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Visual Comfort社の主なビジネスは何ですか？</div>
+                    <div class="faq-answer">Visual Comfort社は照明製品、特にデコラティブ照明、建築照明、シーリングファンを中心に事業展開しています。デザイナー、ビルダー、請負業者などのB2B顧客が中心ですが、B2C市場も成長させています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのような販売チャネルを持っていますか？</div>
+                    <div class="faq-answer">米国全土にショールームとオフィスを持ち、eコマースビジネスも展開しています。また、イギリスやヨーロッパでもeコマースを運営しています。オムニチャネル戦略を採用し、ショールームとオンラインの両方で顧客体験を提供しています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 特徴的な商品は何ですか？</div>
+                    <div class="faq-answer">世界で最も影響力のあるデザイナーと提携した高級照明製品です。特にシャンデリアなどのデコラティブ照明製品が有名で、デザイン性の高さが特徴です。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>移行前の課題</h2>
+            <p>2024年初頭、Visual Comfort社は以下の3つの大きな課題を抱えていました。</p>
+            
+            <h3>直面していた問題</h3>
+            <ul>
+                <li><span class="highlight">パフォーマンスの問題</span>：リソースを増やしても速度が改善されない</li>
+                <li><span class="highlight">配信速度の遅さ</span>：Adobe Commerceでの変更や展開が困難</li>
+                <li><span class="highlight">イノベーションの難しさ</span>：PHPやAdobe Commerceの専門知識が必要</li>
+                <li><span class="highlight">IT依存性</span>：小さな変更でもIT開発者に依存する状況</li>
+            </ul>
+            
+            <h3>ビジネス目標</h3>
+            <ul>
+                <li>B2B基盤の強化と成長：アカウント体験、セルフサービス体験の向上</li>
+                <li>B2C事業の拡大：ブランド認知度向上とコンバージョン率の改善</li>
+                <li>俊敏性の向上：ビジネス側がコンテンツを自由に管理できる環境の構築</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. パフォーマンスの問題は具体的にどのような状態でしたか？</div>
+                    <div class="faq-answer">Googleのライトハウススコアでは非常に低いスコアが出ており、取締役会からも改善を求められるほど深刻な状態でした。リソースを増やしてもウェブサイトの速度が改善されない状況が続いていました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜイノベーションが難しかったのですか？</div>
+                    <div class="faq-answer">Adobe CommerceのPHP環境に高度なカスタマイズを施していたため、専門的なスキルセットを持つ開発者が必要でした。これらのリソースを見つけるのは困難で高コストであり、開発キャパシティの多くが小さな変更対応に費やされていました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ビジネス目標における最優先事項は何でしたか？</div>
+                    <div class="faq-answer">B2B事業が基盤であるため、そのアカウント体験とセルフサービス体験の向上が最優先でした。同時に、B2C市場の拡大とブランド認知度の向上も重要な目標でした。また、ビジネス側がITに依存せずにコンテンツを管理できる俊敏性の向上も課題でした。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>エッジデリバリーへの移行戦略</h2>
+            <p>Visual Comfort社はAdobeからエッジデリバリーサービスのデモを受け、そのパフォーマンスに感銘を受けましたが、一括での移行リスクを避けるため、プロダクト管理アプローチによる段階的な移行戦略を採用しました。</p>
+            
+            <h3>プロダクトリード・アジャイルアプローチ</h3>
+            <ul>
+                <li>イテレーティブな開発：アイデアから実装まで繰り返し改善</li>
+                <li>価値の早期実現：小さな成功を積み重ねる</li>
+                <li>リスク低減：全体的な移行ではなく部分的に実施</li>
+                <li>適応性：必要に応じて計画を調整</li>
+            </ul>
+            
+            <h3>段階的な移行計画</h3>
+            <ul>
+                <li>1. 米国サイトのホームページから開始</li>
+                <li>2. 製品リスティングページ（PLP）</li>
+                <li>3. 製品詳細ページ（PDP）</li>
+                <li>4. カートとチェックアウト</li>
+                <li>5. イギリス・EU市場への展開</li>
+            </ul>
+            
+            <div class="important">2週間のスプリントサイクルで開発を進め、段階的に価値を実現</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ一括移行ではなく段階的アプローチを選んだのですか？</div>
+                    <div class="faq-answer">以前Magento 2からAdobe Commerceへのアップグレードを経験しており、全面的な移行のリスクを避けたかったためです。また、エッジデリバリーの実装方法に不確実性があったため、段階的に学びながら進める方が安全だと判断しました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 開発チームはどのように構成されていましたか？</div>
+                    <div class="faq-answer">当初はAdobe VIPチームと社内チームを別々に構成していましたが、コミュニケーションの難しさから、後に統合しました。また、エッジチームとAdobe Commerceチームも分けていましたが、統合が必要だと気づき、両方のスキルを持つeコマースチームに再編成しました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 計画外の移行はありましたか？</div>
+                    <div class="faq-answer">はい。当初の計画にはなかった見積ページとショールームページもエッジデリバリーに移行しました。特にDynamics 365への移行プロジェクトと重なったことで、見積ページをエッジデリバリーで実装する機会が生まれました。計画に柔軟に対応したことで、追加の価値を得ることができました。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>段階的な実装と結果</h2>
+            <p>Visual Comfort社はホームページから始めて段階的にエッジデリバリーに移行し、各段階で大幅なパフォーマンス向上を実現しました。</p>
+            
+            <h3>ホームページの移行</h3>
+            <ul>
+                <li>実装期間：わずか2週間</li>
+                <li>パフォーマンススコア：大幅に向上（99点達成）</li>
+                <li>効果：ビジネス側の編集が容易に、パーソナライゼーションの向上</li>
+            </ul>
+            
+            <h3>製品リスティングページ（PLP）の移行</h3>
+            <ul>
+                <li>スコア：26点から91点へ大幅向上</li>
+                <li>カテゴリ：引き続きAdobe Commerceで管理</li>
+                <li>追加効果：柔軟なユーザーコンテンツ管理、DevOpsの簡素化、コードの信頼性向上</li>
+            </ul>
+            
+            <h3>追加ページの移行</h3>
+            <ul>
+                <li>見積ページ：エラー減少、ショールームとの統合改善</li>
+                <li>ショールームページ：Excelスプレッドシートを使用した簡単なコンテンツ管理</li>
+                <li>Adobe Experience Manager Assetsとの統合：メディア管理の効率化</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. パフォーマンス向上はどのように測定されましたか？</div>
+                    <div class="faq-answer">主にGoogleのライトハウススコアを使用して測定しました。ホームページでは99点という高スコアを達成し、PLPでも91点に達しました。この大幅な改善は「これは11まで行く」と表現されるほど印象的でした（映画「スパイナル・タップ」の「これは11まである」という台詞にちなんだジョーク）。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. エッジデリバリーへの移行による具体的なビジネスメリットは何でしたか？</div>
+                    <div class="faq-answer">パフォーマンスの向上だけでなく、コンテンツ管理の容易さ、DevOpsとコード管理の簡素化、QA自動化の改善などが実現しました。エッジデリバリーのドキュメントベースのコンテンツ管理は、ビジネス側がITに依存せずに変更できる環境を提供しました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 見積ページの移行はなぜ計画外だったのに実施されたのですか？</div>
+                    <div class="faq-answer">Dynamics 365への移行プロジェクトと重なったため、見積ページを変更する必要がありました。この機会を利用して、エッジデリバリーでの実装を試みたところ、Adobe CommerceをバイパスしてAPIから直接情報を取得する新しいアプローチが可能となりました。この成功がさらなるイノベーションの基盤となりました。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>アーキテクチャの変化と考慮点</h2>
+            <p>エッジデリバリーへの移行によってアーキテクチャが複雑化し、新たな考慮点が生まれました。</p>
+            
+            <h3>移行前のアーキテクチャ</h3>
+            <ul>
+                <li>Adobe Commerce Cloud + Fastly CDNキャッシング</li>
+                <li>APIコネクション</li>
+                <li>Bloomreach検索機能</li>
+            </ul>
+            
+            <h3>移行後のアーキテクチャ</h3>
+            <ul>
+                <li>エッジデリバリーとAdobe Commerceの統合</li>
+                <li>SharePointフォルダーを使用したコンテンツ管理</li>
+                <li>異なる国向けの別フォルダ構造</li>
+            </ul>
+            
+            <h3>開発環境の考慮点</h3>
+            <ul>
+                <li>本番/ステージング/開発環境の明確な分離</li>
+                <li>DevOps体制の変更</li>
+                <li>エッジとAdobe Commerce両方のスキルセットが必要</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. SharePointでのコンテンツ管理にはどのような課題がありましたか？</div>
+                    <div class="faq-answer">当初は「website」という単一のフォルダにすべてのコンテンツを保存していたため、本番環境とステージング環境のコンテンツが混在する問題がありました。その後、website（本番）、website-stage（ステージング）、website-dev（開発）の3つのフォルダに分離して管理するようになりました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. エッジデリバリーとAdobe Commerceの統合において重要なポイントは何ですか？</div>
+                    <div class="faq-answer">両方のプラットフォームを理解できる開発者が必要です。グローバルな変更を行う場合、エッジページとAdobe Commerceページの両方を更新する必要があるため、統合的な理解が必須です。また、リリース管理も両方のプラットフォームを同期させる必要があります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. DevOps体制はどのように変化しましたか？</div>
+                    <div class="faq-answer">「プログレッシブDevOps」と呼ばれるアプローチを採用し、エッジとAdobe Commerceの両方のリリース候補を同時にステージング環境にプッシュし、エンドツーエンドの回帰テストを実行した後、同日に本番環境にリリースするようになりました。これにより、依存関係による問題を防ぐことができます。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>主な学びと今後の展開</h2>
+            <p>Visual Comfort社はエッジデリバリーへの移行から多くの学びを得て、今後もこの取り組みを継続する予定です。</p>
+            
+            <h3>製品面での学び</h3>
+            <ul>
+                <li>エッジデリバリーのコードはHTML/JavaScriptで単純</li>
+                <li>Adobe Commerceとの連携が容易</li>
+                <li>コンテンツ変更が簡単（WordやExcel）</li>
+                <li>DevOpsが簡素化され、CI/CDが容易に</li>
+            </ul>
+            
+            <h3>移行プロセスでの学び</h3>
+            <ul>
+                <li>「リフト＆シフト」は思ったより複雑</li>
+                <li>ビジネスパートナーシップが重要</li>
+                <li>環境設定と管理に注意が必要</li>
+                <li>適切なスキルセットの確保が必須</li>
+            </ul>
+            
+            <h3>今後の計画</h3>
+            <ul>
+                <li>PDPの移行を再開</li>
+                <li>カートとチェックアウトの実装（シングルページチェックアウトへ）</li>
+                <li>イギリス・EUサイトのPLPを移行</li>
+                <li>新たなコンテンツページの追加</li>
+            </ul>
+            
+            <div class="important">3つの重要なポイント：段階的に移行する、変革に備える、チームのスキル向上を図る</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「リフト＆シフト」が思ったより複雑だったとはどういう意味ですか？</div>
+                    <div class="faq-answer">単にコンテンツを移行するだけではなく、DevOpsプロセス、アーキテクチャ、運用方法も変更する必要がありました。特にPDPの管理方法が変わると、運用プロセス全体に影響します。エッジとAdobe Commerceの統合も考慮する必要があり、単純な移行ではありませんでした。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. チームのスキル向上についてどのような取り組みをしましたか？</div>
+                    <div class="faq-answer">4〜6人のエッジ開発者を新たに雇用し、JavaScript開発スキルを強化しました。また、既存のAdobe Commerce専門家にエッジ開発スキルを学んでもらい、両方のプラットフォームに精通したエンジニアを育成しました。特にAdobe Commerceの深い知識を持つリーダーがエッジを学ぶことで、統合への理解が深まりました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 移行によるROIはどのように測定していますか？</div>
+                    <div class="faq-answer">2024年の注文数と収益は増加しましたが、それがエッジデリバリーだけの効果かどうかは判断できていません。マーケティング活動も同時に強化されたためです。ただし、パフォーマンスの向上（ホームページで64%改善）、コンテンツ管理の容易さ、DevOpsの簡素化、QA自動化の改善などは明確な効果として認識しています。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>重要な用語と概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>エッジデリバリーサービス</td>
+                    <td>Adobeが提供するサービスで、ウェブサイトのパフォーマンスを向上させるためのCDNベースの配信システム</td>
+                </tr>
+                <tr>
+                    <td>プログレッシブ移行</td>
+                    <td>一度にすべてを移行するのではなく、段階的に部分移行していくアプローチ</td>
+                </tr>
+                <tr>
+                    <td>アジャイル/スクラム</td>
+                    <td>小さなチームが2週間のスプリントで繰り返し開発を行う手法</td>
+                </tr>
+                <tr>
+                    <td>ライトハウススコア</td>
+                    <td>Googleが提供するウェブページのパフォーマンス測定ツール</td>
+                </tr>
+                <tr>
+                    <td>PLP/PDP</td>
+                    <td>製品リスティングページ/製品詳細ページ - eコマースサイトの主要ページ</td>
+                </tr>
+                <tr>
+                    <td>DevOps</td>
+                    <td>開発と運用を統合したアプローチ。コードの開発から展開までのプロセス</td>
+                </tr>
+                <tr>
+                    <td>CI/CD</td>
+                    <td>継続的インテグレーション/継続的デリバリー - 自動化されたビルド、テスト、デプロイのプロセス</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            <p>講演：Visual Comfort社 - Kevin氏</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

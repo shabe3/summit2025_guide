@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S321 Adobe Experience Manager Assets Top DAM Innovations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 16px;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.4rem;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0f3c78;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        p {
+            margin-bottom: 16px;
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .summary {
+            font-weight: bold;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 24px 0;
+            font-size: 1.2rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            margin-top: 32px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* FAQ スタイル */
+        .faq-container {
+            margin-top: 16px;
+        }
+        .faq-item {
+            margin-bottom: 8px;
+        }
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        .faq-question:after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question:after {
+            content: '-';
+        }
+        .faq-answer {
+            display: none;
+            padding: 12px;
+            background-color: #f5f5f5;
+            border-radius: 0 0 4px 4px;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Adobe Experience Manager Assets<br>Top DAM Innovations</h1>
+        </header>
+        
+        <section class="section">
+            <p class="summary">
+                Adobe Experience Managerの最新DAM（デジタルアセット管理）機能による、コンテンツの「信頼性」「意図ベース」「スケール展開」を実現する革新的な機能についての解説です。コーヒーを例に、コンテンツの品質と価値を高めるプロセスを紹介しています。
+            </p>
+            
+            <p>
+                コーヒーが水と茶に次いで世界で3番目に消費される飲み物であるように、質の高いコンテンツ供給も、丁寧で複雑なプロセスを経て実現します。この発表では、AEMアセットがコンテンツの<span class="highlight">信頼できるクリエイティブパートナー</span>として、どのように進化しているかをご紹介します。
+            </p>
+        </section>
+        
+        <section class="section">
+            <h2>1. 信頼性 (Trust)</h2>
+            
+            <p class="summary">
+                コンテンツの信頼性を確保するための革新的な機能。メタデータの充実、ブランド基準の遵守、重複検出などによって、品質の高いコンテンツを管理できます。
+            </p>
+            
+            <h3>主な機能と革新点</h3>
+            <ul>
+                <li><span class="underline">AI活用メタデータ強化</span>：生成AIとLMSを使用して、ブランド固有の詳細なメタデータを自動生成。手動入力の10分の作業を数秒に短縮</li>
+                <li><span class="underline">Figma統合</span>：AEM AssetsとFigma Enterpriseの直接統合により、クリエイティブチームの作業効率を向上</li>
+                <li><span class="underline">重複アセット検出</span>：同一または類似アセットを自動検出し、管理を効率化</li>
+                <li><span class="underline">ブランド検証スコア</span>：アセットがブランドガイドラインに準拠しているかを数値化</li>
+                <li><span class="underline">Adobe Express統合</span>：AEM内からAdobe Expressを利用可能。ブランドガイドラインに基づく編集が容易に</li>
+                <li><span class="underline">コンテンツ証明</span>：非可視ウォーターマークとコンテンツ証明書により、アセットの出所と信頼性を確保</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. スマートタグ機能はどのようにブランド固有のメタデータを生成しますか？</div>
+                    <div class="faq-answer">
+                        生成AIと自然言語プロンプトを使用して、一般的なタグだけでなく、製品SKU、ブランド、製品タイプなどの詳細なカスタムメタデータを自動生成します。取り込み時に一度設定すれば、すべてのアセットに適用されます。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 重複アセット検出はどのような種類の重複を見つけられますか？</div>
+                    <div class="faq-answer">
+                        完全に同一だが異なるフォルダに保存されているアセットと、同じ元画像から生成された低解像度バージョンなど異なる変種の両方を検出できます。重複アセットパネルで一覧表示され、場所や詳細情報を確認できます。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. ブランド検証スコアはどのように計算されていますか？</div>
+                    <div class="faq-answer">
+                        中央で管理されているブランドガイドラインに基づいて、アセットがどの程度準拠しているかを評価します。例えば「背景が煩雑でない」などの基準に合わせて100点満点でスコア化されます。
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>2. 意図ベース (Intent Based)</h2>
+            
+            <p class="summary">
+                ユーザーの意図や個人の興味に合わせたコンテンツ発見と表示を実現する機能。自然言語検索や多言語対応、パーソナライズされたコンテンツ生成などが含まれます。
+            </p>
+            
+            <h3>主な機能と革新点</h3>
+            <ul>
+                <li><span class="underline">AI検索（セマンティック検索）</span>：キーワードだけでなく自然言語での検索が可能。誤字やタイポにも対応</li>
+                <li><span class="underline">多言語メタデータ</span>：ユーザーの言語設定に応じて、検索プロンプトとメタデータを自動翻訳</li>
+                <li><span class="underline">Dynamic Mediaテンプレート</span>：静的な画像をパーソナライズ可能なテンプレートに変換。地域やターゲットに合わせた調整が容易</li>
+                <li><span class="underline">AIビデオ文字起こし</span>：Dynamic MediaのAI文字起こし機能で60以上の言語に対応。アクセシビリティ向上に貢献</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. セマンティック検索はどのように従来の検索と異なりますか？</div>
+                    <div class="faq-answer">
+                        キーワードベースではなく、文の意味を理解して検索します。例えば「友達とコーヒーを楽しむ」といった自然な表現で検索でき、タイポや同義語（「友達」と「バディ」など）にも対応します。また、検索結果に関連するフィルターも自動的に提案します。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 多言語機能はどの程度シームレスですか？</div>
+                    <div class="faq-answer">
+                        ユーザーの言語設定を変更するだけで、検索プロンプトとメタデータ（タイトルや説明など）が自動的に翻訳されます。追加設定は不要で、マジックワンドアイコンを使えば元の英語とターゲット言語を簡単に切り替えられます。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. Dynamic Mediaテンプレートでパーソナライズできるのは何ですか？</div>
+                    <div class="faq-answer">
+                        テキスト、画像、レイヤーの表示/非表示、位置、サイズなどをパラメーター化できます。例えば、「Buy Now」を「Sip Now」に変更したり、プロモーション内容を変更したりできます。すべての変更はURLパラメーターで制御できるため、リアルタイムで無限のバリエーションを生成できます。
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>3. スケール展開 (Activation at Scale)</h2>
+            
+            <p class="summary">
+                信頼性の高いコンテンツを適切なチームや個人に効率的に提供するための機能。コンテンツハブの強化、メタデータベースのアクセス制御、アプリケーション統合などが含まれます。
+            </p>
+            
+            <h3>主な機能と革新点</h3>
+            <ul>
+                <li><span class="underline">属性ベースのアクセス制御</span>：メタデータに基づいて、特定のユーザーグループに関連するアセットのみを表示</li>
+                <li><span class="underline">コンテンツハブのブランディング</span>：ロゴ、タイトル、色などをカスタマイズ可能</li>
+                <li><span class="underline">Dynamic Mediaレンディション</span>：コンテンツハブから直接Dynamic Mediaのレンディションにアクセス可能</li>
+                <li><span class="underline">カスタム拡張性</span>：組織固有のワークフローやアクションを統合（例：Adobe Workfrontとの連携）</li>
+                <li><span class="underline">統合検索</span>：AEMだけでなくDropboxなど外部ソースのアセットも発見可能</li>
+                <li><span class="underline">Adobe Experience Manager Sites Optimizer</span>：SEOとアクセシビリティのために、AIによる代替テキスト（alt text）の生成と管理</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 属性ベースのアクセス制御はどのように設定しますか？</div>
+                    <div class="faq-answer">
+                        シンプルなルールベースで設定できます。例えば「地域がEMEAのアセットのみを地域マーケターに表示する」「チャネルが店内ディスプレイのアセットのみを店舗マーケティングチームに表示する」などのルールを作成できます。複数のメタデータを組み合わせた複雑なルールも可能です。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. コンテンツアドバイザーの特徴は何ですか？</div>
+                    <div class="faq-answer">
+                        自然言語での検索、カラープロファイルの表示、Dynamic Mediaレンディションへのアクセスなどが可能です。特にユニークなのは、キャンペーン資料（PDFなど）をアップロードするだけでターゲットオーディエンスに適したアセットを自動推奨してくれる点です。アセットだけでなくコンテンツフラグメントも検索できます。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. Sites Optimizerのalt text生成はどのように機能しますか？</div>
+                    <div class="faq-answer">
+                        AIを使用して画像の適切な代替テキストを自動生成します。SEO対応とアクセシビリティを向上させるため、alt textが欠けているアセットを特定し、適切な説明を提案します。これをサイト全体に簡単に適用できます。
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>用語集と重要機能</h2>
+            
+            <table>
+                <tr>
+                    <th>用語/機能</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>DAM (Digital Asset Management)</td>
+                    <td>デジタルアセット管理。企業のデジタル資産を効率的に管理するシステム</td>
+                </tr>
+                <tr>
+                    <td>AEM Assets</td>
+                    <td>Adobe Experience Managerのデジタルアセット管理モジュール</td>
+                </tr>
+                <tr>
+                    <td>Dynamic Media</td>
+                    <td>リッチメディアコンテンツの管理・配信を行うAEMの機能</td>
+                </tr>
+                <tr>
+                    <td>コンテンツハブ</td>
+                    <td>外部ユーザーや部門とアセットを共有するためのインターフェース</td>
+                </tr>
+                <tr>
+                    <td>スマートタグ</td>
+                    <td>AIを使用して画像の内容を自動的にタグ付けする機能</td>
+                </tr>
+                <tr>
+                    <td>コンテンツ証明</td>
+                    <td>アセットの出所と真正性を証明する技術</td>
+                </tr>
+                <tr>
+                    <td>セマンティック検索</td>
+                    <td>意味を理解して検索結果を返す高度な検索機能</td>
+                </tr>
+            </table>
+        </section>
+        
+        <p class="important">
+            AEM Assetsは「信頼性」「意図ベース」「スケール展開」の3つの柱で<br>
+            コンテンツサプライチェーンを強化し、より効果的なデジタル体験を実現します
+        </p>
+        
+        <footer>
+            Adobe Experience Manager Assets Top DAM Innovations プレゼンテーション資料より
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentNode;
+                    faqItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

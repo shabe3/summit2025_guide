@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S328 Activate Content Faster with Adobe Experience Manager Assets</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+        .faq-container {
+            margin-top: 20px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            position: relative;
+            font-weight: bold;
+        }
+        .faq-question:after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            top: 10px;
+        }
+        .faq-question.active:after {
+            content: '-';
+        }
+        .faq-answer {
+            padding: 15px;
+            display: none;
+            background-color: #f5f5f5;
+            border-radius: 0 0 4px 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Adobe Experience Manager Assetsで<br>コンテンツをより速くアクティベート</h1>
+        </header>
+
+        <div class="summary">
+            <h2>概要</h2>
+            <p>本セッションでは、Adobe Experience Manager（AEM）Assetsを活用して、コンテンツのアクティベーションをスケールさせる方法について解説します。今日の消費者は、視覚的に優れ、パーソナライズされた、かつブランドに一貫したエクスペリエンスを求めています。企業はコンテンツのアクティベーション（実装）を加速しながら、信頼性、ブランドの一貫性、パーソナライゼーション、そして適切な投資バランスを確保する必要があります。</p>
+        </div>
+
+        <section>
+            <h2>信頼されたコンテンツを素早く準備する</h2>
+            <p>ブランドコンテンツの準備と承認プロセスを加速する方法に焦点を当てます。</p>
+            
+            <h3>主な機能と利点</h3>
+            <ul>
+                <li><span class="highlight">Content Hub</span> - 何千人ものユーザーにコンテンツへのアクセスを提供する機能</li>
+                <li><span class="underline">UI ブランディング</span> - ポータルインターフェースをブランドに合わせてカスタマイズ可能</li>
+                <li>ライブブランドサービス - ブランドガイドラインをリアルタイムで提供</li>
+                <li>テンプレート活用 - Adobe ExpressやDynamic Mediaのテンプレートを活用してコンテンツ作成を効率化</li>
+                <li>自動メタデータ付与 - AIを活用して製品画像に自動でメタデータを付与</li>
+                <li><span class="highlight">ブランドバリデーションスコア</span> - AIがブランドガイドラインに基づいてコンテンツのブランド整合性をスコアリング</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Content Hubとは何ですか？</div>
+                    <div class="faq-answer">Content Hubは、AEMの機能の一つで、何千人ものユーザーに承認済みのブランドコンテンツへのアクセスを提供するポータルです。UIをブランドに合わせてカスタマイズすることも可能です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ブランドバリデーションスコアはどのように機能しますか？</div>
+                    <div class="faq-answer">AIがブランドガイドラインに基づいて画像を分析し、ブランドの整合性をスコアリングします。例えば、背景が煩雑すぎる場合は低いスコアを表示し、その理由も説明します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 自動メタデータ付与の利点は何ですか？</div>
+                    <div class="faq-answer">AIが製品画像を分析して自動的にメタデータを付与し、そのメタデータは必要に応じて自動翻訳されます。これにより、コンテンツの検索性と再利用性が向上します。</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>コンテンツの再利用と目的に合わせた再編集</h2>
+            <p>グローバルコンテンツを地域やローカル市場のニーズに合わせて適応させる方法について解説します。</p>
+            
+            <h3>主な機能と利点</h3>
+            <ul>
+                <li><span class="highlight">パーミッショニングシステム</span> - アセットのメタデータプロパティに基づくルールを設定し、ユーザーグループに適切なコンテンツを表示</li>
+                <li><span class="underline">拡張性（Extensibility）</span> - コンテンツワークフローをビジネスニーズに合わせて拡張（例：使用権の延長申請）</li>
+                <li>Dynamic Mediaテンプレート - マーケティング向けのパラメータ化可能なテンプレート</li>
+                <li>Adobe Expressテンプレート - ローカライズとバリエーション作成のための機能</li>
+                <li>自動翻訳 - コンテンツの多言語化を容易に</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. パーミッショニングシステムはどのように役立ちますか？</div>
+                    <div class="faq-answer">アセットのメタデータプロパティに基づいてルールを設定し、特定のユーザーグループに適切なサブセットのコンテンツのみを表示できます。これにより、ユーザーは関連するコンテンツに集中できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Dynamic Mediaテンプレートとは何ですか？</div>
+                    <div class="faq-answer">マーケティング向けのパラメータ化可能なテンプレートで、URLとして公開され、オンザフライで設定可能です。例えば、パーソナライズされたバナーを作成し、名前などの要素をリアルタイムで変更できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 拡張性（Extensibility）の具体例は？</div>
+                    <div class="faq-answer">Adobe Builder技術を使用して、Content Hubに拡張機能を追加できます。例えば、アセットの使用権を延長するためのリクエストフローや、印刷サービスへのコンテンツ送信など、ビジネスフローを接続できます。</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>勝利するコンテンツをスケールでアクティベート</h2>
+            <p>承認済みコンテンツを様々なチャネルに効率的に展開する方法を解説します。</p>
+            
+            <h3>主な機能と利点</h3>
+            <ul>
+                <li><span class="highlight">パブリックリンク共有</span> - 特定のアセットへのリンクを外部ユーザーと簡単に共有</li>
+                <li><span class="underline">Smart Crop</span> - AIが画像の重要な部分を自動的に認識しクロップ</li>
+                <li>DRMとライセンス条件の表示 - コンテンツの使用権を明確に表示</li>
+                <li>Dynamic Media URLの活用 - URLを直接チャネルに配置して展開を簡略化</li>
+                <li>Content Selector - 特定のソリューションから直接コンテンツを検索・選択・プレビュー・デプロイ</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Smart Cropはどのように機能しますか？</div>
+                    <div class="faq-answer">AIが画像の重要な部分（「重心」）を自動的に認識し、様々なフォーマットやサイズに適切にクロップします。必ずしも中央でなくても、重要な要素が含まれるように切り抜きます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Content Selectorの利点は？</div>
+                    <div class="faq-answer">特定のソリューションで作業しているチャネル担当者が、コンテンツのソース（AEM）に接続し、視覚的に検索、選択、プレビューし、ボタンをクリックするだけでコンテンツをデプロイできます。ダウンロードとアップロードのサイクルが不要になります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. DRMとライセンス条件の表示はなぜ重要ですか？</div>
+                    <div class="faq-answer">アセットの使用権と有効期限を明確に表示することで、ユーザーは適切なコンテンツを選択でき、ライセンス違反を防止できます。期限切れのアセットは表示されるが、ダウンロードできないように設定することも可能です。</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>最新のAI革新とコンテンツアクティベーション</h2>
+            <p>AEMにおける最新のAI機能がコンテンツの検索と活用をどう変革するかを紹介します。</p>
+            
+            <h3>主な機能と革新</h3>
+            <ul>
+                <li><span class="highlight">統合検索（Unified Search）</span> - AEMとDropboxなどの他のソースからのアセットを一つの検索結果に統合</li>
+                <li><span class="underline">インテントベース検索</span> - 自然言語でコンテンツを検索する革命的な機能</li>
+                <li>Content Advisor - インテリジェントなコンテンツ推奨エンジン</li>
+                <li>インテント駆動マッチ - キャンペーン概要書などの長文からコンテンツを自動的にマッチング</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. インテントベース検索とは何ですか？</div>
+                    <div class="faq-answer">従来のキーワード検索ではなく、自然言語（例：「芸術的なコーヒーカップを示す承認済みのPNGアセットを見つけて」）でコンテンツを検索できる機能です。セマンティック検索技術に基づいており、文の意味を理解します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Content Advisorの主な特徴は？</div>
+                    <div class="faq-answer">コンテキストに基づいて適切なコンテンツを推奨するインテリジェントアドバイザーです。インテントベース検索と同じ技術を使用し、ユーザーの状況に応じたコンテンツを提供します。視覚的なコンテンツだけでなく、コピーなどのテキストコンテンツも含みます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. インテント駆動マッチはどのように機能しますか？</div>
+                    <div class="faq-answer">キャンペーン概要書などの長文ドキュメントを分析し、ターゲットオーディエンスなどの情報を抽出して、適切なコンテンツを自動的にマッチングします。これにより、マーケターは長文の「プロンプト」からコンテンツを効率的に見つけることができます。</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="important">
+            コンテンツアクティベーションは、信頼性・ブランドの一貫性・スケールの3つのバランスを実現する必要があります
+        </div>
+
+        <section>
+            <h2>AEMコンテンツアクティベーションの4つの柱</h2>
+            <p>AEMでコンテンツをスケールでアクティベートするための基盤となる4つの能力について説明します。</p>
+            
+            <ul>
+                <li><span class="highlight">AEM Assets</span> - コンテンツ管理の中核プラットフォーム</li>
+                <li><span class="highlight">Dynamic Media</span> - コンテンツを安全かつスケーラブルに配信するプラットフォーム</li>
+                <li><span class="highlight">Content Hub</span> - 人間がコンテンツにアクセス、作成、アクティベートする能力を提供</li>
+                <li><span class="highlight">API アクセス</span> - 自動化とコード駆動によるシームレスなアクティベーション</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>重要な用語と解説</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>解説</th>
+                </tr>
+                <tr>
+                    <td>コンテンツアクティベーション</td>
+                    <td>承認済みコンテンツを様々なチャネルや市場に効率的に展開するプロセス</td>
+                </tr>
+                <tr>
+                    <td>Content Hub</td>
+                    <td>AEMの機能の一つで、何千人ものユーザーに承認済みブランドコンテンツへのアクセスを提供するポータル</td>
+                </tr>
+                <tr>
+                    <td>Dynamic Media</td>
+                    <td>コンテンツを安全かつスケーラブルに配信するプラットフォーム。Smart Cropなどの機能を提供</td>
+                </tr>
+                <tr>
+                    <td>インテントベース検索</td>
+                    <td>自然言語でコンテンツを検索できる、セマンティック検索技術に基づく機能</td>
+                </tr>
+                <tr>
+                    <td>Content Advisor</td>
+                    <td>ユーザーのコンテキストに基づいて適切なコンテンツを推奨するインテリジェントエンジン</td>
+                </tr>
+                <tr>
+                    <td>ブランドバリデーションスコア</td>
+                    <td>AIがブランドガイドラインに基づいてコンテンツのブランド整合性を評価するスコアリングシステム</td>
+                </tr>
+            </table>
+        </section>
+
+        <footer>
+            <p>© 2025 Adobe Experience Manager Assets</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                    } else {
+                        answer.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEM Sites トップイノベーション</title>
+    <style>
+        :root {
+            --accent-color: #0f3c78;
+            --bg-color: #f5f5f5;
+            --section-bg: #ffffff;
+            --text-color: #333;
+            --highlight-color: #fff3cd;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 16px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .summary {
+            background-color: var(--section-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            background-color: var(--section-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        ul {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+        
+        .important {
+            font-weight: bold;
+            text-align: center;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .faq-container {
+            margin-top: 1.5rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            padding: 10px;
+            position: relative;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            padding: 0 10px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 10px;
+            padding-top: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #666;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Adobe Experience Manager Sites トップイノベーション</h1>
+        </header>
+        
+        <div class="summary">
+            <p><strong>サマリー：</strong>Adobe Experience Managerの最新イノベーションは、AIを活用したインテント主導型体験の構築、ブランド完全性を維持するガバナンス、継続的な最適化メカニズムの3つの柱に基づいています。これらの革新により、マーケターは変化するカスタマージャーニーに対応し、高速かつ高品質なコンテンツ体験を提供できるようになります。</p>
+        </div>
+        
+        <section>
+            <h2>マーケティング環境の変化</h2>
+            <p>従来の予測可能なマーケティングファネルは急速に進化しています。AIの進化により、消費者の意思決定プロセスが変わりつつあります。</p>
+            
+            <h3>主な変化ポイント</h3>
+            <ul>
+                <li>2023年のジェネレーティブAIにより、<span class="highlight">認知段階が瞬時に</span>なった</li>
+                <li>2024年の推論AI機能により、<span class="highlight">検討段階も短縮化</span>している</li>
+                <li>消費者は、ブランドが案内する前に、<span class="underline">個人の好みに合わせて選択肢を得る</span>ようになった</li>
+                <li>ブランドは、予測可能なファネルからAI主導の流動的な顧客体験へと移行する必要がある</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ従来のマーケティングファネルが変化しているのですか？</div>
+                    <div class="faq-answer">AIの急速な発展により、消費者の情報取得と意思決定のプロセスが根本的に変わっています。ジェネレーティブAIと推論AIによって、情報へのアクセスが瞬時になり、消費者の好みに合わせた選択肢が自動的に提示されるようになったため、ブランドが従来のように顧客の意思決定プロセスを完全にコントロールすることが難しくなっています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ブランドはこの変化にどう対応すべきですか？</div>
+                    <div class="faq-answer">ブランドは静的なコンテンツ戦略から、インテント主導型の流動的なコンテンツ戦略へと移行する必要があります。消費者の意図を理解し、瞬時に適切なコンテンツを提供できるAI主導の体験を構築することが重要です。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>革新の3つの柱</h2>
+            <p>AEMの最新イノベーションは、変化するマーケティング環境に対応するための3つの重要な要素に焦点を当てています。</p>
+            
+            <h3>インテント主導型体験の創造</h3>
+            <ul>
+                <li>単なる大量のコンテンツではなく、<span class="highlight">顧客の意図に応じた</span>体験が必要</li>
+                <li>AIが顧客の意図を予測し、適切なコンテンツを提供</li>
+                <li>静的なコンテンツから、顧客の行動に合わせて進化する<span class="underline">インテント対応型コンテンツ</span>へ</li>
+            </ul>
+            
+            <h3>ブランド完全性とガバナンス</h3>
+            <ul>
+                <li>AIによるコンテンツ作成の高速化に伴い、<span class="highlight">ブランド完全性の維持</span>が課題に</li>
+                <li>コンプライアンスとブランド基準の自動化によるリスク管理</li>
+                <li>速度と品質の両立を実現するAI主導のワークフロー</li>
+            </ul>
+            
+            <h3>継続的な最適化</h3>
+            <ul>
+                <li>すべてのコンテンツ相互作用を<span class="underline">学習機会</span>として活用</li>
+                <li>AIが生成したインサイトによるコンテンツ決定の精度向上</li>
+                <li>推測作業から精密なデータ駆動型意思決定へ</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. インテント主導型体験とは具体的に何ですか？</div>
+                    <div class="faq-answer">インテント主導型体験とは、顧客の意図（何を求めているか）に合わせて、適切なタイミングで最適なコンテンツを提供する体験のことです。AIが顧客の行動パターンや嗜好を分析し、ニーズを予測することで、単に反応するのではなく先回りした体験を提供します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ブランド完全性を維持しながら、なぜAIによる高速化が必要なのですか？</div>
+                    <div class="faq-answer">AIによるコンテンツ作成の高速化は、変化の激しい市場環境で競争力を維持するために不可欠です。一方で、不適切なコンテンツや一貫性のない表現はブランド価値を損なう可能性があります。AEMは両方のニーズに対応し、速度と品質の両立を実現します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 継続的な最適化とは何を意味しますか？</div>
+                    <div class="faq-answer">継続的な最適化とは、ユーザーの行動データや反応を常に分析し、それに基づいてコンテンツや体験を自動的に改善し続けるプロセスです。AIがデータからインサイトを抽出し、次のアクションを提案することで、マーケターは戦略的な意思決定に集中できます。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>AIパワード体験ビルディング</h2>
+            <p>AEMは、AIを活用した新しい体験構築方法を導入し、マーケターが迅速かつ効果的に高品質な体験を作成できるようになります。</p>
+            
+            <h3>主な機能と利点</h3>
+            <ul>
+                <li>マーケターの<span class="highlight">意図に基づいた</span>ランディングページなどの体験を数分で作成</li>
+                <li>既存の承認済みコンテンツを活用して、<span class="underline">新しい体験を効率的に生成</span></li>
+                <li>過去のメトリクス（クリックスルー率など）に基づいた<span class="highlight">最適なコンテンツの発見</span></li>
+                <li>チーム間のコラボレーションを促進する直感的なエディター機能</li>
+            </ul>
+            
+            <div class="important">AIパワード体験ビルディングにより、数週間かかっていた体験作成が数分で完了可能に</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. AIパワード体験ビルディングのワークフローはどのようなものですか？</div>
+                    <div class="faq-answer">まず、作成したい体験の意図を説明し、関連するキャンペーン情報やドキュメントをアップロードします。次に、AIが適切なテンプレートを特定し、既存のコンテンツリポジトリから関連コンテンツを推奨します。その後、AIが複数のバリエーションを生成し、マーケターはエディターでこれらを編集・洗練させ、チームでコラボレーションして最終的な体験を作成します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. この機能はどのようにして既存のコンテンツを活用しますか？</div>
+                    <div class="faq-answer">AIは組織のコンテンツリポジトリから、新しい体験の意図に最も関連性の高いコンテンツを特定します。これには、テキスト、画像、ビデオなどのアセットが含まれます。また、過去のパフォーマンスデータを分析して、最も効果的だったコンテンツ要素を推奨することで、新しい体験の成功確率を高めます。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>ブランドサービスとガバナンス</h2>
+            <p>AIがコンテンツ作成を加速させる中、ブランドの完全性を維持することは信頼を構築し、コストリスクを回避するために不可欠です。</p>
+            
+            <h3>ブランドサービスの主な特徴</h3>
+            <ul>
+                <li>コンテンツに対する<span class="highlight">ブランドスコア</span>の自動計算</li>
+                <li>問題点の詳細な説明と<span class="underline">改善提案</span>の提供</li>
+                <li>Adobe Experience Cloud全体で共有される<span class="highlight">中央管理型のブランド基準</span></li>
+                <li>トーン・オブ・ボイスやブランド価値に基づいたコンテンツ検証</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. ブランドスコアはどのように算出されますか？</div>
+                    <div class="faq-answer">ブランドスコアは、コンテンツがブランドガイドラインに準拠しているかどうかを評価する指標です。トーン・オブ・ボイス、用語の使用、メッセージングの一貫性など、複数の要素に基づいて計算されます。各要素がブランド基準にどの程度合致しているかを分析し、総合的なスコアを生成します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ブランドサービスはAdobe Experience Cloudの他の製品とどのように連携しますか？</div>
+                    <div class="faq-answer">ブランドサービスは、Adobe Experience Cloud全体で中央管理される設定であり、すべてのソリューションでブランド基準を一貫して適用できます。これにより、AEMサイト、AEMアセット、Adobe Target、Adobe Campaignなど、様々な製品でコンテンツが作成される際に、同じブランド基準に基づいて検証されます。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>AEM Site Optimizer</h2>
+            <p>AEM Site Optimizerは、マーケターがファネル全体で継続的に体験を最適化し、ビジネスインパクトを高めるための新しいアプリケーションです。</p>
+            
+            <h3>ファネル全体の最適化</h3>
+            <ul>
+                <li><span class="highlight">獲得段階</span>：SEO技術課題の解決、コンテンツとキーワードの関連性向上</li>
+                <li><span class="highlight">エンゲージメント段階</span>：バウンス率の高い領域の特定と最適化、アクセシビリティ要件の対応</li>
+                <li><span class="highlight">コンバージョン段階</span>：フォームレイアウトの最適化、セキュリティ問題の解決</li>
+            </ul>
+            
+            <h3>自動化されたワークフロー</h3>
+            <ul>
+                <li><span class="underline">自動特定</span>：サイト全体の問題や改善機会を特定</li>
+                <li><span class="underline">自動提案</span>：ビジネスインパクトの大きい解決策を提案</li>
+                <li><span class="underline">自動最適化</span>：承認されたソリューションの迅速な実装</li>
+                <li>マーケターは常に<span class="highlight">最終的な意思決定権</span>を持ち、すべての変更を管理</li>
+            </ul>
+            
+            <div class="important">Site Optimizerにより、マーケターは戦略的な意思決定者として、継続的な最適化の目標を達成できます</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Site Optimizerはどのように問題の優先順位を決定しますか？</div>
+                    <div class="faq-answer">Site Optimizerは、各問題や改善機会の推定ビジネスインパクトに基づいて優先順位を決定します。サイトパフォーマンス、ユーザーエンゲージメント、コンバージョン率などの指標に対する潜在的な影響を分析し、最も大きな効果が期待できる機会を上位に表示します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 具体的にどのような問題を解決できますか？</div>
+                    <div class="faq-answer">Site Optimizerは、壊れたバックリンク、不適切なメタデータ、SEO問題、パフォーマンスの遅延、アクセシビリティの問題、最適化されていないフォーム、セキュリティ脆弱性など、幅広い問題に対応します。これらの問題を自動的に特定し、解決策を提案、実装することで、マーケターの時間と労力を節約します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 変更の実装プロセスはどのようになっていますか？</div>
+                    <div class="faq-answer">Site Optimizerは各問題に対する解決策を提案し、マーケターは変更内容を確認してから展開を承認します。企業によっては、承認ワークフローや複数の関係者による確認プロセスを設定することも可能です。マーケターはいつでも提案を無視したり、カスタマイズしたりする選択肢があります。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>主要な用語と概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>インテント主導型体験</td>
+                    <td>顧客の意図に応じて最適化された、進化するコンテンツ体験</td>
+                </tr>
+                <tr>
+                    <td>ブランドサービス</td>
+                    <td>コンテンツがブランドガイドラインに準拠しているかを評価・管理するツール</td>
+                </tr>
+                <tr>
+                    <td>ブランドスコア</td>
+                    <td>コンテンツのブランド基準への準拠度を示す定量的指標</td>
+                </tr>
+                <tr>
+                    <td>Site Optimizer</td>
+                    <td>サイト全体の問題を自動特定・提案・最適化するAEMアプリケーション</td>
+                </tr>
+                <tr>
+                    <td>AIパワード体験ビルディング</td>
+                    <td>AIを活用して意図に基づいた体験を迅速に構築する新機能</td>
+                </tr>
+                <tr>
+                    <td>継続的最適化</td>
+                    <td>データと学習に基づいてコンテンツ体験を常に改善するプロセス</td>
+                </tr>
+            </table>
+        </section>
+        
+        <footer>
+            <p>© 2025 Adobe Experience Manager Sites Top Innovations</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

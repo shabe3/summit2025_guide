@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S325 Elevate Experiences with AEM and the Power of Generative AI</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .summary {
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 2px;
+        }
+        .important {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .faq-container {
+            margin-top: 15px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 12px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            position: relative;
+            font-weight: 500;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        .faq-question.active::after {
+            content: '-';
+        }
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            background-color: #f2f7fd;
+            border-radius: 0 0 4px 4px;
+        }
+        .faq-question.active + .faq-answer {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #0f3c78;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AEMとGenAIの力でデジタル体験を向上させる</h1>
+        </header>
+
+        <div class="section">
+            <p class="summary">
+                この資料は、Adobeが提供するAEM（Adobe Experience Manager）とGenAI（生成AI）の組み合わせにより、デジタル体験を向上させる方法についての説明です。組織全体でGenAIを活用するための課題と解決策、具体的な成功事例を紹介しています。
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>1. GenAIの現状と課題</h2>
+            <p class="summary">
+                GenAIは個人レベルでは広く使われているものの、組織全体での活用には大きなギャップがあります。
+            </p>
+            <ul>
+                <li><span class="highlight">91%</span>の従業員が業務でGenAIを使用しているが、<span class="highlight">13%</span>の組織しか複数のGenAIユースケースを成功裏に実装できていない</li>
+                <li><span class="highlight">75%</span>近くの組織がGenAIから価値を引き出して拡大することに苦戦している</li>
+            </ul>
+            <h3>主な課題：</h3>
+            <ul>
+                <li><span class="underline">導入の難しさ</span>：明確なプレイブックやガイドラインの欠如</li>
+                <li><span class="underline">不十分なコンテキスト</span>：出力の質に影響</li>
+                <li><span class="underline">不明確なユースケース</span>：個別のツールを業務に統合する難しさ</li>
+                <li><span class="underline">ガバナンスとコンプライアンスの懸念</span>：継続的な課題</li>
+                <li><span class="underline">統合の欠如</span>：既存のワークフローへの組み込みの難しさ</li>
+                <li><span class="underline">技術偏重</span>：人材やプロセスよりも技術に重点が置かれがち</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ個人レベルでは使われているのに組織レベルでの導入が難しいのですか？</div>
+                    <div class="faq-answer">
+                        個人レベルでの使用は比較的シンプルですが、組織全体での導入には、明確なガイドライン、既存ワークフローへの統合、ガバナンス、コンプライアンス対応など複雑な要素が必要になるためです。また、変更管理（チェンジマネジメント）や人材育成の要素も重要です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「不十分なコンテキスト」とは具体的にどういう問題ですか？</div>
+                    <div class="faq-answer">
+                        GenAIツールが良質な出力を生成するためには、ブランドに関する情報、コンテンツの背景情報、意図などの十分なコンテキスト（文脈情報）が必要です。これが不足すると、ブランドに合わない不適切な出力が生成される可能性があります。例えば、犬の月面写真のように非現実的なコンテンツが生成されることがあります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 技術偏重の問題をどう解決すべきですか？</div>
+                    <div class="faq-answer">
+                        技術だけでなく、人材育成やプロセス改善にも同等の注力が必要です。変更管理（チェンジマネジメント）を重視し、ツールを使いこなすためのスキル開発、新しいワークフローの構築、組織内での適切な役割分担などを計画的に進めることが重要です。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. AdobeのGenAIビジョンと解決策</h2>
+            <p class="summary">
+                Adobeは、GenAIをAEMに統合し、デジタル体験実務者の障壁を下げ、ビジネスインパクトを最大化するソリューションを提供しています。
+            </p>
+            <h3>基本アプローチ：</h3>
+            <ul>
+                <li><span class="underline">コンテキストと基盤となるデータ</span>：関連性の高いAI出力のための基盤</li>
+                <li><span class="underline">エージェントベースのアーキテクチャ</span>：複雑なタスクを簡素化</li>
+                <li><span class="underline">エンタープライズ向けガバナンスとコンプライアンス</span>：信頼性と安全性を確保</li>
+                <li><span class="underline">統合されたソリューション</span>：既存のワークフローにシームレスに適合</li>
+            </ul>
+
+            <h3>主要な基盤サービス：</h3>
+            <ul>
+                <li><span class="highlight">Content AI Foundation</span>：コンテンツの意味的集約とインデックス化を行い、コンテンツを効果的に活用</li>
+                <li><span class="highlight">Unified Brand Service</span>：ブランドガイドラインを取り込み、すべての出力がブランドに準拠するよう保証</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Content AI Foundationとは具体的に何ですか？</div>
+                    <div class="faq-answer">
+                        Content AI Foundationは、AEM内のコンテンツに対して意味的集約とインデックス化を行う基盤レイヤーです。リポジトリ/DAMにあるコンテンツの情報を理解し、その知識をGenAIツールが活用できるようにします。これにより、コンテンツの再利用や有効活用が容易になり、より関連性の高い出力が可能になります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. エージェントベースのアーキテクチャはどのように役立ちますか？</div>
+                    <div class="faq-answer">
+                        従来のAIアプローチが特定のタスクに対する個別のツールを提供していたのに対し、エージェントベースのアプローチでは、複雑なタスク全体を処理できる統合ワークフローを実現します。これにより、自律的な活動、高度な推論、自己学習が可能になり、ユーザーは具体的な指示を詳細に与える必要がなくなります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Unified Brand Serviceにはどのような情報が含まれますか？</div>
+                    <div class="faq-answer">
+                        Unified Brand Serviceには、ブランドの声（トーン&ボイス）、チャネルごとのガイドライン、画像ガイドライン、アクセシビリティ基準など、ブランドに関する重要な情報が含まれます。GenAIツールはこのサービスから情報を取得し、生成されるすべてのコンテンツがブランドの基準に準拠するよう保証します。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. 主なGenAI機能とツール</h2>
+            <p class="summary">
+                AdobeはAEM向けに複数のGenAI機能とツールを提供し、コンテンツのライフサイクル全体をサポートしています。
+            </p>
+            <h3>主要なツール：</h3>
+            <ul>
+                <li><span class="highlight">Generate Variations</span>：コンテキストを考慮したコンテンツバリエーションを生成</li>
+                <li><span class="highlight">Experience Generation</span>：目的に基づいて完全なエクスペリエンスを迅速に作成</li>
+                <li><span class="highlight">Site Optimizer</span>：ビジネス目標に基づいてウェブページを自動的に最適化</li>
+                <li><span class="highlight">Smart Tag Enhancements</span>：AIビジョン技術を使用して関連メタデータを自動適用</li>
+                <li><span class="highlight">Content Credentials</span>：資産の作成方法や権利管理に関する情報を追跡</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Generate Variationsはどのように機能しますか？</div>
+                    <div class="faq-answer">
+                        Generate Variationsは、ページのコンテキスト（コピー、コンテンツフラグメント、画像など）を分析し、Content AI Foundationとブランドガイドラインを活用して、関連性の高いオンブランドなコンテンツバリエーションを生成します。これはドキュメントベースのオーサリング、コンテンツフラグメント、ユニバーサルエディタで利用可能です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Site Optimizerはどのような問題を解決しますか？</div>
+                    <div class="faq-answer">
+                        Site Optimizerは、特定のユースケース（壊れたバックリンクの修正など）ではなく、ビジネス目標（エンゲージメント、トラフィック、コンバージョンの向上など）に焦点を当てています。エージェントフレームワークが目標達成に必要な最適化を特定し、自律的に実装します。これにより、最適化の機会を自動識別し、提案・実装することが可能になります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Experience Generationのメリットは何ですか？</div>
+                    <div class="faq-answer">
+                        Experience Generationを使用すると、目的を入力するだけで、エージェントフレームワークが最も効果的なコンテンツの推奨、テンプレートやレイアウトの提案、そしてエクスペリエンス全体の構築を数分で行います。これにより、生産性の向上、コンテンツROIの増加、予算の最大化が実現し、すべてブランドのインテグリティとコンプライアンスを維持しながら行われます。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. 成功事例：Adobe.comチーム</h2>
+            <p class="summary">
+                Adobe.comのCreative Cloudチームは、Generate Variationsツールを活用してコンテンツ作成と実験を加速させました。
+            </p>
+            <h3>導入アプローチ：</h3>
+            <ul>
+                <li><span class="underline">段階的導入</span>：小規模な導入から始め、徐々に拡大</li>
+                <li><span class="underline">人間とAIの協業</span>：AIがデザイナーやコピーライターの仕事を奪うのではなく補完することを強調</li>
+                <li><span class="underline">実績の共有</span>：成功事例を共有し、組織全体での採用を促進</li>
+            </ul>
+
+            <h3>成果：</h3>
+            <ul>
+                <li>ABテストの<span class="highlight">20%</span>でGenAIを活用</li>
+                <li>コンテンツバリエーションが<span class="highlight">200%</span>以上増加</li>
+                <li>テスト実施期間が<span class="highlight">6週間から4週間</span>に短縮</li>
+                <li>コンバージョンとリフトが<span class="highlight">25%</span>以上向上</li>
+                <li>2025年までにGenAIを使用するテストを<span class="highlight">50%</span>に増やし、テスト速度を<span class="highlight">10%</span>向上させる計画</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのようにチームメンバーの懸念を解消しましたか？</div>
+                    <div class="faq-answer">
+                        主な懸念は「AIが仕事を奪う」というものでした。プロダクトマネージャーはチームメンバーに対して、AIはジョブを置き換えるのではなく、彼らのスキルと組み合わせて「よりスマートに働く」ためのツールであることを強調しました。実際の成功事例を示すことで、AIがチームの生産性と創造性を高めることを証明しました。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜバリエーションが増えるとパフォーマンスが向上するのですか？</div>
+                    <div class="faq-answer">
+                        より多くのバリエーションをテストすることで、オーディエンスの好みや行動パターンについての理解が深まります。Generate Variationsツールを使用することで、チームはブランドガイドラインに準拠した多様なコンテンツバリエーションを迅速に作成でき、通常では試さなかったような新しいアプローチも試すことができました。これにより、より効果的なコンテンツを特定する可能性が高まりました。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 段階的導入の具体的なステップは何でしたか？</div>
+                    <div class="faq-answer">
+                        Adobe.comチームは「這う、歩く、走る」のアプローチを採用しました。まず「這う」段階では、少数のパワーユーザーにツールを紹介し、専門家を招いてデモを行いました。「歩く」段階では、プロダクトマネージャーとデザイナーがツールを使用して洞察を共有し、より多くのユーザーを招き入れました。最初は、主要ページではなく小規模なページでテストを開始し、成功を証明してから拡大していきました。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>5. 今後の展望と重要なポイント</h2>
+            <p class="summary">
+                AdobeはGenAIを活用してコンテンツライフサイクル全体をサポートし、エンタープライズ向けのソリューションを提供しています。
+            </p>
+
+            <p class="important">ストーリーテリングの強化がGenAIの本質</p>
+
+            <h3>重要な取り組み：</h3>
+            <ul>
+                <li><span class="underline">単純化と統合</span>：デジタル実務者の参入障壁を下げる</li>
+                <li><span class="underline">エンタープライズ向け設計</span>：ガバナンス、コンプライアンス、信頼性を考慮</li>
+                <li><span class="underline">ビジネスインパクトを重視</span>：個別のユースケースからビジネス目標へ</li>
+                <li><span class="underline">人材とプロセスの重視</span>：技術だけでなく変更管理も重要</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobeのアプローチはどのように「カントリードラムセット」に例えられていますか？</div>
+                    <div class="faq-answer">
+                        プレゼンテーションの冒頭で、スピーカーはカントリー音楽のドラムセットがロックのドラムセットと比べてシンプルである理由を説明しました。それは「ストーリーテリング」に焦点を当て、それを引き立てるためです。同様に、AdobeのGenAIアプローチは、裏側では複雑な技術（LLM、機械学習など）を使用していますが、フロントエンドでは統一された使いやすいインターフェースを提供し、ブランドのストーリーテリングを強化することを重視しています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. GenAIツールの導入を成功させるためのヒントは何ですか？</div>
+                    <div class="faq-answer">
+                        1. 創造的になる：既存のプロセスに疑問を持ち、変更の可能性を探る
+                        2. リスクを取る：小さく始めて計算されたリスクを取る
+                        3. 頻繁に共有する：チーム内だけでなく、経営陣にも成果を共有する
+                        特に変更管理（人材、プロセス、ワークフロー）に注力することが重要です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 早期アクセスプログラムはどのように参加できますか？</div>
+                    <div class="faq-answer">
+                        Experience Generationの早期アクセスプログラムに興味がある場合は、プロダクトおよびエンジニアリングチームに直接連絡することができます。このプログラムは通常のベータプログラムとは異なり、チームとの直接的な関わりがあります。Cloud、Edge Delivery Services、およびオンプレミスなど、あらゆる種類のAEMに対応しています。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>重要な用語と概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>Content AI Foundation</td>
+                    <td>コンテンツの意味的集約とインデックス化を行い、GenAIツールがコンテンツを効果的に活用できるようにする基盤レイヤー</td>
+                </tr>
+                <tr>
+                    <td>Unified Brand Service</td>
+                    <td>ブランドガイドラインを取り込み、GenAI出力がブランドに準拠するよう保証するサービス</td>
+                </tr>
+                <tr>
+                    <td>Generate Variations</td>
+                    <td>コンテキストを考慮したコンテンツバリエーションを生成するツール</td>
+                </tr>
+                <tr>
+                    <td>Experience Generation</td>
+                    <td>目的に基づいて完全なエクスペリエンスを迅速に作成するエージェントベースのツール</td>
+                </tr>
+                <tr>
+                    <td>Site Optimizer</td>
+                    <td>ビジネス目標に基づいてウェブページを自動的に最適化するツール</td>
+                </tr>
+                <tr>
+                    <td>Smart Tag Enhancements</td>
+                    <td>AIビジョン技術を使用して関連メタデータを自動適用する機能</td>
+                </tr>
+                <tr>
+                    <td>Content Credentials</td>
+                    <td>資産の作成方法や権利管理に関する情報を追跡する機能</td>
+                </tr>
+            </table>
+        </div>
+
+        <footer>
+            <p>S325 Elevate Experiences with AEM and the Power of Generative AI - Adobe Summit</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

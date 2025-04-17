@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S308 Scaling Ecommerce and Personalization Sling TV's Peak Event Playbook</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 15px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #0f3c78;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #0f3c78;
+      border-bottom: 2px solid #0f3c78;
+      padding-bottom: 5px;
+      margin-top: 25px;
+    }
+    h3 {
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+    .section {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .highlight {
+      background-color: #fff3cd;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+    .underline {
+      border-bottom: 2px solid #0f3c78;
+      padding-bottom: 2px;
+    }
+    .important {
+      font-size: 1.2rem;
+      text-align: center;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .faq-container {
+      margin-top: 15px;
+    }
+    .faq-item {
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .faq-question {
+      background-color: #f9f9f9;
+      padding: 12px 15px;
+      cursor: pointer;
+      position: relative;
+      font-weight: bold;
+    }
+    .faq-question::after {
+      content: "+";
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+    }
+    .faq-item.active .faq-question::after {
+      content: "-";
+    }
+    .faq-answer {
+      padding: 0 15px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background-color: #fff;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Sling TVのピークイベント対策</h1>
+      <p>Adobe Commerceを活用したEコマースとパーソナライゼーション戦略</p>
+    </header>
+    
+    <div class="section">
+      <h2>概要</h2>
+      <p>本資料は、Sling TVがスポーツイベントなどの高負荷時にどのようにAdobe Commerceプラットフォームを活用し、安定したサービスを提供しているかを解説しています。チームワークと技術的改善を通じて、サービス停止の問題を解決し、ユーザーエクスペリエンスを向上させた事例を紹介します。</p>
+      
+      <h3>Sling TVとは</h3>
+      <ul>
+        <li>2015年に立ち上げられたインターネット経由のライブTVサービス</li>
+        <li>オンデマンドコンテンツやクラウドDVRサービスも提供</li>
+        <li>ケーブルボックスや衛星放送用のディッシュが不要</li>
+        <li>柔軟なサービス層と料金体系を特徴とする</li>
+      </ul>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. Sling TVはどのようなサービスですか？</div>
+          <div class="faq-answer">
+            <p>Sling TVは2015年に立ち上げられたインターネット経由のライブTVサービスです。従来のケーブルテレビや衛星放送と異なり、特別な機器が不要で、スマートフォンやその他のデバイスからコンテンツを視聴できます。オンデマンドコンテンツやクラウドDVR機能も提供しています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. Sling TVの特徴は何ですか？</div>
+          <div class="faq-answer">
+            <p>Sling TVの主な特徴は、柔軟なサービス層と料金体系です。ユーザーは様々なパッケージを組み合わせることができ、選択したコンテンツパッケージに基づいて料金が調整されます。また、特別な機器が不要なため、導入のハードルが低いのも特徴です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. 「ハイチューニングイベント」とは何ですか？</div>
+          <div class="faq-answer">
+            <p>「ハイチューニングイベント」とは、多くの視聴者が同時にサービスにアクセスする高負荷イベントを指します。主にスポーツイベント（スーパーボウルやマーチマッドネスなど）やニュースイベント（選挙など）が該当します。これらのイベント時には、短時間に大量のユーザーが登録やサービス利用を行うため、システムに大きな負荷がかかります。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Adobeとの連携の歴史</h2>
+      <p>Sling TVは2015年の立ち上げから徐々にAdobe製品の利用を拡大し、2020年のパンデミックを機に本格的な導入を決定。現在は多数のAdobe製品を活用してユーザーエクスペリエンスを向上させています。</p>
+      
+      <h3>Adobeとの関係の進化</h3>
+      <ul>
+        <li><span class="underline">2015年（初期）</span>: Adobe Prime Time（同時視聴管理）、Experience Manager（一部ページ）、Analytics</li>
+        <li><span class="underline">2020年</span>: パンデミックを機に、顧客体験の問題点（サイロ化、市場投入の遅さ、限定的なマーケティングキャンペーン）を認識</li>
+        <li><span class="underline">現在</span>: Adobe製品を全面的に導入し、ビジネスパートナーが迅速に市場対応できる体制を構築</li>
+      </ul>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. Sling TVが最初に使用していたAdobe製品は何ですか？</div>
+          <div class="faq-answer">
+            <p>初期（2015年）には、Adobe Prime Time（同時視聴管理用）、Experience Manager（一部ページのみ）、Adobe AnalyticsとMedia Analyticsを限定的に使用していました。これらの導入は契約上の理由が主で、プログラミング契約の一部としてAdobeの使用が必要だったためです。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. 2020年にAdobe製品の全面導入を決めた理由は何ですか？</div>
+          <div class="faq-answer">
+            <p>パンデミック期間中、Sling TVは顧客体験における重大なギャップを認識しました。具体的には、顧客体験のサイロ化、市場投入までの時間の長さ、マーケティングキャンペーンの制限、アップセル機会の限定などの問題がありました。これらの問題解決と技術スタックの統合を目的として、Adobe製品の全面導入を決定しました。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. Adobe製品の全面導入によるメリットは何でしたか？</div>
+          <div class="faq-answer">
+            <p>Adobe製品の全面導入により、技術スタックの統合、必要なスキルセットの焦点化、ビジネスパートナーのエンパワーメントが実現しました。特に、市場に対してリアルタイムで応答できるようになり、IT部門に依存せずにビジネス側が直接マーケティング活動を実行できるようになったことが大きなメリットでした。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>直面した課題と解決策</h2>
+      <p>2023年初頭にAdobe Commerceを導入しましたが、フットボールシーズンなどの高負荷イベント時にシステム障害が発生。三者（Sling TV、Adobe、統合パートナーのProficient）の協力により、問題を特定し解決しました。</p>
+      
+      <h3>高負荷時の課題</h3>
+      <ul>
+        <li>スポーツイベント開始直前に<span class="highlight">短時間で大量の登録が殺到</span>する特殊なトラフィックパターン</li>
+        <li>1つのアクティベーションに対して約10倍のコマースへの呼び出しが発生</li>
+        <li>2023年のフットボールシーズン時にAdobe Commerceがダウン</li>
+        <li>初期段階では各チームが互いに責任を追及する状況に</li>
+      </ul>
+
+      <h3>取り組みと解決策</h3>
+      <ul>
+        <li><span class="underline">3者協力体制の構築</span>: Sling TV、Adobe、Proficient（統合パートナー）の三者が協力</li>
+        <li><span class="underline">共同サミット開催</span>: オースティンでの集中会議で問題点を共有・分析</li>
+        <li><span class="underline">日々のミーティング</span>: 毎日のチェックインを通じて継続的な改善</li>
+        <li><span class="underline">技術的改善</span>: システム監視の強化、キャッシュの最適化、データベースの移行（MariaDBからAurora）</li>
+      </ul>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. 高負荷イベント時にはどのようなトラフィックパターンが見られましたか？</div>
+          <div class="faq-answer">
+            <p>高負荷イベント時には、イベント開始（キックオフ）の直前に短時間で大量の登録が殺到するという特殊なトラフィックパターンが見られました。通常日と比較して登録数が急激に増加し、さらに1つのアクティベーションに対して約10倍のコマース呼び出しが発生するため、システムに極めて高い負荷がかかりました。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. システム障害を解決するために最初に実施したことは何ですか？</div>
+          <div class="faq-answer">
+            <p>最初に実施したのは、システムの可視性向上です。各チームが自分たちのシステム部分しか見えていなかったため、New Relicを活用してデータを共有し、顧客ジャーニー全体をシステム的に可視化しました。これにより、問題が発生する箇所とその影響を特定し、新たな監視指標（KPI）を設定することができました。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. キャッシュ最適化ではどのような改善がありましたか？</div>
+          <div class="faq-answer">
+            <p>当初はキャッシュ利用率が12%程度と低く、大部分のトラフィックがバックエンドまで到達していました。地域IDの導入により、郵便番号ベースの価格設定から地域ベースに変更することで、キャッシュの組み合わせを大幅に簡素化。その結果、キャッシュ利用率が98%以上に向上し、キャッシュフラッシュ後の回復時間も大幅に短縮されました。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. データベース移行の効果は何でしたか？</div>
+          <div class="faq-answer">
+            <p>MariaDBからAuroraへの移行により、垂直方向だけでなく水平方向へのスケーリングも可能になりました。従来は3ノード（リーダー1つ、ライター2つ）の制限があり、1つのノードに問題が発生するとすべてに影響していましたが、Auroraへの移行によりこの制限がなくなり、負荷分散が可能になりました。この改善はAdobe Commerce Cloud全体にも取り入れられ、すべてのユーザーに恩恵をもたらしています。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>成果と今後の展望</h2>
+      <p>技術的な改善とチームワークにより、Sling TVはAdobe製品を活用して顧客体験を大幅に向上させ、ビジネス成果を達成。今後もAI活用やプラットフォーム安定化を目指します。</p>
+      
+      <h3>主要な成果</h3>
+      <ul>
+        <li>カート変換率が<span class="highlight">30%向上</span></li>
+        <li>高価値顧客が<span class="highlight">18%増加</span></li>
+        <li>リターン訪問時のパーソナライゼーションにより<span class="highlight">22%のコンバージョン向上</span></li>
+        <li>マーケティングコストの大幅削減</li>
+        <li>ピーク時に<span class="highlight">1分あたり610注文</span>を安定して処理可能に</li>
+      </ul>
+
+      <h3>Adobe導入による実現機能</h3>
+      <ul>
+        <li><span class="underline">地域別価格設定</span>: 郵便番号に基づくリアルタイム価格生成</li>
+        <li><span class="underline">パーソナライゼーション</span>: 顧客の興味（例：フットボール）に合わせたブランディング</li>
+        <li><span class="underline">ビジネスチームによる直接制御</span>: IT部門を介さずにビジネスチームが経験を提供可能</li>
+      </ul>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. Adobeとの連携による最も大きな成果は何ですか？</div>
+          <div class="faq-answer">
+            <p>最も大きな成果は、カート変換率の30%向上、高価値顧客の18%増加、リターン訪問時のコンバージョン率22%向上など、具体的なビジネス指標の改善です。技術面では、ピーク時に1分あたり610注文を安定して処理できるようになったことが大きな成果です。これにより、スポーツイベントなどの高負荷時にもサービスを安定して提供できるようになりました。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. パーソナライゼーションはどのように実現していますか？</div>
+          <div class="faq-answer">
+            <p>Sling TVでは、顧客の興味（例：フットボール）に基づいてセグメント化し、適切なブランディングを提供しています。これにより、顧客がカート体験全体を通じて一貫したブランディングを体験できます。また、初回訪問時に顧客を特定できなくても、その行動を分析し、リターン訪問時にパーソナライズした体験を提供することで、コンバージョン率を22%向上させています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. 今後の展望はどのようなものですか？</div>
+          <div class="faq-answer">
+            <p>Sling TVは今後も引き続きAdobe技術の活用を深め、チームのツール活用能力を向上させ、市場対応の迅速化を図る計画です。特にAI技術の活用に大きな期待を寄せており、Adobe Summitで発表された新技術の導入も検討しています。また、プラットフォームの安定化も重要な焦点となっており、Adobeとのパートナーシップを通じてイノベーションを継続していく予定です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="important">
+      「チームの強さは各メンバーにあり、各メンバーの強さはチームにある」<br>
+      - マーク（Sling TV）
+    </div>
+
+    <div class="section">
+      <h2>重要用語と説明</h2>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>説明</th>
+        </tr>
+        <tr>
+          <td>Sling TV</td>
+          <td>2015年に立ち上げられたインターネット経由のライブTVサービス。特別な機器が不要で、柔軟な料金体系が特徴。</td>
+        </tr>
+        <tr>
+          <td>ハイチューニングイベント</td>
+          <td>スポーツイベントやニュースイベントなど、短時間に大量のユーザーが同時にサービスにアクセスする高負荷イベント。</td>
+        </tr>
+        <tr>
+          <td>Adobe Commerce</td>
+          <td>Sling TVが導入したEコマースプラットフォーム。2023年初頭に導入され、高負荷イベント対応のために最適化された。</td>
+        </tr>
+        <tr>
+          <td>キャッシュ最適化</td>
+          <td>地域IDの導入により、キャッシュ利用率を12%から98%以上に向上させた技術的改善。</td>
+        </tr>
+        <tr>
+          <td>Aurora</td>
+          <td>MariaDBから移行した新データベース。垂直・水平両方向へのスケーリングが可能で、システム安定性を向上。</td>
+        </tr>
+      </table>
+    </div>
+
+    <footer>
+      <p>Sling TVのピークイベント対策 - Adobe Commerce活用事例</p>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+          const faqItem = this.parentNode;
+          faqItem.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
