@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S330 From Complexity to Clarity How UPS Modernized Its Global Website</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .summary {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        
+        .important {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #0f3c78;
+            color: white;
+        }
+        
+        .faq-container {
+            margin-top: 15px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        
+        .faq-question {
+            background-color: #f0f7ff;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            position: relative;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: "−";
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>UPSのグローバルウェブサイト刷新：複雑さから明快さへ</h1>
+        </header>
+        
+        <div class="section">
+            <div class="summary">
+                UPSはAdobe Experience ManagerとEdge Delivery Services（EDS）を活用し、200カ国以上で展開する複雑なウェブサイトを刷新。パフォーマンス向上、コンテンツ管理の効率化、パーソナライゼーションの強化を実現しました。
+            </div>
+            
+            <p>UPSは世界最大の配送会社として、毎日2200万個のパッケージを200カ国以上で配送しています。米国GDPの6%に相当する物流を担うUPSにとって、デジタル体験の刷新は重要な課題でした。</p>
+        </div>
+        
+        <div class="section">
+            <h2>プロジェクトの背景と課題</h2>
+            
+            <div class="summary">
+                UPSが直面していた課題は、大規模で複雑なグローバルウェブサイトの管理と、ユーザー体験の向上でした。
+            </div>
+            
+            <h3>UPSの規模と複雑さ</h3>
+            <ul>
+                <li>200カ国以上での事業展開</li>
+                <li>2万ページ以上のウェブコンテンツ</li>
+                <li>50以上のアプリケーション</li>
+                <li>毎日1500万人以上のユーザーがパッケージ追跡のためにアクセス</li>
+            </ul>
+            
+            <h3>主な課題</h3>
+            <ul>
+                <li class="highlight">コンテンツ管理の複雑さ</li> - 異なる国や地域ごとに異なるコンテンツと規則
+                <li class="highlight">ウェブサイトの速度</li> - 2.5秒以内のロード時間とGoogle Lighthouseスコア90を目標
+                <li class="highlight">多言語対応</li> - 複数の言語と方言への対応とコンテンツ翻訳の自動化
+                <li class="highlight">高トラフィックへの対応</li> - 特に繁忙期（11月・12月）のトラフィック急増
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜUPSはウェブサイトの刷新が必要だったのですか？</div>
+                    <div class="faq-answer">UPSは顧客と従業員のためのシームレスなデジタル体験を提供し、オンライン収益を増加させ、カスタマーサービスコストを削減するために刷新が必要でした。また、大規模なパーソナライゼーションを実現することも目標でした。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. プロジェクトの規模はどれくらいでしたか？</div>
+                    <div class="faq-answer">200カ国以上、2万ページ以上、50以上のアプリケーション、複数の言語への対応が必要な大規模プロジェクトでした。さらに、毎日1500万人以上のユーザーがパッケージ追跡のためにアクセスするため、高いパフォーマンスが求められました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. プロジェクトはどのようなタイムラインで進められましたか？</div>
+                    <div class="faq-answer">2023年7月にEdge Delivery Servicesの検討を開始し、同年10月末までにMVP（最小実行可能製品）として全世界のホームページをリリースする必要がありました。これは11月と12月がUPSの繁忙期であり、その前にプロジェクトを完了させる必要があったためです。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>ソリューション要件</h2>
+            
+            <div class="summary">
+                UPSはAdobe Experience ManagerのEdge Delivery Services（EDS）を採用し、コンテンツ管理の刷新とウェブサイトのパフォーマンス向上を目指しました。
+            </div>
+            
+            <h3>マーケティング視点の要件</h3>
+            <ul>
+                <li><span class="underline">使いやすさ</span> - コンテンツの迅速な作成と公開</li>
+                <li><span class="underline">パーソナライゼーション</span> - ユーザー層に基づいたコンテンツのカスタマイズ</li>
+                <li><span class="underline">オムニチャネル対応</span> - ウェブサイト、モバイルアプリ、APIなど多様なチャネルでの一貫した体験</li>
+                <li><span class="underline">プロセス効率</span> - コンテンツ作成と公開プロセスの効率化</li>
+            </ul>
+            
+            <h3>技術視点の要件</h3>
+            <ul>
+                <li><span class="underline">SaaSプラットフォーム</span> - 自社データセンターからクラウドへの移行</li>
+                <li><span class="underline">エッジインフラストラクチャ</span> - コンテンツをCDNエッジに配置しパフォーマンス向上</li>
+                <li><span class="underline">サイトパフォーマンス</span> - Google Lighthouseスコア90と高速ページロード</li>
+                <li><span class="underline">ヘッドレスCMS</span> - コンテンツとプレゼンテーション層の分離</li>
+                <li><span class="underline">バックエンド統合</span> - API統合の簡素化と再利用可能なコンポーネント</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Edge Delivery Services（EDS）とは何ですか？</div>
+                    <div class="faq-answer">EDSはAdobe Experience Managerのクラウドサービス上に構築された革新的なコンテンツ配信サービスです。2023年に発表され、より高速でパーソナライズされたウェブ体験を提供することを目的としています。サーバーサイドからクライアントサイド統合への移行や、エッジでのコンテンツ配信が特徴です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. サーバーサイドからクライアントサイド統合への移行の課題は何でしたか？</div>
+                    <div class="faq-answer">API認証が主な課題でした。従来のサーバーサイド統合ではなく、クライアントサイドでAPIを呼び出すには、ブラウザからの認証方法を再考する必要がありました。これはページパフォーマンスとSEO向上のために不可欠な変更でした。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ヘッドレスCMSへの移行の目的は何でしたか？</div>
+                    <div class="faq-answer">コンテンツとプレゼンテーション層を分離することで、様々なアプリケーションやチャネルが同じコンテンツソースから情報を取得できるようにするためです。これにより、ヘッダーやフッターなどの共通要素の一貫性を保ちながら、アプリケーションごとの独立性を確保できます。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>実装プロセスと成果</h2>
+            
+            <div class="summary">
+                2023年7月から10月末までの短期間で、MVPとして世界中のホームページをEdge Delivery Servicesに移行。パフォーマンス、コンテンツ管理、ローカライゼーションの大幅な改善を実現しました。
+            </div>
+            
+            <h3>主な実装ステップ</h3>
+            <ul>
+                <li>再利用可能なコンポーネントの設計と構築</li>
+                <li>APIのクライアントサイド統合への移行</li>
+                <li>Edge Delivery Services上でのコンテンツ配信最適化</li>
+                <li>Universal Editorを活用したコンテンツ作成プロセスの改善</li>
+                <li>地域別マスターコンテンツとローカライゼーションの仕組み構築</li>
+            </ul>
+            
+            <h3>主な成果</h3>
+            <ul>
+                <li><span class="highlight">パフォーマンス向上</span> - LCP（最大コンテンツフル表示時間）が3.2秒から2.3秒に改善</li>
+                <li><span class="highlight">コンテンツ再利用</span> - 複数国・地域で同じコンポーネントを再利用</li>
+                <li><span class="highlight">効率的なコンテンツ管理</span> - Universal Editorによる直感的な編集体験</li>
+                <li><span class="highlight">迅速な公開プロセス</span> - コンテンツ作成から公開までの時間短縮</li>
+                <li><span class="highlight">地域別マスター</span> - アルゼンチンなど地域のマスターから複数国へのコンテンツ展開</li>
+            </ul>
+            
+            <div class="important">
+                毎月5000万ページビュー以上を処理し、Google Lighthouseスコア向上によるSEO改善も実現
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. パフォーマンス向上のために具体的に何をしましたか？</div>
+                    <div class="faq-answer">CDNを活用したコンテンツのキャッシュ、アセット（画像など）の最適化、サードパーティスクリプトの最適化、クライアントサイド統合への移行などを実施しました。これによりLCP（最大コンテンツフル表示時間）が3.2秒から2.3秒に改善し、Google Core Web Vitalsの基準をクリアしました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. コンテンツの再利用性はどのように実現しましたか？</div>
+                    <div class="faq-answer">フラグメントと呼ばれる再利用可能なコンテンツブロックを作成し、これらを様々なページやサイト（メインサイト、ヘルスケアサイトなど）で使用できるようにしました。また、コンポーネントに文脈に応じた知能を持たせ、表示するロケールやブランドに合わせて自動的に調整されるようにしました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 地域別マスターコンテンツの仕組みはどのように機能しますか？</div>
+                    <div class="faq-answer">例えばアルゼンチンを中南米地域のマスターとして設定し、そこからコロンビアやチリなど他の国々にコンテンツを継承させる仕組みを構築しました。各国は必要に応じてコンテンツを上書きすることも可能です。これにより、コンテンツの一貫性を保ちながら、国ごとの特殊性にも対応できます。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>今後の展望</h2>
+            
+            <div class="summary">
+                UPSは2025年4月または5月までに完全移行を目指し、AIによるコンテンツ作成やオムニチャネル体験の強化に取り組んでいます。
+            </div>
+            
+            <h3>進行中の取り組み</h3>
+            <ul>
+                <li>残りのページとアプリケーションのEdge Delivery Servicesへの移行</li>
+                <li>AIを活用したページ作成（チャットボットによる指示でページを自動生成）</li>
+                <li>オムニチャネル体験の強化（ウェブサイト、モバイルアプリ、APIなど）</li>
+                <li>パフォーマンスの継続的な最適化（Google Lighthouseスコア90を目標）</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. プロジェクトの主な教訓は何でしたか？</div>
+                    <div class="faq-answer">十分な計画と設計の重要性、特にAPIのクライアントサイド統合への移行の複雑さ、再利用可能なコンポーネント設計の重要性などが主な教訓でした。ソフトウェア開発と同様に、初期の設計が全体の成功を左右することが明らかになりました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. AIを活用したページ作成とは具体的にどのようなものですか？</div>
+                    <div class="faq-answer">チャットボットのようなインターフェースを通じて「これらの画像を使ったページが欲しい」などの指示を出すと、AIがページを自動的に構成する機能の開発を検討しています。これにより、ドラッグ＆ドロップによる手作業でのページ作成から、AIによる自動生成へと進化させることを目指しています。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>重要用語・事実リスト</h2>
+            
+            <table>
+                <tr>
+                    <th>用語/事実</th>
+                    <th>解説</th>
+                </tr>
+                <tr>
+                    <td>Edge Delivery Services (EDS)</td>
+                    <td>Adobeが2023年に発表したコンテンツ配信サービス。クライアントサイド統合とエッジでのコンテンツ配信が特徴</td>
+                </tr>
+                <tr>
+                    <td>Universal Editor</td>
+                    <td>Adobe Experience Managerの編集ツール。直感的なインターフェースでコンテンツ編集が可能</td>
+                </tr>
+                <tr>
+                    <td>LCP (Largest Contentful Paint)</td>
+                    <td>Google Core Web Vitalsの指標の一つ。ページの主要コンテンツが表示されるまでの時間</td>
+                </tr>
+                <tr>
+                    <td>ヘッドレスCMS</td>
+                    <td>コンテンツとプレゼンテーション層を分離し、API経由でコンテンツを配信するCMS</td>
+                </tr>
+                <tr>
+                    <td>UPSの規模</td>
+                    <td>200カ国以上、毎日2200万個のパッケージ配送、米国GDPの6%を担う</td>
+                </tr>
+                <tr>
+                    <td>プロジェクトのタイムライン</td>
+                    <td>2023年7月開始、10月末MVP完了、2025年4-5月に完全移行予定</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            資料: S330 From Complexity to Clarity How UPS Modernized Its Global Website Nikunj Merchant
+        </footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

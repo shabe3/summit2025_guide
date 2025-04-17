@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S412 Plan, Reach, Measure, Repeat How Adobe Transforms Customer Acquisition</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 16px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        .important {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 16px 0;
+        }
+        .faq-container {
+            margin-top: 16px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 0;
+            position: relative;
+        }
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            transition: 0.3s;
+        }
+        .faq-question.active::after {
+            content: "-";
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px 0;
+            padding-right: 20px;
+        }
+        .faq-answer.active {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 32px;
+            color: #666;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>顧客獲得を変革するアドビの方法<br>Plan, Reach, Measure, Repeat</h1>
+        </header>
+
+        <div class="summary">
+            <h2>セッション概要</h2>
+            <p>このセッションでは、Kiyoshi Hara氏（Adobe Mix Modelerのプロダクト責任者）と業界専門家が、効果的な顧客獲得戦略について解説します。顧客獲得とは単に「ブランドの新規顧客を見つける」ことですが、その実現には計画、リーチ、測定の継続的なサイクルが不可欠です。現在のマーケティングリーダーが直面する課題と、Adobeがどのようにしてこれらの課題を克服しているかを紹介します。</p>
+        </div>
+
+        <div class="section">
+            <h2>顧客獲得の現状と課題</h2>
+            <p>マーケティングリーダーが直面している課題についてGartnerの調査結果から見えてくる現実は厳しいものです。</p>
+            
+            <ul>
+                <li><span class="highlight">約90%</span>のマーケティングリーダーが過去1年間でキャンペーンパフォーマンスに問題を経験</li>
+                <li><span class="highlight">約75%</span>が「少ないリソースでより多くのことを求められている」と回答</li>
+                <li>キャンペーンマーケティング予算は<span class="highlight">前年比31%増加</span>している一方で</li>
+                <li><span class="highlight">70%</span>がROI測定に中程度または重大な課題を抱えている</li>
+                <li><span class="highlight">約60%</span>がキャンペーン戦略とビジネス目標の整合に課題を抱えている</li>
+            </ul>
+
+            <p class="important">「数字は嘘をつかない。単に語り手の数学によって異なるストーリーを語っているだけだ」</p>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜこれほど多くの企業がキャンペーンパフォーマンスに満足していないのですか？</div>
+                    <div class="faq-answer">キャンペーンの効果測定が不十分であり、ビジネス目標との整合性が取れていないことが主な原因です。多くの企業が「なぜ成功しているのか」「何が効果をもたらしているのか」を理解していません。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 予算は増えているのに、なぜROI測定に課題があるのでしょうか？</div>
+                    <div class="faq-answer">予算は増えていますが、適切な測定方法やツールが不足しています。多くの企業がラストクリック分析などの旧来の測定方法に依存しており、真のインクリメンタル効果を把握できていません。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. キャンペーン戦略とビジネス目標の整合性が取れていないとは具体的にどういう意味ですか？</div>
+                    <div class="faq-answer">多くの企業がキャンペーンを実行していますが、それがどのようにビジネス全体の目標に貢献しているかの明確な理解がなく、「なぜそれをやっているのか」という根本的な問いに答えられない状態にあります。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>顧客獲得の基本要素</h2>
+            <p>効果的な顧客獲得には以下の3つの要素が不可欠です：</p>
+
+            <h3>1. <span class="underline">Plan（計画）</span></h3>
+            <ul>
+                <li>顧客獲得の<span class="highlight">戦略と目的</span>を明確に定義</li>
+                <li>予算配分の計画</li>
+                <li><span class="highlight">61%</span>のマーケターがマーケティングミックスモデリングによる計画効率化に期待</li>
+            </ul>
+
+            <h3>2. <span class="underline">Reach（リーチ）</span></h3>
+            <ul>
+                <li>潜在顧客の特定と接触方法</li>
+                <li>類似オーディエンスの発見と拡大</li>
+                <li><span class="highlight">62%</span>のマーケターがネットワークやパートナーと直接取引してオーディエンスにリーチする計画</li>
+            </ul>
+
+            <h3>3. <span class="underline">Measure（測定）</span></h3>
+            <ul>
+                <li>効果測定の方法を事前に確立</li>
+                <li>成功または失敗の基準を明確化</li>
+                <li><span class="highlight">66%</span>のマーケターがステークホルダーへのキャンペーン効果の証明に課題</li>
+            </ul>
+
+            <p class="important">これらの基本要素を繰り返し実行し、継続的に最適化することが成功の鍵</p>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ計画段階で測定方法を決めておくことが重要なのですか？</div>
+                    <div class="faq-answer">計画段階で測定方法を明確にしておくことで、キャンペーン実施中および実施後に何を成功とみなすかの基準が明確になります。後から測定方法を考えると、正確なデータ収集ができなかったり、ビジネス目標との整合性が取れなくなるリスクがあります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. リーチ戦略において、どのようにして潜在顧客を見つけるべきですか？</div>
+                    <div class="faq-answer">既存の顧客データを活用して類似オーディエンスを作成したり、パブリッシャーやメディアパートナーと協力して新しいオーディエンスを発見することが効果的です。Adobe Real-Time CDPなどのツールを使用すると、プライバシーに配慮しながら効率的にオーディエンスを拡大できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「繰り返し」の要素はなぜ重要なのですか？</div>
+                    <div class="faq-answer">マーケティングは一度実行して終わりではなく、継続的な改善プロセスです。パフォーマンスデータを分析し、次回のキャンペーンに活かすことで、徐々に効果を高めることができます。この繰り返しのサイクルこそが持続的な成長をもたらします。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Adobeの顧客獲得変革事例</h2>
+            <p>Adobe自身のマーケティング部門が直面した課題と、その解決方法について紹介します。</p>
+
+            <h3>直面した2つの主要課題</h3>
+            <ul>
+                <li><span class="highlight">体験創出におけるコスト重視</span>：潜在顧客のニーズよりも価格や効率に焦点</li>
+                <li><span class="highlight">マーケティング投資と実行の不一致</span>：各チャネルチームが独立して動き、統一されたアプローチがなかった</li>
+            </ul>
+
+            <h3>具体的な問題点</h3>
+            <ul>
+                <li>チャネル別チームが断片化されたアプローチで運営</li>
+                <li>異なるチームが異なるメディアエージェンシーと協働</li>
+                <li>進化するメディア環境により複雑化（より多くのチャネル、ウォールドガーデン化など）</li>
+                <li>マルチタッチアトリビューション（MTA）への過度の依存</li>
+                <li>マーケティングコストの全体的な上昇</li>
+            </ul>
+
+            <h3>解決策：一貫性とイノベーション</h3>
+            <ul>
+                <li>チャネル中心からリージョン中心のチーム構成へ変更</li>
+                <li>グローバルメディアセンターオブエクセレンスを設立</li>
+                <li>戦略実行を直接担当するチームを新設</li>
+                <li>Adobe Real-Time CDPとCollaborationの活用</li>
+                <li>Adobe Mix Modelerの開発と導入</li>
+            </ul>
+
+            <p class="important">この変革により、過去5年間でインクリメンタルROIが<span class="highlight">80%改善</span></p>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. リージョン中心のチーム構成とは具体的にどういうものですか？</div>
+                    <div class="faq-answer">従来のチャネル（検索、ディスプレイ、SNSなど）ごとに分かれていたチームを、地域別のチームに再編成しました。これにより、各地域チームがすべてのチャネルを横断的に管理できるようになり、地域特有のニーズに合わせた統合的なアプローチが可能になりました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. グローバルメディアセンターオブエクセレンスの役割は何ですか？</div>
+                    <div class="faq-answer">すべてのエージェンシーパートナーが同じプレイブックに基づいて活動するよう監督し、一貫した戦略とアプローチを確保する役割を担っています。これにより、異なるエージェンシーが独自の方法で動くことなく、統一された方向性を維持できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobe Mix Modelerとは何ですか？</div>
+                    <div class="faq-answer">Adobe Mix Modelerは、オンラインとオフラインの両方のチャネルにわたるマーケティング効果を測定し、予算配分を最適化するためのツールです。クッキーに依存せず、ビジネスメトリクスとマーケティング投資を結びつけることで、真のインクリメンタル効果を把握できます。この変革プロセスの中で開発された新しいソリューションです。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Real-Time CDP Collaborationはどのように顧客獲得に役立ちますか？</div>
+                    <div class="faq-answer">パブリッシャーやパートナーと直接連携し、ファーストパーティデータを活用して潜在顧客を見つけるためのツールです。顧客データを共有することなく、プライバシーに配慮しながらオーディエンスをスケールできます。主要パブリッシャーとの連携方法を変え、より質の高いオーディエンスにリーチできるようになります。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>実演デモのハイライト</h2>
+            <p>Zoe氏によるAdobe製品を使った顧客獲得プロセスのデモでは、以下の内容が紹介されました。</p>
+
+            <h3>計画フェーズ</h3>
+            <ul>
+                <li>Adobe Mix Modelerで過去のキャンペーンパフォーマンスを分析</li>
+                <li>目標ベースの計画機能で収益目標から必要な予算を算出</li>
+                <li>異なる計画を比較し、ROI改善の根拠を明確化</li>
+            </ul>
+
+            <h3>リーチフェーズ</h3>
+            <ul>
+                <li>Real-Time CDPでAIアシスタントを活用したオーディエンス作成</li>
+                <li>ソーシャルプラットフォームへのオーディエンス直接アクティベーション</li>
+                <li>Real-Time CDP Collaborationでプレミアムパブリッシャー（TV Tube）と連携</li>
+                <li>ルックアライクオーディエンスの作成でリーチを拡大</li>
+            </ul>
+
+            <h3>測定フェーズ</h3>
+            <ul>
+                <li>キャンペーン実施中にリアルタイムでの測定結果確認</li>
+                <li>Mix Modelerでチャネル間のインクリメンタル効果を比較</li>
+                <li>マルチタッチアトリビューション分析で顧客ジャーニーにおける各チャネルの役割を把握</li>
+                <li>外部要因（株式市場の下落、インフレなど）の影響分析</li>
+                <li>計画と実績の比較で予算配分の最適化</li>
+            </ul>
+
+            <h3>最適化フェーズ</h3>
+            <ul>
+                <li>Customer Journey Analyticsで効率化の余地を分析</li>
+                <li>クロスセル分析でリターゲティングの機会を発見</li>
+                <li>新たなオーディエンスをCDPに発行しリターゲティング</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 目標ベースの計画とはどのようなものですか？</div>
+                    <div class="faq-answer">目標ベースの計画は、Adobe Mix Modelerの新機能で、収益やコンバージョンなどの目標値を入力すると、それを達成するために必要な予算額を算出してくれます。従来の「この予算でどれだけの成果が出るか」というアプローチではなく、「この成果を上げるにはどれだけの予算が必要か」というアプローチが可能になります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Real-Time CDP Collaborationとパブリッシャーとのデータコラボレーションの違いは何ですか？</div>
+                    <div class="faq-answer">従来のデータコラボレーションでは、SQLベースのクリーンルームを設定し、エンジニアリングチームの協力を得て顧客データをオンボーディングし、複雑なクエリを実行する必要がありました。この作業には数日かかっていましたが、Real-Time CDP Collaborationでは数回のクリックで即座にオーディエンスインサイトを得られます。また、顧客データを共有することなく、プライバシーに配慮した方法でコラボレーションが可能です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. マルチタッチアトリビューション分析と増分効果（インクリメンタル）測定の違いは何ですか？</div>
+                    <div class="faq-answer">マルチタッチアトリビューション（MTA）は、顧客ジャーニー内の各タッチポイントに貢献度を割り当てる手法で、主にクリックやビューなどの行動データに基づいています。一方、インクリメンタル測定は、そのマーケティング活動がなかった場合と比較して真に追加された効果を測定するもので、オフラインチャネルを含むすべてのチャネルの真の貢献度を把握できます。Mix Modelerはこの両方の視点を提供することで、より包括的な測定を可能にしています。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>成功のための3つの原則</h2>
+            <p>セッションの最後に、顧客獲得戦略を成功させるための3つの重要な原則が紹介されました。</p>
+
+            <h3>1. <span class="underline">Conviction（確信）</span></h3>
+            <ul>
+                <li>すべてのステークホルダーの合意を得る</li>
+                <li>強力なスポンサーをつける</li>
+                <li>「真実」に対するオープンで正直な対話</li>
+                <li>真実に対する責任者の明確化</li>
+            </ul>
+
+            <h3>2. <span class="underline">Focus（焦点）</span></h3>
+            <ul>
+                <li>取り組むべき最優先事項を決定</li>
+                <li>何が機能しているのか、なぜ機能しているのかを理解</li>
+                <li>何が変更しにくいか、その理由を認識</li>
+            </ul>
+
+            <h3>3. <span class="underline">Resilience（回復力）</span></h3>
+            <ul>
+                <li>継続的に成功を積み重ねる</li>
+                <li>目標を達成していても、その理由を理解し改善</li>
+                <li>責任、成功の定義、達成方法の共通理解を確保</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ強力なスポンサーが必要なのですか？</div>
+                    <div class="faq-answer">顧客獲得の方法を変革するには、既存のプロセスや組織構造の変更が必要になります。そうした変化には抵抗が伴うため、強力なスポンサー（通常は経営幹部）の支援が不可欠です。スポンサーは、変革の必要性を組織全体に伝え、障壁を取り除くことができます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「真実に対する耐性」とは具体的にどういう意味ですか？</div>
+                    <div class="faq-answer">多くのマーケターは自分のキャンペーンが成功することを望むあまり、データが示す現実を直視できなくなることがあります。「真実に対する耐性」とは、キャンペーンが期待通りの結果を出していない場合でも、そのデータを正直に受け入れ、客観的に分析する能力のことです。これにより、感情ではなくデータに基づいた意思決定が可能になります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 目標を達成している場合でも、なぜその理由を理解する必要があるのですか？</div>
+                    <div class="faq-answer">目標を達成していても、その理由を理解していなければ、その成功を再現したり、さらに拡大したりすることは難しくなります。例えば、目標は達成したが市場全体が50%成長している中で自社は5%しか成長していない場合、実質的には45%のマイナスと考えるべきです。成功の背後にある要因を理解することで、真の成長機会を見極め、さらなる改善が可能になります。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>重要な用語と概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>顧客獲得（Customer Acquisition）</td>
+                    <td>ブランドの新規顧客を見つけるためのマーケティング活動全般</td>
+                </tr>
+                <tr>
+                    <td>マーケティングミックスモデリング（MMM）</td>
+                    <td>様々なマーケティングチャネルの効果を測定し、最適な予算配分を行うための統計的手法</td>
+                </tr>
+                <tr>
+                    <td>インクリメンタル効果</td>
+                    <td>マーケティング活動がなかった場合と比較して追加された真の効果</td>
+                </tr>
+                <tr>
+                    <td>マルチタッチアトリビューション（MTA）</td>
+                    <td>コンバージョンに至るまでの各タッチポイントに貢献度を割り当てる手法</td>
+                </tr>
+                <tr>
+                    <td>Real-Time CDP</td>
+                    <td>Adobeのリアルタイム顧客データプラットフォーム、顧客データを統合しアクティベーションするためのツール</td>
+                </tr>
+                <tr>
+                    <td>CDP Collaboration</td>
+                    <td>パブリッシャーやパートナーとプライバシーに配慮しながらデータ連携するためのAdobeのソリューション</td>
+                </tr>
+                <tr>
+                    <td>Mix Modeler</td>
+                    <td>オンライン・オフラインを含むすべてのチャネルのマーケティング効果を測定・予測するAdobeのツール</td>
+                </tr>
+                <tr>
+                    <td>Customer Journey Analytics</td>
+                    <td>複数のデータソースを統合し、顧客ジャーニー全体を分析するためのAdobeのソリューション</td>
+                </tr>
+            </table>
+        </div>
+
+        <footer>
+            <p>Adobe Summit 2024 - セッションS412</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    this.classList.toggle('active');
+                    answer.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

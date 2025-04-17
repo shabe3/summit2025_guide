@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S415 From Last-Touch to Incrementality Adobe Marketings Measurement Transformation</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 16px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .title {
+            text-align: center;
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+        }
+        
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #0f3c78;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 2px;
+        }
+        
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+        }
+        
+        .faq-container {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            padding: 10px;
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            padding-left: 20px;
+            background-color: #f9f9f9;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">アドビマーケティングの測定変革：<br>ラストタッチからインクリメンタリティへ</h1>
+        
+        <div class="summary">
+            <h2>概要</h2>
+            <p>この資料は、アドビ社内におけるマーケティング測定手法の変革プロセスについて、Adobe Mix Modelerの製品マーケティングリーダーであるLily Chee Watsonと、アドビのグロースマーケティングパフォーマンス組織を率いるMattの対話形式で解説したものです。アドビがラストタッチアトリビューションからインクリメンタリティ重視の測定手法へと移行した8年間の道のりと、その成果、直面した課題とその対処法について詳しく説明しています。</p>
+        </div>
+        
+        <div class="section">
+            <h2>変革の背景と目的</h2>
+            <p>アドビのマーケティング測定変革は、より正確な測定手法の確立と、財務部門との関係強化、データ駆動型の意思決定の実現を目的としていました。</p>
+            
+            <h3>出発点の課題</h3>
+            <ul>
+                <li>異なる3つのマーケティングチャネルで独立して<span class="highlight">ラストタッチアトリビューション</span>を使用</li>
+                <li>「1+1=3」問題：実際のコンバージョン数以上の成果を各チャネルが報告</li>
+                <li>財務部門と言葉が通じない状態（実績の解釈の不一致）</li>
+                <li>サブスクリプションモデルへの移行による顧客関係の継続的な把握の必要性</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. ラストタッチアトリビューションとは何ですか？</div>
+                    <div class="faq-answer">ラストタッチアトリビューションとは、コンバージョン（購入など）の前に顧客が最後に接触したマーケティングチャネルに全ての成果を帰属させる測定手法です。例えば、顧客がSNS広告を見て、その後検索広告をクリックして購入した場合、検索広告に全ての成果が帰属します。この手法は簡単ですが、コンバージョンパスの他のタッチポイントの貢献を無視するという問題があります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「1+1=3問題」とは具体的にどういう問題ですか？</div>
+                    <div class="faq-answer">この問題は、複数のマーケティングチャネルが同じコンバージョンを自分の成果として計上することで起きます。例えば、実際のビジネスで80件のコンバージョンがあった場合に、異なるチャネルからの報告を合計すると100件以上になってしまうような状況です。これにより、マーケティング全体の効果が過大評価され、財務部門との信頼関係構築の障害となっていました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. サブスクリプションモデルへの移行がマーケティング測定に与えた影響は？</div>
+                    <div class="faq-answer">従来の一回限りの購入ではなく、顧客との継続的な関係を築くサブスクリプションモデルへの移行により、アドビは顧客行動をより細かく、継続的に把握する必要が生じました。これにより、日々、週ごとのビジネスパフォーマンスを常に把握する「データ駆動型オペレーティングモデル」（DDOM）の必要性が高まりました。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>測定手法の進化プロセス</h2>
+            <p>アドビは段階的なアプローチで測定手法を進化させていきました。「這う→歩く→走る」の段階的アプローチにより、組織の受け入れを確保しながら変革を進めました。</p>
+            
+            <h3>主な進化ステップ</h3>
+            <ul>
+                <li><span class="underline">マルチタッチアトリビューション</span>への移行：タイムスタンプに基づく事実ベースの測定</li>
+                <li>チャネル拡張戦略：投資ポイントの多様化（Snapchat、TikTok、YouTubeなど）</li>
+                <li>クッキー依存からの脱却：プライバシー法の変化への対応</li>
+                <li><span class="highlight">3つの手法の統合</span>：混合モデリング、アトリビューションモデリング、実験の組み合わせ</li>
+            </ul>
+            
+            <div class="important">「スイスチーズ戦略」：複数の測定手法を重ね合わせることで、各手法の弱点（穴）を補完</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. マルチタッチアトリビューションに移行した際の具体的な変化は？</div>
+                    <div class="faq-answer">ラストタッチからマルチタッチに移行したことで、各マーケティングチャネルの貢献度評価が大きく変わりました。特に検索広告は、ラストタッチでは最も効果的に見えていたものの、マルチタッチでは実際の貢献度が下がって評価されるようになりました。また、一部のメディアパートナーは、ラストタッチでは最高のROIを示していたにもかかわらず、新しい測定モデルでは最下位に位置づけられるケースもありました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「スイスチーズ戦略」とは具体的にどのような戦略ですか？</div>
+                    <div class="faq-answer">スイスチーズ戦略とは、各測定手法が持つ弱点（スイスチーズの穴のようなもの）を、別の測定手法で補完するアプローチです。例えば、混合モデリング、アトリビューションモデリング、実験の3つを組み合わせることで、単一の測定手法では捉えられない側面をカバーし、より包括的で正確な測定を実現します。これにより、クッキー依存の減少や消費者プライバシー法の変化にも対応できる「未来に耐える」測定システムを構築しました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. チャネル拡張戦略とその後の課題は何でしたか？</div>
+                    <div class="faq-answer">アドビはSnapchat、TikTok、YouTubeなど多様なチャネルに投資を広げる戦略を取りましたが、2018年から2024年にかけてのクッキー廃止やプライバシー法の変化により、これらの新規チャネルでのデータ精度が低下しました。その結果、投資を継続する明確な根拠を示すことが難しくなり、「モグラたたき」のように次々と出てくる測定の課題に対応する必要がありました。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>変革のための組織的アプローチ</h2>
+            <p>技術、人材、プロセスの三位一体のアプローチで変革を実現。各ステークホルダーとの効果的なコミュニケーションが成功の鍵でした。</p>
+            
+            <h3>主要な組織的アプローチ</h3>
+            <ul>
+                <li><span class="underline">上向き・下向き・外向きの管理</span>：異なるペルソナに合わせたコミュニケーション戦略</li>
+                <li>エージェンシーパートナーの戦略的統合：15社から2社へ</li>
+                <li>メディア分析リソースの内製化：代わりにメディア戦略家と運用専門家の増強</li>
+                <li>明確な組織行動のための化学反応のような適合性確認</li>
+                <li>オープンなモデル共有：メディアチームが結果を「ゲーム」できるアプローチ</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「上向き・下向き・外向きの管理」とは具体的にどのような戦略ですか？</div>
+                    <div class="faq-answer">この戦略は、異なるステークホルダーに対して最適なコミュニケーション方法を取るアプローチです。「上向き管理」は経営陣に対して、より洗練された測定方法の価値とROIを説明するもの。「下向き管理」は実務者（特に検索広告チーム）に対して、彼らの貢献が新システムでは低く評価されるという懸念に対処するもの。「外向き管理」はメディアパートナーやエージェンシーに対して、新しい測定基準でどう評価されるかを事前に示し、改善点を明確にするものです。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. メディア分析リソースの内製化のメリットは何ですか？</div>
+                    <div class="faq-answer">アドビはエージェンシー側のメディア分析リソースを使わず、内部で分析機能を維持する戦略を取りました。これにより、アドビの測定技術に対する深い理解を持つ内部アナリストがメディアチームのパフォーマンスを評価し、目標達成を支援する体制を確立できました。節約されたコストはメディア戦略家の採用と運用プロセスの最適化に再投資され、より効果的なマーケティング運用を実現しました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. オープンなモデル共有とはどのような取り組みですか？</div>
+                    <div class="faq-answer">アドビは測定モデルの詳細（変数、スコアリング方法、係数など）をメディアチームに対してオープンに共有しています。これにより、メディアチームは「モデルをゲームする」（最適な結果を得るための戦略を立てる）ことができます。また、モデルの欠陥が見つかった場合は、すぐに修正するか実験で検証するプロセスを確立しています。この透明性によって、チーム間の信頼関係が強化され、継続的な改善が促進されています。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>四半期計画と四半期内最適化の統合</h2>
+            <p>アドビは同じ測定エコシステムを使用して、事前の四半期計画と四半期中の継続的最適化の両方を行うことで大きな成果を上げています。</p>
+            
+            <h3>主要なプロセス</h3>
+            <ul>
+                <li><span class="underline">四半期前計画</span>：予算、メディアミックス、ターゲットカバー率を含む詳細な計画</li>
+                <li><span class="underline">四半期内最適化</span>：「計画からの逸脱計画」の継続的な実行</li>
+                <li>週次インターロック：ビジネスパフォーマンスの解釈と対応策の決定</li>
+                <li>エピソディックインターロック（3、6、9週目）：予測の更新と追加資金の要求</li>
+                <li>チャネル、地域、製品ポートフォリオをまたぐ予算シフト</li>
+            </ul>
+            
+            <div class="important">「みんな計画を持っている。顔面パンチを食らうまでは」- マイク・タイソン</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「週次インターロック」と「エピソディックインターロック」の違いは何ですか？</div>
+                    <div class="faq-answer">週次インターロックは、毎週行われるビジネスパフォーマンスの解釈と対応策を決定する会議です。ビジネスの強みと弱み、目標達成状況、今後の対策を議論します。一方、エピソディックインターロックは四半期の3週目、6週目、9週目に行われる、より大きな調整のための会議です。ここでは、チャネル間や地域間での予算シフトの報告や、追加資金の要求（小・中・大のオプション提示）を行います。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「計画からの逸脱計画」とはどういう意味ですか？</div>
+                    <div class="faq-answer">マイク・タイソンの「みんな計画を持っている。顔面パンチを食らうまでは」という引用が示すように、どんな計画も現実との衝突で調整が必要になります。「計画からの逸脱計画」とは、元の計画からどのように適応的に変更していくかのプロセスを指します。アドビでは、週次およびエピソディックなインターロックを通じて、市場の変化や実績に基づいて継続的に計画を調整しています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 追加資金の要求プロセスはどのように機能しますか？</div>
+                    <div class="faq-answer">エピソディックインターロックでは、マーケティングチームが財務部門やGo-to-Market組織に対して、小・中・大の追加資金オプションとそれぞれの予想リターンを提示します。例えば「200万ドルで300万ドルのリターン」「600万ドルで600万ドルのリターン」などの具体的な投資対効果を示します。資金が承認された場合は、「これを7週目に市場に投入し、13週目までにこの地域、この製品、このルートでこの額の再発収益として表れる」という具体的な予測を提供します。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>成果と主要な学び</h2>
+            <p>アドビのマーケティング測定変革は、予算増加と効率向上という具体的な成果をもたらしました。8年間の旅から得られた主な学びを紹介します。</p>
+            
+            <h3>主な成果</h3>
+            <ul>
+                <li>過去5年間で<span class="highlight">予算を2.5倍に増加</span></li>
+                <li>マーケティングのAdobe.com定期収益への貢献を<span class="highlight">75%増加</span></li>
+                <li>支出増にもかかわらず<span class="underline">投資収益率(ROI)を向上</span></li>
+            </ul>
+            
+            <h3>主要な学び</h3>
+            <ul>
+                <li><span class="underline">技術面</span>：複数の測定手法の組み合わせ、経済データなどの変数の取り込み、コンテンツ効果の理解</li>
+                <li><span class="underline">人材・プロセス面</span>：初期スコープの明確化、ステークホルダー別のコミュニケーション、変化に先立つチーム編成</li>
+                <li><span class="underline">運用面</span>：運用チームへの投資、理想的な行動に適した人材の採用、移行期間の確保</li>
+            </ul>
+            
+            <div class="important">「這う→歩く→走る」の段階的アプローチが変革成功の鍵</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 予算増とROI向上を同時に達成できた理由は何ですか？</div>
+                    <div class="faq-answer">通常、マーケティング支出を増やすとROIは低下する傾向がありますが、アドビは両方を向上させることができました。その理由は、効果的な四半期計画と四半期内の継続的な最適化にあります。適切な予算配分で四半期をスタートし、週次での継続的な最適化によって効率を高めながら貢献度を増加させる戦略が功を奏しました。また、複数の測定手法を組み合わせることで、より精度の高い意思決定が可能になったことも大きな要因です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. コンテンツ効果の理解とは具体的にどのような取り組みですか？</div>
+                    <div class="faq-answer">アドビはタッチポイントだけでなく、その背後にあるクリエイティブ資産、さらにはクリエイティブ資産内の個々の要素の効果を測定することに注力しています。例えば、TikTokでは黒背景が赤背景より効果的だが、Facebookでは黄色背景が同じクリエイティブ資産に対してより効果的、といった細かい洞察を得ることを目指しています。Gen Studioなどのツールを活用して、クリエイティブの効果を深く理解する取り組みを進めています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 変革プロセスで最も難しかった点は何でしたか？</div>
+                    <div class="faq-answer">変革プロセスで最も難しかった点は、異なるステークホルダーの懸念に対処することでした。特に、ラストタッチアトリビューションでは「ヒーロー」だった検索広告チームが、新しい測定手法では評価が下がることへの懸念に対応することが課題でした。アドビはこの問題に対して、過去のデータを新モデルで再評価して見せる、インクリメンタルな測定と分数的な測定の両方を一定期間並行して使用するなどの「移行期間」を設けることで対処しました。また、メディアパートナーとの対話も重要で、新モデルでの評価が大きく変わる可能性を事前に伝え、適応する時間を確保しました。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>重要な用語と解説</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>解説</th>
+                </tr>
+                <tr>
+                    <td>ラストタッチアトリビューション</td>
+                    <td>コンバージョン前の最後のタッチポイントにすべての成果を帰属させる測定手法</td>
+                </tr>
+                <tr>
+                    <td>マルチタッチアトリビューション</td>
+                    <td>コンバージョンパス上の複数のタッチポイントに成果を分配する測定手法</td>
+                </tr>
+                <tr>
+                    <td>インクリメンタリティ</td>
+                    <td>マーケティング活動がなかった場合と比較して追加的に得られた成果を測定する考え方</td>
+                </tr>
+                <tr>
+                    <td>混合モデリング</td>
+                    <td>統計的手法を用いて様々なマーケティング要素の貢献度を包括的に分析する手法</td>
+                </tr>
+                <tr>
+                    <td>スイスチーズモデル</td>
+                    <td>複数の測定手法を重ね合わせることで、各手法の弱点（穴）を補完する戦略</td>
+                </tr>
+                <tr>
+                    <td>Adobe Mix Modeler</td>
+                    <td>アドビの統合マーケティング測定ソリューション（元々はアドビ社内用に開発）</td>
+                </tr>
+                <tr>
+                    <td>DDOM (Data Driven Operating Model)</td>
+                    <td>データ駆動型オペレーティングモデル。日々のビジネスパフォーマンスを把握する仕組み</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            元資料：S415 From Last-Touch to Incrementality Adobe Marketings Measurement Transformation
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

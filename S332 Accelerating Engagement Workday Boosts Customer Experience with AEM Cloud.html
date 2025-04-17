@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workday Boosts Customer Experience with AEM Cloud</title>
+    <style>
+        :root {
+            --accent-color: #0f3c78;
+            --bg-color: #f5f5f5;
+            --section-bg: #ffffff;
+            --text-color: #333;
+            --highlight-color: #fff3cd;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 15px;
+            line-height: 1.6;
+        }
+        header {
+            margin-bottom: 25px;
+        }
+        h1 {
+            color: var(--accent-color);
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .summary {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        section {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .underline {
+            text-decoration: underline;
+            text-decoration-color: var(--accent-color);
+            text-decoration-thickness: 2px;
+        }
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .faq-container {
+            margin-top: 20px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        .faq-question {
+            padding: 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        .faq-answer {
+            display: none;
+            padding: 0 15px 15px;
+            border-top: 1px solid #e0e0e0;
+            background-color: #fafafa;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>WorkdayがAEMクラウドで顧客体験を向上</h1>
+    </header>
+
+    <div class="summary">
+        <h2>サマリー</h2>
+        <p>WorkdayはAdobeのExperience Manager(AEM)クラウドを採用し、分断されていた顧客体験を統合した「Workday Resource Center」を構築しました。これにより、50万人以上の顧客コミュニティユーザーにパーソナライズされた体験を提供し、毎月のユーザー数を30%増加、サポートケースを15%削減、年間20万ドルの運用コスト削減を実現しています。</p>
+    </div>
+
+    <section>
+        <h2>Workdayの課題と取り組み</h2>
+        <p>Workdayは約3年半前、B2B企業として顧客体験の分断という課題に直面していました。成長に伴い、デジタル体験の近代化とクラウドオンボーディングモデルの改善が必要となりました。</p>
+        
+        <h3>主な課題</h3>
+        <ul>
+            <li>顧客が<span class="highlight">分断されたソリューション</span>を経験している</li>
+            <li>デジタル体験の<span class="underline">スケールと近代化</span>の必要性</li>
+            <li>従来のクラウドオンボーディングモデルの限界</li>
+            <li>セルフサービス機能の強化</li>
+            <li>クロスセル機会の創出</li>
+        </ul>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Q. なぜWorkdayは顧客体験の統合が必要だったのですか？</div>
+                <div class="faq-answer">異なる時期に異なるニーズのためにアプリケーションを構築してきた結果、顧客が分断された体験をしていました。これは多くのB2B企業で見られる一般的な問題です。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. Workdayが目指した顧客体験とは？</div>
+                <div class="faq-answer">パーソナライズされたコンテキスト体験、接続性と透明性のある体験、データ駆動型でプロアクティブな体験の3つの要素を組み合わせた統合ポータル体験を目指しました。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. 「Workday Resource Center」とは何ですか？</div>
+                <div class="faq-answer">すべての顧客接点への単一入口点となる統合体験です。重要なお知らせや通知の提供、セルフサービス機能の強化、オンボーディングの自動化などを実現しています。</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>AEMクラウド採用の理由</h2>
+        <p>WorkdayはAEMクラウドへの移行ではなく、新規実装としてAEMクラウドを選択しました。将来的な拡張性やイノベーション機能の活用を重視した決断です。</p>
+
+        <h3>選定理由</h3>
+        <ul>
+            <li><span class="underline">将来性</span>：後の移行作業を避け、将来の技術変化に対応</li>
+            <li><span class="highlight">イノベーション機能</span>：エッジ配信、ジェネレーティブAI、エンタープライズ改善</li>
+            <li>迅速な市場投入</li>
+            <li>セキュリティの確保</li>
+            <li>コスト効率と保守の容易さ</li>
+        </ul>
+
+        <div class="important">AEMクラウドでは99.92%の稼働率と平均4秒のロード時間を実現</div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Q. なぜ既存システムからの移行ではなく新規実装を選んだのですか？</div>
+                <div class="faq-answer">既存のシステムに新しいソリューションを構築し、後に移行作業に対処するのではなく、最初から将来性を見据えたシステムを構築することを選びました。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. AEMクラウドの主な利点は何ですか？</div>
+                <div class="faq-answer">エッジ配信、ジェネレーティブAI機能、早期のAEM機能アクセス、保守の容易さなどが主な利点です。また、セキュリティの向上とコスト効率も重要な要素でした。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. クラウド導入時の注意点は？</div>
+                <div class="faq-answer">クラウドでは一定の制御を手放す必要があります。本番環境での直接操作ができなくなるため、事前のテストと検証が重要になります。</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>実装と運用モデル</h2>
+        <p>Workdayはコンテンツフラグメントと体験フラグメントをベースとしたソリューションを選択し、アプリケーション全体を製品として扱う運用モデルを確立しました。</p>
+
+        <h3>主な実装アプローチ</h3>
+        <ul>
+            <li><span class="highlight">コンテンツと体験フラグメント</span>ベースのソリューション</li>
+            <li>製品として扱うプロダクト運用モデル</li>
+            <li>将来のユースケースを想定した機能設計</li>
+            <li>プログラム間でのソリューション共有戦略</li>
+            <li>マルチプログラム戦略による重複の回避</li>
+        </ul>
+
+        <h3>コンテンツ管理アプローチ</h3>
+        <ul>
+            <li>APIベースのコンテンツアプローチから開始</li>
+            <li>コンテンツフラグメントと体験フラグメントの採用</li>
+            <li>エッジ配信の活用</li>
+            <li>ジェネレーティブAI機能の検討</li>
+        </ul>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Q. プロダクト運用モデルとは何ですか？</div>
+                <div class="faq-answer">アプリケーション全体を製品として扱い、顧客の有効化、エンゲージメント、維持だけでなく、成長と拡大戦略にも対応できる機能を備えた運用モデルです。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. マルチプログラム戦略の目的は？</div>
+                <div class="faq-answer">現在3つの独立したクラウドプログラムを運用していますが、接続アセット、コード共有、ガバナンスモデルを通じて重複を避け、効率的な運用を目指しています。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. AIを活用する上での重要点は？</div>
+                <div class="faq-answer">「IAを整えないとAIは成功しない」という考え方が重要です。情報アーキテクチャ（IA）の定義、コンテンツの保存方法、キャッシュ方法などを適切に設計することがAI活用の前提となります。</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>成果と今後の展開</h2>
+        <p>Workdayはリソースセンターの導入により大きな成果を上げ、さらなるパーソナライゼーションやグローバル展開を計画しています。</p>
+
+        <h3>主な成果</h3>
+        <ul>
+            <li><span class="highlight">月間ユーザー数30%増加</span></li>
+            <li><span class="highlight">サポートケース15%削減</span></li>
+            <li><span class="highlight">年間20万ドルの運用コスト削減</span></li>
+            <li>50万人以上の顧客コミュニティユーザーがアクセス</li>
+            <li>99.92%の稼働率</li>
+        </ul>
+
+        <h3>今後の展開</h3>
+        <ul>
+            <li><span class="underline">パーソナライゼーション</span>：Adobe Targetの活用</li>
+            <li>CRMデータとの統合</li>
+            <li>グローバル顧客体験ソリューションの展開</li>
+            <li>マーケティングエコシステムとの統合</li>
+            <li>カスタマージャーニートラッキングの実装</li>
+            <li>エージェント体験の向上</li>
+        </ul>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Q. パーソナライゼーションの次のステップは？</div>
+                <div class="faq-answer">Adobe Targetを有効化し、体験フラグメントベースのソリューションを活かしてターゲットでの静的コンテンツのオファー作成を行います。CRMデータの統合や動的コンテンツパーソナライゼーションも計画しています。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. グローバルカスタマージャーニートラッキングの目的は？</div>
+                <div class="faq-answer">見込み客や顧客がコンバージョンに至るまで、またはサポートに連絡するまでのすべてのタッチポイントを理解することで、提供しているコンテンツが実際に関連性があるかを把握するためです。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. エージェント体験の向上とは？</div>
+                <div class="faq-answer">KCS（Knowledge-Centered Service）を活用したエージェント体験の向上を目指しています。また、モジュラーアーキテクチャの作成や継続的な体験のテストと最適化も計画しています。</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>主な教訓と推奨事項</h2>
+        <p>Workdayの実装経験から得られた教訓と推奨事項です。AEMクラウドの適切な活用方法とパートナーシップの重要性を強調しています。</p>
+
+        <h3>主な教訓</h3>
+        <ul>
+            <li><span class="underline">AEMの適切な使用時期を理解する</span>：すべてのソリューションがAEMに適しているわけではない</li>
+            <li>レガシー実装を避け、Adobeのベストプラクティスに従う</li>
+            <li>パートナーとの協力：共同作業を重視し、適切な関与レベルを維持する</li>
+            <li>Adobeサポートとの効果的な連携方法を学ぶ</li>
+            <li>クラウドシステムを信頼することの重要性</li>
+        </ul>
+
+        <h3>計画・実装のポイント</h3>
+        <ul>
+            <li>ジェネレーティブAI時代に向けた顧客向け機能を事前に計画</li>
+            <li>クラウドでの作業方法に関する内部期待値の設定</li>
+            <li>継続的な最適化と新機能の積極的な統合</li>
+        </ul>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Q. クラウドに移行する際の最大の心構えは？</div>
+                <div class="faq-answer">クラウドシステムを信頼し、従来のように本番環境を直接操作して「最後の一時間で救う」ことができなくなることを受け入れる必要があります。適切な品質管理プロセスを通して実施すれば、実際に機能します。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. パートナーとの協力で重視すべき点は？</div>
+                <div class="faq-answer">パートナーエコシステムは優れていますが、「利害関係を持たせる」ことが重要です。チームとして協力し、パートナーとの作業で適切な可視性を確保することが成功につながります。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. Adobeサポートを効果的に活用するには？</div>
+                <div class="faq-answer">問題を適切に説明し、フラストレーションを伝えるだけでなく、効果的に連携することが重要です。Ultimate Successへの移行により、問題の集約や必要に応じたエスカレーション、他のプログラムの状況報告が可能になりました。</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>重要な用語・事実リスト</h2>
+        <table>
+            <tr>
+                <th>用語/事実</th>
+                <th>説明</th>
+            </tr>
+            <tr>
+                <td>Workday Resource Center</td>
+                <td>すべての顧客接点への単一入口点となる統合体験。AEMクラウドで構築</td>
+            </tr>
+            <tr>
+                <td>Experience Hub</td>
+                <td>AEMクラウドサービスにおけるエージェント体験の新しいホーム。ペルソナに基づいてカスタマイズされた体験を提供</td>
+            </tr>
+            <tr>
+                <td>AI Assistant</td>
+                <td>Experience Hub内のコンテキスト内で動作し、製品に関する詳細な質問に対して人間の言語で回答とガイダンスを提供</td>
+            </tr>
+            <tr>
+                <td>Experience Catalyst</td>
+                <td>コンテンツをベクトル化してML理解を促進し、クラウドサービスへのコンテンツオンボーディングを効率化するアーリーアクセス機能</td>
+            </tr>
+            <tr>
+                <td>コンテンツフラグメント</td>
+                <td>AEMで構造化コンテンツを管理するための機能。チャネルに依存しないコンテンツ作成を可能にする</td>
+            </tr>
+            <tr>
+                <td>体験フラグメント</td>
+                <td>再利用可能なコンテンツとレイアウトの組み合わせ。Adobe Targetとの統合に活用される</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>ソース: S332 Accelerating Engagement Workday Boosts Customer Experience with AEM Cloud</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
