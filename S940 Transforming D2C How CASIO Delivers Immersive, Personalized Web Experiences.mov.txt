@@ -1,0 +1,352 @@
+00:00:00:01 - 00:00:25:42
+不明
+How do I hang it up? Too much coffee. Okay. Thank you very much for attending our session today. I am at zero, and, I might be consulting manager from Japan. I have helped a lot of Japanese customers in Japan for their digital transformation through the implementation, like I am and other Adobe solutions. And, Casio is one of our outstanding customer in Japan's history.
+
+00:00:25:47 - 00:00:38:00
+不明
+I'm very happy to be here to be able to talk about our history and the future. So today we have a sound from Casio.
+
+00:00:38:05 - 00:01:05:29
+不明
+Hello. I'm Noriko Mira. So I'm based in Tokyo. So my team is, basically responsible for implementing marketing technology. Well, mostly Adobe Solutions is a, commerce analytics organization, which, we're going to talk about more details later. So, yeah, I'm very happy to be here. And, thank you very much for coming. At this time of day, I hope that session is, you enjoy.
+
+00:01:05:34 - 00:01:35:44
+不明
+Enjoy the session. Okay. Okay. So I will briefly talk about today's agenda. We want to talk about three things. First is about the overall Casio's need to see business and what we have achieved through the, journey of our digital transformation together. And second is the, mighty shock and mighty shock is a service that, let you able to create your one of a kind G-Shock by changing the color in the design.
+
+00:01:35:44 - 00:02:03:50
+不明
+As you wish. And third one is, we want to share about Casio's future vision. So I will hand over to Noriko and for the first part to begin, this was. Some. Right. So, just wanted to start with a bit of, overview of our business. All right. Then, well, before starting, I will just ask one question.
+
+00:02:03:55 - 00:02:25:36
+不明
+So, anyone have, ever owned G-Shock watches or Casio watches or any any products from from Casio? Would you raise your hands? Oh, great. This is, this is, like, really like, lovely parts, working for the company. Like, it's very well known. Especially when I travel abroad. Like, there are a lot of uses we can.
+
+00:02:25:36 - 00:02:52:01
+不明
+I can actually meet and, people who love the products as well. So, yeah, as you know, so our major lines of business, so, PCs, G-Shock, Casio, BBG, or other brands, and also education calculators, scientific calculators. And so some, software, kind of businesses as well. And the last one is the, the electric, music instruments.
+
+00:02:52:06 - 00:03:14:12
+不明
+All right. So these are three major lines of business. And so in terms of numbers, there's a sales number here. But as you can see, like 80%, almost 80% of sales are coming from outside of Japan. So, it's pretty, pretty global, company. And, we are almost here in 70 years, in our history as well.
+
+00:03:14:16 - 00:03:52:33
+不明
+Right? So, just looking back the time, like, probably, when the Casio. When Casio created G-Shock watch, so this is more like, traditional value chain we had. So, basically, we had this, innovative idea. We have this product, design, that, you know, toughness, watch, which never existed in the market. And then now we manufacture it basically, based on our demand forecasting or planning, we manufacture it and sell it, so sells, mostly coming, going through our retail partners.
+
+00:03:52:38 - 00:04:17:11
+不明
+And then, they, they own basically the, the touchpoints, of our end users and also for support, product support as such. We also provide support through, different partners as well. So this is kind of our traditional value chains, which will probably similar to most like, consumer brands, maybe 50 years ago or 50 years ago anyway.
+
+00:04:17:11 - 00:04:52:29
+不明
+So but in the, in the age of digital, you know, everything can be direct. So, basically we have set the vision, to be, more user centric people who want to purchase our customers, at the center, of, of, or the business activities essentially. So, in this four stages, let's say from the product design point of view, of course, we are, creative, we create innovative products, but we also want to hear, users voice, to continuously updates or create, new products.
+
+00:04:52:34 - 00:05:19:22
+不明
+And also, in terms of manufacturing, we want to hear, the, the feedback and we'll, run this faster, feedback loop so that we can, we can, we can, basically manufacture as much as, as, as the customers in the customers want and in terms of sales, we want to do personalized, shopping experience, which has been think, talked a lot, everywhere in the summit.
+
+00:05:19:27 - 00:05:44:24
+不明
+And also they support we want to be able to provide a seamless support, as well for, better customer satisfaction. Right. So, the vision is good, but then, like a back in the day, we had a lot of, challenges here, so, as I say, in the traditional value chain, we didn't have, you know, many like, direct touchpoints with our end users.
+
+00:05:44:29 - 00:06:07:58
+不明
+So, you know, to get this, knowledge of voice, from users, we didn't really have a effective way to do that. So, to tackle this challenge, we decided to, basically build this, global marketing, technology stack, which is mostly built on, Adobe Solutions. I'm gonna talk a bit more details on that.
+
+00:06:08:11 - 00:06:36:05
+不明
+So that will include, the user touchpoints. So websites, emails, push notifications, all that. And with the, or these user touchpoints, we are going to have all this user data coming from each of those. So we want to make this global, and yeah, sometimes, some go back to 20, 20 like five years ago where we decided to do this.
+
+00:06:36:10 - 00:07:05:55
+不明
+But then our situation was basically this, so, well, we were not really like, you know, early adopter or anything like that. In 2020, we have this situation like we have hundreds of websites, local website. So, maybe one country had okay, this is a site for joke site for BBG site or for, calculator. Also maybe site for support, things like that and multiplies the number of countries that we are operating.
+
+00:07:05:59 - 00:07:36:03
+不明
+It's like essentially very, very decentralized. So of course, because the website is this decentralized, the, user experience, quite varied. Depends dependent on the, on the websites, that you're looking at. And also, in terms of like a tech investment. So because you have like hundreds of websites, if you want to add one, one feature or one more function on the website, you basically need to go one by one.
+
+00:07:36:08 - 00:08:03:50
+不明
+Maybe the websites are built on different platforms. So basically you need to, invest as many as you have. Maybe building one small, simple website, is cheaper than building a big one. But, when you like, think about maintaining and enhancing it, it's it's just that, investment is, very inefficient as well. And also the operations, you have to basically do the same thing, on a different website in different countries.
+
+00:08:03:55 - 00:08:38:04
+不明
+Essentially, you're doing the same thing, but you have to do it many times. And the later piece, is, so limited synergy. So basically because it's a, it's very decentralized. So there's not not much incumbent, they can already, you know, share the best practices and all that and finally other data. So user data is scattered around and maybe, stored in a different technology, maybe, store different with different definitions or different, tracking methodologies and stuff like that.
+
+00:08:38:08 - 00:09:09:19
+不明
+So we have like, tons of problems now when we start, this problem, this, project. Right. So, what happens? So we are basically searching for, different solutions, and then, we selected, Adobe, to be a global partner, to build, on or, solve all these issues. So we have started the global website rollout, which am I love ecommerce targets and and analytics in the in the first phase.
+
+00:09:09:24 - 00:09:36:21
+不明
+Okay. So yeah, this is a basically how we started, 2020, we started in Japan, and went to a acquisition. So. Oh, by the way, the number on the top right corner, this is, indicating the, the DTC, direct to consumer, business revenue. So, we had 120 20, and now we are basically doubling, in within this five years of time.
+
+00:09:36:26 - 00:09:56:47
+不明
+So, yeah, number just counting out basically, now we have, more than 30 websites and in 21 languages. And yeah, pretty much our covet, our major markets in terms of direct to consumer. Right. So.
+
+00:09:56:52 - 00:10:36:48
+不明
+Right. So the, basically the problems that I just described earlier, mostly, mostly solved, like we've got 33 global website, consistent, user experience across all market. And there are automations like, let's say we have got 21 different languages. We have this, translation workflow, running, that can automate, you know, all the, all the data inputs kind of kind of operations as well, and also best practices, if something works very well, if one company, sorry, one country, it is very easy to break it down in another country because it's all built on the same thing.
+
+00:10:36:52 - 00:11:01:09
+不明
+Right. And also for, development as well, when we develop one feature, a it's one new component, right? That can be applied to everywhere. And this also, in the, facilitate the synergy and collaborations, across markets. So we can, now basically share the knowledge, share the best practices much better than before.
+
+00:11:01:09 - 00:11:26:50
+不明
+And finally, data. So data is stored, in one place and same with the same, definition. We can do the reporting easily. You can make the use cases, enabled very quickly as well. Okay. Right. So, yeah, this is the kind of very high level architecture that, we have, implemented at the, at the time of the initial rollout.
+
+00:11:26:50 - 00:11:53:48
+不明
+So in the back end, we have a, alpha assets as well. And, we have other ecommerce, which is, connected to payments delivery and also ERP and front ends. Again, a m commerce for checkouts. And also the targets of the Adobe target, that is responsible for, for, product recommendations recently viewed and maybe tests and all that.
+
+00:11:53:50 - 00:12:19:06
+不明
+And we also at the same time implemented this Casio ID, which is the single ID that you, you we will basically need to, use our service. And then in terms of data, we have analytics. Yeah. The CTP and also we build a lot of business intelligence like dashboards and stuff as well. So the last one here, highlighting marketing automation here because, this is the next topic, right.
+
+00:12:19:18 - 00:12:55:08
+不明
+So with this, we have implemented, this architecture, but then we found this marketing automation piece is getting kind of, kind of hard. So let's talk a bit more details on that. So, the challenges are here. So we have the, very limited, real time capabilities with this architecture. I mean, most of the, most of the architecture, Adobe suites by then and other products just sitting that they belong to another suite.
+
+00:12:55:12 - 00:13:15:46
+不明
+So, in this, in this architecture, we had, limited real time capability where there is the API, there is a way to do it, but it just takes our more efforts, more, investment, more maintenance. And oh, and also the ID is ID resolution is another issue, which, I'm going to talk a bit more details on it.
+
+00:13:15:51 - 00:13:41:25
+不明
+And then while in order to kind of work around these issues, we had to build custom integrations, complex workflows, and that's basically, slow down, everything like if you want to do, like, one use case. Okay. We have to do, this development and then that deployment and, and these, workflows you have to maintain, and also multiple partners.
+
+00:13:41:25 - 00:14:06:22
+不明
+Adobe is in the Salesforce partner there. So, it takes like long time and costs to just build one, one, one use case or make one, one change. In any of these cases. Right. So, what we have done is, we implemented, agile at the beginning of time, basically just replacing the other, migrating automation.
+
+00:14:06:26 - 00:14:31:57
+不明
+So, here is also, again, high level kind of architecture now. So we have an and commerce that will sense the streaming events data through, ad server. So that will come, real time. And that's also for one thing to mention, is this out of box. So, that will, well, implementation is a lot easier.
+
+00:14:32:02 - 00:15:01:12
+不明
+And then, those that are, come in real time and also we have a batch, processing data as well. So that coming from ADP, and also Casio ID, so basically our architecture is much more like a streamline now real time coming from Adobe, batch process ones coming from ADP. And then, yeah, we have, replaced, ma, I mean, at all to Azure or globally.
+
+00:15:01:12 - 00:15:25:19
+不明
+And last year, and now email when push is there is a responsibility to push it out. Right. So now basically we have from the cashier and other team in this picture. So that will also speed up the process and the costs as well. Right. So this is just one example of what we have been able to do with agile.
+
+00:15:25:19 - 00:15:48:06
+不明
+So let's say for example, before we had this scheduled email and we sent it all in the same content, to all this subscriber. So, yeah, this is kind of kind of easy, easy segmentation. Easy to make. But then now we have, real time data coming through, through the ad server. So real time we can do that.
+
+00:15:48:06 - 00:16:18:55
+不明
+Events trigger, let's say, okay. We want to send, this email to people who have seen our products recently. So we can easily create a segment for that. And then, in terms of contents, we are also able to do, personalization, to some extent. So, let's say, okay, we maybe we want to change the, the, top picture here, depending on what, depending on the products that the user has sent, maybe the last product they have seen or things like that.
+
+00:16:18:59 - 00:16:51:04
+不明
+Right. So yeah, this is a kind of, upgrade that we have. We have achieved. And yeah, another thing just to mention, this is actually new, development for us as well. But, now we have, Agile Inspector and also, new, other ecommerce, SaaS, product recommendations as well. So, that we are, trying to do now is, from zero, we want to use this recommendation engine.
+
+00:16:51:09 - 00:17:19:16
+不明
+Provided in other e-commerce. So, depending on, well, based on users, users behavior or, anything that comes in coming in through, to ajio, we can send the requests to say, okay, we want this recommendation, to this specific person and then, yeah, other business basically. Come up with a response, with, with the recommendations.
+
+00:17:19:21 - 00:17:46:56
+不明
+And as you may know, like, the commerce, recommendation has, different, different variations, right? So it could be like, other we can say recommendation. So it's different for everyone. And then maybe you can pick, well, most purchased, most varied product similarity, etc.. So, these are, pretty interesting use case that leveraging different different part of solutions.
+
+00:17:47:00 - 00:18:19:18
+不明
+Okay. So the next bit is around the IDs. So this may not be the most exciting thing in the world, but this is my one of my favorite parts of AP as well. So ideas. So in terms of, IDs, we have, as I mentioned, customer ID, so there's a login, logging members basically. And also we have subscribers, you know, who just, put email on our website and subscribe to, G-Shock newsletter, for example.
+
+00:18:19:22 - 00:18:40:10
+不明
+And we also have guest processes. You don't have to have that ID to buy something from us. You can be a guest by itself as well. So, we have this kind of three, three different, known customers. And of course, we do have a lot of anonymous customers who only have, ID, which is a cookie.
+
+00:18:40:15 - 00:19:09:54
+不明
+Right. So, in this scenario, the challenge is really to identify users accurately, especially in the, real time. And also in the complex scenario as well. So what, how this app can, how is this? So we have actually joined the, beta program, for what is called ID graph linking roles, in an app.
+
+00:19:09:59 - 00:19:34:18
+不明
+So, this is great, great, feature that help us to really accurately identify users, in a very complex scenario as well. So, we can now actually, see, this person is, classified member and also a subscriber, and we also have stitch all these ideas together and create this ID graph kind of thing.
+
+00:19:34:23 - 00:19:59:52
+不明
+And so easy idea also, can be stitched. I said the cookie idea can be stitched. So, we can, basically consolidate everything like, purchase history, subscription based and real time events all together. I'll stick to one profile. So yeah, same for different, type of, members. So, maybe there is a subscriber who like to purchase as a guests.
+
+00:19:59:57 - 00:20:25:13
+不明
+That's possible as well. And then we can we can capture them right now. Okay. So, yeah, just to close this section, we have this, uplift in the conversion, by a marketing emails. So this is, you own the comparison and in the same period, so we have 100, 337% conversions. So, yeah, double the numbers as well.
+
+00:20:25:18 - 00:20:57:46
+不明
+It's looking pretty good. After the after the migration. Okay. So yeah, I think that's it for the first section. And I will pass it over to, no rest, my son. Thank you very much. Okay. Next, we want to talk about my G-Shock. Now let's go.
+
+00:20:57:51 - 00:21:02:55
+不明
+See?
+
+00:21:03:00 - 00:21:09:16
+不明
+These numbers.
+
+00:21:09:20 - 00:21:37:37
+不明
+This.
+
+00:21:37:42 - 00:22:07:53
+不明
+Okay. Okay. So now it's a time for, Japanese lesson. Okay, I will say one word in Japanese. So, everybody, please repeat after me. I see a lot of Japanese here, but everybody repeat after me already. Okay? Okay. Thank you very much. For those who didn't repeat after me, please don't visit Japan anymore. Okay. So what is this?
+
+00:22:07:53 - 00:22:40:48
+不明
+Okay. I think this word got so popular in Japan from 5 to 10 years ago, and, we often use this word to talk about what is what is your favorite things in your life, what's your passionate about and what you want to spend money, time and money for it through fun activities. So for example, we say this soccer team is Mao XI or this idol group is my super or something like that, you know, so we use this term to talk about what you value as a person.
+
+00:22:40:52 - 00:23:08:56
+不明
+Okay. So now you got what oshi is. And so Meiji Shock, as you saw in the video, you can create your one of a kind G-Shock by changing the color and the materials of the watch. And, what's happening here is that we are observing. Many people are getting excited with that idea and trying to create a very unique watch that represent their ocean.
+
+00:23:09:01 - 00:23:35:17
+不明
+Is it an awesome. Okay. So in addition to that, we're seeing many people creating watch as a pair watch or a team watch or something. A special gift to present to somebody important for you. And here are some voice of customers. You see there is, design of F1 car, and there's a pet bird. And also there are, ten years marriage anniversary.
+
+00:23:35:21 - 00:24:06:41
+不明
+So all of them are very, you know, unique and invaluable. And this is the gallery that you can see all the customization created by Cassian's customers in the past. And, when I first saw this, I felt that this is a personalization, you know, so of course, it's important to understand the customer's need and, delivering the relevant content and at the right time throughout the right channel, that is, you know, we are telling to the customer all the time.
+
+00:24:06:46 - 00:24:35:50
+不明
+But at the same time, I also felt that this is something beyond that. You know, all watches are so unique and so special and personal and, I'm very proud that our solutions and our service is part of that. Okay. So next, I want to talk about how we built this and, what I want to appeal here is that all of this are pretty created by Adobe Solutions.
+
+00:24:35:55 - 00:25:14:13
+不明
+So we are using Adobe Creative Cloud solutions and integrating them with, experience cloud solution starting from substance 3D, Photoshop Em, and, Adobe Commerce. And, I won't get into too much detail of this thing, but I want to share some aspects here. And, first, when we thought about how we could even create this thing, even if we can develop the function of the customization, it was obvious that we can't physically shoot the product because of the number of the customization and the combinations and not only the combinations.
+
+00:25:14:28 - 00:25:44:25
+不明
+We also need to, show the preview image on the website from ten different angles. So the mathematics will be, astronomical figures. So that is why we decided to use the substance 3D to create the 3D model and use Photoshop to separate the layers so that we can change the colors of each parts, and also leveraging the same dynamic media function to dynamically render the customized watch on the website.
+
+00:25:44:29 - 00:26:20:09
+不明
+Okay. And I also want to touch upon the numbers of images shock. So from a design perspective, the current possible combination is more than 10 billion. And since the launch of my G-Shock, Casio produced more than 150,000 combinations. I created on the website. And also this is very remarkable. But 90% of the watches are completely unique. That means that there are more than 100,000 people in this world wearing this.
+
+00:26:20:09 - 00:26:57:16
+不明
+My G-Shock. That is truly one and only. Isn't it cool? Okay, so from the business perspective, and this number is very good out of the entire purchase of this G-Shock, 80% was the first to see purchase on the website. That means that this major shock is strongly contributing to the acquisition of the new customers. Right? And second, 40%, 45% of the consumers were at the age of below 30s and 30% were female.
+
+00:26:57:20 - 00:27:23:09
+不明
+Okay. And G-Shock brand has a very long history. It has more than 40 years of history. And the brand were I, I feel that mainly acknowledge as a masculine brand type, you know, because of the toughness of the watch. But my design shock, it is, getting a really good attraction from the new customer segments that Casio couldn't reach in the past.
+
+00:27:23:14 - 00:27:48:12
+不明
+And last but not least, the people who purchased my G-Shock. Out of the entire purchase, 10% of the customers bought the second G-Shock at the website. So this means that major shock is also increasing the customers lifetime value of G-Shock business. Okay, is it a great success?
+
+00:27:48:17 - 00:28:14:01
+不明
+Thank you. Okay, so I'll hand over to you again about the features. Actually, before moving to the next section, I just wanted to do a quick poll like, so this service is currently only available in Japan. So, I was just wondering if the same service, we made it available in your own country.
+
+00:28:14:05 - 00:28:36:09
+不明
+It should be able to. You wants to buy one if you're interested to get one. Who? You kind of raise your hands. Only this, Yeah. And. You know, Thank you. Sorry. I could have done better.
+
+00:28:36:14 - 00:29:08:40
+不明
+Right. Will get approval internally. All right. So, yeah, the last bit is, future vision. So, yeah, in the first section, I talked about the global martech rollout and also, ma enhancement, replacement of the, of the tool and, never shamelessly uncovered a major shock. Essentially, these, activities are more focusing on, convergence, like, in terms of, like, customer journey.
+
+00:29:08:45 - 00:29:41:08
+不明
+So, yeah, we want to have a, good website. That are easy to use. And also improving, operations and that sort of aspects as well. But, we are focusing on, more on convergence, basically make it more sales. And you know, data, see websites, but then, the future visions, that are there we are, working on, we'll be covering, like, a wider, part of the customer journey from awareness, to loyalty.
+
+00:29:41:12 - 00:30:09:03
+不明
+So, one, one piece, so on, topic, that we want to, look into, will be personalized contents. So we will now create more content, and also 3D contents as well, and, user data as well. We want to, have more user data, in order for us, to be, to be able to, customer personalize the content as well.
+
+00:30:09:08 - 00:30:35:01
+不明
+So the first this is the first bit and then our second, second part, it will be, enhancing our web experience. So our am, is not on clouds yet. We have started with our aims, how to be managed, service. But we are now starting our project, to, move into cloud. And, also, we are looking into, adding more 3D experience on that.
+
+00:30:35:05 - 00:30:58:15
+不明
+And the last bit is, to make, this marketing activities or engagement more interactive. So, I'm going to be, talk a bit more details that like, final engagements, we want to get more close of customers. As I mentioned, a very, early in, in the presentation, like, we want to put our customers, at the center.
+
+00:30:58:19 - 00:31:19:27
+不明
+So, this is a this is where we, really want to enhance, in coming years. Okay. So talk, a bit more details for each topic also in terms of content and there, well, there are a lot of like, contents and data and in the keynote and other places as well. But, yeah, we that really resonate.
+
+00:31:19:32 - 00:31:49:07
+不明
+Well, to me. So, yeah, we have a few, few challenges here. Like, let's say, on this, I just stick to one products on our website, which is really cool. I love this watch. But in terms of creative and content, it's, more, more like a product focused images. So you can see, you know, from the, the photos to the photos, in a different angles.
+
+00:31:49:12 - 00:32:14:43
+不明
+And on the right hand side, there, there are image, like people wearing it, but, that those images are kind of limited if you compared to, like number of images on the left. So, so with the well, if you want to personalize the content, basically you need more content depending on what users really needs or the reason is better, for each customers.
+
+00:32:14:48 - 00:32:40:18
+不明
+So basically the, the challenge on the content side and we don't have enough content. And then on the other side, right hand side, so we have basic attributes. As I said, there is a customer ID, we collect, emails, basic, like age, gender sort of thing. And also we have with if the user has purchased anything, we have purchase history and web behavior, app behavior sort of data.
+
+00:32:40:23 - 00:33:06:18
+不明
+But is it enough to really personalize the content? Actually, it's pretty hard, to show to say, okay, we should show this content to that user. Well, we can do basic thing like, you know, gender depends on gender showing different contents. But let's say is is not really like a personalized and it's, segmenting it. Right. So, we actually have better knowledge than before, but it's still limited.
+
+00:33:06:20 - 00:33:27:30
+不明
+We there's a room to improve. And also the, the try on feature, there is a demand for that. So. Well, because what we are selling mostly watches, most of the time what the users worry about is, you know, before making a purchase, they want to see, you know, how how that look actually, on on my own list.
+
+00:33:27:35 - 00:33:52:10
+不明
+So these are the kind of, demands and, in terms of content, of content, mostly today. So there is a kind of mismatch, or like, both content and that, users, here's a data. We, we do have challenges, right. So, yeah, I mean, how we're going to do it is this basically, I think it's mentioned in everywhere.
+
+00:33:52:15 - 00:34:11:50
+不明
+But, contents, could be generated, with, with the gender I, or we also want to have, we need to have metadata for the contents. Otherwise, you know, user user data is enriched. But then, we need to we need to able to flag, what content is for for for whom, basically.
+
+00:34:11:55 - 00:34:37:41
+不明
+So we need to have this meta tag for each content. And also, we working on, 3D content creation as well. And then on the right hand side, so uses data, perspective, on top of everything that we have already, we are we are going to add more touch points or get more data from users through surveys, through campaigns, or through partnerships.
+
+00:34:37:41 - 00:35:01:20
+不明
+So maybe through machine learning, if the data is not enough, maybe we need to calculate it or, do some prediction on it. Right. So, so we need to work on both sides, ready to be able to personalize. Our communications better. Right. So this is the first bit and then second way is, well, when we have more content ready, more data is coming in.
+
+00:35:01:25 - 00:35:30:38
+不明
+We want to deliver them better as well. So. And I am cloud, what we expect is while essentially that is a faster, faster site, through each delivery service, but that's, not not only down on the am cloud. There will be, there will be new integrations between, EMR sets and agile as well. So you can use, the contents more seamlessly on in Azure or in different channels as well.
+
+00:35:30:38 - 00:35:54:28
+不明
+And well, currently our, our channels are mostly like, in terms of, activations, emails and and a push notifications. But we are also planning to add more like things like WhatsApp. More like that. The channels that, that, that a users, likes to use. So, yeah, more channels, more content, more, better delivery.
+
+00:35:54:33 - 00:36:21:55
+不明
+That's that's what kind of the kind of, things that we want to do. And also the last bit is, well, this will be, ready fairly soon, in the US. But we are going to, try, try this virtual try on kind of feature on our website. So that will be with the 3D, models, that you can actually, you know, try on inform and, and look, how, try how it looked.
+
+00:36:22:02 - 00:36:57:27
+不明
+So, yeah, these are in, in the roadmap. Okay. And then last bit is about the, the interactivity. So, what we want to, do is, basically, one is for community. This is more for, like, our loyal customers. So fans, so where you can, you know, generate content. So I use it, user can generate content or, but, comments on or discuss something or, we want to do, poll.
+
+00:36:57:27 - 00:37:23:01
+不明
+I mean, I just did a poll for my G-Shock, but we want to do a similar pose, it on on other platforms as well. That will help us to, probably like, do this, manufacturing planning, for example. So, all these, touch points that we, we have been building, we can really leverage them, and, make an impact in our business.
+
+00:37:23:10 - 00:37:42:01
+不明
+So there's a poll and a pilot marketing, that I just mentioned about. And, also some user research, maybe focus user research or something like that with, with the data that we have, we can, we can do this, kind of, fan engagement as well. And, we will call it Casio Lab as well.
+
+00:37:42:06 - 00:38:15:10
+不明
+So there's the fan engagement kind of community, and our Casio lab is more for like, pilot marketing or polls and user research and and so thing. So. Yeah, essentially what we want to achieve is, for our fans, we want to, create an environment where you can, engage with, with the like minded or maybe find useful information about products, or, know the know the brand better and also participates the brands by, you know, giving us the, the information, like a poll.
+
+00:38:15:11 - 00:38:41:19
+不明
+What do thing like your feedback about this idea or this product? We want we want our customers to participate as well. And for us. So, of course we can we can know our customers better. Just going back to the value chain thing. So we can, you know, really, put our customers first, to, to the product design, plan manufacturing, sell and and support and all that.
+
+00:38:41:19 - 00:38:58:15
+不明
+So we, we need, those kind of kind of platforms, to really achieve that. The chain. All right. So I think that's pretty much it. Thank you. Thank you very much.
+
+00:38:58:19 - 00:38:58:34
+不明
+For.
+
