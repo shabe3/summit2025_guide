@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S601 Architecting Adobe Experience Platform for Scale Across Regions and Brands</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .summary-box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 2px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .important {
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #0f3c78;
+            color: white;
+            text-align: left;
+            padding: 10px;
+        }
+        
+        td {
+            padding: 10px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .faq-container {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 0 0 15px;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Adobe Experience Platform のスケーラブルなアーキテクチャ設計</h1>
+            <p>複数ブランド・地域に対応するための実装ガイド</p>
+        </header>
+        
+        <div class="summary-box">
+            <h2>概要</h2>
+            <p>Adobe Experience Platform (AEP) を複数のブランドや地域にわたって展開する企業は、データ管理とカスタマーエクスペリエンスの最適化において複雑な課題に直面します。このドキュメントでは、ビジネス構造に基づいたアーキテクチャ設計の選択肢と、効率的な実装のためのガイドラインを提供します。</p>
+            <p class="important">単一サンドボックスと複数サンドボックスのアプローチを理解し、<span class="highlight">ビジネス要件に合わせた最適な設計</span>を選択することが成功への鍵です。</p>
+        </div>
+        
+        <div class="section">
+            <h2>課題の理解</h2>
+            <p>多くの企業は、複数のブランドや地域にわたってカスタマーデータを管理する際に複雑な課題に直面しています。</p>
+            
+            <h3>主な課題</h3>
+            <ul>
+                <li><span class="underline">複雑性の管理</span>：ブランドや地域ごとに異なる要件を調整しながら、統一されたプロファイルを維持する</li>
+                <li><span class="underline">一貫したカスタマーエクスペリエンス</span>：共有データを活用しつつ、ブランドや地域に固有の体験を提供する</li>
+                <li><span class="underline">データガバナンス</span>：データアクセスを適切に管理し、コンプライアンス要件を満たす</li>
+                <li><span class="underline">効率性</span>：拡大するユースケースに対応しながら、管理効率を維持する</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜAEPの実装が複雑になるのですか？</div>
+                    <div class="faq-answer">ビジネスの成長に伴い、新しいブランドや地域が追加されるたびに、データ管理、ユーザーアクセス、マーケティング戦略などの調整が必要になります。各ブランドや地域は独自の要件を持ちながらも、統一されたカスタマープロファイルを維持する必要があります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 実際の企業での活用例は？</div>
+                    <div class="faq-answer">マリオットホテルのような複数ブランドを持つグローバル企業では、5つのブランドにわたる統一プロファイルを実現しています。金融サービス企業では、グローバルな単一プロファイルを構築し、すべてのマーケターや分析者がアクセスできるようにしています。小売業では、国レベルでの運用と、その中でのブランド別体験を両立させています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのような組織構造で実装すべきですか？</div>
+                    <div class="faq-answer">中央集権型（一つのマーケティングチームが全ブランド・地域を担当）と分散型（地域や言語ごとに特化したチーム）のどちらの組織構造かを考慮する必要があります。この違いによって、サンドボックス設計やアクセス権限の設計が大きく変わります。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>設計の基本原則</h2>
+            <p>AEPの実装を成功させるためには、以下の要素を考慮した設計アプローチが必要です。</p>
+            
+            <h3>重要な検討事項</h3>
+            <ul>
+                <li><span class="underline">ビジネス構造</span>：マーケティングが中央集権型か分散型か</li>
+                <li><span class="underline">データ共有レベル</span>：どの程度のデータを共有または分離する必要があるか</li>
+                <li><span class="underline">コンプライアンス要件</span>：規制上の理由でデータを分離する必要があるか</li>
+                <li><span class="underline">チームの自律性</span>：地域やブランドごとのチームがどの程度独立して運用する必要があるか</li>
+                <li><span class="underline">成長計画</span>：2〜3年先の拡大をどう見据えるか</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. どこから設計を始めるべきですか？</div>
+                    <div class="faq-answer">IT部門やテクニカルな観点ではなく、ビジネス構造から始めることをお勧めします。組織が中央集権型か分散型か、データの共有レベル、コンプライアンス要件、チームの自律性を考慮することが重要です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. データ共有に関する考慮点は？</div>
+                    <div class="faq-answer">完全に統一されたプロファイルを維持したいのか、特定のデータ（PII情報など）を保護したいのか、あるいはブランドごとにデータを分離したいのかを検討します。コンプライアンス要件と合わせて考慮することが重要です。例えば、薬局で購入した医薬品データと食品購入データは、規制により分離が必要かもしれません。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 将来の成長をどう考慮すべきですか？</div>
+                    <div class="faq-answer">企業は通常、小規模から始めて成長していきます。新しいブランドや地域、ビジネスユニットの追加を見据えて、2〜3年先の拡大計画を考慮した設計が必要です。設計時に将来を見据えないと、後で課題に直面することになります。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>単一サンドボックスアプローチ</h2>
+            <p>単一サンドボックスアプローチでは、すべてのデータとオブジェクトを一つのプロダクションサンドボックスに集約します。</p>
+            
+            <h3>メリット</h3>
+            <ul>
+                <li><span class="underline">グローバルな顧客ビュー</span>：ブランドや地域を超えた統一された顧客プロファイル</li>
+                <li><span class="underline">データ移動が不要</span>：すべてのデータが一箇所に集約されている</li>
+                <li><span class="underline">クロスセグメンテーション</span>：ブランドや地域をまたいだオーディエンス作成が容易</li>
+                <li><span class="underline">管理の効率性</span>：一元的なデータモデルとワークフロー</li>
+            </ul>
+            
+            <h3>実装例</h3>
+            <ul>
+                <li><span class="highlight">スキーマ設計</span>：「コンテキストノード」を使用してブランド固有の属性を整理（例：AdobeというノードにExperience Cloud、Document Cloud、Creative Cloudのサブノードを作成）</li>
+                <li><span class="highlight">アクセス制御</span>：属性ベースのアクセス制御（ABAC）とフィールドレベルのアクセス制御を使用して、特定のノードやフィールドへのアクセスを制限</li>
+                <li><span class="highlight">オブジェクトレベルの制御</span>：セグメント（オーディエンス）にラベルを付けて、特定のマーケターのみがアクセスできるようにする</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 単一サンドボックスでのフィールドアクセス制御はどのように機能しますか？</div>
+                    <div class="faq-answer">属性ベースのアクセス制御（ABAC）とフィールドレベルのアクセス制御を使用して、スキーマ内の特定のノードやフィールドにラベルを付けます。ユーザーの役割に同じラベルが付与されている場合のみ、そのフィールドやノードにアクセスできます。この方法で、Social Securityや医療情報などの機密データや、特定ブランドのデータへのアクセスを制限できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. オーディエンスの制御はどのように行いますか？</div>
+                    <div class="faq-answer">オブジェクトレベルのアクセス制御（OLAC）を使用して、セグメント（オーディエンス）にラベルを付けることができます。例えば、ドイツ向けのオーディエンスに「Germany」というラベルを付けると、「France」ロールを持つマーケターには表示されません。これにより、不適切なオーディエンスのアクティベーションを防止できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 特定の地域やブランド向けのセグメンテーションはどのように行いますか？</div>
+                    <div class="faq-answer">二つの方法があります。1つ目は、オーディエンス定義に地域フィルターを含める方法（例：「米国内のユーザー」という条件を追加）。2つ目は、アクティベーション時にコンセントポリシーを使用してフィルタリングする方法です。前者はオーディエンスサイズとアクティベーション数の一致が保証されますが、毎回フィルターを追加する必要があります。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>複数サンドボックスアプローチ</h2>
+            <p>複数サンドボックスアプローチでは、ブランドや地域ごとに別々のプロダクションサンドボックスを使用し、データを完全に分離します。</p>
+            
+            <h3>適用シナリオ</h3>
+            <ul>
+                <li><span class="underline">コンプライアンス要件</span>：法的理由でデータの完全な分離が必要な場合</li>
+                <li><span class="underline">高度な自律性</span>：地域やブランドごとのチームが独立して運用する必要がある場合</li>
+                <li><span class="underline">データ隔離</span>：特定のデータを他のブランドや地域と共有したくない場合</li>
+            </ul>
+            
+            <h3>実装上の考慮点</h3>
+            <ul>
+                <li><span class="highlight">データの複製</span>：共通の企業データが複数のサンドボックスに複製される必要がある</li>
+                <li><span class="highlight">ワークフローの複製</span>：同様のジャーニーやセグメントを複数のサンドボックスで作成・管理する必要がある</li>
+                <li><span class="highlight">オーディエンス共有</span>：サンドボックス間でオーディエンスを共有して、センシティブなデータを移動せずに活用</li>
+                <li><span class="highlight">サンドボックスツーリング</span>：パッケージ機能を使用して、スキーマやセグメントを複数のサンドボックスに展開</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 複数サンドボックスでのレポーティングはどうなりますか？</div>
+                    <div class="faq-answer">Customer Journey Analytics（CJA）を使用して、各サンドボックスのデータに基づくレポートを作成できます。パネル共有機能を使用すると、複数のサンドボックスからのデータを一つのダッシュボードで並べて表示できます。データセットのエクスポート/インポートで統合することも可能ですが、法的・コンプライアンス上の制約を確認する必要があります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. プライバシー（GDPR）対応はどうなりますか？</div>
+                    <div class="faq-answer">Adobeのプライバシーサービスは、アクセスまたは削除リクエストを受け取ると、すべてのサンドボックスに対して同じリクエストを発行します。そのため、単一または複数サンドボックスのどちらのアプローチでも、プライバシー対応に違いはありません。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. サンドボックスツーリングとは何ですか？</div>
+                    <div class="faq-answer">サンドボックスツーリングは、スキーマやオーディエンスなどのオブジェクトをパッケージとしてまとめ、複数のサンドボックスに展開する機能です。依存関係のあるオブジェクト（フィールドグループなど）も自動的に含まれます。この機能により、ソフトウェア開発ライフサイクルの最適化やブランド間のコラボレーションが可能になります。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>実装アプローチの選択</h2>
+            <p>単一サンドボックスと複数サンドボックスのアプローチを比較し、最適な選択をするための基準を以下に示します。</p>
+            
+            <table>
+                <tr>
+                    <th>考慮事項</th>
+                    <th>単一サンドボックス</th>
+                    <th>複数サンドボックス</th>
+                </tr>
+                <tr>
+                    <td>コンプライアンス</td>
+                    <td>データ分離の要件が緩やか</td>
+                    <td>厳格なデータ分離が必要</td>
+                </tr>
+                <tr>
+                    <td>標準化</td>
+                    <td>管理しやすい</td>
+                    <td>サンドボックス間で一貫性を保つのが難しい</td>
+                </tr>
+                <tr>
+                    <td>自律性</td>
+                    <td>アクセス制御で部分的に実現</td>
+                    <td>完全な自律性が可能</td>
+                </tr>
+                <tr>
+                    <td>再利用性</td>
+                    <td>高い（すべてが一箇所）</td>
+                    <td>サンドボックス間で共有が必要</td>
+                </tr>
+                <tr>
+                    <td>データ共有</td>
+                    <td>容易（遅延なし）</td>
+                    <td>複雑（データ複製が必要）</td>
+                </tr>
+            </table>
+            
+            <p class="important">常に<span class="highlight">単一サンドボックスから始める</span>ことをお勧めします。これにより、将来複数サンドボックスに移行する場合でも、すべての設計をそのまま再利用できます。</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 最終的な判断基準は何ですか？</div>
+                    <div class="faq-answer">コンプライアンスと法的要件が最優先です。法的に完全なデータ分離が必要な場合は複数サンドボックスを選択します。それ以外の場合は、ビジネス要件（データ共有レベル、チームの自律性など）と成長計画を考慮して判断します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 将来的に変更することは可能ですか？</div>
+                    <div class="faq-answer">単一サンドボックスで開始し、後で複数サンドボックスに移行することは可能です。設計が一貫していれば、サンドボックスツーリングを使用してスキーマやオーディエンスを再利用できます。逆の移行はより複雑になります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ビジネスの成長に合わせた拡張性はどうですか？</div>
+                    <div class="faq-answer">単一サンドボックスでも、属性ベースのアクセス制御とスキーマ設計の工夫により、新しいブランドや地域を追加できます。複数サンドボックスでは、新しいサンドボックスを追加し、サンドボックスツーリングで既存の設計を適用できます。どちらのアプローチも拡張性はありますが、管理の複雑さは異なります。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>重要な用語と概念</h2>
+            
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>サンドボックス</td>
+                    <td>AEP内のデータとオブジェクト（ジャーニー、オーディエンスなど）を含むコンテナ。各サンドボックス内のデータは分離されています。</td>
+                </tr>
+                <tr>
+                    <td>属性ベースのアクセス制御 (ABAC)</td>
+                    <td>スキーマのノードやフィールドにラベルを付け、同じラベルを持つロールにのみアクセスを許可する機能。</td>
+                </tr>
+                <tr>
+                    <td>オブジェクトレベルのアクセス制御 (OLAC)</td>
+                    <td>セグメント（オーディエンス）などのオブジェクトにラベルを付け、アクセスを制限する機能。</td>
+                </tr>
+                <tr>
+                    <td>スキーマ</td>
+                    <td>データの構造を定義するもの。コンテキストノードを使用してブランドや地域ごとのデータを整理できます。</td>
+                </tr>
+                <tr>
+                    <td>サンドボックスツーリング</td>
+                    <td>スキーマやセグメントなどのオブジェクトをパッケージ化し、複数のサンドボックスに展開する機能。</td>
+                </tr>
+                <tr>
+                    <td>コンセントポリシー</td>
+                    <td>アクティベーション時にプロファイルをフィルタリングするために使用できるポリシー。地域やブランドの制約にも活用可能。</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            <p>Adobe Summit 2023 - S601 Architecting Adobe Experience Platform for Scale Across Regions and Brands</p>
+            <p>プレゼンター: Sal Dowd (Product Management, Adobe Experience Platform) & Danny Miller (Customer Engineering, Adobe)</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    this.classList.toggle('active');
+                    answer.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

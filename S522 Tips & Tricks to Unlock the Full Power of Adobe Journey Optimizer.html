@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S522 Tips & Tricks to Unlock the Full Power of Adobe Journey Optimizer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .title {
+            color: #0f3c78;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0f3c78;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 2px;
+        }
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* FAQスタイル */
+        .faq-container {
+            margin-top: 20px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">S522 Tips & Tricks to Unlock the Full Power of Adobe Journey Optimizer</h1>
+
+        <div class="summary">
+            <h2>サマリー</h2>
+            <p>Adobe Journey Optimizerは、Experience Platformの機能を活用して顧客体験を最適化するツールです。このセッションでは、Chris StultsとIvan Meyerという2人の専門家が、Journey Optimizerをより効果的に使用するための数多くのヒントとテクニックを紹介しています。統合された顧客プロファイル、スケーラブルな配信機能、コンテンツデザイン、リアルタイムジャーニーオーケストレーション、インテリジェントな次のベストアクション提案など、多くの機能を活用する方法が解説されています。</p>
+        </div>
+
+        <div class="section">
+            <h2>ジャーニー管理の最適化</h2>
+            <p>Journey Optimizerのジャーニーキャンバスを最大限に活用するためのテクニックを紹介します。ストリーミングセグメントを効率的に使用し、タイムアウト時の対応やジャーニー中の顧客管理を改善する方法を解説します。</p>
+            
+            <h3>主要ポイント</h3>
+            <ul>
+                <li>ジャーニーキャンバス内で<span class="highlight">オーディエンス、属性、イベント</span>を直接参照することで、ストリーミングセグメントの数を抑制できます</li>
+                <li>アクションやイベントの<span class="underline">タイムアウトパス</span>を設定することで、プロファイルがジャーニーから脱落するのを防止できます</li>
+                <li>ジャーニー中に<span class="highlight">追加イベント</span>を使用して、顧客の行動に基づいたパーソナライズを実現</li>
+                <li><span class="underline">グローバル終了条件</span>を設定して、特定の条件が満たされた場合にジャーニーからプロファイルを即座に除外可能</li>
+                <li>複数のジャーニー間での<span class="highlight">コンフリクト管理ツール</span>を使用して、優先順位付けが可能</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. ストリーミングセグメントの制限にはどう対処すればよいですか？</div>
+                    <div class="faq-answer">ジャーニーキャンバス自体が持つ機能を活用しましょう。キャンバス内でプロファイル属性、オーディエンス、イベントなどを直接参照することで、多くのストリーミングセグメントを作成せずに済みます。これにより、ストリーミングセグメントの数を抑えながらパーソナライズされたジャーニーを実現できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. タイムアウトした顧客をジャーニーで進めるにはどうすればよいですか？</div>
+                    <div class="faq-answer">任意のアクション、条件、イベントにタイムアウトパスを設定できます。タイムアウトパスを追加し、その後のアクションをそのパスの上にドラッグすることで、エラーやタイムアウトが発生しても、ユーザーがジャーニーを継続できるようになります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ジャーニーの途中で顧客を除外するにはどうすればよいですか？</div>
+                    <div class="faq-answer">グローバル終了条件を使用すると、ジャーニー内のどの位置にいても、特定のイベントが発生したり特定の属性が真になったりした場合に、顧客をジャーニーから完全に除外できます。これは長期間実行されるジャーニーで特に有用です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 複数のジャーニーにある顧客の優先順位をどう管理しますか？</div>
+                    <div class="faq-answer">コンフリクト管理ツールを使って、キャンペーンやジャーニー間の優先順位を設定できます。これにより、同じオーディエンスに対して複数のジャーニーが実行されている場合でも、最も重要なものが優先されます。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>カスタムアクションと拡張機能</h2>
+            <p>外部システムとの連携や独自のアクションを実装するためのテクニックを紹介します。カスタムアクションのテスト、メッセージングの共有、外部データの活用など、Journey Optimizerの拡張性を高める方法を解説します。</p>
+            
+            <h3>主要ポイント</h3>
+            <ul>
+                <li>カスタムアクションをジャーニー内ではなく<span class="highlight">設定画面内でテスト可能</span>になりました</li>
+                <li>Slackなどのチャットツールを使用して<span class="underline">チーム全体でメッセージをテスト</span>する方法</li>
+                <li>製品カタログなどの情報を<span class="highlight">プロファイルではなく外部リスト</span>として管理し参照する方法</li>
+                <li><span class="underline">CSV形式でのパーソナライゼーションバリエーションテスト</span>機能</li>
+                <li>プロファイルを作成せずに<span class="highlight">CSVリストから直接キャンペーン</span>を実行する方法</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. カスタムアクションをより効率的にテストするにはどうすればよいですか？</div>
+                    <div class="faq-answer">新機能により、ジャーニーの中ではなく、カスタムアクションの設定画面内で直接テストできるようになりました。これにより、カスタムペイロードを試して、適切なレスポンスを確認し、ジャーニーに組み込む前に正しく動作することを確認できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. チーム全体でメッセージのテスト結果を共有するにはどうすればよいですか？</div>
+                    <div class="faq-answer">SlackやTeamsなどのチャットツールを活用します。Webhookを設定し、カスタムアクションとして「Slack」を設定すれば、テストメッセージを特定のチャンネルに送信できます。これにより、チーム全員がテスト結果をリアルタイムで確認できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. プロファイルを膨らませずに外部データを参照するにはどうすればよいですか？</div>
+                    <div class="faq-answer">レコードベースのデータセットを定義し、プロファイル用に有効化せずに参照用として設定できます。商品SKU情報、製品カタログ、予約情報などをこの方法で管理し、メッセージパーソナライゼーションで必要な時だけ参照することができます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. パーソナライゼーションの様々なバリエーションをテストするにはどうすればよいですか？</div>
+                    <div class="faq-answer">「CSVでシミュレート」機能を使用します。テンプレートをダウンロードし、様々なパーソナライゼーションのバリエーションを含むCSVファイルを作成。それをアップロードすることで、各バリエーションのプレビューを簡単に確認できます。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>位置情報とモバイル体験の強化</h2>
+            <p>位置情報を活用したエンゲージメントを実現するためのテクニックを紹介します。Placesサービスを使用したジオフェンス、位置情報に基づいたアプリ体験のカスタマイズ、RCSによるリッチなSMSメッセージングなど、モバイル体験を向上させる方法を解説します。</p>
+            
+            <h3>主要ポイント</h3>
+            <ul>
+                <li>無料で利用できる<span class="highlight">Placesサービス</span>を使用したPOI（関心ポイント）管理</li>
+                <li>位置情報に基づいた<span class="underline">アプリ内メッセージ戦略</span>の構築方法</li>
+                <li>位置情報に基づいて<span class="highlight">アプリ体験自体を変更</span>する方法</li>
+                <li><span class="underline">URL短縮機能</span>を活用したSMSリンクの最適化</li>
+                <li><span class="highlight">RCS</span>（Rich Communication Services）を使用したブランド化されたメッセージング</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 位置情報を活用したエンゲージメントをどのように構築すればよいですか？</div>
+                    <div class="faq-answer">Placesサービスを活用します。これは追加費用なしで利用できる位置情報サービスで、POI（関心ポイント）のライブラリを作成し、各POIにメタデータを付加できます。位置情報に基づくプッシュ通知だけでなく、アプリ内メッセージングの戦略も検討すると効果的です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 位置情報をテストするにはどうすればよいですか？</div>
+                    <div class="faq-answer">Assuranceツールを使用すると、位置情報ベースのエンゲージメントをテストできます。マップ上で位置をシミュレートし、エントリーイベントやエグジットイベントをトリガーして、適切なメッセージが表示されるかを確認できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 位置情報を使ってアプリ体験自体を変更するにはどうすればよいですか？</div>
+                    <div class="faq-answer">位置情報シグナルをジャーニーイベントとして使用し、アプリ内メッセージを表示してコードベースの体験に誘導できます。これにより、店内モードの有効化や専用マップの表示など、位置に応じてアプリ体験を完全に変更することが可能です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. RCSとは何で、どのように活用できますか？</div>
+                    <div class="faq-answer">RCS（Rich Communication Services）はSMSの次世代版で、アプリをダウンロードせずにリッチなメッセージング体験を提供します。ブランド化された信頼性の高いメッセージ、マルチメディア、アクションリンクなどを含めることができます。対応端末なら自動的にRCSにアップスケールすることも可能です。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>高度なパーソナライゼーションと自動化</h2>
+            <p>パーソナライズされたコミュニケーションと自動化を強化するためのテクニックを紹介します。動的セグメンテーション、計算属性、顧客AIなど、顧客体験を向上させる高度な機能の活用方法を解説します。</p>
+            
+            <h3>主要ポイント</h3>
+            <ul>
+                <li>個別の担当者からのパーソナライズされた<span class="highlight">メッセージ送信</span>の方法</li>
+                <li><span class="underline">ヘッドレスキャンペーン</span>を使用した高スループットなトランザクション処理</li>
+                <li>日付関数を使った<span class="highlight">動的セグメンテーション</span>による誕生日キャンペーンなどの自動化</li>
+                <li><span class="underline">計算属性</span>を活用した自動的なパーソナライゼーション値の生成</li>
+                <li><span class="highlight">Customer AI</span>を使用した顧客のコンバージョンや解約の可能性予測</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 特定の担当者からのメッセージを送信するにはどうすればよいですか？</div>
+                    <div class="faq-answer">担当者の名前や連絡先情報をプロファイルのオブジェクトとして保存します。これにより、メールのヘッダーパラメータを設定して、ブランド全体からではなく特定の担当者からのメッセージとして表示することができます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ヘッドレスキャンペーンとは何ですか？</div>
+                    <div class="faq-answer">ヘッドレスキャンペーンは、マーケティングまたはトランザクションの通知をオーディエンスまたは個人に送信できる機能です。コンテンツの一部または全部をAPIペイロードから動的に設定でき、ワンタイムパスコードや注文状況更新などの高スループットなトランザクションに最適です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 動的セグメンテーションを活用した誕生日キャンペーンはどのように設定しますか？</div>
+                    <div class="faq-answer">属性条件に「誕生日=今日」を設定し、年を無視するオプションを使用します。これにより、毎日オーディエンスが更新され、その日が誕生日のユーザーだけを含むようになります。これをバッチキャンペーンに設定すれば、ジャーニーの数を増やさずに自動化できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 計算属性とは何ですか？</div>
+                    <div class="faq-answer">プロファイルタブ内にある機能で、任意のイベントをチェックして合計、最小値、最大値、カウント、最新の値などを自動的に計算します。例えば「最後に閲覧した商品」などの値を自動的に取得し、パーソナライゼーションに利用できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Customer AIはどのように活用できますか？</div>
+                    <div class="faq-answer">コンバージョンや解約の可能性を1〜99のスコアで予測します。これにより、例えばコンバージョン可能性が中程度のユーザーにターゲティングし、既に高可能性（自然にコンバートする）や低可能性（コンバートしにくい）のユーザーへのリソース投入を最適化できます。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>今後の機能と改善点</h2>
+            <p>近日公開予定の機能や改善点について紹介します。これらの機能を活用することで、よりパワフルなカスタマージャーニーを構築できるようになります。</p>
+            
+            <h3>主要ポイント</h3>
+            <ul>
+                <li><span class="highlight">アクティベーションカレンダー</span>機能によるキャンペーン管理の視覚化</li>
+                <li>物理的なスマートボタンと<span class="underline">AJOの連携</span>による店舗内体験の向上</li>
+                <li><span class="highlight">Dynamic Media統合</span>によるパーソナライズされた動的画像の使用</li>
+                <li><span class="underline">オファーランキング</span>による最適なオファーの自動選択</li>
+                <li><span class="highlight">iOS Live Activities</span>（配送状況やスコア更新など）のサポート</li>
+                <li><span class="underline">柔軟なオーディエンス評価</span>機能によるオンデマンドセグメンテーション</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. アクティベーションカレンダーとは何ですか？</div>
+                    <div class="faq-answer">すべてのアクティベーションをカレンダー上に視覚的に表示する機能です。これにより、キャンペーンの重複やタイミングを把握しやすくなり、ビジネスイベントとの関連性も理解しやすくなります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Dynamic Media統合はどのように活用できますか？</div>
+                    <div class="faq-answer">パーソナライズされた動的画像をメッセージングで使用できます。例えば、商品の色違いの表示や、ユーザー名が刻印されたクレジットカードの画像表示などが可能です。また、ロゴなしで画像を作成し、ブランドに応じて動的にロゴを追加するといった使い方も可能です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. オファーランキングはどのように機能しますか？</div>
+                    <div class="faq-answer">複数のオファーがある場合に、どのオファーを表示するべきかをAIが判断します。これにより、各顧客に最適なオファーを自動的に提示することができ、コンバージョン率の向上に貢献します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 柔軟なオーディエンス評価とは何ですか？</div>
+                    <div class="faq-answer">オンデマンドでセグメンテーションを実行できる機能です。通常のバッチセグメンテーションを待たずに、必要なタイミングでオーディエンスを評価できます。例えば、急なイベントが発生した際に、即座にオーディエンスを評価してキャンペーンを実行できます。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>重要な用語・機能リスト</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>ジャーニーキャンバス</td>
+                    <td>顧客体験の流れを視覚的に設計するツール。分岐、判断、待機などを設定可能</td>
+                </tr>
+                <tr>
+                    <td>カスタムアクション</td>
+                    <td>外部システムにAPIコールを送信するための機能。外部プッシュベンダーやメッセージングシステムとの連携に利用</td>
+                </tr>
+                <tr>
+                    <td>グローバル終了条件</td>
+                    <td>ジャーニー内のどの位置にいても、特定の条件が満たされた場合に顧客をジャーニーから除外する機能</td>
+                </tr>
+                <tr>
+                    <td>コンフリクト管理</td>
+                    <td>複数のキャンペーンやジャーニー間の優先順位を設定し、顧客が適切なものに参加するよう管理する機能</td>
+                </tr>
+                <tr>
+                    <td>Placesサービス</td>
+                    <td>位置情報を管理するためのサービス。POI（関心ポイント）の設定やメタデータの追加が可能</td>
+                </tr>
+                <tr>
+                    <td>RCS</td>
+                    <td>Rich Communication Services。次世代のSMSで、リッチなメッセージング体験を提供</td>
+                </tr>
+                <tr>
+                    <td>ヘッドレスキャンペーン</td>
+                    <td>APIを通じて動的にコンテンツを設定できるキャンペーン。高スループットなトランザクション処理に最適</td>
+                </tr>
+                <tr>
+                    <td>計算属性</td>
+                    <td>イベントデータから自動的に値を計算し、プロファイルに追加する機能</td>
+                </tr>
+                <tr>
+                    <td>Customer AI</td>
+                    <td>顧客のコンバージョンや解約の可能性を予測するAI機能</td>
+                </tr>
+                <tr>
+                    <td>動的セグメンテーション</td>
+                    <td>日付関数などを使用して、動的に変化するオーディエンスを定義する方法</td>
+                </tr>
+            </table>
+        </div>
+
+        <footer>
+            <p>Adobe Summit S522 セッション「Tips & Tricks to Unlock the Full Power of Adobe Journey Optimizer」より</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

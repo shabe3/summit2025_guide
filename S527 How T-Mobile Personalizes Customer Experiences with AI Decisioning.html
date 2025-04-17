@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S527 How T-Mobile Personalizes Customer Experiences with AI Decisioning</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .summary {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 2px;
+        }
+        .important {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #0f3c78;
+        }
+        .faq-container {
+            margin-top: 20px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .faq-question {
+            padding: 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 15px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 500px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #0f3c78;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>T-Mobileが実現するAIデシジョニングによる顧客体験のパーソナライズ</h1>
+        </header>
+
+        <div class="section">
+            <div class="summary">
+                T-Mobileはデータ主導型、AI活用型、デジタルファースト企業として、AIデシジョニングを活用し顧客体験をパーソナライズしています。この文書では、デシジョニングの概念、T-Mobileの実装事例、そして今後の展望について解説します。
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>T-Mobileのデジタルビジョン</h2>
+            <div class="summary">
+                T-Mobileは単なる通信会社ではなく、パーソナライズされた方法で人々を世界とつなぐことを目指しています。
+            </div>
+            <ul>
+                <li><span class="underline">ハイパーパーソナライゼーション</span>：スマートなレコメンデーションとリアルタイムにコンテンツをカスタマイズ</li>
+                <li><span class="underline">効率性と革新</span>：自動化を通じて時間を短縮し、より戦略的なプロジェクトにリソースを振り向ける</li>
+                <li><span class="underline">カスタマージャーニーの最適化</span>：あらゆる接点で摩擦ポイントを特定し対処</li>
+                <li><span class="underline">認知負荷の低減</span>：顧客が求める前に必要なものを提供する</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. T-Mobileは最近どのようなデジタル改革を行いましたか？</div>
+                    <div class="faq-answer">
+                        2023年2月、T-Mobileは20の異なるアプリを1つの体験に統合した「ToLife」アプリをリリースしました。これにより、店舗とオンラインの間でシームレスな顧客体験を実現しています。特に注目すべきは、2023年2月から開始された新しい販売手法で、店舗スタッフが顧客のスマートフォンでToLifeアプリを使ってアップグレードプロセスを案内する取り組みです。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. T-Mobileのデジタルファーストビジョンとは具体的に何ですか？</div>
+                    <div class="faq-answer">
+                        T-Mobileのデジタルファーストビジョンは、顧客がオンラインで開始するか店舗で開始するかに関わらず、一貫した流動的な体験を提供することです。特に注力しているのは、デジタルツールを活用してカスタマージャーニーを最適化し、顧客がT-Mobileとのあらゆる接点で満足できる体験を得られるようにすることです。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. T-Mobileがデータ主導型・AI活用型企業である理由は？</div>
+                    <div class="faq-answer">
+                        T-Mobileは単なる通信会社を超え、データとAIを活用して顧客体験を向上させることに注力しています。データを活用して顧客理解を深め、AIを活用してパーソナライズされたレコメンデーションを提供し、デジタルチャネルを最大限に活用することで、効率的かつ革新的なサービスを提供しています。CEOを含むすべての従業員が「T-Mobileはデータ主導型、AI活用型、デジタルファースト企業である」というマントラを共有しています。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>デシジョニングの概要</h2>
+            <div class="summary">
+                デシジョニングとは、目標を最適化するために、最終ユーザーに提示するコンテンツを選択するプロセスです。
+            </div>
+            <h3>デシジョニングの主な要素</h3>
+            <ul>
+                <li><span class="highlight">フィルタリング</span>：オファーライブラリから条件に合ったコンテンツを絞り込む
+                    <ul>
+                        <li>事前計算された制約（コレクション）</li>
+                        <li>適格性制約（特定ステータスのメンバー向けなど）</li>
+                        <li>配置/位置の制約</li>
+                        <li>抑制/制限の制約（疲労管理など）</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">ランキング</span>：フィルタリングされたコンテンツから最適なものを選ぶ
+                    <ul>
+                        <li>ルールベースランキング：手動で設定された優先度スコア</li>
+                        <li>フォーミュラランキング：条件に基づき動的に重みを調整</li>
+                        <li>インテリジェントランキング：AIモデルによる最適化</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="important">
+                デシジョニングの本質は「誰に」「何を」「いつ」「どこで」「なぜ」提示するかの最適化
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. デシジョニングのビジネス上のメリットは何ですか？</div>
+                    <div class="faq-answer">
+                        デシジョニングには主に3つのメリットがあります。1つ目はパーソナライゼーションの実現で、各ユーザーに合わせたオファーコンテンツを提供できます。2つ目はスケールでの効率性向上で、選択プロセスを自動化し時間とリソースを節約できます。3つ目は市場成長の促進で、効果的なデシジョニングによってブランドロイヤルティが高まり、顧客のLTV（生涯価値）が増加します。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. AIモデルランキングはどのように機能しますか？</div>
+                    <div class="faq-answer">
+                        デシジョニングで使用される2つのAIモデルは、定義された成功指標を達成する可能性に基づいてオファーをランク付けします。「自動最適化」はオファーグループ全体のリターンを最大化し、「パーソナライズ最適化」はプロファイルごとのリターンを最大化します。両モデルとも目標ベースの最適化を採用し、時間とともに学習してビジネス成果を向上させます。最近の開発には、カスタムメトリクスと効果測定も含まれています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. AIフォーミュラビルダーとは何ですか？</div>
+                    <div class="faq-answer">
+                        AIフォーミュラビルダーは、ランキングフォーミュラの拡張機能で、プロファイル属性、オファー属性、コンテキストを操作してオファーの重み付けを調整できます。従来の優先度スコアだけでなく、AIモデル出力、プロファイルに存在する傾向スコア、または静的な値も使用できるようになります。2025年4月にリリース予定です。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>T-Mobileの実装事例</h2>
+            <div class="summary">
+                T-Mobileはデシジョニングを様々な形で実装し、顧客体験の向上に成功しています。
+            </div>
+            
+            <h3>1. ToLifeホームページの最適化</h3>
+            <ul>
+                <li>ランキングの組み合わせ（フォーミュラと知能ランキング）を実装</li>
+                <li>パーソナライズされた体験によってエンゲージメントが向上</li>
+                <li>注文量が二桁成長</li>
+            </ul>
+            
+            <h3>2. チャネル横断型放棄カート対策</h3>
+            <ul>
+                <li>アプリ内カード、Web、メール、プッシュ通知が連携</li>
+                <li>カート放棄だけでなく、閲覧放棄やショップ放棄も対象</li>
+                <li>最大63%のリフトと週間注文量の二倍増を達成</li>
+            </ul>
+            
+            <h3>3. サブスクリプションマーケットプレイスの自動化</h3>
+            <ul>
+                <li>顧客プロファイルに基づく5つの異なるキャンペーンを実施</li>
+                <li>エンゲージメント向上と顧客維持率の改善</li>
+                <li>複数のサイロ化された体験を一つに統合</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. T-Mobileはデシジョニング実装でどのような課題に直面しましたか？</div>
+                    <div class="faq-answer">
+                        T-Mobileが直面した主な課題は以下の通りです：1）ビジネス優先順位付けとマシン学習のバランス（リーダーがページ上部に自分のコンテンツを表示させたいという要望）、2）異なるコンテンツタイプ（iPhoneオファーとネットワーク停止通知など）に適した測定フレームワークの構築、3）リーダーのマインドセット変更（手動優先順位付けから機械による最適化への移行）、4）コンテンツのスケーリング（十分な量と多様性の確保）。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 旅行オファーの実験からどのような発見がありましたか？</div>
+                    <div class="faq-answer">
+                        T-Mobileは50以上の旅行オファーバリエーションをデシジョニングエンジンに投入し、顧客との共鳴度を検証しました。驚くべきことに、旅行オファーはiPhoneオファーやStarlinkなどの特典オファーを含む全コンテンツタイプの中で、常にトップ5の高パフォーマンスオファーとなりました。これはホームページ下部に配置されていたにもかかわらず達成された結果で、現在はページ上部への移動を検討中です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. チャネル横断型の最適化はどのように実現されましたか？</div>
+                    <div class="faq-answer">
+                        T-Mobileはタイガーチームを結成し、迅速かつ効果的にチャネル横断型の最適化を実現しました。それまで別々に最適化されていたWeb、メール、アプリ内カード、プッシュ通知を連携させ、顧客プロファイルに基づいて適応的なメッセージングを実現しました。例えば、WebやEメールでは豊富なコンテンツや画像を使用し、プッシュ通知では短いフットプリントで緊急性を強調するなど、各チャネルの特性を活かしました。また、特定のチャネルでより多くの顧客がインタラクションすると、そのチャネルにより多くのトラフィックを送るよう調整しました。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>デシジョニングの今後</h2>
+            <div class="summary">
+                Adobeとの協力により、T-Mobileはデシジョニング機能を拡張し、より包括的なパーソナライゼーションを目指しています。
+            </div>
+            
+            <h3>AJデシジョニングの新機能</h3>
+            <ul>
+                <li>オファーを超えた新しいコンテンツオブジェクト（製品、コンテンツ、コールトゥアクションなど）</li>
+                <li>スキーマベースのアイテムカタログ管理</li>
+                <li>堅牢なコレクションルール</li>
+                <li>意思決定ポリシーと選択戦略の新しい構成要素</li>
+                <li>コードベースのコンテンツオーサリングワークフロー</li>
+            </ul>
+            
+            <h3>将来のビジョン</h3>
+            <ul>
+                <li>ジャーニーレベルでのデシジョニング：どのジャーニーパスが最適か</li>
+                <li>ジャーニー間の仲裁：どのジャーニーに入るべきか</li>
+                <li>チャネル最適化：どのチャネルが最適か</li>
+                <li>メッセージング：どのメッセージが最適か</li>
+                <li>オファー：どのオファーが最適か</li>
+            </ul>
+
+            <div class="important">
+                目標：顧客ジャーニーのあらゆる分岐点にインテリジェンスを注入する
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. T-Mobileはデシジョニングの経験から何を学びましたか？</div>
+                    <div class="faq-answer">
+                        T-Mobileの5つの主要な学びは次の通りです：1）自動化によって優れた体験と効率性が実現される、2）ビジネス優先事項と機械学習・顧客行動のバランスを取ることが重要、3）成功には優れた測定フレームワークが不可欠、4）デシジョニングはコンテンツの量とテストの量に比例して効果を発揮する、5）変更アクティベーション（従来の変更管理よりも包括的なアプローチ）が極めて重要である。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 今後追加されるチャネルサポートは何ですか？</div>
+                    <div class="faq-answer">
+                        AIデシジョニングでは、コードベース体験を最初のチャネルとしてサポートし、その後すぐにメールチャネルのサポートが追加される予定です。続いてプッシュ通知、Webなどのチャネルサポートも拡充していく計画です。これにより、オファーデシジョニングと同等の機能が実現されます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ジャーニーレベルのデシジョニングとは何ですか？</div>
+                    <div class="faq-answer">
+                        ジャーニーレベルのデシジョニングとは、個々のオファーだけでなく、ユーザーが進むべき最適なジャーニーパス全体を自動的に選択・カスタマイズすることです。例えば、ユーザーが週に1つのジャーニーにしか入れないという制約がある場合、複数のジャーニーの候補から最適なものを選ぶことができます。現在は優先度に基づく仲裁が行われていますが、将来的にはフォーミュラやAIランキングなどのデシジョニングコンポーネントを導入し、ジャーニー間をインテリジェントに仲裁する予定です。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>重要な用語・概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>デシジョニング</td>
+                    <td>目標を最適化するために最終ユーザーに提示するコンテンツを選択するプロセス</td>
+                </tr>
+                <tr>
+                    <td>フィルタリング</td>
+                    <td>オファーライブラリから条件に合ったコンテンツを絞り込むプロセス</td>
+                </tr>
+                <tr>
+                    <td>ランキング</td>
+                    <td>フィルタリングされたコンテンツから最適なものを選ぶプロセス</td>
+                </tr>
+                <tr>
+                    <td>AIモデルランキング</td>
+                    <td>成功指標達成の可能性に基づいてオファーをランク付けするAI技術</td>
+                </tr>
+                <tr>
+                    <td>自動最適化</td>
+                    <td>オファーグループ全体のリターンを最大化するAIモデル</td>
+                </tr>
+                <tr>
+                    <td>パーソナライズ最適化</td>
+                    <td>プロファイルごとのリターンを最大化するAIモデル</td>
+                </tr>
+                <tr>
+                    <td>AIフォーミュラビルダー</td>
+                    <td>AIモデル出力、優先度スコア、傾向スコアなどを組み合わせて重み付けを調整するツール</td>
+                </tr>
+                <tr>
+                    <td>変更アクティベーション</td>
+                    <td>従来の変更管理よりも包括的なアプローチで、全員を巻き込んで変更を促進する手法</td>
+                </tr>
+            </table>
+        </div>
+
+        <footer>
+            T-Mobile & Adobe Summit 2025
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentNode;
+                    faqItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

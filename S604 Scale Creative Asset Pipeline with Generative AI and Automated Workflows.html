@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S604 Scale Creative Asset Pipeline with Generative AI and Automated Workflows</title>
+    <style>
+        :root {
+            --accent-color: #0f3c78;
+            --bg-color: #f5f5f5;
+            --section-bg: #ffffff;
+            --text-color: #333;
+            --highlight-color: #fff3cd;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 16px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: var(--accent-color);
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+        }
+        
+        .section {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+        
+        .summary {
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .faq-container {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .faq-question {
+            padding: 12px;
+            cursor: pointer;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2rem;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 12px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>クリエイティブ・アセット・パイプラインの拡張：生成AI自動化ワークフロー</h1>
+        
+        <div class="section">
+            <div class="summary">
+                この資料では、クリエイティブ・アセット作成の自動化とスケーリングを実現するための方法を解説します。Adobe Fireflyなどの生成AIを活用し、クリエイティブチームの作業効率を高め、本来の創造的作業に集中できる環境づくりを目指します。
+            </div>
+            
+            <p>現状の課題として、クリエイティブチームは全作業時間の約29％しか本来の創造的タスクに費やせていません。残りの時間は反復作業やコンテンツ更新など、本来の創造性を発揮できない作業に時間を取られています。</p>
+            
+            <div class="important">
+                <span class="underline">人間の創造性は生成AIでは置き換えられない唯一のものです</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>1. 導入：創造的作業の課題</h2>
+            
+            <div class="summary">
+                企業全体で統一されたコンテンツ管理が行われておらず、チーム間の連携が取れていないことが大きな課題です。
+            </div>
+            
+            <h3>現状の問題点</h3>
+            <ul>
+                <li>複数のチームが異なるシステムで作業</li>
+                <li>単一の情報源（シングルソースオブトゥルース）がない</li>
+                <li>コンテンツの管理が複雑化（「最終版」「最終版_修正1」などの命名混乱）</li>
+                <li>パーソナライゼーションのためのコンテンツ需要爆発</li>
+            </ul>
+            
+            <h3>目指すべき姿</h3>
+            <ul>
+                <li>クリエイティブチームがブランド、レイアウト、デザインを定義</li>
+                <li>人間監視のもとでコンテンツを大規模に自動生成</li>
+                <li>サイロ化した組織の壁を取り払い、協働を促進</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 変革における最も大きな課題は何ですか？</div>
+                    <div class="faq-answer">チェンジマネジメントです。チーム間の協働を可能にし、自動化と生成AI機能の実装を行うには、大幅な変更が必要です。多くの組織ではこの変革プロセスが最大の障壁となります。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. クリエイティブが29%しか創造的作業に使えていない理由は？</div>
+                    <div class="faq-answer">コンテンツマーケティングの需要増加に伴い、アセット更新や繰り返し作業、フォーマット変更など技術的な作業負担が増えているためです。また、異なるチャネル向けのバリエーション作成にも多くの時間が取られています。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ単一の情報源が重要なのですか？</div>
+                    <div class="faq-answer">単一の情報源があることで、すべてのチームが同じアセットを使用でき、重複作業を減らし、一貫性を保ちながら効率的にコンテンツを作成・管理できるようになります。また、バージョン管理も容易になります。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>2. AI導入のステージ</h2>
+            
+            <div class="summary">
+                AI技術導入には段階的なアプローチが必要です。各組織の状況に応じた適切なステップを踏むことで、持続可能な変革を実現できます。
+            </div>
+            
+            <h3>導入段階</h3>
+            <ul>
+                <li><span class="highlight">探索段階</span>：ウェブ上の様々なツールを試し、手動で1対1の作業を行う</li>
+                <li><span class="highlight">支援段階</span>：ツールを組み合わせて創造的ワークフローを実現するが、まだ手動で連携</li>
+                <li><span class="highlight">反復可能段階</span>：プログラム的な自動化で最適化を開始し、スケールの問題に対応</li>
+                <li><span class="highlight">インテリジェント段階</span>：エージェント機能やマルチエージェントワークフローで高度な自動化を実現</li>
+            </ul>
+            
+            <div class="important">
+                すべての組織が同じステージから始める必要はなく、同じゴールに向かう必要もありません
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 多くの組織はどの段階にいますか？</div>
+                    <div class="faq-answer">会場の参加者からの回答によると、多くの組織は「探索段階」と「支援段階」にあり、AIを手動で使用しています。「反復可能段階」の自動化に取り組んでいる組織はやや少なく、「インテリジェント段階」に到達している組織はごく少数です。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 組織はどのように段階を進むべきですか？</div>
+                    <div class="faq-answer">組織は現状を評価し、段階的に進むべきです。まずは簡単なユースケースから始め、そこから学びながら複雑なシナリオへと移行していくのが理想的です。すべての段階を経る必要はなく、組織のニーズに合わせたアプローチが重要です。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 各段階での主な違いは何ですか？</div>
+                    <div class="faq-answer">主な違いは自動化のレベルと統合の度合いです。探索段階では個別ツールの実験、支援段階ではツールの組み合わせ、反復可能段階ではプログラム的な自動化、インテリジェント段階ではエージェントによる高度な自動化と人間の介入減少が特徴です。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>3. コンテンツ作成の最適化</h2>
+            
+            <div class="summary">
+                自動化のためには、クリエイティブとテクノロジストが協力し、テンプレートの作成方法を見直す必要があります。単なる美しいデザインではなく、自動化に適した構造を持つテンプレートが重要です。
+            </div>
+            
+            <h3>テンプレート最適化のポイント</h3>
+            <ul>
+                <li>変更可能な要素と固定要素を明確に区別</li>
+                <li>レイヤー名に命名規則を導入（例：ハンドルバー括弧{{変数名}}）</li>
+                <li>適切なアプリケーションの選択
+                    <ul>
+                        <li>Photoshop：画像編集、短いテキスト向け</li>
+                        <li>InDesign：長いテキスト、印刷、リフロー必要なコンテンツ向け</li>
+                    </ul>
+                </li>
+                <li>マルチアートボードドキュメントの活用（複数アスペクト比を1つのファイルで管理）</li>
+                <li>スマートオブジェクトの活用（複数のアートボードで同じ要素を再利用）</li>
+            </ul>
+            
+            <div class="important">
+                <span class="underline">自動化のためのテンプレート設計は従来のデザイン方法とは異なります</span>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜPhotoshopとInDesignの使い分けが重要ですか？</div>
+                    <div class="faq-answer">Photoshopは画像編集に優れていますが、長いテキストの取り扱いには限界があります。特に多言語対応の場合、テキストの長さが変わるため、InDesignのようなテキストリフローが可能なアプリケーションが適しています。また、大判印刷はInDesignが適しています。目的に合ったツールを選ぶことが重要です。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. クリエイティブはどのように作業方法を変える必要がありますか？</div>
+                    <div class="faq-answer">クリエイティブは、自由な制作からより構造化された制作へと変更する必要があります。レイヤー名の明確な命名、変更可能/不可能な要素の区別、スマートオブジェクトの活用など、自動化を見据えたファイル構成が重要になります。テクノロジストと協力して最適なテンプレート構造を設計することが求められます。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. マルチアートボードとスマートオブジェクトのメリットは？</div>
+                    <div class="faq-answer">マルチアートボードを使用すると、1つのファイル内で複数のアスペクト比（サイズ比率）を管理できます。スマートオブジェクトを活用すると、1つの要素を変更するだけで、すべてのアートボードに変更が反映されます。これにより、効率的に複数フォーマットのコンテンツを作成・更新できます。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>4. 協働と自動化のプロセス</h2>
+            
+            <div class="summary">
+                効率的な自動化には適切な協働プラットフォームと承認プロセスが不可欠です。完全自動化ではなく、人間が監視・承認できるワークフローが理想的です。
+            </div>
+            
+            <h3>Frame.ioを活用した協働プロセス</h3>
+            <ul>
+                <li>アセットのアップロードと共有</li>
+                <li>コメントやフィードバックの一元管理</li>
+                <li>承認ステータスの管理</li>
+                <li>カスタムアクションによる自動化との連携
+                    <ul>
+                        <li>テンプレートとデータの結合</li>
+                        <li>アートボードの抽出</li>
+                        <li>キーアートの抽出</li>
+                        <li>最終レンディション作成</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="important">
+                自動化は「完全無人化」ではなく、人間が介在するハイブリッドプロセスが理想的です
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Frame.ioのカスタムアクションとは何ですか？</div>
+                    <div class="faq-answer">Frame.ioのカスタムアクションは、標準機能ではない拡張機能で、Adobe WorkfrontなどのプラットフォームでWorkfront Fusionを使って作成します。例えば、テンプレートとデータの結合、アートボード抽出、レンディション作成などの自動化タスクをトリガーできます。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 自動化プロセスで人間が介在する重要性は？</div>
+                    <div class="faq-answer">完全自動化は多くの場合、品質管理や創造的判断が必要な場面で問題を生じます。人間が介在することで、自動生成されたコンテンツが品質基準やブランドガイドラインに合致しているか確認でき、特に規制の厳しい業界では重要です。必要に応じて自動化ステップを分割し、承認プロセスを組み込むことができます。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 自動化されたコンテンツの編集はできますか？</div>
+                    <div class="faq-answer">はい、デモで示されたように、自動生成されたPSDファイルは完全なレイヤー構造を保持しているため、クリエイティブチームがPhotoshopで開いて編集し、再度Frame.ioにアップロードして承認プロセスを継続できます。最終的なレンディションもPNGなどのフォーマットで出力可能です。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>5. API活用と開発プロセス</h2>
+            
+            <div class="summary">
+                実際の自動化開発には、Adobe APIの理解とテスト環境の構築が重要です。少しずつ複雑さを増していくアプローチが成功の鍵です。
+            </div>
+            
+            <h3>開発のポイント</h3>
+            <ul>
+                <li>API仕様書をしっかり読む</li>
+                <li>認証（Adobeでは、IMSトークン）の仕組みを理解</li>
+                <li>同期・非同期APIの違いを把握
+                    <ul>
+                        <li>Firefly生成AIは同期API（即時レスポンス）</li>
+                        <li>Photoshop/InDesignは非同期API（時間がかかる処理）</li>
+                    </ul>
+                </li>
+                <li>Postmanなどのツールでテスト</li>
+                <li>環境変数を活用して認証情報を管理</li>
+                <li>Workfront Fusionなどのローコード環境で統合</li>
+            </ul>
+            
+            <div class="important">
+                <span class="underline">単純なものから始め、徐々に複雑さを増していく「クロール→ウォーク→ラン」アプローチが重要</span>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 非同期APIを扱う際の注意点は？</div>
+                    <div class="faq-answer">非同期APIでは、リクエスト送信後に即座に結果が返ってこないため、ジョブIDなどを受け取り、そのステータスを定期的に確認するコードが必要です。これは同期的な思考に慣れた開発者には少し違和感があるかもしれませんが、大きなファイル処理や複雑な操作には不可欠なアプローチです。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. ローコード環境でのメリットと限界は？</div>
+                    <div class="faq-answer">Workfront Fusionなどのローコード環境は、API操作の連携やビジネスロジックの実装に優れていますが、大きなバイナリファイル（画像など）の処理には適していません。そのため、ファイルはS3バケットなどの外部ストレージに保存し、URL参照する方法が推奨されています。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. PhotoshopのGet Manifest APIはなぜ重要ですか？</div>
+                    <div class="faq-answer">Get Manifest APIを使うことで、PSDファイル内のすべてのレイヤー情報やその構造を取得できます。これにより、テンプレートの変数要素（置換可能なテキストやスマートオブジェクト）を特定し、プログラム的に変更するためのペイロードを構築できます。InDesignにはこの機能がないため、構造を事前に把握している必要があります。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>6. アクティベーションと最終配信</h2>
+            
+            <div class="summary">
+                作成・承認されたアセットを各種チャネルで活用するプロセスです。Adobe ExpressやExperience Managerとの連携で、マーケターがセルフサービスでコンテンツを再利用できます。
+            </div>
+            
+            <h3>アクティベーションの流れ</h3>
+            <ul>
+                <li>承認済みアセットをExperience Managerに自動公開</li>
+                <li>Adobe Expressでテンプレートとして使用
+                    <ul>
+                        <li>制限付きテンプレートの設定（変更可能/不可能な要素を指定）</li>
+                        <li>マーケターが最終調整（ラストマイル編集）</li>
+                    </ul>
+                </li>
+                <li>ソーシャルメディアなど各チャネルへの直接配信</li>
+                <li>Adobe Journey Optimizerなどの活用</li>
+            </ul>
+            
+            <div class="important">
+                テクノロジストとクリエイティブの協業が、真のオムニチャネル展開の鍵となります
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobe Expressの役割は何ですか？</div>
+                    <div class="faq-answer">Adobe Expressは、クリエイティブチームが作成したテンプレートをマーケターや非デザイナーが活用できるようにする橋渡し役です。テンプレートの制限を設定することで、ブランドの一貫性を保ちながら、マーケターが必要に応じてカスタマイズできる環境を提供します。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobe Experience Managerとの連携メリットは？</div>
+                    <div class="faq-answer">Adobe Experience Managerはデジタルアセット管理（DAM）システムとして機能し、承認されたアセットを一元管理します。これにより、異なる地域やキャンペーン間でアセットを再利用しやすくなり、メタデータ管理も可能になります。また、他のAdobe製品との連携も容易になります。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 真のオムニチャネル展開とは何ですか？</div>
+                    <div class="faq-answer">真のオムニチャネル展開とは、ソーシャルメディア、ウェブサイト、印刷物、広告など、あらゆるチャネルに最適化されたフォーマットでコンテンツを提供することです。Photoshopでのキーアート作成とInDesignでの印刷用レイアウトを組み合わせることで、一貫性のあるブランドイメージを維持しながら、各チャネルの特性に合わせたコンテンツ展開が可能になります。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>重要用語・テクノロジー解説</h2>
+            
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>Adobe Firefly</td>
+                    <td>Adobeの生成AIモデル群。画像生成や編集機能を提供</td>
+                </tr>
+                <tr>
+                    <td>Firefly Services</td>
+                    <td>Fireflyモデルやその他創造的機能（Photoshop、InDesign等）にプログラム的にアクセスするためのAPI</td>
+                </tr>
+                <tr>
+                    <td>Project Concept</td>
+                    <td>アイデア発想のためのツール。Fireflyと連携してイメージボードなどを作成可能</td>
+                </tr>
+                <tr>
+                    <td>Frame.io</td>
+                    <td>コラボレーションプラットフォーム。レビュー、承認プロセス、自動化アクションの統合が可能</td>
+                </tr>
+                <tr>
+                    <td>IMS（Identity Management System）</td>
+                    <td>AdobeのAPI認証システム。24時間有効なトークンを生成</td>
+                </tr>
+                <tr>
+                    <td>Workfront Fusion</td>
+                    <td>ローコード自動化プラットフォーム。API連携やワークフロー自動化に使用</td>
+                </tr>
+                <tr>
+                    <td>Get Manifest API</td>
+                    <td>Photoshopファイルの構造とレイヤー情報を取得するAPI</td>
+                </tr>
+                <tr>
+                    <td>マルチアートボード</td>
+                    <td>1つのファイル内に複数のサイズ・アスペクト比のデザインを含む構造</td>
+                </tr>
+                <tr>
+                    <td>スマートオブジェクト</td>
+                    <td>Photoshopで複数の場所から参照できる再利用可能なコンテンツ</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            <p>S604 Scale Creative Asset Pipeline with Generative AI and Automated Workflows</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

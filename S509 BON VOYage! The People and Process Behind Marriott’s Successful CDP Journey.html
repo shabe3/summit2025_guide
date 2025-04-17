@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S509 BON VOYage! The People and Process Behind Marriott's Successful CDP Journey</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .title {
+      color: #0f3c78;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .summary {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .section {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0f3c78;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #0f3c78;
+    }
+    h3 {
+      font-size: 1.2rem;
+      margin: 15px 0 10px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    .highlight {
+      background-color: #fff3cd;
+      padding: 2px 4px;
+    }
+    .underline {
+      border-bottom: 2px solid #0f3c78;
+    }
+    .important {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin: 15px 0;
+    }
+    .faq-container {
+      margin-top: 15px;
+    }
+    .faq-item {
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .faq-question {
+      background-color: #f9f9f9;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: relative;
+      font-weight: bold;
+    }
+    .faq-question::after {
+      content: "+";
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2em;
+    }
+    .faq-question.active::after {
+      content: "-";
+    }
+    .faq-answer {
+      display: none;
+      padding: 15px;
+      border-top: 1px solid #eee;
+    }
+    .faq-answer.active {
+      display: block;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title">マリオットの成功したCDPジャーニー：人材とプロセス</div>
+    </header>
+
+    <div class="summary">
+      <p>マリオットインターナショナルは、アドビのリアルタイムCDPを活用して顧客データを統合し、マーケティングの効率化と顧客体験の向上を実現しました。このプレゼンテーションでは、マリオットのKristen Cooper氏とアドビのNina Caruso氏が、オーディエンスセンターオブエクセレンス（COE）の構築と運用について6つのステップで解説しています。</p>
+    </div>
+
+    <div class="section">
+      <h2>CDPとは何か？</h2>
+      <p>カスタマーデータプラットフォーム（CDP）は、様々なデータソースから顧客データを収集・統合し、実用的なプロファイルを作成してアクティベーションするためのプラットフォームです。</p>
+      
+      <h3>CDPの主要コンポーネント</h3>
+      <ul>
+        <li><span class="underline">データ収集・統合</span>：既知の顧客データ、見込み客データ、匿名データ、サードパーティデータ、データウェアハウスからのデータなど</li>
+        <li><span class="underline">実用的なプロファイル作成</span>：統合されたプロファイル、モデル、オーディエンスの構築</li>
+        <li><span class="underline">アクティベーション</span>：有料メディアから自社チャネル、企業システムまで全体に活用</li>
+      </ul>
+
+      <h3>CDPからの期待効果</h3>
+      <ul>
+        <li>完全なカスタマージャーニーマーケティングの実現</li>
+        <li>コンバージョンとエンゲージメントの向上</li>
+        <li>チーム間コラボレーションの促進</li>
+        <li>効率性の向上とデータアクセスの民主化</li>
+      </ul>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. CDPとCRMの違いは何ですか？</div>
+          <div class="faq-answer">CDPはCRMよりも包括的なデータ管理を提供します。CRMは主に既知の顧客との取引履歴に焦点を当てていますが、CDPは匿名データや行動データも含め、すべてのチャネルからのデータを統合します。また、CDPはリアルタイムのアクティベーションに特化しています。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. なぜオーディエンスセンターオブエクセレンスが必要なのですか？</div>
+          <div class="faq-answer">CDPには多くの部門（広告、マーケティング、IT、パートナーシップ、カスタマーサポートなど）が関わります。各部門は独自のデータ、KPI、プロセス、文化を持っているため、これらを調整するためにオーディエンスCOEが必要です。調査によると、組織間の協力が顧客データ活用の最大の障壁（43%）となっています。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. マリオットの規模はどれくらいですか？</div>
+          <div class="faq-answer">マリオットインターナショナルは30以上のブランド、142カ国に9,100以上の施設を持つグローバルな旅行会社です。ホテルだけでなく、ツアー、アクティビティ、コブランドクレジットカード、飲食オプション、小売店など多様なサービスを提供しており、スターバックスなど他のブランドとも提携しています。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>オーディエンスCOE構築の6ステップ</h2>
+      <p>マリオットとアドビは、成功するオーディエンスCOEを確立・導入するための6つのステップを提案しています。</p>
+
+      <h3>1. 夢を描く（Dream）</h3>
+      <ul>
+        <li><span class="highlight">何を解決したいか</span>：解決すべきビジネス課題を明確にする</li>
+        <li><span class="highlight">どこに課題があるか</span>：組織の能力ギャップを特定する</li>
+        <li><span class="highlight">なぜ投資するか</span>：技術、人材、プロセスの面での目標を設定する</li>
+      </ul>
+
+      <h3>2. 準備する（Prepare）</h3>
+      <ul>
+        <li>パイロットや試験的ケースで機能を検証する</li>
+        <li>早期の成果と迅速な成功例を通じて組織の支持を得る</li>
+        <li>シンプルな内容から始め、段階的に拡大する</li>
+        <li>パイロットから得た教訓を本格的な実装に活かす</li>
+      </ul>
+
+      <h3>3. 実行する（Go）</h3>
+      <ul>
+        <li>オーディエンスCOEの構築：戦略推進、イニシアチブ所有、効果測定、コミュニケーション促進、ガバナンス</li>
+        <li>適切なCOEモデルの選択：集中型、分散型、ハブアンドスポーク型など</li>
+        <li>多様なスキルセットを持つチームの構成</li>
+        <li>定期的な見直しと調整</li>
+      </ul>
+
+      <h3>4. 測定する（Measure）</h3>
+      <ul>
+        <li>主要なKPIを事前に決定する</li>
+        <li>各ユースケース後に効果を評価する時間を設ける</li>
+        <li>オーディエンスCOEのモデル自体が機能しているか確認する</li>
+      </ul>
+
+      <h3>5. 楽しむ（Have Fun）</h3>
+      <ul>
+        <li>ニュースレター、ポッドキャスト、学習機会を通じてチームをつなぐ</li>
+        <li>認定資格やバッジで楽しい競争を促進する</li>
+        <li>オフィスアワーやSlackチャンネルで継続的な交流を支援する</li>
+      </ul>
+
+      <h3>6. 次の計画を立てる（Plan Your Next Trip）</h3>
+      <ul>
+        <li>ビジネス優先事項の変化に合わせてCDPとCOEを進化させる</li>
+        <li>新しいデータソースやベンダーの新機能を活用する</li>
+      </ul>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. マリオットのCDPパイロットはどのように行われましたか？</div>
+          <div class="faq-answer">マリオットのパイロットは約5か月間で実施され、4つのユースケースを通じて機能検証、クロスファンクショナルなステークホルダーの参加、戦略的な収益ドライバーへの整合性に焦点を当てました。パイロットでは、ストリーミングデータの取り込み、アイデンティティ解決、1億8900万の顧客プロファイル作成、自社チャネルと有料チャネルの両方でのアクティベーションをテストしました。Accentureをパートナーとして迅速な学習と導入を実現しました。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. マリオットのオーディエンスCOEの構成はどうなっていますか？</div>
+          <div class="faq-answer">マリオットのモデルは、オーディエンス機能プロダクトマネージャー（Kristen Cooper氏）を中心に、「オーディエンスセンターオブエクセレンス」と「プラットフォームチーム」の2つのグループで構成されています。オーディエンスCOEは約20〜30人で、主に地域チームの代表者で構成され、CDPを使用してオーディエンスを構築し、配信します。プラットフォームチームは再利用可能な機能を構築し、新しいデータやチャネル統合を実現します。これは報告ラインが異なる部門横断的なチームで、約10人で構成されています。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. マリオットのCDPからの具体的な成果は何ですか？</div>
+          <div class="faq-answer">マリオットは、マーケターのアイデアからライブキャンペーンまでの時間を平均5か月から2週間に短縮しました。また、2024年の最初の年で目標の150を上回る169の新しい属性や信号をプラットフォームに追加しました。CDPの導入により、一貫した顧客体験の提供、データアクセスの民主化、全チャネルでのアクティベーション、ローカライズされたアクティベーションが可能になりました。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>マリオットのCDP導入事例</h2>
+      <p>マリオットはアドビのリアルタイムCDPを導入し、独自の運用モデルを確立しました。</p>
+
+      <h3>CDPへの期待</h3>
+      <ul>
+        <li><span class="underline">データアクセスの民主化</span>：マーケティングチームが直接データにアクセスできるようにする</li>
+        <li><span class="underline">オムニチャネルアクティベーション</span>：「一度オーディエンスを構築し、あらゆる場所でアクティベート」</li>
+        <li><span class="underline">ローカライズされたアクティベーション</span>：地域チームが顧客に近い立場でデータを活用できるようにする</li>
+      </ul>
+
+      <h3>マリオットの運用モデル</h3>
+      <div class="important">「真の統合されたクロスファンクショナルチーム」がマリオットの成功の秘訣</div>
+      <ul>
+        <li><span class="highlight">オーディエンス機能プロダクトマネージャー</span>：全体を統括</li>
+        <li><span class="highlight">オーディエンスCOE</span>：CDPユーザー、オーディエンス構築、各地域の代表者（20〜30名）</li>
+        <li><span class="highlight">プラットフォームチーム</span>：再利用可能な機能構築、新データ提供、チャネル統合（約10名）</li>
+        <li>異なる部門からの統合チーム、混合スタッフィングモデル（正社員とコントラクター、国内と海外）</li>
+        <li>持続的な資金提供と定期的なミーティングの重視</li>
+      </ul>
+
+      <h3>チーム文化の構築</h3>
+      <ul>
+        <li>四半期ごとの対面計画会議（時差を考慮したアジェンダ設計）</li>
+        <li>友好的な競争を取り入れたゲーム（例：セッション冒頭の画像クイズ）</li>
+        <li>「Pay It Forward」プログラム：貢献したステークホルダーに感謝を示す</li>
+        <li>テストプロファイルに好きな本や映画、ペットの名前を使用</li>
+      </ul>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. マリオットのCDPジャーニーのタイムラインはどうなっていますか？</div>
+          <div class="faq-answer">マリオットは最初にビジョンを設定し、Accentureをパートナーとしたパイロットを実施しました。その後、約1年半前（2022年後半頃）に本格的な実装を開始し、現在は拡大フェーズに入っています。古いキャンペーンの移行や、マーケターがオムニチャネルで考えるよう促進しています。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. CDPを活用する際のチーム構築のコツは何ですか？</div>
+          <div class="faq-answer">マリオットは小規模から始め、データに精通した「スーパーユーザー」を最初に招き、オーディエンス命名規則やタグの使用法などを確立しました。また、グローバルロイヤルティライフサイクルフレームワークなど、一つの戦略的イニシアチブを選んで新しい方法で取り組みました。部門横断的なチームが重要で、技術と事業の両方を理解するメンバーが価値を生み出します。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q. マリオットの今後のCDP計画は何ですか？</div>
+          <div class="faq-answer">マリオットは現在、スタックの簡素化と、より多くのオーディエンスやキャンペーンのCDPへの移行に注力しています。また、リアルタイムCDPコラボレーションツールを活用したコマーケティングの機会や、フェデレーテッドオーディエンスコンポジション機能を活用したデータ移動の最小化なども計画しています。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>重要用語・概念</h2>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>説明</th>
+        </tr>
+        <tr>
+          <td>CDP</td>
+          <td>カスタマーデータプラットフォーム。様々なソースからデータを収集・統合し、顧客プロファイルを作成・アクティベートするプラットフォーム</td>
+        </tr>
+        <tr>
+          <td>オーディエンスCOE</td>
+          <td>オーディエンスセンターオブエクセレンス。CDPを効果的に活用するための組織横断的な体制</td>
+        </tr>
+        <tr>
+          <td>ストリーミングデータ</td>
+          <td>リアルタイムで継続的に収集・処理されるデータ</td>
+        </tr>
+        <tr>
+          <td>バッチデータ</td>
+          <td>定期的なスケジュールで処理されるデータセット</td>
+        </tr>
+        <tr>
+          <td>アイデンティティ解決</td>
+          <td>異なるデータソースから同一顧客を特定し、統合プロファイルを作成するプロセス</td>
+        </tr>
+        <tr>
+          <td>オムニチャネルアクティベーション</td>
+          <td>同じオーディエンスデータを複数のチャネル（有料メディア、Eメール、アプリなど）で活用すること</td>
+        </tr>
+      </table>
+    </div>
+
+    <footer>
+      <p>Source: S509 BON VOYage! The People and Process Behind Marriott's Successful CDP Journey.mov.txt</p>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const questions = document.querySelectorAll('.faq-question');
+      
+      questions.forEach(question => {
+        question.addEventListener('click', function() {
+          this.classList.toggle('active');
+          const answer = this.nextElementSibling;
+          answer.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

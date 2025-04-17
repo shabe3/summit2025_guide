@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>データウェアハウス + インテリジェントアクティベーション</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0f3c78;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        .important {
+            font-weight: bold;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .faq-container {
+            margin-top: 15px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .faq-question.active::after {
+            content: '-';
+        }
+        .faq-answer {
+            padding: 10px;
+            display: none;
+            background-color: #f9f9f9;
+            border-radius: 0 0 4px 4px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>データウェアハウス + インテリジェントアクティベーション</h1>
+            <p class="important">リアルタイムな顧客体験を実現するためのパワーカップル</p>
+        </header>
+
+        <div class="summary">
+            <h2>概要</h2>
+            <p>企業データウェアハウスとCDP（カスタマーデータプラットフォーム）を連携させることで、マーケターは企業データを活用し、リアルタイムでパーソナライズされた顧客体験を提供できます。AT&Tの事例を通じて、データ戦略とCDP評価・選定プロセスについて解説します。</p>
+        </div>
+
+        <div class="section">
+            <h2>市場の課題</h2>
+            <p>現代のデジタル環境では、消費者行動が常に変化し、多様なチャネルでのインタラクションが増加しています。データ量は増えていますが、適切なデータポイントへのアクセスと活用が課題となっています。</p>
+            
+            <h3>主な課題</h3>
+            <ul>
+                <li>消費者行動の急速な変化と多様化</li>
+                <li>多くの情報があるにも関わらず、<span class="highlight">関連性の高いデータへのアクセスが困難</span></li>
+                <li>企業データの活用と最小限のデータ移動の両立</li>
+                <li>既存技術投資の価値拡大と継続的な活用</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. データウェアハウスとCDPの違いは何ですか？</div>
+                    <div class="faq-answer">
+                        データウェアハウスは長期的なデータ保管、履歴データの管理、分析ワークフローに適しています。一方、CDPはマーケティングチームが顧客データを統合し、アクションにつなげるためのツールです。両者は補完関係にあります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜデータウェアハウスだけでは不十分なのですか？</div>
+                    <div class="faq-answer">
+                        データウェアハウスはデータ保管と分析に優れていますが、マーケターがリアルタイムで顧客体験を提供するための直感的なインターフェースやアクティベーション機能が不足しています。CDPはその間のギャップを埋めます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. リアルタイム体験がなぜ重要なのですか？</div>
+                    <div class="faq-answer">
+                        現代の消費者はミリ秒単位で関与するかどうかを判断します。毎日何千ものブランドメッセージに触れる中で、コンテキストに沿った瞬間的なパーソナライズが成功の鍵となります。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>AT&Tの事例</h2>
+            <p>AT&Tは米国最大のコネクティビティプロバイダーとして、1億人以上の顧客にサービスを提供しています。マーケティングチームはCDPを通じて、パーソナライズされた関連性の高いタイムリーな顧客体験の提供を目指しています。</p>
+            
+            <h3>CDP評価プロセス</h3>
+            <ol>
+                <li><span class="underline">現状の正直な自己評価</span>：チーム、プロセス、技術の現状を徹底的に分析</li>
+                <li><span class="underline">組織的な合意形成</span>：CEO含む経営陣の承認とチームメンバーからの草の根サポートの両立</li>
+                <li><span class="underline">ユースケースと要件の策定</span>：データの保存、アクセス、消費、アクティベーション方法の明確化</li>
+            </ol>
+
+            <h3>CDPに求められた主要要件</h3>
+            <ul>
+                <li>オーディエンス構築の一元化</li>
+                <li>リアルタイムパーソナライゼーション</li>
+                <li>マーケター向けの使いやすいUI</li>
+                <li><span class="highlight">Snowflakeとの連携による「コンポーザビリティ」</span>（データの複製を最小限に抑える機能）</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. AT&Tがアドビを選んだ理由は何ですか？</div>
+                    <div class="faq-answer">
+                        主な理由は：1)フェデレーション機能とリアルタイム機能の両立、2)迅速な価値実現（導入から数日でオーディエンス構築が可能に）、3)アドビエクスペリエンスプラットフォームの戦略的方向性でした。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのデータをフェデレーションし、どのデータをCDPに取り込むべきですか？</div>
+                    <div class="faq-answer">
+                        AT&Tの場合、静的な履歴データ（過去の購入履歴、顧客生涯価値など）はSnowflakeに残し、イベントベースのデータ（ウェブサイトでの行動、アカウント変更、CRM活動など）をCDPにストリーミングする戦略です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. CDP導入の組織的合意形成にはどうアプローチしましたか？</div>
+                    <div class="faq-answer">
+                        AT&Tでは、CEOからの「トップダウン」の承認と、組織全体の「草の根」レベルでのサポートの両方が重要でした。両者が出会う中間層の管理職の理解と推進力が特に重要だったとのことです。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>リアルタイムCDPの価値</h2>
+            <p>アドビのリアルタイムCDPとデータウェアハウスの連携により、AT&Tは迅速に価値を実現し、大規模なパフォーマンスとオペレーション効率を達成しました。</p>
+            
+            <h3>主な成果</h3>
+            <ul>
+                <li><span class="underline">迅速な価値実現</span>：契約締結から2ヶ月以内にユースケースを本番稼働</li>
+                <li><span class="underline">優れたパフォーマンスとスケール</span>：5,000万人以上のオーディエンスを8分以内に生成可能</li>
+                <li><span class="underline">オペレーション効率</span>：複数プラットフォームでの重複作業を排除</li>
+            </ul>
+
+            <h3>今後の展望</h3>
+            <ul>
+                <li>CDP→Snowflakeの双方向フェデレーション機能</li>
+                <li>プロファイルエンリッチメント機能（エンタープライズ属性をプロファイルレベルで活用）</li>
+                <li>リアルタイムパーソナライゼーションのためのストリーミングデータ連携</li>
+                <li>メディアパートナーや他のマーケティングプラットフォームとの統合拡大</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. フェデレーション機能とは具体的に何ですか？</div>
+                    <div class="faq-answer">
+                        フェデレーションとは、データを物理的に移動せずに、元の場所（データウェアハウス）に保持したまま、CDPからアクセスして活用する機能です。これによりデータの重複を避け、ガバナンスとコスト効率を向上させます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. リアルタイムCDPで何ができるようになりますか？</div>
+                    <div class="faq-answer">
+                        顧客の行動や状況に基づいた即時のパーソナライゼーション、複数チャネルでの一貫したメッセージング、プライバシー設定に準拠したアクティベーションなどが可能になります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. AT&Tが実装したユースケースの例は？</div>
+                    <div class="faq-answer">
+                        具体的なユースケースとしては、リターゲティング戦略の改善、複数チャネル（ウェブサイト、アプリ、メール、SMS）での一貫したパーソナライゼーション、小売店やコールセンターの担当者へのプロンプト・オファー表示などが挙げられています。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>主要な用語と概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>CDP</td>
+                    <td>カスタマーデータプラットフォーム。顧客データを統合し、マーケティングアクティベーションを可能にするツール</td>
+                </tr>
+                <tr>
+                    <td>データウェアハウス</td>
+                    <td>長期的なデータ保管、履歴データ管理、分析ワークフロー向けの企業データ保管システム</td>
+                </tr>
+                <tr>
+                    <td>フェデレーション</td>
+                    <td>データを物理的に移動せずに、元の場所に保持したままアクセスする技術</td>
+                </tr>
+                <tr>
+                    <td>リアルタイムパーソナライゼーション</td>
+                    <td>顧客の現在の行動や状況に基づいて即時に関連性の高い体験を提供すること</td>
+                </tr>
+                <tr>
+                    <td>コンポーザビリティ</td>
+                    <td>複数のシステムが柔軟に連携し、データ重複を最小化する能力</td>
+                </tr>
+            </table>
+        </div>
+
+        <footer>
+            <p>S505 データウェアハウス + インテリジェントアクティベーション：リアルタイムな顧客体験を実現するためのパワーカップル</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                    } else {
+                        answer.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

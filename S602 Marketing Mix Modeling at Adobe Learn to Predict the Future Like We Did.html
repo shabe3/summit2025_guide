@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S602 Marketing Mix Modeling at Adobe</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 16px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 32px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .summary {
+            background-color: #f9f9f9;
+            padding: 16px;
+            border-left: 3px solid #0f3c78;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            display: inline-block;
+        }
+        .important {
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 24px 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .faq-container {
+            margin-top: 16px;
+        }
+        .faq-item {
+            margin-bottom: 8px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+        .faq-question {
+            padding: 12px 16px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        .faq-question:after {
+            content: "+";
+            font-size: 18px;
+        }
+        .faq-question.active:after {
+            content: "-";
+        }
+        .faq-answer {
+            padding: 0 16px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-answer.active {
+            padding: 16px;
+            max-height: 500px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Marketing Mix Modeling at Adobe</h1>
+        </header>
+
+        <div class="section">
+            <div class="summary">
+                <p>AdobeはAIとML駆動のマーケティングミックスモデリングを活用して、データ主導の意思決定を可能にし、マーケティング投資のROIを19%向上させました。この内部ツール「Dawn」は後に「Adobe Mix Modeler」として製品化されました。</p>
+            </div>
+
+            <h3>本セッションで得られる知識</h3>
+            <ul>
+                <li>AIと機械学習を活用した<span class="highlight">迅速で実用的なマーケティングインサイト</span>の生成方法</li>
+                <li>単一の統合ソリューションへの測定の<span class="highlight">統合に関するエンジニアリング課題</span></li>
+                <li>開発過程での<span class="underline">重要な落とし穴とブレークスルー</span></li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. マーケティングの測定における従来の課題は何でしたか？</div>
+                    <div class="faq-answer">
+                        <p>従来のマーケティング測定では「精度と速度のトレードオフ」が存在しました。正確な分析は時間がかかり柔軟性に欠け、迅速な洞察は現実を過度に単純化する傾向がありました。また、Adobeでは断片化したデータソース、異なる方法論、複数のベンダーからの矛盾する結果に悩まされていました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. データ侵食（Data Erosion）とは何ですか？</div>
+                    <div class="faq-answer">
+                        <p>ウォールドガーデン（閉鎖的なプラットフォーム）、モバイルデバイスの制限、進化するプライバシー法、Cookieレス時代への移行などにより、収集できるデータが減少する現象です。これによりデータ精度が低下し、意思決定がさらに困難になります。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobeはどのような解決策を構築しましたか？</div>
+                    <div class="faq-answer">
+                        <p>Adobeは「Dawn」という内部名のデータ駆動型運用モデルを構築しました。これは測定、最適化、計画のための中央ハブとして機能し、すべてのビジネスユニット、マーケティングチーム、代理店、パートナー向けにリアルタイムに近いインサイトを提供します。これにより、断片化したレポートや矛盾する測定手法の問題を解消し、戦略的な質問に集中できるようになりました。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Dawnの発展と影響</h2>
+            <div class="summary">
+                <p>2014年に開発が始まったDawnは、Adobeの成長に伴って進化し、Senseiのモデルを組み込みながら変化するマーケティング環境に適応してきました。</p>
+            </div>
+
+            <h3>Dawnのビジネスインパクト</h3>
+            <ul>
+                <li>Adobeの<span class="underline">40億ドルから200億ドル</span>へのビジネス成長に貢献</li>
+                <li>マーケティング投資のリターンが<span class="highlight">年平均19％向上</span></li>
+                <li>50以上のビジネスユニットと29以上の国で<span class="highlight">数十億ドルのマーケティング支出</span>に影響</li>
+                <li>マーケティングとファイナンスチーム間の<span class="underline">戦略的な関係強化</span></li>
+            </ul>
+
+            <div class="important">「AIとアナリティクスは過去を理解し未来を予測するだけでなく、<br>その未来を積極的に形作る力となりました」</div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Dawnはどのようにファイナンスチームとの関係を改善しましたか？</div>
+                    <div class="faq-answer">
+                        <p>Dawnのデータ駆動型インサイトにより、ファイナンスチームはマーケティングチームの予測をほぼ確実なものとして信頼するようになりました。両チームは目標の整合性を図り、マーケティングがどのように財務目標に合わせて拡大または調整できるかについて高度な会話ができるようになりました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobe Mix Modelerとは何ですか？</div>
+                    <div class="faq-answer">
+                        <p>Adobe Mix Modelerは、Dawnの10年以上にわたる革新と学習をベースに2023年10月に発売された製品です。AI駆動の測定と計画を直感的なマーケター向けプラットフォームで組み合わせ、従来の測定手法を変革するものです。精度、速度、スケールの3つの柱に基づいています。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Dawnは具体的にどのような問題を解決しましたか？</div>
+                    <div class="faq-answer">
+                        <p>Dawnは断片化したレポート、データソース、測定手法の問題を解決し、一貫したインサイトを提供しました。また、データ収集の減少という課題に対応し、変化するマーケティング環境に適応できるモデルを実装しました。重要な戦略的質問（「最大の効果を得るために次のドルをどこに投資すべきか」など）に答えることで、ビジネス成長を支援しました。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>技術的アプローチと方法論</h2>
+            <div class="summary">
+                <p>Adobe Mix Modelerの核となる技術は、マルチタッチアトリビューション（MTA）とマーケティングミックスモデリング（MMM）の2つの測定アプローチを組み合わせ、転移学習で統合しています。</p>
+            </div>
+
+            <h3>マルチタッチアトリビューション（MTA）</h3>
+            <ul>
+                <li>イベントレベルのデータに基づく<span class="underline">離散時間生存モデル</span>を採用</li>
+                <li>コンバージョンパスと非コンバージョンパスの両方を分析</li>
+                <li>広告効果の<span class="highlight">減衰（Ad Stock）</span>と<span class="highlight">逓減効果（Diminishing Return）</span>を組み込み</li>
+                <li>顧客の「累積的関心レベル」を確率モデルでマッピング</li>
+            </ul>
+
+            <h3>マーケティングミックスモデリング（MMM）</h3>
+            <ul>
+                <li>集計レベルのデータに基づく<span class="underline">乗法モデル</span>を使用</li>
+                <li>広告効果の減衰には<span class="highlight">指数関数的減衰</span>を適用</li>
+                <li>逓減効果には<span class="highlight">べき関数</span>を適用</li>
+                <li>メディアシナジーと時間変動効果を考慮するため加法モデルではなく乗法モデルを採用</li>
+            </ul>
+
+            <h3>統合アプローチ：スイスチーズモデル</h3>
+            <ul>
+                <li>異なる測定手法を「<span class="highlight">スイスチーズの層</span>」のように重ね合わせる</li>
+                <li>各手法の弱点（穴）を他の手法で補い、全体として包括的な視点を提供</li>
+                <li><span class="underline">双方向転移学習</span>によりMTAとMMMの長所を統合</li>
+                <li>実験結果などの外部知識も取り込み可能</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. MTAモデルはなぜ離散時間生存モデルを採用したのですか？</div>
+                    <div class="faq-answer">
+                        <p>離散時間生存モデルには、1)コンバージョンと非コンバージョンの両方のパスを考慮できる、2)解釈性が高い、3)広告効果の減衰と逓減効果を自然に組み込める、4)スケーラビリティが高い、5)予測精度が高い、という利点があります。特に、複雑なマーケティング行動を捉えながらも解釈しやすいモデルを構築できる点が重要でした。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ加法モデルではなく乗法モデルを選択したのですか？</div>
+                    <div class="faq-answer">
+                        <p>乗法モデルは、1)メディアシナジー（メディアが協働してより大きな効果を生む）、2)時間変動する効果（同じ投資でも時期によって効果が異なる）、3)基準需要の変化に応じた予算配分の最適化、といった実際のマーケティング行動をより適切に表現できるためです。例えば、季節性による需要変動に合わせて予算配分を最適化する場合、乗法モデルの方が現実に即した結果を得られます。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 転移学習はどのように機能しますか？</div>
+                    <div class="faq-answer">
+                        <p>転移学習は、MTAとMMM、そして実験結果などの外部知識を統合するプロセスです。MTAから得られるチャネルの相対的なパフォーマンスの情報をMMMに取り込み、MMMからの知識をMTAスコアの更新に利用します。具体的には、モデルのトレーニング過程で最適化目標関数に「事前知識とモデル予測の距離」を表す項を追加し、数値最適化アルゴリズムで解きます。これにより、各モデルの長所を活かしながら一貫したインサイトを提供できます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>予算最適化</h2>
+            <div class="summary">
+                <p>Mix Modelerの予算最適化は、構築された乗法モデルに基づいて、複数のコンバージョン目標や制約条件を考慮しながら最適な予算配分を数値的に導き出します。</p>
+            </div>
+
+            <h3>最適化の特徴</h3>
+            <ul>
+                <li>チャネルレベルの<span class="highlight">制約条件</span>（最小・最大予算）を柔軟に設定可能</li>
+                <li>単一期間内または<span class="underline">複数期間にわたる</span>制約に対応</li>
+                <li>複数のコンバージョン目標（オンライン販売と店舗販売など）に対して<span class="highlight">重み付け</span>して最適化</li>
+                <li>上位ファネルと下位ファネルなど<span class="underline">異なる単位</span>の目標も統合可能</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 予算最適化アルゴリズムはどのように機能しますか？</div>
+                    <div class="faq-answer">
+                        <p>予算最適化アルゴリズムは、乗法モデルから得られたインサイトを使用して、特定の制約条件（チャネルごとの最小・最大予算、総予算など）の下でコンバージョンや収益を最大化する予算配分を数値的に導き出します。複数のコンバージョン目標がある場合は、それぞれに重みを付けた加重和を最適化します。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 複数のコンバージョン目標とは具体的にどのようなものですか？</div>
+                    <div class="faq-answer">
+                        <p>例えば、オンライン販売と店舗販売の両方を最適化したい小売業者や、短期的な売上（下位ファネル）とブランド認知度（上位ファネル）の両方を考慮したい場合などが挙げられます。これらの目標は単位が異なる場合も多いため、重み付けによって長期と短期の成功をバランスよく追求できます。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 予算最適化の結果はどのように活用されますか？</div>
+                    <div class="faq-answer">
+                        <p>予算最適化の結果は、「最大の効果を得るために次のドルをどこに投資すべきか」といった戦略的な質問に答え、マーケティング投資の意思決定に直接活用されます。また、時期による需要変動に応じた予算のシフトや、複数のビジネス目標のバランスを取った投資計画の策定にも役立ちます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>将来の展望と革新</h2>
+            <div class="summary">
+                <p>Adobeはマーケティング革新ロードマップを継続的に発展させ、新機能の開発を通じてより高度な測定と最適化機能を提供していきます。</p>
+            </div>
+
+            <h3>新しい革新と機能</h3>
+            <ul>
+                <li><span class="highlight">目標ベースのプランニング</span>：マーケティング予算ではなく目標を入力し、それを達成するための予算と計画を生成</li>
+                <li><span class="highlight">ポートフォリオプランニング</span>：複数のビジネスポートフォリオ、目標、製品にわたる計画の構築</li>
+                <li><span class="underline">詳細なインクリメンタリティインサイト</span>：タッチポイントやチャネルだけでなく、キャンペーン、パブリッシャー、セグメントなどで詳細分析</li>
+                <li><span class="underline">ワークフローでのAIエージェント</span>：チーム間の協働を効率化し、複数のモデルを同時に実行して比較</li>
+            </ul>
+
+            <h3>成功へのカギ</h3>
+            <ul>
+                <li>すべてのチームにわたる<span class="highlight">統一された測定アプローチ</span></li>
+                <li><span class="highlight">精度と速度</span>のバランスを取るためのAIの活用</li>
+                <li>常に<span class="underline">進化し</span>、新しい技術をマーケティングスタックに統合</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 目標ベースのプランニングとは具体的にどのような機能ですか？</div>
+                    <div class="faq-answer">
+                        <p>目標ベースのプランニングでは、ユーザーがマーケティング予算ではなくマーケティング目標（例：売上目標、コンバージョン目標など）を入力すると、AIがその目標を達成するために必要な予算とその最適な配分計画を提案します。これにより、目標から逆算した戦略的な予算計画が可能になります。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. マーケティング測定における今後の課題は何ですか？</div>
+                    <div class="faq-answer">
+                        <p>プライバシー規制の強化、サードパーティCookieの廃止、データの分断化の進行などが今後も課題となります。また、AIの急速な進化に合わせて測定技術も常に更新していく必要があります。Adobeはこれらの課題に対応するために、適応性の高いモデルの開発と、多様なデータソースの統合を継続的に進めています。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ワークフローでのAIエージェントはどのように役立ちますか？</div>
+                    <div class="faq-answer">
+                        <p>AIエージェントは、複数のモデルを同時に実行して比較したり、データ準備や分析プロセスを自動化したりすることで、マーケティングチームの効率を高めます。これにより、分析者はモデルの運用よりも戦略的な洞察の解釈と活用に集中できるようになります。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>重要な用語・概念一覧</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>マーケティングミックスモデリング（MMM）</td>
+                    <td>集計レベルのデータを使用して、様々なマーケティングチャネルの効果を測定する手法</td>
+                </tr>
+                <tr>
+                    <td>マルチタッチアトリビューション（MTA）</td>
+                    <td>個別のタッチポイントレベルでコンバージョンへの貢献度を測定する手法</td>
+                </tr>
+                <tr>
+                    <td>広告効果の減衰（Ad Stock）</td>
+                    <td>マーケティング活動の効果が時間とともに減少していく現象</td>
+                </tr>
+                <tr>
+                    <td>逓減効果（Diminishing Return）</td>
+                    <td>投資額が増えるほど追加投資の限界効果が小さくなる現象</td>
+                </tr>
+                <tr>
+                    <td>転移学習（Transfer Learning）</td>
+                    <td>あるタスクで学習した知識を別のタスクに活用する機械学習手法</td>
+                </tr>
+                <tr>
+                    <td>スイスチーズモデル</td>
+                    <td>異なる測定手法の弱点（穴）を他の手法で補完するアプローチ</td>
+                </tr>
+                <tr>
+                    <td>離散時間生存モデル</td>
+                    <td>生物医学研究から派生した、イベント（コンバージョン）の発生確率を時間経過とともに分析するモデル</td>
+                </tr>
+                <tr>
+                    <td>乗法モデル vs 加法モデル</td>
+                    <td>乗法：要素が掛け合わされる（相乗効果を表現可能）、加法：要素が足し合わされる（相互作用が限定的）</td>
+                </tr>
+            </table>
+        </div>
+
+        <footer>
+            <p>S602 Marketing Mix Modeling at Adobe Learn to Predict the Future Like We Did - 2025年4月17日</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isActive = this.classList.contains('active');
+                    
+                    // Close all answers
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                    });
+                    document.querySelectorAll('.faq-answer').forEach(a => {
+                        a.classList.remove('active');
+                    });
+                    
+                    // Open clicked answer if it was not already active
+                    if (!isActive) {
+                        this.classList.add('active');
+                        answer.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

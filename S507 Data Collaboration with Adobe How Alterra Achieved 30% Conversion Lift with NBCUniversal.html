@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S507 Data Collaboration with Adobe How Alterra Achieved 30% Conversion Lift with NBCUniversal</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0f3c78;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+        .faq-container {
+            margin-top: 20px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 500px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Adobeデータコラボレーション: AlterraとNBCUniversalの成功事例</h1>
+        </header>
+
+        <div class="summary">
+            <p>本セッションでは、Adobeの<span class="underline">Real-Time CDPコラボレーション</span>を活用して、スキーリゾート運営会社のAlterraがNBCUniversalとのデータ連携により<span class="highlight">コンバージョン率30%向上</span>を達成した事例を紹介しています。ファーストパーティデータを安全に共有し、Connected TV（CTV）広告でターゲティングと測定を強化した革新的な取り組みです。</p>
+        </div>
+
+        <section>
+            <h2>データコラボレーションの現状と課題</h2>
+            <p>マーケティング業界ではシグナル損失、データプライバシー要件、複雑な技術など多くの課題がある中、先進企業は新たな戦略を模索しています。</p>
+            
+            <h3>主な市場動向</h3>
+            <ul>
+                <li><span class="underline">ファーストパーティデータの重視</span>：調査によると78%の企業がCDPを導入し、半数以上がファーストパーティデータを活用</li>
+                <li><span class="underline">データコラボレーションの増加</span>：59%の組織がより多くのファーストパーティデータを持つ組織との連携を検討</li>
+                <li><span class="underline">データクリーンルームの採用</span>：66%のデータ・広告専門家がデータクリーンルームの導入を開始</li>
+            </ul>
+
+            <h3>データクリーンルームが提供する主な価値</h3>
+            <ul>
+                <li>データの匿名化・集計処理によるプライバシー保護</li>
+                <li>データ移動の最小化（ゼロデータコピー）</li>
+                <li>企業の機密データの保護</li>
+            </ul>
+
+            <h3>既存のデータコラボレーションの課題</h3>
+            <ul>
+                <li>他のデータ管理システムから<span class="highlight">切り離された環境</span>での運用</li>
+                <li>技術的なスキル（SQLなど）が必要で<span class="highlight">実行に時間がかかる</span></li>
+                <li>異なるテクノロジースタック間の<span class="highlight">相互運用性の制限</span></li>
+                <li>データ移動に伴う<span class="highlight">データ漏洩リスク</span></li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. データコラボレーションとは具体的に何ですか？</div>
+                    <div class="faq-answer">
+                        データコラボレーションとは、複数の組織が持つファーストパーティデータを安全に共有・分析し、マーケティング効果を高める取り組みです。例えば「あなたが知っている顧客の中で私も知っている人は誰か」「あなたが知っている顧客で私がまだ知らない人は誰か」といった洞察を得ることができます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. データクリーンルームはどのようにプライバシーを保護しますか？</div>
+                    <div class="faq-answer">
+                        データクリーンルームは、個人を特定できない集計データのみを提供し、元の顧客データを直接共有することなく分析を可能にします。また、データの移動を最小限に抑え、必要なデータのみを使用することでセキュリティを高めています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. データコラボレーションの導入状況はどうなっていますか？</div>
+                    <div class="faq-answer">
+                        Forresterの調査によると、59%の組織がより多くのファーストパーティデータを持つ組織との連携を模索しており、43%が異なる種類のファーストパーティデータを持つ組織とのパートナーシップを検討しています。また、IABの調査では66%のデータ・広告専門家がデータクリーンルームの採用を開始しています。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Adobe Real-Time CDPコラボレーション</h2>
+            <p>上記の課題に対応するため、Adobeは2023年のサミットでReal-Time CDPコラボレーションを発表し、2024年に一般提供を開始しました。</p>
+
+            <h3>主な特徴</h3>
+            <ul>
+                <li><span class="underline">コードなしの簡単操作</span>：技術的な知識がなくても利用可能</li>
+                <li><span class="underline">相互運用性</span>：異なるクラウドやデータ環境間での連携が可能</li>
+                <li><span class="underline">プライバシー中心設計</span>：特許出願中の独自の匿名化技術</li>
+                <li><span class="underline">CDPとの統合</span>：顧客データ管理と一体化したシームレスな体験</li>
+            </ul>
+
+            <h3>提供する主な機能</h3>
+            <ul>
+                <li>パートナーとの視覚的なカタログを通じた発見とコラボレーション</li>
+                <li>リアルタイムでのオーディエンス重複分析</li>
+                <li>Connected TVや小売メディアネットワークへのアクティベーション</li>
+                <li>キャンペーンのリーチ、頻度、パフォーマンスの測定</li>
+            </ul>
+
+            <div class="important">
+                Real-Time CDPコラボレーションは、顧客データ管理の一環として<br>
+                データコラボレーションを組み込む新しいアプローチです
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobe Real-Time CDPコラボレーションの利用にはCDPが必要ですか？</div>
+                    <div class="faq-answer">
+                        いいえ、必須ではありません。Adobe CDPユーザーの場合は既存のオーディエンスデータを簡単に活用できますが、データウェアハウスや別のクラウドストレージ環境にデータがある場合でも利用可能です。相互運用性を重視した設計になっています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 通常のデータクリーンルームとの違いは何ですか？</div>
+                    <div class="faq-answer">
+                        Adobe Real-Time CDPコラボレーションは、①CDPと統合されており顧客データ管理の一部として機能する、②コードを書かずに直感的に操作できる、③異なるテクノロジースタック間の相互運用性が高い、④より高度なデータ匿名化技術を採用している、という特徴があります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのような業種・企業に適していますか？</div>
+                    <div class="faq-answer">
+                        パブリッシャーとブランド間の連携、ブランド同士の連携、小売メディアネットワークでの活用など、幅広い業種で利用可能です。特にファーストパーティデータを活用したターゲティングや測定の強化を目指す企業に適しています。AlterraとNBCUの事例では、スキーリゾート業界でも効果を発揮しています。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>NBCUniversalのデータコラボレーション戦略</h2>
+            <p>NBCUniversalは、データコラボレーションを通じてConnected TV領域での効果的なマーケティングを可能にする戦略を展開しています。</p>
+
+            <h3>NBCUのデータコラボレーション戦略の2つの柱</h3>
+            <ul>
+                <li>ピクセルに代わる<span class="underline">より正確な測定データの提供</span></li>
+                <li>Peacockの登場による<span class="underline">ファーストパーティデータの成長と活用</span></li>
+            </ul>
+
+            <h3>提供している主な機能</h3>
+            <ul>
+                <li>セルフサービスでのオーディエンスインサイト分析</li>
+                <li>迅速なオーディエンスオンボーディングとアクティベーション</li>
+                <li>パフォーマンス測定と分析</li>
+            </ul>
+
+            <h3>Connected TVでの価値提供</h3>
+            <ul>
+                <li>プレミアムコンテンツと高エンゲージメントオーディエンス</li>
+                <li>世界クラスのアドテクによるフルファネルパフォーマンス</li>
+                <li>オーディエンスオンボーディング時間の<span class="highlight">3週間から数日へ短縮</span></li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Connected TVとは何ですか？</div>
+                    <div class="faq-answer">
+                        Connected TV（CTV）とは、インターネットに接続されたテレビデバイスのことで、ストリーミングサービスなどのオンラインコンテンツを視聴できます。NBCUniversalのPeacockなどのプラットフォームを通じて、ターゲティング広告を配信することが可能です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. NBCUはデータコラボレーションによって何を実現しようとしていますか？</div>
+                    <div class="faq-answer">
+                        NBCUは「常にオンのオーディエンス戦略」を実現しようとしています。これまでのようにオーディエンスを選び、キャンペーンを実施して数ヶ月後に結果を確認するのではなく、リアルタイムでオーディエンスの反応を見ながら最適化し、効果測定のループを繰り返し閉じることができるアプローチです。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. オーディエンスオンボーディングの時間短縮は何が重要なのですか？</div>
+                    <div class="faq-answer">
+                        オーディエンスオンボーディングの時間が3週間から数日に短縮されることで、マーケターは市場の変化や消費者の行動変化に素早く対応できるようになります。特にAlterraのような季節性のあるビジネスでは、タイムリーなキャンペーン実施が売上に直結するため、この時間短縮は非常に重要です。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>AlterraとNBCUniversalの成功事例</h2>
+            <p>スキーリゾート運営会社のAlterraは、Adobe Real-Time CDPコラボレーションを活用してNBCUniversalとのデータ連携を実施し、大きな成果を上げました。</p>
+
+            <h3>Alterraのビジネス課題</h3>
+            <ul>
+                <li>米国人口の<span class="highlight">わずか4%</span>しかスキーをしないニッチ市場</li>
+                <li>レジャー・観光業での厳しい財布シェア競争</li>
+                <li>季節性の高いビジネスによる<span class="highlight">短い販売期間</span></li>
+                <li>顧客セグメントごとの細かなメッセージング戦略の必要性</li>
+            </ul>
+
+            <h3>実施したコラボレーション内容</h3>
+            <ul>
+                <li>Real-Time CDPで構築した3つの主要セグメント（更新、休眠、見込み客）の活用</li>
+                <li>NBCUniversalとの接続によるオーディエンス重複分析</li>
+                <li>セグメントごとに異なるクリエイティブを使用したConnected TVキャンペーン実施</li>
+                <li>CDPの変換データを利用したインクリメンタリティテスト</li>
+            </ul>
+
+            <h3>達成した成果</h3>
+            <ul>
+                <li>主要オーディエンスセグメント全体で<span class="highlight">コンバージョン率30%向上</span></li>
+                <li>各セグメントで<span class="highlight">30%のマッチ率</span>を達成</li>
+                <li>CTVが顧客獲得と維持の両方に効果的な<span class="highlight">コンバージョンドライバー</span>であることを証明</li>
+                <li>2回目のキャンペーンをすでに開始</li>
+            </ul>
+
+            <div class="important">
+                Alterraは、精緻なセグメント戦略とデータコラボレーションの組み合わせにより<br>
+                ニッチ市場での効果的なマーケティングを実現しました
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Alterraとはどのような企業ですか？</div>
+                    <div class="faq-answer">
+                        Alterraマウンテンカンパニーは、19の著名な通年型マウンテンリゾートを運営する企業で、世界60以上の目的地を含むスキー・スノーボードシーズンパス「アイコンパス」を提供しています。毎年冬にはスキーヤー・スノーボーダーを迎え入れています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. インクリメンタリティテストとは何ですか？</div>
+                    <div class="faq-answer">
+                        インクリメンタリティテストとは、マーケティング施策による純粋な追加効果を測定するテスト手法です。この事例では、CTVキャンペーンにさらされたグループとさらされていないグループのコンバージョン率を比較し、キャンペーンが生み出した追加的なコンバージョンを測定しました。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Alterraが構築した3つの主要セグメントとは何ですか？</div>
+                    <div class="faq-answer">
+                        Alterraは次の3つのセグメントを活用しました：①更新セグメント（既存のアイコンパス保有者で更新を検討中の顧客）、②休眠セグメント（過去にアイコンパスを保有していたが現在は保有していない顧客）、③見込み客セグメント（まだアイコンパスを購入したことがない潜在顧客）。各セグメントに異なるクリエイティブを使用しました。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Adobe Real-Time CDPコラボレーションのロードマップ</h2>
+            <p>Adobeは今後、Real-Time CDPコラボレーションの機能拡張を予定しています。</p>
+
+            <h3>開発予定機能</h3>
+            <ul>
+                <li><span class="underline">ブランド間コラボレーション</span>：異なるブランド同士でのオーディエンス分析・活用</li>
+                <li><span class="underline">小売・コマースメディアユースケース</span>：小売メディアネットワークでの測定機能</li>
+                <li><span class="underline">Amazonマーケティングクラウドとの統合</span>：ウォールドガーデンとのコラボレーション拡大</li>
+                <li><span class="underline">類似モデリング</span>：シードオーディエンスからの見込み客拡大</li>
+                <li><span class="underline">グローバル展開</span>：オーストラリア、ニュージーランド、カナダなど追加市場での提供</li>
+            </ul>
+
+            <h3>継続的な開発の4つの柱</h3>
+            <ul>
+                <li>マーケティングテクノロジーと広告テクノロジーの統合</li>
+                <li>コードなしの直感的なユーザーエクスペリエンス</li>
+                <li>多様なテクノロジースタックに対応する相互運用性</li>
+                <li>顧客データを移動せずに安全に活用するプライバシー中心設計</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Amazonマーケティングクラウドとの統合は何が重要ですか？</div>
+                    <div class="faq-answer">
+                        Amazonマーケティングクラウドとの統合により、Amazonの広告プラットフォーム上でのキャンペーン計画に役立つオーディエンスインサイトを得られるようになります。また、キャンペーン実施後の測定データも取得できるため、Amazon広告の効果をより正確に把握できるようになります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 類似モデリングとはどのような機能ですか？</div>
+                    <div class="faq-answer">
+                        類似モデリングは、既存の顧客（シードオーディエンス）と似た特性を持つ新しい見込み客を見つけ出す機能です。これにより、リターゲティングだけでなく効果的なプロスペクティング（新規顧客開拓）が可能になります。パートナーが保有する顧客データの中から、自社の顧客に似た特性を持つ見込み客を特定できます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. データコラボレーションを始めるための最初のステップは何ですか？</div>
+                    <div class="faq-answer">
+                        データコラボレーションを始めるには、①自社の全体戦略とデータ戦略の中でデータコラボレーションの位置づけを明確にする、②連携したいパブリッシャーやブランドパートナーを特定し必要な法的合意を結ぶ、③具体的なユースケース・キャンペーン目標・KPIを定義する、④キャンペーンを実行し結果を測定する、⑤学びを次のコラボレーションに活かす、というステップが推奨されています。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>重要用語と概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>データコラボレーション</td>
+                    <td>複数の組織間でファーストパーティデータを安全に共有・活用する取り組み</td>
+                </tr>
+                <tr>
+                    <td>データクリーンルーム</td>
+                    <td>プライバシーを保護しながらデータを共有・分析できる環境</td>
+                </tr>
+                <tr>
+                    <td>Real-Time CDP</td>
+                    <td>Adobeの顧客データプラットフォーム。顧客データの統合・管理・活用を行う</td>
+                </tr>
+                <tr>
+                    <td>Connected TV (CTV)</td>
+                    <td>インターネットに接続されたテレビデバイス。ストリーミングサービスなどを視聴可能</td>
+                </tr>
+                <tr>
+                    <td>ファーストパーティデータ</td>
+                    <td>自社が直接収集した顧客データ。同意に基づくため高品質で信頼性が高い</td>
+                </tr>
+                <tr>
+                    <td>インクリメンタリティテスト</td>
+                    <td>マーケティング施策による純粋な追加効果を測定するテスト手法</td>
+                </tr>
+                <tr>
+                    <td>オーディエンスオンボーディング</td>
+                    <td>オーディエンスデータを広告プラットフォームに取り込む工程</td>
+                </tr>
+                <tr>
+                    <td>相互運用性</td>
+                    <td>異なるシステムやプラットフォーム間でのデータやサービスの連携能力</td>
+                </tr>
+            </table>
+        </section>
+
+        <footer>
+            <p>このページはAdobe Summit 2024のセッション「S507 Data Collaboration with Adobe How Alterra Achieved 30% Conversion Lift with NBCUniversal」の内容に基づいています。</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
