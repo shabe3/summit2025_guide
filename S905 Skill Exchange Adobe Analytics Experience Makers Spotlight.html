@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S905 Skill Exchange Adobe Analytics Experience Makers Spotlight</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #0f3c78;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 40px;
+            font-size: 1.4rem;
+        }
+        
+        h3 {
+            color: #0f3c78;
+            font-size: 1.2rem;
+            margin-top: 25px;
+        }
+        
+        .summary {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        ul, ol {
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            display: inline-block;
+        }
+        
+        .important {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 25px 0;
+            color: #0f3c78;
+        }
+        
+        .faq-container {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 15px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f5f5f5;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Adobe Analytics における効率的な管理とタグ戦略</h1>
+        
+        <div class="section">
+            <div class="summary">
+                本資料は、Adobe Analyticsの管理者向けに、効率的な運用のためのテクニックとタグ付け戦略について解説しています。前半では過負荷の管理者向けの4つの実用的なヒント、後半ではCarMaxの事例に基づいた包括的なタグ戦略の構築方法を紹介しています。
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>パート1: 管理者向け効率化テクニック</h2>
+            <div class="summary">
+                管理者として1000人近いユーザーを抱える発表者が、日々の業務効率を上げるための実践的なテクニックを紹介します。
+            </div>
+            
+            <h3>発表者について</h3>
+            <ul>
+                <li>フランスのグルノーブル出身、カリフォルニアに20年在住</li>
+                <li>Gen Digital（Norton LifeLock、Avastなど7つのサイバーセキュリティブランドの傘下企業）に16年勤務</li>
+                <li>Adobe Analyticsの実装、レポーティング、管理、文書化、ユーザー管理を1人で担当</li>
+                <li>約1000人のユーザーを抱え、常に問い合わせへの対応が必要な状況</li>
+            </ul>
+            
+            <h3>ヒント1: FAQ ダッシュボードの構築</h3>
+            <ul>
+                <li>同じ質問に何度も回答することによる時間と労力の無駄を解消</li>
+                <li>Workspaceにテキスト可視化を使用して回答を一度作成し、リンクを共有</li>
+                <li>質問ごとに折りたたみ可能なFAQを作成して整理</li>
+                <li>共有時にはそのFAQが自動的に展開されユーザーに表示される</li>
+                <li>会社全体と共有し、徐々に内容を構築・メンテナンス</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのようにFAQダッシュボードを作成するのか？</div>
+                    <div class="faq-answer">
+                        テキスト可視化を使用して回答を入力し、FAQにわかりやすいタイトルをつけます。すべてを折りたたみ、最も人気のあるものを上部に配置します。会社全体と共有することが重要です。テキスト可視化以外にも、フリーフォームテーブル、ベン図、フローチャートなどが使用可能で、右クリックして「説明を編集」から内容を入力し、折りたたむことができます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. FAQダッシュボードのメリットは？</div>
+                    <div class="faq-answer">
+                        時間と労力の節約、ユーザーがFAQを直接参照する習慣づけ、プラットフォームへの信頼構築、知識の整理、他のダッシュボードやレポートからのリンク可能性などがあります。カンファレンスのスプレッドシートやワードドキュメントよりも、ユーザーがアクセスしやすい形式で情報を提供できます。
+                    </div>
+                </div>
+            </div>
+            
+            <h3>ヒント2: 概要ダッシュボードの構築</h3>
+            <ul>
+                <li>事業全体と各部分の関係性を可視化</li>
+                <li>新規ユーザーの混乱を軽減し、適切なデータを適切な人に提供</li>
+                <li>ブランド、サイト、サブドメイン、モバイルアプリなどの基本的な内訳を表示</li>
+                <li>マスター概要ダッシュボードから始め、個別の概要ダッシュボードへと展開</li>
+                <li>全社共有し、ユーザーに編集コピーアクセスを付与</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのような種類の概要ダッシュボードを作成すべきか？</div>
+                    <div class="faq-answer">
+                        基本的なマスター概要ダッシュボードから始め、ビジネスの各部分を示します。その後、個別の概要ダッシュボードを作成していきます。例えば、すべてのブランドやドメイン、特定の焦点を持つすべてのサブドメイン（カート、サポート、アカウント、ログインなど）、モバイルアプリ、チャネル（有料検索、アフィリエイト、SEOなど）、またはツール別（ビデオ、フィードバックツール、チャットなど）のダッシュボードがあります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 概要ダッシュボード作成のポイントは？</div>
+                    <div class="faq-answer">
+                        上部にはシンプルで基本的な内容を維持し、サマリー数値やシンプルなトレンドを使用します。「自分の母親が理解できるか」を基準にするとよいでしょう。データを消費しやすくするため、コンテキストを追加し、複雑なテーブルの場合は基礎となるデータを非表示にします。各チームに特化したダッシュボードをカスタマイズし、適切にメンテナンスして更新することで信頼を構築します。55,000のレポートを詰め込むような過剰な内容は避けましょう。
+                    </div>
+                </div>
+            </div>
+            
+            <h3>ヒント3: ニュースとお知らせダッシュボードの構築</h3>
+            <ul>
+                <li>ユーザーにAdobe Analyticsの更新情報を効果的に伝達</li>
+                <li>新しいサイト、アプリ、機能、リリース、Adobeの新機能などを紹介</li>
+                <li>既知のバグと変更ログを含める</li>
+                <li>テキスト可視化と箇条書きを使用して年別にレポートを作成</li>
+                <li>全社共有して更新情報を通知</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜニュースレターではなくダッシュボードなのか？</div>
+                    <div class="faq-answer">
+                        ニュースレターは効果的でない場合があります。ワークスペース内に直接情報を維持することで、ユーザーが最新情報をチェックする習慣をつけやすくなります。更新があるたびに、ユーザーのワークスペースリストの上部に表示されるため、目に留まりやすいという利点もあります。
+                    </div>
+                </div>
+            </div>
+            
+            <h3>ヒント4: 管理者モニターダッシュボードの構築</h3>
+            <ul>
+                <li>繰り返し発生する問題を一箇所で追跡</li>
+                <li>管理者専用で共有しない</li>
+                <li>問題ごとにアラートを設定し、詳細を確認できるようにする</li>
+                <li>サーバーコール使用量、訪問者IDの設定不良、プロパティタグ不良などを監視</li>
+                <li>繰り返しタスクのチェックリストも含める</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. モニターダッシュボードで追跡する項目の例は？</div>
+                    <div class="faq-answer">
+                        サーバーコール使用量、訪問者IDの不適切な設定、プロパティタグの不適切な設定、ユーザーエージェントとボット、廃止対象のもの、分類の動作、未指定値、個別カウントなどを追跡します。また、サイト、モバイルアップ、変数の設定など、繰り返しタスクのチェックリストや、QAチェックリスト、新規ユーザーアカウント用のメールテンプレートなども含めることができます。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>パート2: 包括的なタグ戦略</h2>
+            <div class="summary">
+                CarMaxのMegan Powersが、効果的なタグ付け戦略と要件の標準化について解説します。デジタルデータ戦略チームが全てのデジタルプロパティのタグ付けを担当している事例です。
+            </div>
+            
+            <h3>インテークフォームの活用</h3>
+            <ul>
+                <li>個別の問い合わせを一元管理して追跡漏れを防止</li>
+                <li>必要情報を事前に収集し、優先順位付けを促進</li>
+                <li>リクエストタイプ、サイト/ツール/URL、強化/バグ修正の区別</li>
+                <li>チーム、連絡先、優先度、期限、背景詳細、影響/価値の記録</li>
+                <li>永続的変更/テストの区別、アクセス手順、スクリーンショットなどを含む</li>
+            </ul>
+            
+            <h3>タグ付け要件の体系的アプローチ</h3>
+            <ul>
+                <li>既存の要件文書を参照し、サイトを開発ツールで確認</li>
+                <li>ページロードタグから始め、クリック追跡へ移行</li>
+                <li>KPIと関連するリンクに特別な注意を払う</li>
+                <li>変数マップを全社共有の情報源として維持</li>
+                <li>要件テンプレートでスクリーンショット、ページロード/クリック別のタブを活用</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 変数マップには何を含めるべきか？</div>
+                    <div class="faq-answer">
+                        イベント/prop番号と名前、どこで使用されるか、追加日、利用状況（色分けで表示）、実装情報（コンテキストデータ、データレイヤー値など）、エンタープライズデータウェアハウスへのマッピング、Adobe管理設定（タイプ、シリアル化など）を含めます。これは全社共有の情報源として機能します。
+                    </div>
+                </div>
+            </div>
+            
+            <h3>ページネーミングのベストプラクティス</h3>
+            <ul>
+                <li>顧客中心のアプローチを採用</li>
+                <li>3階層アプローチ：チャネル/サイトセクション、サブセクション、ページ</li>
+                <li>標準のチャネルとカスタムeVarを併用して柔軟性を確保</li>
+                <li>サブセクションにはカスタムpropを使用</li>
+                <li>ページレベルには標準のページとカスタムeVarを併用</li>
+            </ul>
+            
+            <h3>クリック追跡のベストプラクティス</h3>
+            <ul>
+                <li>可能な限りすべてのCTA（コールトゥアクション）をタグ付け</li>
+                <li>ページ、リンクテキスト、リンク位置をpropに動的に記録</li>
+                <li>すべてのクリックにタイムスタンプとURLを追加</li>
+                <li>同一ページ上の同名リンク区別のためにカスタムprop5を使用</li>
+                <li>同一セクション内の多数のリンクをグループ化</li>
+                <li>フォーム送信時の顧客選択状態を記録</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. クリック追跡の一般的なベストプラクティスは？</div>
+                    <div class="faq-answer">
+                        KPIを把握し、KPIにつながるリンクに「発見方法」のタグを付けます。KPIの開始と送信に別々のイベントを使用して変換率を測定します。アコーディオン/ドロップダウンは開いた時のみ記録し、サーバーコールを節約します。計算機フィールドなどは個々のクリックではなく送信時に記録します。グローバル変数をID用に使用し、一貫性を保ちます。テスト用に特定の変数とイベントを予約すると効率的です。
+                    </div>
+                </div>
+            </div>
+            
+            <h3>一貫性の確保と横断的アプローチ</h3>
+            <ul>
+                <li>プロパティ間で同じ変数とイベントを使用</li>
+                <li>iOSとAndroidアプリに結合レポートスイートを使用</li>
+                <li>アナリストがマルチサイト分析を容易に行えるようにする</li>
+                <li>データウェアハウステーブルの設定を簡素化</li>
+                <li>オムニチャネルジャーニーを容易に結合可能に</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>重要ポイントまとめ</h2>
+            
+            <div class="important">「ドキュメントは多すぎるということはない - 進めながら記録することで将来の作業が楽になる」</div>
+            
+            <ul>
+                <li class="highlight">FAQダッシュボード、概要ダッシュボード、ニュースダッシュボード、モニターダッシュボードの4つのツールで管理者の効率を向上</li>
+                <li class="highlight">インテークフォームと体系的なタグ付け要件プロセスで一貫性を確保</li>
+                <li class="highlight">顧客視点からのページネーミングと包括的なクリック追跡で分析価値を最大化</li>
+                <li class="highlight">変数とイベントのプロパティ間での一貫した使用でオムニチャネル分析を促進</li>
+                <li class="highlight">すべての手法はシンプルだが効果的で、特別なツールなしで実装可能</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>用語解説</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>Workspace</td>
+                    <td>Adobe Analyticsのレポート作成および分析ツール</td>
+                </tr>
+                <tr>
+                    <td>eVar</td>
+                    <td>Adobe Analyticsのカスタム変数で、コンバージョンの追跡に使用</td>
+                </tr>
+                <tr>
+                    <td>prop</td>
+                    <td>Adobe Analyticsのカスタム変数で、トラフィック分析に使用</td>
+                </tr>
+                <tr>
+                    <td>CTA</td>
+                    <td>コールトゥアクション - ユーザーに特定のアクションを促すボタンやリンク</td>
+                </tr>
+                <tr>
+                    <td>KPI</td>
+                    <td>重要業績評価指標 - ビジネス目標の達成度を測定する指標</td>
+                </tr>
+                <tr>
+                    <td>シリアル化</td>
+                    <td>イベントの記録方法（毎回、訪問ごとに1回など）</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            Adobe Summit 2023 - S905 Skill Exchange Adobe Analytics Experience Makers Spotlight
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

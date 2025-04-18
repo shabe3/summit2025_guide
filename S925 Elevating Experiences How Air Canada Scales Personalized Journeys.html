@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Canadaのパーソナライズ戦略</title>
+    <style>
+        :root {
+            --accent-color: #0f3c78;
+            --bg-color: #f5f5f5;
+            --section-bg: #ffffff;
+            --text-color: #333;
+            --highlight-color: #fff3cd;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 15px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .summary {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 2px;
+        }
+        
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        
+        .faq-container {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .faq-question {
+            padding: 10px 15px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: "+";
+            font-size: 20px;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+        
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 500px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Air Canadaがパーソナライズ戦略で実現する顧客体験の向上</h1>
+        </header>
+        
+        <div class="summary">
+            <p>Air Canadaは、サードパーティCookieの終焉に直面し、ファーストパーティデータ戦略へと移行しました。この発表では、Air Canadaがどのようにしてパーソナライゼーションを拡張し、顧客体験を向上させているかを解説します。Adobeのソリューションを活用し、クロスファンクショナルチームの協力のもと、放棄されたカートの回復とクレジットカード推奨という2つの主要ユースケースを実装した結果、コンバージョン率の向上と運用効率の改善を実現しました。</p>
+        </div>
+        
+        <div class="section">
+            <h2>パーソナライゼーションの背景と課題</h2>
+            <p>現代の消費者は、ブランドが自分の好みを理解し、ニーズを予測して、個別の対応を提供することを期待しています。調査によると、70%以上の消費者がパーソナライズされた対応を企業に期待しています。</p>
+            
+            <h3>航空業界の課題</h3>
+            <ul>
+                <li>フライト検索を放棄した顧客の <span class="highlight">80%</span> が二度と戻らない問題</li>
+                <li>これまでは <span class="underline">サードパーティCookie</span> に依存したリターゲティング</li>
+                <li>GDPR、CCPA、ITPなどのプライバシー規制による3rdパーティCookieの制限</li>
+                <li>データサイロ化による顧客情報の断片化</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Air Canadaとは？</div>
+                    <div class="faq-answer">
+                        <p>カナダ最大の航空会社で、モントリオールに本社を構え、スターアライアンスの創設メンバーです。世界180以上の目的地に就航し、1日1000便以上を運航しています。2023年には4,480万人の乗客が利用しました。また、数百万人の会員を持つ自社ロイヤルティプログラム「Aeroplan」も所有しています。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. サードパーティCookieとは？</div>
+                    <div class="faq-answer">
+                        <p>1993年に発明されたウェブ技術で、ユーザーがサイトを訪れた際に情報を収集するものです。航空会社はこれを使って、フライト検索を中断したユーザーの閲覧履歴や検索行動などを追跡し、広告を表示して予約完了を促していました。CPA（顧客獲得コスト）が他のデジタル広告手法よりも50%低いという利点がありました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜサードパーティCookieに依存できなくなったのか？</div>
+                    <div class="faq-answer">
+                        <p>GDPR（2018年）やCCPA（2020年）などのデータ保護法の制定、Apple ITP（2017年）によるSafariでのクロスサイトトラッキング制限、Googleによるサードパーティ Cookie廃止の発表（2020年）などにより、プライバシー保護の観点から使用が困難になっています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Air Canadaのファーストパーティデータ戦略</h2>
+            <p>Air Canadaはサードパーティ Cookie依存からの脱却を目指し、ファーストパーティデータに基づく戦略を構築しました。この戦略は3つの柱から成り立っています。</p>
+            
+            <h3>戦略の3つの柱</h3>
+            <ul>
+                <li><span class="underline">顧客アイデンティティ解決</span>：様々なチャネル（ウェブサイト・モバイルアプリなど）でのユーザー行動を統合</li>
+                <li><span class="underline">リアルタイムインテント・ターゲティング</span>：顧客の意図をリアルタイムで把握し適切なタイミングでアプローチ</li>
+                <li><span class="underline">オムニチャネルオーケストレーション</span>：全チャネルでの一貫したメッセージングの調整と最適化</li>
+            </ul>
+            
+            <h3>採用したAdobeソリューション</h3>
+            <ul>
+                <li><span class="highlight">Real-time CDP</span>：リアルタイムのファーストパーティデータ統合とオーディエンス共有</li>
+                <li><span class="highlight">Journey Optimizer & Target</span>：統合プロファイルを使用したシームレスなオムニチャネルエンゲージメント</li>
+                <li><span class="highlight">Customer Journey Analytics</span>：全アクティベーションチャネルでの測定実現</li>
+            </ul>
+            
+            <div class="important">
+                複数の異なるツールが同一企業のもとで連携していることが、Air Canadaがアドビを選択した主な理由
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. ファーストパーティデータ戦略の実装はどのように進めたか？</div>
+                    <div class="faq-answer">
+                        <p>まず40名以上の関係者との1対1のセッションを実施し、問題点と解決策を共有。次にAdobeと共同で教育セッションを開催し、プラットフォームの機能を説明。その後、80名以上の参加者によるブレインストーミングセッションを実施し、アイデアを創出。最後にマーケティング、テクノロジー、デジタルプロダクト、データの4部門からなるクロスファンクショナルチームを結成し、アイデアの優先順位付けを行いました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのように優先順位付けを行ったか？</div>
+                    <div class="faq-answer">
+                        <p>4つの柱に基づいて評価しました：
+                        <br>1. 顧客価値：顧客の生活をどれだけ簡単にするか
+                        <br>2. 実現可能性：短期的または長期的に実現可能かどうか
+                        <br>3. 事業性：ビジネスの観点から持続可能かどうか
+                        <br>4. 使いやすさ：顧客が使いこなせるかどうか</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 実装パートナーは誰か？</div>
+                    <div class="faq-answer">
+                        <p>DeloitteをソリューションインプリメンテーションパートナーとしてのAdobeローンチアドバイザリーを選定しました。ローンチアドバイザリーは、新しいAdobeプロダクトの導入にあたってのベストプラクティスガイダンスを提供するサービスで、4つのマイルストーン（開始、定義、設計、ゴーライブ）に沿って実装をサポートします。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>実装されたユースケース</h2>
+            
+            <h3>1. 放棄されたカートの回復</h3>
+            <p>フライト検索から予約に至らなかった顧客（特に中～高価値顧客）を再エンゲージさせる戦略</p>
+            <ul>
+                <li>コンバージョンファネルを<span class="underline">トップ（検索結果）、ミドル（フライト確認）、ボトム（支払い）</span>に分類</li>
+                <li>カスタマースコアを活用して中～高価値顧客を特定</li>
+                <li>タイムリーなメール送信と予約フローへのダイレクトリンク提供</li>
+                <li>CDPからの顧客リストを使用した関連性の高いペイドメディア</li>
+                <li>Adobe Targetを使用したワンクリック予約フロー体験</li>
+                <li>高価値顧客には特別なロイヤルティポイント特典を提供</li>
+            </ul>
+            
+            <h3>2. クレジットカードアップセル</h3>
+            <p>航空券予約プロセス中に高価値顧客向けに共同ブランドクレジットカードを提案</p>
+            <ul>
+                <li>購入フロー内で<span class="highlight">独占的な特典</span>を提示（ポイントボーナス、ステートメントクレジット）</li>
+                <li>特別オファーを含むターゲットメールの送信</li>
+                <li>関連ペイドメディアの展開と獲得後のメディア停止による効率化</li>
+                <li>Adobe Targetを活用したウェブサイト上での一貫したオファー提示</li>
+            </ul>
+            
+            <div class="important">
+                「ファネル内で深く進むほど、顧客の購入意図は高まる」という洞察に基づいた戦略
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 具体的な成果は？</div>
+                    <div class="faq-answer">
+                        <p>主に3つの成果がありました：
+                        <br>1. 自動化によるマニュアル設定の工数を数週間削減
+                        <br>2. Look-to-Book率（検索から予約への転換率）とクレジットカード獲得率の向上
+                        <br>3. 拡張可能な意図主導型パーソナライゼーションの基盤構築</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. これらの基盤はどのように拡張できるか？</div>
+                    <div class="faq-answer">
+                        <p>同じデータパイプラインを活用して、航空券以外の製品（機内食、座席指定など）に関するキャンペーンを展開できます。例えば、既にフライトを予約しクレジットカードを持っている顧客に対して、機内食のアップセルを行うことが可能です。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 今後の展望は？</div>
+                    <div class="faq-answer">
+                        <p>マーケティング実践を変革し、意図主導型体験を大規模に創出・活用することが次のステップです。技術と人材は整備されましたが、今後はスケーリングを可能にするプロセスの構築に注力します。WorkFrontなどのAdobeプロダクトも検討しており、コンテンツ領域への拡大も視野に入れています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>主要な学び</h2>
+            <ul>
+                <li><span class="underline">クロスファンクショナルな協力が不可欠</span>：マーケティング、データ、テクノロジー、デジタルプロダクトの連携なしでは成功しない</li>
+                <li><span class="underline">強固な基盤となるユースケース</span>：拡張可能なパーソナライゼーションの基盤を構築することが重要</li>
+                <li><span class="underline">データソースと属性の価値を最大化</span>：CDPにデータを取り込むコストを考慮し、将来の活用可能性を計画</li>
+                <li><span class="underline">明確な範囲設定と規律の維持</span>：スコープクリープを避け、インパクト創出に集中</li>
+                <li><span class="underline">内部チームの実行能力と変更管理を優先</span>：パートナーは素晴らしいサポートを提供するが、戦略は社内に存在</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>重要な用語と解説</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>解説</th>
+                </tr>
+                <tr>
+                    <td>ファーストパーティデータ戦略</td>
+                    <td>自社が直接収集した顧客データを活用するアプローチ。サードパーティCookieに依存しない持続可能な方法</td>
+                </tr>
+                <tr>
+                    <td>Real-time CDP</td>
+                    <td>顧客データプラットフォーム。リアルタイムで顧客データを統合し、セグメント化する</td>
+                </tr>
+                <tr>
+                    <td>Journey Optimizer</td>
+                    <td>顧客ジャーニーを設計・自動化するAdobeツール</td>
+                </tr>
+                <tr>
+                    <td>Adobe Target</td>
+                    <td>ウェブサイトやアプリでのパーソナライゼーションを実現するツール</td>
+                </tr>
+                <tr>
+                    <td>Look-to-Book</td>
+                    <td>航空業界の主要KPI。訪問者数に対する予約数の比率（コンバージョン率）</td>
+                </tr>
+                <tr>
+                    <td>クロスファンクショナルチーム</td>
+                    <td>マーケティング、テクノロジー、デジタルプロダクト、データなど異なる部門からメンバーが集まったチーム</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            <p>Air Canadaがパーソナライズ戦略で実現する顧客体験の向上 - Adobe Summit 2024セッションS925より</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S908 Skill Exchange Project Management & System Admin Best Practices 'Through the Eras</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .section {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 3px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+        .faq-container {
+            margin-top: 15px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+            border-left: 3px solid #0f3c78;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        .faq-question.active::after {
+            content: '−';
+        }
+        .faq-answer {
+            background-color: #ffffff;
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 15px;
+            border-left: 3px solid #ddd;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>プロジェクト管理とシステム管理のベストプラクティス</h1>
+        </header>
+        
+        <div class="section">
+            <h2>概要</h2>
+            <p>この資料は、Qualcommの事例を通して、プロジェクト管理とシステム管理の効果的な連携方法を紹介しています。混沌としたプロジェクト管理環境から、整理された単一プラットフォームへの移行を実現した経験から得られた3つの重要原則と、システム管理者とプロジェクトマネージャーの強力なパートナーシップの重要性について解説しています。</p>
+            
+            <div class="important">
+                <span class="highlight">システム管理者とプロジェクトマネージャーの強力なパートナーシップ</span>と<span class="underline">3つの重要原則（組織化、ガバナンス、メンテナンス）</span>が成功の鍵です。
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>導入：現状の課題</h2>
+            <p>多くの企業では、リーダーシップからのプロジェクト指示が各部門に伝わり、チームが実行に移しますが、効果的なプロセスがないと混乱が生じます。</p>
+            
+            <h3>主な課題</h3>
+            <ul>
+                <li>複数のプロジェクト管理ツール（Monday.com、Basecamp、Jiraなど）が混在</li>
+                <li>リクエストの提出先や必要情報が不明確</li>
+                <li>組織的な混乱と非効率</li>
+                <li>プロジェクト完了までの時間が予測不能</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ複数のプロジェクト管理ツールが問題になるのですか？</div>
+                    <div class="faq-answer">複数のツールが存在すると、情報が分散し、全体像を把握することが困難になります。また、チーム間の連携も取りにくくなり、重複作業やコミュニケーションエラーが発生しやすくなります。単一のプラットフォームに統合することで、これらの問題を解決できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのような状況が「混沌としたプロジェクト管理環境」を引き起こしますか？</div>
+                    <div class="faq-answer">標準化されたプロセスの欠如、複数のツールの使用、責任の所在が不明確な状態、一貫したトラッキング方法の不在などが原因となります。特に大規模な組織や複数の部門が関わるプロジェクトでは、この問題が顕著になります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのようにしてQualcommはこの課題を認識したのですか？</div>
+                    <div class="faq-answer">Qualcommでは、複数のプロジェクト管理ツールが使用されており、リクエストの送信先や必要情報が不明確という問題に直面していました。特に40以上のチームがそれぞれ独自のワークフローを持ち、45,000人以上の従業員にアクセスを提供する必要があるという規模の課題も認識されていました。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>原則1：組織化（Organization）</h2>
+            <p>効果的なシステム管理とプロジェクト管理には、十分な準備と組織化が必要です。新しいツールの導入前に、インスタンス、ユーザー、リクエスト、プロジェクトなどを整理することが重要です。</p>
+            
+            <h3>システム管理者の組織化戦略</h3>
+            <ul>
+                <li><span class="underline">ユーザー管理</span>：カスタムフォームを使用してデータを追跡し、内部/外部ユーザーを分類</li>
+                <li><span class="underline">アクセスレベル設定</span>：リクエスター、レビュアー、プランナー、ワーカーなど役割に応じたアクセス権限の割り当て</li>
+                <li><span class="underline">リクエスト整理</span>：機能チームごとにリクエストを整理し、各リクエストタイプを明確化</li>
+                <li><span class="underline">プロジェクト整理</span>：会計年度に基づいた四半期設定、テンプレートの活用</li>
+                <li><span class="underline">レポート整理</span>：命名規則の統一、チームラベルの付与</li>
+            </ul>
+            
+            <h3>プロジェクトマネージャーの組織化戦略</h3>
+            <ul>
+                <li><span class="underline">様々なレポート活用</span>：高レベルから詳細まで、必要に応じたレポート作成</li>
+                <li><span class="underline">プロジェクトの視覚化</span>：カテゴリ別、担当者別フィルタリング</li>
+                <li><span class="underline">リクエストの可視化</span>：QトピックによるグループでのソートとOキュートピック</li>
+                <li><span class="underline">視覚的アピール</span>：条件付き書式、カラーコーディング、カレンダー同期</li>
+                <li><span class="underline">ボードビュー活用</span>：創造的チームの視覚的組織化</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. ユーザー管理で最も重要なポイントは何ですか？</div>
+                    <div class="faq-answer">内部と外部ユーザーを明確に区別することが最も重要です。Qualcommでは、ユーザー名に会社の略称を付けることで識別を容易にし、別々のログイン方法を使用しています。また、法務チームなど機密情報を扱うチームは別会社として設定することで、情報アクセスを適切に管理しています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. プロジェクトマネージャーがレポートを効果的に活用するコツは？</div>
+                    <div class="faq-answer">目的に合わせた複数のレポートを作成することです。プロジェクトテンプレート別、カテゴリ別、担当者別など、様々な視点からのレポートを用意しておくと、状況に応じた意思決定が可能になります。特に優先順位付けや再優先順位付けが頻繁に必要な場合、これらのレポートをステータスミーティングで活用することで効率的な判断ができます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 視覚的に分かりやすいレポートを作成するには？</div>
+                    <div class="faq-answer">条件付き書式を活用し、プロジェクトフェーズやブランドタイプに合わせた色分けを行うことが効果的です。また、プロジェクトやリクエストをカレンダーに同期させ、チームや企業イニシアチブごとに異なるカレンダーを用意することで視覚的に把握しやすくなります。さらに、ガントチャートが苦手なユーザーには、円グラフを使用して進捗を簡単に示すことも有効です。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>原則2：ガバナンス（Governance）</h2>
+            <p>効果的なガバナンスは、ユーザーを遠ざけることなく適切なガードレールを設定することで実現します。集中的かつ集合的な意思決定を行う核となるチームの確立が重要です。</p>
+            
+            <h3>システム管理者のガバナンス戦略</h3>
+            <ul>
+                <li><span class="underline">中核Work Frontチームの確立</span>：優先順位付け、レポート方法、テンプレート使用に関する集中的な意思決定</li>
+                <li><span class="underline">タイガーチーム（専門家チーム）の活用</span>：各主要チームの代表者を含め、質問や懸念の最初の対応窓口として機能</li>
+                <li><span class="underline">コミュニケーション計画</span>：リソースセンターでの情報提供、トレーニング文書の更新、定期的な情報発信</li>
+                <li><span class="underline">標準化された命名規則</span>：レポート、プロジェクト、リクエストの名称の統一</li>
+                <li><span class="underline">ユニバーサルフォーム</span>：すべてのリクエストとプロジェクトで一貫した一連のフィールドを使用</li>
+            </ul>
+            
+            <h3>プロジェクトマネージャーのガバナンス戦略</h3>
+            <ul>
+                <li><span class="underline">トラフィックマネージャーの設置</span>：指定された担当者がダッシュボードを管理し、プロジェクトを委任</li>
+                <li><span class="underline">ステータスミーティングの実施</span>：ブランド別、ワークストリーム別、チーム別の進捗確認</li>
+                <li><span class="underline">優先順位付けの会話</span>：ターンアラウンドタイムに基づく優先順位の議論</li>
+                <li><span class="underline">リーダーシップとの調整</span>：より広範な優先順位の議論、保留または優先順位を下げるべき項目の特定</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. トラフィックマネージャーとは何ですか？</div>
+                    <div class="faq-answer">トラフィックマネージャーは、プロジェクトの流れを管理する担当者です。必ずしもこの役職で雇用された人である必要はなく、コーディネーターやマネージャーなど、組織力に優れた人が担当することもあります。Work Frontのダッシュボードを運用し、俯瞰的な視点でプロジェクトを把握し、チームメンバーへの委任を担当します。また、ステータスミーティングを主導し、優先順位付けの議論を行います。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 効果的なガバナンスを確立するために必要なコミュニケーション戦略は？</div>
+                    <div class="faq-answer">リソースセンターでの情報提供、トレーニング文書の定期的な更新、そして月次ニュースレターなどを通じた定期的な情報発信が効果的です。特に、特定の方法で作業を行う理由を説明することで、ユーザーの理解と協力を得やすくなります。また、タイガーチーム（専門家チーム）のメンバーが各チームの代表者として機能し、質問や懸念に対する最初の対応窓口となることも重要です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ユニバーサルフォームの利点は何ですか？</div>
+                    <div class="faq-answer">ユニバーサルフォームを使用することで、部門全体で一貫した高レベルのメトリクスを追跡することができます。各チームは独自の項目（メールチームはメール開封率、ソーシャルメディアチームはエンゲージメントなど）を追跡しますが、ユニバーサルフォームにより、「部門全体のプロジェクトのうち、このオーディエンスへのマーケティングは何パーセントか」「リクエストのうち、自動車ビジネスまたはコンピューティングビジネスをサポートしているのは何パーセントか」といった質問に答えることができます。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>原則3：メンテナンス（Maintenance）</h2>
+            <p>システムの長期的な成功には定期的なメンテナンスが欠かせません。ユーザーの活動状況の追跡、使用されていないオブジェクトの特定、必要に応じたプロセスの最適化が重要です。</p>
+            
+            <h3>システム管理者のメンテナンス戦略</h3>
+            <ul>
+                <li><span class="underline">ユーザー監査</span>：最終ログイン日、非アクティブ化すべきユーザー、ツール利用状況の追跡</li>
+                <li><span class="underline">システム管理者および採用ダッシュボード</span>：長期間開いているプロジェクト、空白情報、使用されなくなった項目の特定</li>
+                <li><span class="underline">安定要素の選択</span>：頻繁に変更されない要素（割り当てチームなど）をレポートの基準として選択</li>
+                <li><span class="underline">会計年度の更新</span>：年初に会計年度を更新し、ユーザーに即時提供</li>
+                <li><span class="underline">アナウンスの確認</span>：SSL証明書の更新や最新の四半期製品リリースなどの情報を把握</li>
+            </ul>
+            
+            <h3>プロジェクトマネージャーのメンテナンス戦略</h3>
+            <ul>
+                <li><span class="underline">プロセスの継続的最適化</span>：部門や会社の変化に合わせたプロセスの見直し</li>
+                <li><span class="underline">プロジェクトの進捗追跡</span>：滞っているプロジェクトの特定と対応</li>
+                <li><span class="underline">テンプレート使用状況の分析</span>：使用頻度の低いテンプレートや過剰に使用されるテンプレートの調査</li>
+                <li><span class="underline">ワークロードの再配分</span>：チームメンバー間のプロジェクト数の均衡化</li>
+                <li><span class="underline">リソース要求の根拠</span>：プロジェクト数に基づくリソース要求の正当化</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. システム管理者が注目すべきメンテナンス指標は何ですか？</div>
+                    <div class="faq-answer">最終ログイン日、長期間開いているプロジェクト、空白のままになっている必須情報、使用されなくなった項目などに注目するべきです。これらの指標は、システム管理者および採用ダッシュボードでチームを追跡することで確認できます。これにより、非アクティブなユーザーを特定し、プロセスが適切に機能しているかを把握できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. プロジェクトテンプレートの使用状況をどのように分析すべきですか？</div>
+                    <div class="faq-answer">プロジェクトテンプレート別のレポートを作成し、使用頻度を監視します。使用頻度が低いテンプレート（例：ブランド命名テンプレート）については、その理由を調査します。複雑すぎるのか、コミュニケーション不足なのかなどを検討します。逆に、アドホックテンプレートなど頻繁に使用されるものについては、そのパターンに基づいて新しいテンプレートを作成する機会があるかもしれません。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. メンテナンスの負担を軽減するには？</div>
+                    <div class="faq-answer">頻繁に変更されない要素（割り当てチームなど）をレポートの基準として選択することで、メンテナンスの頻度を減らすことができます。また、年初に会計年度を更新しておくことで、ユーザーからの問い合わせを減らすことができます。定期的にアナウンスセンターとExperience Leagueをチェックし、SSL証明書の更新や最新の四半期製品リリースなどの情報を把握することも重要です。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>重要なポイントと成果</h2>
+            <p>Qualcommでの実装により、様々なレベルの組織から高い評価を得ています。効率性の向上、時間の節約、標準的な受付プロセスの確立などの成果が報告されています。</p>
+            
+            <div class="important">
+                <span class="highlight">システム管理者とプロジェクトマネージャーの強力なパートナーシップ</span>と<span class="underline">3つの重要原則（組織化、ガバナンス、メンテナンス）</span>を実践することで、効果的な業務プロセスを確立できます。
+            </div>
+            
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>Work Front</td>
+                    <td>Qualcommが導入したプロジェクト管理ツール</td>
+                </tr>
+                <tr>
+                    <td>タイガーチーム</td>
+                    <td>各主要チームの代表者で構成される専門家チーム</td>
+                </tr>
+                <tr>
+                    <td>トラフィックマネージャー</td>
+                    <td>プロジェクトのフローを管理し、ダッシュボードを運用する担当者</td>
+                </tr>
+                <tr>
+                    <td>リクエストキュー</td>
+                    <td>チームへの作業依頼を管理するシステム</td>
+                </tr>
+                <tr>
+                    <td>システム管理者</td>
+                    <td>ツールの技術的側面を管理する担当者</td>
+                </tr>
+                <tr>
+                    <td>プロジェクトマネージャー</td>
+                    <td>プロジェクトの計画、実行、完了を管理する担当者</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            <p>S908 Skill Exchange Project Management & System Admin Best Practices 'Through the Eras</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

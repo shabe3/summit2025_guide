@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S903 Skill Exchange Audience and Implementation Best Practices with Real-Time CDP</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 15px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      color: #0f3c78;
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      color: #0f3c78;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #0f3c78;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+    
+    h3 {
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+    
+    .section {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .summary {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    
+    ul {
+      padding-left: 20px;
+    }
+    
+    li {
+      margin-bottom: 8px;
+    }
+    
+    .highlight {
+      background-color: #fff3cd;
+      padding: 2px 4px;
+    }
+    
+    .underline {
+      border-bottom: 2px solid #0f3c78;
+    }
+    
+    .important {
+      font-weight: bold;
+      text-align: center;
+      margin: 25px 0;
+      font-size: 1.1rem;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #f0f0f0;
+    }
+    
+    .faq-container {
+      margin-top: 15px;
+    }
+    
+    .faq-item {
+      margin-bottom: 10px;
+    }
+    
+    .faq-question {
+      background-color: #f0f0f0;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      position: relative;
+      font-weight: bold;
+    }
+    
+    .faq-question::after {
+      content: "+";
+      position: absolute;
+      right: 15px;
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-item.active .faq-question::after {
+      content: "−";
+    }
+    
+    .faq-answer {
+      padding: 0 15px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background-color: #ffffff;
+      border-radius: 0 0 5px 5px;
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 15px;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>リアルタイムCDPによるオーディエンスと実装のベストプラクティス</h1>
+    
+    <div class="section">
+      <div class="summary">
+        クアルコムのオーディエンス＆エクスペリエンスリーダーによる、限られたリソースでもAdobe Experience PlatformのCDPを効果的に実装し、オーディエンス中心のマーケティングへと変革するためのノウハウとベストプラクティスの共有。
+      </div>
+      
+      <p>このセッションでは、マーケティング組織をデジタル変革しながらコスト削減する方法、効果的にCDPを実装するためのヒントと戦略、そしてオーディエンス・センター・オブ・エクセレンスの確立方法について解説します。B2BとB2Cの両方の市場にまたがる多様なオーディエンスを持つクアルコムの事例を基に、実践的なアプローチをご紹介します。</p>
+    </div>
+    
+    <div class="section">
+      <h2>CDPの実装戦略</h2>
+      <div class="summary">
+        限られたリソースでCDPを実装するための実践的アプローチ
+      </div>
+      
+      <h3>クアルコムのCDP導入背景</h3>
+      <ul>
+        <li>クアルコムはもともと<span class="highlight">スマートフォン向け技術のB2B企業</span>だったが、<span class="underline">Snapdragonブランド</span>を消費者向けに展開し、自動車、オーディオ、XR、IoTなど<span class="highlight">多様な製品分野</span>に拡大</li>
+        <li>CDP導入前の課題：<span class="underline">未定義のオーディエンス分類体系</span>、デジタルマーケティングの運用ギャップ、限られたリソースと資金</li>
+      </ul>
+      
+      <h3>成功するCDP実装のポイント</h3>
+      <ul>
+        <li><span class="highlight">シンプルで明確なユースケース</span>から始める（クアルコムは開発者向けの単一チャネルから開始）</li>
+        <li>オーディエンスをしっかり定義し、それに基づいてユースケースを構築</li>
+        <li>スコープの拡大を避け、<span class="underline">リスクバッファ</span>を含める</li>
+        <li>データ収集と測定戦略を確立（ABCマインドセット：Always Be Collecting）</li>
+        <li>組織内のあらゆるレベルで<span class="highlight">採用のチャンピオンとコラボレーションパートナー</span>を見つける</li>
+      </ul>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. CDPを導入する際の最初のステップは何ですか？</div>
+          <div class="faq-answer">
+            明確でシンプルな最初のユースケースを定義することです。クアルコムの場合は開発者向けの単一チャネルでの実行から始めました。組織の中核となるオーディエンスを特定し、それに基づいてユースケースを構築することが重要です。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. 限られたリソースでCDPを実装するコツは？</div>
+          <div class="faq-answer">
+            スコープの拡大を避け、明確な優先順位を設定することです。また、組織内のあらゆるレベルで採用のチャンピオンとコラボレーションパートナーを見つけることが重要です。彼らはあなたがいない会議室でも機能を擁護してくれます。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. データ収集でのベストプラクティスは？</div>
+          <div class="faq-answer">
+            「ABCマインドセット」（Always Be Collecting）を持つことです。オーディエンスとキャンペーン戦略に基づいて、常にデータを収集する姿勢が重要です。また、最終的な測定に必要なパフォーマンスデータが確実に利用できるようにしてください。
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>オーディエンスの構築と管理</h2>
+      <div class="summary">
+        効果的なオーディエンス戦略の確立と実装方法
+      </div>
+      
+      <h3>オーディエンスの定義と構築</h3>
+      <ul>
+        <li><span class="underline">オーディエンス</span>は「独自の特性を持つ人々のグループ」、<span class="underline">セグメント</span>は「そのグループをより小さな独自の部分に分割したもの」</li>
+        <li>オーディエンス構築のデータタイプ：属性（時間に依存しない記録データ）、イベント（タイムスタンプ付きの時系列データ）、既存のオーディエンス</li>
+        <li>クアルコムの実践的アプローチ：
+          <ol>
+            <li>ステークホルダーへのインタビューでコアオーディエンスを定義</li>
+            <li>既存ツールの調査</li>
+            <li>セグメントからオーディエンスへのマッピング</li>
+            <li>リーダーシップとの確認</li>
+            <li>分析による検証</li>
+            <li>CDPへのオーディエンス移行</li>
+            <li>運用ワークフローへの組み込み</li>
+            <li>定期的なレビュー</li>
+          </ol>
+        </li>
+      </ul>
+      
+      <h3>UIでのオーディエンス構築テクニック</h3>
+      <ul>
+        <li><span class="highlight">ビルドルール</span>：ドラッグ＆ドロップ、論理演算子、ネストされたルール</li>
+        <li><span class="highlight">コンポーズオーディエンス</span>：オーディエンスの結合、除外、重複削除</li>
+        <li><span class="highlight">外部オーディエンスのインポート</span>：アドホックリストのアップロード</li>
+        <li>データ分布を確認して期待値と合致するか検証</li>
+        <li>ファイルサイズの制限とスキーマに合わせたフィールド要件に注意</li>
+      </ul>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. オーディエンスとセグメントの違いは何ですか？</div>
+          <div class="faq-answer">
+            オーディエンスは「独自の特性を持つ人々のグループ」で、セグメントは「そのグループをより小さな独自の部分に分割したもの」です。たとえば、B2B市場のトップティアアカウントをオーディエンスとし、それを購入段階と認知段階に分けたものがセグメントとなります。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. CDPでオーディエンスを構築する主な方法は？</div>
+          <div class="faq-answer">
+            主に3つの方法があります。「ビルドルール」（ドラッグ＆ドロップUIで論理ルールを構築）、「コンポーズオーディエンス」（既存オーディエンスの結合や除外）、「外部オーディエンスのインポート」（アドホックリストのアップロード）です。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. オーディエンス構築時のベストプラクティスは？</div>
+          <div class="faq-answer">
+            いくつかあります：データ分布を事前に確認する、アクセスラベルを適用してデータガバナンスを管理する、タグを使用してコアオーディエンスを整理する、オーディエンスロジックのテキストサマリーを要件ドキュメントに貼り付ける、適切なオーディエンス評価方法（バッチ、ストリーミング、エッジ）を選択することなどです。
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>オーディエンスのアクティベーションと拡張</h2>
+      <div class="summary">
+        構築したオーディエンスの効果的な活用方法
+      </div>
+      
+      <h3>データ送信先の設定と注意点</h3>
+      <ul>
+        <li>PII識別子のセキュリティ確保：<span class="highlight">ハッシュフィールドを使用</span>するか、アクティベーション時に<span class="highlight">暗号化変換を適用</span></li>
+        <li>宛先コネクタはパートナーが管理していることに注意（例：Google 360連携にはAdobeとGoogleの両方のドキュメントを確認）</li>
+        <li>アクティベーションプラットフォームで使用する識別子に基づいて<span class="underline">オーディエンス数を提供</span>する</li>
+        <li>オーディエンスが宛先に累積して表示されるまで時間がかかることを考慮</li>
+      </ul>
+      
+      <h3>拡張機能の活用</h3>
+      <ul>
+        <li>イベントトリガーに基づいてオーディエンスのジャーニーを管理</li>
+        <li>例：ヘルスケア業界でワクチン接種したユーザーを自動的にキャンペーンから除外</li>
+        <li>標準の宛先がない場合は<span class="highlight">Ad CloudまたはAudience Manager経由で有効化</span>するか、カスタムソリューションを検討</li>
+        <li>利用できない宛先についてはAdobeアカウントチームにサポートを依頼</li>
+      </ul>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. PII（個人識別情報）を安全に扱うにはどうすれば良いですか？</div>
+          <div class="faq-answer">
+            アクティベーション時にはスキーマ内のハッシュフィールドを使用するか、アクティベーションワークフロー中に暗号化変換を適用してPIIデータを確実に安全に保つことが重要です。これによりプライバシーとデータ保護の規制要件を満たすことができます。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. 目的の宛先がCDPで利用できない場合はどうすれば良いですか？</div>
+          <div class="faq-answer">
+            いくつかの選択肢があります：Ad CloudやAudience Manager経由で宛先を有効化する、マーケティングチームのニーズに基づいて完全なカスタムソリューションを作成する、またはAdobeアカウントチームに連絡してサポートを求めることです。多くの場合、彼らは考慮できるソリューションを提供してくれます。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. 拡張機能はどのような場合に役立ちますか？</div>
+          <div class="faq-answer">
+            拡張機能は、イベントトリガーに基づいてオーディエンスジャーニーを管理するのに役立ちます。例えば、ヘルスケア業界でインフルエンザワクチン接種キャンペーンを行っている場合、最近ワクチン接種したユーザーのイベントデータを送信して、アクティブなキャンペーンから除外したり、マーケティング戦略に基づいて新しいコンテンツをトリガーしたりすることができます。
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Customer Journey Analyticsの活用</h2>
+      <div class="summary">
+        インサイトからアクティベーションへのプロセス効率化
+      </div>
+      
+      <h3>CJAの主なメリット</h3>
+      <ul>
+        <li><span class="highlight">インサイトからアクティベーションへのプロセスを合理化</span></li>
+        <li>マーケターがデータと洞察により近づける</li>
+        <li>WebデータとMarketoデータを組み合わせてオーディエンスの全体像を把握</li>
+        <li>コアオーディエンス向けダッシュボードの構築と共有</li>
+      </ul>
+      
+      <h3>CJAでのオーディエンス作成</h3>
+      <ul>
+        <li>Webの行動分析から直接オーディエンスを作成可能</li>
+        <li>選択した項目を右クリックして迅速にオーディエンスを構築</li>
+        <li>構築したオーディエンスは自動的にAEPに送信される</li>
+        <li>ダッシュボードには要点のサマリーと視覚化を含める</li>
+        <li>ステークホルダーにとってアクセスしやすい形式でレポートを共有</li>
+      </ul>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. CJAがCDPの実装にどのように役立ちますか？</div>
+          <div class="faq-answer">
+            CJAはインサイトからアクティベーションへのプロセスを合理化し、特に専任のオーディエンス開発者が限られている組織にとって重要です。マーケターがデータと洞察に直接アクセスできるようになり、意思決定のためのダッシュボードを提供できます。また、WebデータとMarketoデータなど異なるソースのデータを組み合わせて、オーディエンスの全体像をより把握することが可能になります。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. CJAでオーディエンスを作成する方法は？</div>
+          <div class="faq-answer">
+            CJAでは、Web行動のセレクションを右クリックして、オーディエンスを素早く構築できます。このプロセスはUIで数秒で完了し、構築されたオーディエンスは自動的にAdobe Experience Platformに送信されます。これにより、インサイトから直接オーディエンスを作成するワークフローが効率化されます。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. 効果的なオーディエンスダッシュボードの作り方は？</div>
+          <div class="faq-answer">
+            効果的なダッシュボードには、ステークホルダーが理解すべきインサイトの要点サマリーを含め、視覚化を活用して強力なストーリーを伝えることが重要です。また、ステークホルダーにとってアクセスしやすく親しみやすい形式でレポートとダッシュボードを共有することも大切です。
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>運用のベストプラクティス</h2>
+      <div class="summary">
+        日常的な運用管理とオーディエンスセンター・オブ・エクセレンスの確立
+      </div>
+      
+      <h3>日常的な運用管理のポイント</h3>
+      <ul>
+        <li><span class="highlight">フォルダーとタグ</span>を活用して整理（一括で変更を適用可能）</li>
+        <li>標準的なオーディエンス命名規則を定義</li>
+        <li>CDPとCJAを定期的にパージしてワークスペースをクリーンに保つ</li>
+        <li>データコンプライアンスのリスクを避けるために<span class="underline">ITセキュリティポリシー</span>を適用</li>
+        <li>データフローを定期的にモニタリング：モニターUI、プロアクティブアラート、Postman</li>
+      </ul>
+      
+      <h3>オーディエンスセンター・オブ・エクセレンスの確立</h3>
+      <ul>
+        <li>オーディエンスをCDPに統合して一元管理</li>
+        <li>定義したオーディエンスを運用ワークフローに追加（変更管理のため）</li>
+        <li>マーケティングステークホルダー向けにオーディエンスダッシュボードを作成</li>
+        <li>必要なデータ収集方法と宛先を決定</li>
+        <li>オーディエンスジャーニーを強化するための拡張機能を検討</li>
+      </ul>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. オーディエンスを整理するためのベストプラクティスは？</div>
+          <div class="faq-answer">
+            CDPでフォルダーとタグを活用することで、より効率的に整理できます。変更を一括で適用することもできます。また、メタデータと報告にロールアップする必要がある名前を使用して、標準的なオーディエンス命名規則を定義することも重要です。マーテックスタック全体で共有するオーディエンスの文字制限にも注意しましょう。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. データフローをモニタリングする方法は？</div>
+          <div class="faq-answer">
+            データフローをモニタリングする方法は3つあります：AEPのモニターUIを訪問する、モニターUIを訪問する代わりにプロアクティブアラートを購読する、Postmanを使用して失敗したバッチや詳細情報を確認するなどです。データジョブが正常に実行されていることを確認するために、定期的なプロセスを確立することをお勧めします。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. オーディエンスセンター・オブ・エクセレンスを確立するには？</div>
+          <div class="faq-answer">
+            オーディエンスセンター・オブ・エクセレンスを確立するには、オーディエンスをCDPに統合して一元管理し、重複を削除します。ステークホルダーと連携して定義したオーディエンスを運用ワークフローに追加し、変更管理を促進します。また、マーケティングステークホルダー向けにオーディエンスダッシュボードを作成して、オーディエンス主導のチームになることを目指しましょう。
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>主要な用語と概念</h2>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>説明</th>
+        </tr>
+        <tr>
+          <td>CDP (Customer Data Platform)</td>
+          <td>顧客データを統合・管理し、リアルタイムで活用するためのプラットフォーム</td>
+        </tr>
+        <tr>
+          <td>オーディエンス</td>
+          <td>独自の特性を持つ人々のグループ</td>
+        </tr>
+        <tr>
+          <td>セグメント</td>
+          <td>オーディエンスをより小さな独自の部分に分割したもの</td>
+        </tr>
+        <tr>
+          <td>アイデンティティグラフ</td>
+          <td>CDPの中核となる、異なるデバイスやチャネルをまたいで顧客を識別するためのシステム</td>
+        </tr>
+        <tr>
+          <td>CJA (Customer Journey Analytics)</td>
+          <td>異なるデータソースを組み合わせて顧客ジャーニーを分析するツール</td>
+        </tr>
+        <tr>
+          <td>属性</td>
+          <td>時間に依存しない記録データ（プロファイルデータ、アカウントデータなど）</td>
+        </tr>
+        <tr>
+          <td>イベント</td>
+          <td>タイムスタンプ付きの時系列データ（カート放棄、ログインなど）</td>
+        </tr>
+        <tr>
+          <td>ビルドルール</td>
+          <td>オーディエンス構築のための基本的な方法、ドラッグ＆ドロップUI</td>
+        </tr>
+        <tr>
+          <td>コンポーズオーディエンス</td>
+          <td>既存のオーディエンスを組み合わせたり絞り込んだりする機能</td>
+        </tr>
+        <tr>
+          <td>オーディエンス評価方法</td>
+          <td>バッチ、ストリーミング、エッジの3種類から選択</td>
+        </tr>
+      </table>
+      
+      <div class="important">
+        「オーディエンス中心のアプローチで、限られたリソースでも効果的にCDPを実装し、マーケティングを変革できる」
+      </div>
+    </div>
+    
+    <footer>
+      <p>Adobe Summitセッション「S903 Skill Exchange Audience and Implementation Best Practices with Real-Time CDP」より</p>
+    </footer>
+  </div>
+  
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

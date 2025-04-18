@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S922 PepsiCo Design and Doritos Journey with Adobe Firefly and Generative AI</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            display: inline-block;
+        }
+        
+        .important {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .faq-container {
+            margin-top: 15px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+        
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 500px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #0f3c78;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PepsiCoとDoritosの旅: Adobe FireflyとAIの活用</h1>
+        
+        <div class="section">
+            <h2>サマリー</h2>
+            <p>PepsiCoのデザインセンターは、Adobe Fireflyのカスタムモデルを使用してDoritosブランドの「Doritos Loaded」グローバルカリナリープラットフォームを強化しました。この革新的なアプローチにより、高品質なパーソナライズコンテンツを大規模に作成し、様々な市場での料理レシピを効率的に生成できるようになりました。</p>
+            
+            <div class="important">
+                <span class="highlight">AIを活用しつつも、人間中心のデザインプロセスを維持</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>PepsiCoデザインセンターとAI導入</h2>
+            <p>PepsiCoデザインセンターは、マリオ・マルティニとCEOのラモン・ラグアルタによって10年前に設立された組織で、デザインをビジネスと革新のための「秘密兵器」として活用しています。</p>
+            
+            <h3>デザインセンターの構成</h3>
+            <ul>
+                <li><span class="underline">ブランド構築</span>: 一貫したブランド体験の創造</li>
+                <li><span class="underline">イノベーション</span>: 製品開発とデザイン思考の推進</li>
+                <li><span class="underline">企業運営</span>: デザイナーの活動をサポートする運営管理</li>
+            </ul>
+            
+            <h3>AI導入の循環プロセス</h3>
+            <ul>
+                <li><span class="underline">大胆な実装</span>: リーダーシップのサポート、Adobeとの連携、IT部門との緊密な協力</li>
+                <li><span class="underline">トレーニング</span>: 教育、洞察の収集、チームのベースラインの把握</li>
+                <li><span class="underline">クリエイティブの権限強化</span>: オープンなコミュニケーション、1対1のフィードバック</li>
+                <li><span class="underline">戦略と実践</span>: AIで大きな成果をもたらすプロジェクトの特定</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. PepsiCoデザインセンターのAI導入の特徴は？</div>
+                    <div class="faq-answer">「人間中心」のアプローチを重視しています。AIは人間を置き換えるのではなく、デザイナーの能力を強化するために使用されています。リーダーシップのサポート、IT部門との連携、教育、オープンなコミュニケーションを重視した循環的なプロセスを採用しています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. デザインセンターはどのような役割を担っていますか？</div>
+                    <div class="faq-answer">デザインセンターはPepsiCoの「秘密兵器」として機能し、ブランド構築、製品イノベーション、デザイン思考の推進を担当しています。多様なバックグラウンドを持つデザイナーが一貫したブランド体験を創造し、ビジネス成果を向上させています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. AIツールを導入する際の重要なステップは？</div>
+                    <div class="faq-answer">1. リーダーシップと技術パートナーからのサポートを確保する、2. チームの現状を把握し適切な教育プログラムを作成する、3. オープンなフィードバック体制を構築する、4. 具体的な成功事例を作りAIの価値を証明するプロジェクトを特定する、という4つのステップが重要です。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Doritosブランドとカスタムモデルの活用</h2>
+            <p>Doritosは三角形を象徴として、「サクサク感の象徴」「大胆な風味のビーコン」「多様性を祝福するステートメント」というブランド価値を構築しています。「Doritos Loaded」はチップを超えた新しい料理体験を提供するグローバル展開中のカリナリープラットフォームです。</p>
+            
+            <h3>Doritos Loadedの課題</h3>
+            <ul>
+                <li>30の異なる市場での展開（各市場でカスタマイズが必要）</li>
+                <li>KFC、ピザハットなど外食パートナーとのコラボレーション</li>
+                <li>インフルエンサーシェフとのコンテンツ制作</li>
+                <li>季節やトレンドに合わせた迅速なコンテンツ更新の必要性</li>
+                <li>写真撮影の限られたレシピ数と資源制約</li>
+            </ul>
+            
+            <h3>Adobe Firefly カスタムモデルの解決策</h3>
+            <ul>
+                <li>高品質な写真から訓練したAIモデルによる新しいレシピビジュアルの生成</li>
+                <li>各市場向けにローカライズされたレシピ画像の迅速な作成</li>
+                <li>パートナー企業のメニューに基づいたカスタム料理の提案</li>
+                <li>インフルエンサー向けのレファレンス素材の提供</li>
+                <li>季節やトレンドに合わせた柔軟なコンテンツ更新</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Doritos Loadedとは何ですか？</div>
+                    <div class="faq-answer">Doritos Loadedとは、Doritosチップをベースにした料理を作る新しいカリナリープラットフォームです。ピザやチキンファヒータなど、冷蔵庫から取り出した様々な食材とDoritosを組み合わせて、大胆な自己表現を促す新しい食体験を提供しています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜAdobe Fireflyのカスタムモデルが必要だったのですか？</div>
+                    <div class="faq-answer">Doritos Loadedは30の異なる市場で展開され、各市場で異なるレシピや食材が必要でした。また、KFCやピザハットなどのパートナー企業との協業、季節トレンドへの対応など、膨大な数のビジュアルコンテンツが必要で、従来の撮影だけでは時間とリソースが足りなかったためです。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. トルコでのパイロット展開はどのようなものでしたか？</div>
+                    <div class="faq-answer">トルコでは、朝にベーグルを販売する食品カートを活用し、その後の時間帯にDoritos Loadedメニューを提供するという展開が行われました。これにより、地元の食品カート事業者に新たな収入源を提供し、消費者には新しい食体験を提供することができました。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Fireflyカスタムモデルのベストプラクティス</h2>
+            <p>Adobe Professional Servicesのユージン・ナカガワ氏が共有した、高品質なカスタムモデルを作成するための重要なポイントです。</p>
+            
+            <h3>トレーニングデータセットの最適化</h3>
+            <ul>
+                <li><span class="underline">一貫性を重視</span>: 照明、アスペクト比、背景、前景、構図など統一されたスタイルを確保</li>
+                <li><span class="underline">バリエーションを取り入れる</span>: 若干異なる照明や角度など、スタイル内での多様性を確保</li>
+                <li><span class="underline">オーバーフィッティングを回避</span>: モデルが過度に特殊化しないよう注意</li>
+            </ul>
+            
+            <h3>アスペクト比の計画</h3>
+            <ul>
+                <li>最終出力のアスペクト比に合わせたトレーニングデータを準備</li>
+                <li>出力仕様に事前に合わせることで、クロップなどの問題を防止</li>
+                <li>アプリケーションの出力仕様に合わせた計画が時間と労力を節約</li>
+            </ul>
+            
+            <h3>キャプションの最適化</h3>
+            <ul>
+                <li><span class="underline">柔軟なキャプション形式</span>: 固定フレーズを避け、多様な記述方法を採用</li>
+                <li><span class="underline">繰り返しフレーズの排除</span>: 特定の表現に不釣り合いな重要性が付与されるのを防止</li>
+                <li><span class="underline">核心概念の捉え方を確認</span>: 自動キャプションサービスの結果を手動で確認・編集</li>
+                <li><span class="underline">正確性の確保</span>: 誤ったキャプション（例：ピザと表記されたDoritos）を修正</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. カスタムモデルを作る際の一番重要なポイントは？</div>
+                    <div class="faq-answer">トレーニングデータの一貫性とバリエーションのバランスが最も重要です。照明、アスペクト比、背景などの要素で統一感を持たせつつ、若干の違いを取り入れることで、柔軟で高品質な出力を得ることができます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. オーバーフィッティングとは何ですか？</div>
+                    <div class="faq-answer">オーバーフィッティングとは、AIモデルが訓練データに過度に適合し、新しいデータに対する汎用性が失われる状態です。モデルが過度に特殊化し、限られたパターンしか生成できなくなるため、トレーニングデータの一貫性とバリエーションのバランスを取ることで防止します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. キャプションの最適化が重要な理由は？</div>
+                    <div class="faq-answer">キャプションはAIモデルが画像の特徴を理解するための重要な情報源です。固定フレーズや繰り返しを避け、多様で正確なキャプションを用意することで、モデルの学習効果が高まり、より柔軟で高品質な出力が得られます。自動キャプションサービスは必ず人間がチェックし、編集する必要があります。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>将来への展望と主要な教訓</h2>
+            <p>PepsiCoデザインセンターは、Doritos LoadedでのFireflyカスタムモデルの成功を受け、より広範なAI活用の展開を計画しています。チームメンバーに対するAI教育を重視し、AIをデザインプロセスに組み込む取り組みを進めています。</p>
+            
+            <h3>主要な教訓</h3>
+            <ul>
+                <li><span class="underline">人材のエンパワーメント</span>: リソースが限られている状況でもスマートに働くためのツールを提供</li>
+                <li><span class="underline">チームの未来への準備</span>: AIスキルを身につけることでキャリアパスを拡大</li>
+                <li><span class="underline">倫理的AI</span>: 知的財産権を尊重した責任あるAI活用</li>
+                <li><span class="underline">インパクトの最大化</span>: クリエイティブの価値を高め、増幅する</li>
+            </ul>
+            
+            <div class="important">
+                <span class="highlight">「AIは人間を置き換えるものではなく、全員にスーパーパワーを与えるもの」</span>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. PepsiCoのAI活用の次のステップは？</div>
+                    <div class="faq-answer">社員向けのAI教育パイロットプログラムを開始し、フィードバックを収集しながら、適切なプロジェクトを特定してAIをワークフローにシームレスに統合することを計画しています。また、DoritosだけでなくPepsiCoのその他のブランドでもAIの可能性を模索しています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ倫理的AIが重要視されているのですか？</div>
+                    <div class="faq-answer">PepsiCoは知的財産権を尊重したAI活用を重視しています。市場には知的財産から無断で学習するAIプラットフォームも存在しますが、PepsiCoはAdobeと提携し、倫理的で責任あるAI活用を推進しています。これは自社の知的財産を保護すると同時に、他社の権利も尊重するためです。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. AIが人間を置き換えない理由は？</div>
+                    <div class="faq-answer">PepsiCoはAIを「人間中心」の視点で活用しており、AIはクリエイティブプロセスの一部（例：レタッチ作業）を効率化しますが、アート・ディレクション、撮影計画、最終レビューなど、人間の創造性と判断が必要な部分は依然として重要です。AIは人間のクリエイティブ能力を増幅するツールとして位置づけられています。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>重要な用語・事実リスト</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>Adobe Firefly</td>
+                    <td>Adobeの生成AIプラットフォーム。倫理的に訓練されたデータに基づく高品質な画像生成が可能。</td>
+                </tr>
+                <tr>
+                    <td>カスタムモデル</td>
+                    <td>特定のブランドやスタイルに合わせて調整された生成AIモデル。ブランド独自の視覚言語を維持しながら新しいコンテンツを生成。</td>
+                </tr>
+                <tr>
+                    <td>Doritos Loaded</td>
+                    <td>Doritosチップをベースにした料理を作るグローバルカリナリープラットフォーム。30の市場で展開中。</td>
+                </tr>
+                <tr>
+                    <td>オーバーフィッティング</td>
+                    <td>AIモデルが訓練データに過度に適合し、新しいデータに対する汎用性が失われる状態。</td>
+                </tr>
+                <tr>
+                    <td>PepsiCoデザインセンター</td>
+                    <td>10年前に設立されたPepsiCoの組織。デザインをビジネスと革新の「秘密兵器」として活用。</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            S922 PepsiCo Design and Doritos Journey with Adobe Firefly and Generative AI
+        </footer>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

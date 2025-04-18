@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S929 Accelerate Journey Time to Value How MLB Delivers Game-Day Messaging</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #0f3c78;
+            margin-bottom: 15px;
+        }
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 2px;
+        }
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 15px 0;
+            font-size: 1.2rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #0f3c78;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        /* FAQ スタイル */
+        .faq-container {
+            margin-top: 15px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s;
+        }
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #fff;
+            border-radius: 0 0 5px 5px;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 15px;
+            border-left: 1px solid #eee;
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MLB ゲームデイメッセージング：<br>ジャーニータイムバリューの加速</h1>
+        </header>
+
+        <div class="summary">
+            <h2>概要</h2>
+            <p>このセッションでは、メジャーリーグベースボール（MLB）がAdobe Journey Optimizerを活用して、ファンへのゲームデイメッセージングを提供する方法を紹介します。MLBは30チームで年間2,000以上の試合を開催し、2024年には71百万人以上のファンが来場しました。Adobe Experience Platformを基盤とし、特にJourney Optimizerを活用して、チケット購入からゲーム観戦、そして次の来場促進までの顧客ライフサイクル全体をカバーする効果的なコミュニケーションを実現しています。</p>
+        </div>
+
+        <div class="section">
+            <h2>MLBの組織構造とAdobe採用背景</h2>
+            <p>MLBは2000年にデジタル権利契約を締結し、すべてのデジタルマーケティングを中央集権化。30クラブそれぞれに「デジタルプロデューサー」を割り当て、密接な連携を実現しています。</p>
+            
+            <ul>
+                <li>各クラブにはデジタルプロデューサーが1対1で割り当てられ、クラブとMLB間の窓口として機能</li>
+                <li>メールテクノロジー・オペレーションチームがジャーニーリーダーとして全ジャーニーを構築・管理</li>
+                <li>Adobe Experience Platform導入により、セグメンテーションの民主化とオーディエンス構築時間の短縮を実現</li>
+                <li>Real-time CDPを活用して自社メディアや有料メディアの配信先を活性化</li>
+                <li>Adobe Media Mix Modeler、Customer Journey Analyticsも活用し、マーケティングチャネル全体を最適化</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. MLBのデジタルマーケティング構造はどのように特徴的ですか？</div>
+                    <div class="faq-answer">
+                        <p>MLBは2000年に30クラブすべてとデジタル権利契約を締結し、デジタルマーケティングを中央集権化しました。各クラブには「デジタルプロデューサー」が1対1で割り当てられ、日常的にクラブと連携します。これにより、すべてのクラブ間で標準化されたデジタルマーケティング戦略を実行できる独自の構造となっています。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobe Experience Platformの主な活用方法は？</div>
+                    <div class="faq-answer">
+                        <p>主に以下の用途で活用しています：1)セグメンテーションの民主化（マーケターがロバストなオーディエンスを構築可能）、2)Real-time CDPを使用した自社・有料メディアの活性化、3)CRMシステム（SalesforceやDynamics 365）でのリード情報の強化、4)Adobe Media Mix Modelerによるマーケティングチャネル支出の最適化、5)Customer Journey Analyticsでのチケット販売ダッシュボード活用。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ジャーニーオプティマイザーの導入規模はどれくらいですか？</div>
+                    <div class="faq-answer">
+                        <p>2024年末までに、すべての30クラブが少なくとも1つのジャーニーを運用するようになり、合計180以上のジャーニーが作成・開始されました。拡張性と15人のデジタルプロデューサートレーニングのおかげで、この大規模な展開が可能になりました。クラブごとにサンドボックスを持ち、ジャーニーテンプレートを共有することで、ゼロから構築する必要なく効率的に展開できます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>顧客ライフサイクルとユースケース</h2>
+            <p>MLBはAdobe Journey Optimizerを活用して、チケット獲得からゲーム後のフォローアップまでの完全なファンライフサイクルをカバーする10種類のテンプレート化されたユースケースを開発しました。</p>
+
+            <h3>1. ディスプレイスファンプログラム（チケット獲得）</h3>
+            <ul>
+                <li>地元を離れているファンに対して、応援チームの遠征試合情報を提供</li>
+                <li>カスタムビジネスイベントを活用し、MLBの統計APIからアウェイシリーズ情報を取得</li>
+                <li>以前は日次メール1通だったが、Journey Optimizerで14日前・7日前のメールと直前のプッシュ通知の多チャネル展開に進化</li>
+            </ul>
+
+            <h3>2. 観戦前情報プログラム（ゲーム前）</h3>
+            <ul>
+                <li>チケット購入者に試合前の重要情報（先発投手、開場時間、駐車場情報など）を提供</li>
+                <li>チケット保有者データに接続されたカスタムユニタリーイベントを1時間ごとに実行</li>
+                <li>当日チケット購入者やチケット転送受領者（全体の最大60%）にもリアルタイムに情報提供が可能に</li>
+                <li>マルチチャネル（メール＋プッシュ通知）での情報提供を自動化</li>
+            </ul>
+
+            <h3>3. チェックインプログラム（入場時）</h3>
+            <ul>
+                <li>Ballpark AppでのQRチケットスキャン情報をAdobe Experience Platformにストリーミング</li>
+                <li>ファン情報、デバイス情報、ゲームコンテキスト、座席情報を活用</li>
+                <li>座席アップグレード、新球場の案内、シーズンチケット保持者への歓迎メッセージなどに活用</li>
+                <li>北部スタジアムでの寒い時期には上層席のファンを下層席へ招待するサプライズなども実施</li>
+            </ul>
+
+            <h3>4. ゲームイベント・イニングチェンジプログラム（観戦中）</h3>
+            <ul>
+                <li>統計APIとWebSocketを使用して、ゲーム内イベント（イニング開始・終了、ホームラン、盗塁など）を取得</li>
+                <li>ストリーミングオーディエンスを活用し、スタジアムにいるファンに適切なタイミングでメッセージ送信</li>
+                <li>タンパベイ・レイズでは第4イニング後にマスコットレースの投票を促進、参加率が大幅上昇</li>
+                <li>第6イニング時の最終飲食オーダー告知などにも活用</li>
+            </ul>
+
+            <h3>5. ゲームオーバープログラム（観戦後）</h3>
+            <ul>
+                <li>ゲーム終了後、特に単発チケット購入者への再来場促進コミュニケーションを開始</li>
+                <li>勝敗、初回来場者、プロモーション実施、座席セクションなどの情報でセグメントを分け、パーソナライズ</li>
+                <li>メール、プッシュ通知、Facebookなどマルチチャネルでコミュニケーション展開</li>
+                <li>メール＋プッシュ通知を受信したファンは、メールのみの場合と比べて40%高い転換率を達成</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. ディスプレイスファンプログラムとは何ですか？</div>
+                    <div class="faq-answer">
+                        <p>地元を離れているファンに対して、応援チームの遠征試合情報を提供するプログラムです。例えば、サンディエゴ・パドレスのファンがアトランタに住んでいる場合、パドレスがアトランタに来る際に通知します。Journey Optimizerの導入前は一日一回の自動メールだけでしたが、現在は14日前・7日前のメールと直前のプッシュ通知という多チャネル展開になり、より効果的にファンとコミュニケーションできるようになりました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. チケット購入後のコミュニケーションはどのように改善されましたか？</div>
+                    <div class="faq-answer">
+                        <p>以前は試合前日に一度だけメールを送信するシステムでしたが、Journey Optimizerでは1時間ごとにチケットデータを確認し、新規購入者やチケット転送受領者にもリアルタイムに情報を提供できるようになりました。これは大きな改善点で、一部のクラブでは観客の最大60%が試合当日にチケットを購入していたため、多くのファンに重要情報が届かないという問題を解決しました。また、プッシュ通知も自動化され、駐車場情報や開場時間変更などの重要情報をタイムリーに提供できるようになりました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 試合後のコミュニケーションでのセグメンテーションはどのように行われていますか？</div>
+                    <div class="faq-answer">
+                        <p>試合後のコミュニケーションでは主に4つのセグメントを活用しています：1)初回来場者（初めて球場を訪れた人には異なるアプローチが必要）、2)勝敗（勝利を観たファンと敗戦を観たファンでは体験が大きく異なる）、3)プロモーション（ボブルヘッド配布日や花火ナイトなど特別イベントの有無）、4)座席セクション（例：シカゴ・カブスのバドワイザー・ブリーチャーズなど特徴的なエリアでの体験）。これらのセグメントに基づいてパーソナライズしたメッセージを送ることで、再来場率の向上に成功しています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>導入プロセスと成功のポイント</h2>
+            <p>Adobe Journey OptimizerをMLB全30クラブに効率的に展開するために、様々な戦略と工夫が施されました。</p>
+
+            <h3>導入アプローチ</h3>
+            <ul>
+                <li>2023年後半：AKSチームが代行してMLB向けに少数のジャーニーを実行開始</li>
+                <li>2024年：10種類のユースケーステンプレートを作成し、すべてのクラブが利用可能に</li>
+                <li>デジタルプロデューサー15人にトレーニングを実施し、ジャーニー構築能力を強化</li>
+                <li>2024年末までに全30クラブが少なくとも1つのジャーニーを運用、合計180以上のジャーニーを展開</li>
+            </ul>
+
+            <h3>成功のためのツールと戦略</h3>
+            <ul>
+                <li>ユースケースライブラリ：すべてのクラブがアクセスできるビジュアルライブラリを作成</li>
+                <li>正式な依頼プロセス：30クラブからの依頼を一元管理する仕組みを構築</li>
+                <li>Real-time CDPの活用：ジャーニー最適化、有効化、パフォーマンス測定のワンストップショップに</li>
+                <li>週次オフィスアワー：クラブやデジタルプロデューサーからの質問に対応する定期セッションを開催</li>
+            </ul>
+
+            <h3>時間短縮のためのAdobeの機能活用</h3>
+            <ul>
+                <li>フェデレーテッドオーディエンス構成：外部データウェアハウスからゼロデータコピーでオーディエンス構築</li>
+                <li>ユースケースプレイブック：40以上のターンキープレイブックを業界・チャネル・ビジネス成果別に提供</li>
+                <li>カスタムアクション：既存のプッシュ通知やメールサービスプロバイダーを活用した迅速な展開</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. デジタルプロデューサーのトレーニングはどのように行われましたか？</div>
+                    <div class="faq-answer">
+                        <p>2024年1月から4月の開幕日までの3ヶ月間で、4回の実践トレーニングセッションを実施しました。これらは必須参加で、ジャーニーの構築からプッシュ通知の送信まで、ステップバイステップで指導しました。参加者は自身の携帯電話で実際に通知を受け取り、作成したものが機能することを確認できました。また、週次のオフィスアワーも設け、質問や懸念事項に対応する場としました。この実践的なアプローチが成功し、180以上のジャーニー展開につながりました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ユースケースライブラリとはどのようなものですか？</div>
+                    <div class="faq-answer">
+                        <p>「他のクラブは何をしていて、自分たちは何をすべきか」という頻繁な質問に対応するため、30クラブすべてがアクセスできるビジュアルライブラリを作成しました。これは一種のマイクロサイトで、各ユースケースの視覚的表現、オプトイン方法、および実施クラブからの高レベルなメトリクスを確認できます。これにより、クラブ間でのベストプラクティス共有が促進され、新たなユースケース採用の意思決定が容易になりました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 時間短縮のためのフェデレーテッドオーディエンス構成とは何ですか？</div>
+                    <div class="faq-answer">
+                        <p>フェデレーテッドオーディエンス構成は、外部データウェアハウスやクラウドデータストレージ環境に既に存在するデータを、ゼロデータコピーの概念を活用して利用できる次世代オーディエンス構築ツールです。これにより、データをプラットフォームにプッシュする代わりに、データウェアハウス内のデータを直接活用できます。一度技術的なセットアップを行えば、マーケターはユーザーフレンドリーなインターフェースでオーディエンスを構築し、Adobe Experience Platformでアクティベーションするための属性を豊かにすることができます。これによりデータ活用の時間が大幅に短縮されます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>主な用語と技術解説</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>Adobe Journey Optimizer (AJO)</td>
+                    <td>1対1のパーソナライズされたカスタマージャーニーを構築・実行するためのツール。MLBでは顧客ライフサイクル全体でのコミュニケーションに活用。</td>
+                </tr>
+                <tr>
+                    <td>Real-time CDP</td>
+                    <td>リアルタイム顧客データプラットフォーム。オーディエンスセグメンテーションや様々な宛先への有効化に使用。</td>
+                </tr>
+                <tr>
+                    <td>カスタムビジネスイベント</td>
+                    <td>ビジネスで発生する特定の出来事（MLBの場合、試合開始、イニング変更、ホームランなど）をトリガーとして活用する仕組み。</td>
+                </tr>
+                <tr>
+                    <td>Ballpark App</td>
+                    <td>MLBの公式モバイルアプリ。チケットスキャン情報がAdobe Experience Platformにストリーミングされ、ジャーニー開始のトリガーとなる。</td>
+                </tr>
+                <tr>
+                    <td>ディスプレイスファン</td>
+                    <td>地元を離れて住んでいるファン。例：アトランタに住むサンディエゴ・パドレスファンなど。</td>
+                </tr>
+                <tr>
+                    <td>フェデレーテッドオーディエンス構成</td>
+                    <td>外部データウェアハウスからゼロデータコピーでオーディエンスを構築する次世代ツール。</td>
+                </tr>
+            </table>
+        </div>
+
+        <footer>
+            <p>S929 Accelerate Journey Time to Value: How MLB Delivers Game-Day Messaging to Fans<br>
+            プレゼンター: Dan Burns (Adobe Customer Solutions) & Ken Gorecki (MLB)</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

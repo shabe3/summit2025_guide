@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S902 Skill Exchange Managing the Unexpected with Real-Time CDP + Journey Optimizer</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .summary {
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        .important {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 20px 0;
+            color: #0f3c78;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .faq-container {
+            margin-top: 15px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            background-color: #f8f8f8;
+            padding: 10px 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: 500;
+            border-radius: 4px;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px 15px;
+            background-color: #f9f9f9;
+            border-radius: 0 0 4px 4px;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Adobe Real-Time CDP + Journey Optimizer<br>予期せぬ問題への対応と運用ベストプラクティス</h1>
+        </header>
+
+        <div class="section">
+            <div class="summary">
+                <p>アドビのReal-Time CDPとJourney Optimizerを活用したU.S.バンクの実装事例から、予期せぬ問題とその解決策を学ぶ。システムの複雑性を理解し、適切なガイドを見つけ、問題に対処する実践的なアプローチが重要。</p>
+            </div>
+            
+            <h3>概要ポイント</h3>
+            <ul>
+                <li>CDP導入は単なる線形的な旅ではなく、<span class="highlight">予期せぬ問題が必ず発生する冒険</span>である</li>
+                <li>成功の鍵は社内のエキスパートを育成し、ツールの深い理解を持つこと</li>
+                <li>アドビとの継続的なフィードバックと関わりが製品改善と問題解決につながる</li>
+                <li>マルチIDや重複配信などの技術的な課題への実践的な対応策がある</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>U.S.バンクの実装背景</h2>
+            <div class="summary">
+                <p>U.S.バンクは認証ベースのマーケティングとウェブパーソナライゼーションを主要目標として、Real-Time CDPとJourney Optimizerを導入した。</p>
+            </div>
+            
+            <h3>実装の現状と進化</h3>
+            <ul>
+                <li>当初はAdobe Analytics、Target、Audience Managerを使用していた</li>
+                <li>認証ベースの顧客向けマーケティングではCampaignを使用していたが、APIコールが多すぎてシステムがダウン</li>
+                <li>現在はReal-Time CDP、Journey Optimizer（旧称Offer Decisioning）を採用し、オムニチャネル対応を実現</li>
+                <li>オンラインバンキング、モバイル、ATM、支店、コールセンターでの認証ベースマーケティングを展開</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜCampaignからReal-Time CDPに移行したのですか？</div>
+                    <div class="faq-answer">Campaignへのコール数が多すぎてシステムがパフォーマンス低下を起こしたため。Real-Time CDPならリアルタイムで認証ベースのマーケティングを効率的に行える。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 主な導入目標は何だったのですか？</div>
+                    <div class="faq-answer">認証ベースの顧客向けマーケティング（NBA）、Audience Managerの代替、オムニチャネルのトリガーメールの実現。特に認証済みユーザーに対するマーケティングが主眼。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 認証ベースマーケティングとは具体的にどんなものですか？</div>
+                    <div class="faq-answer">顧客がオンラインバンキングやモバイルアプリにログインした瞬間に、その人物を特定し、オフラインデータと組み合わせて最適なメッセージを届けるマーケティング手法。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>成功への鍵：社内エキスパートの育成</h2>
+            <div class="summary">
+                <p>Adobe製品の導入成功において最も重要なのは、社内でのエキスパート育成。外部コンサルタントに頼るだけでなく、自社チームがツールを深く理解することが重要。</p>
+            </div>
+            
+            <h3>エキスパート育成の重要性</h3>
+            <ul>
+                <li>新規ユーザーとして、ツールで起こり得ることを全て予測するのは不可能</li>
+                <li>経験者からの支援が不可欠 - U.S.バンクは「Adobeウィスパラー」と呼ばれるコンサルタントに週10時間依頼</li>
+                <li><span class="underline">社内スタッフの育成と知識獲得が長期的な成功の鍵</span></li>
+                <li>アドビとの継続的な対話、アルファ・ベータ版参加、クライアントアドバイザリーボードへの参加が有効</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「Adobeウィスパラー」とはどのような役割ですか？</div>
+                    <div class="faq-answer">アドビの製品に精通したコンサルタントで、JIRAボード、エンジニア、製品担当者へのアクセス権を持ち、技術的な問題を解決する橋渡し役を担う。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ社内エキスパートの育成が重要なのですか？</div>
+                    <div class="faq-answer">アドビとの技術的な会話ができ、問題発生時に適切に対応できるため。また、アドビ側が実際の利用環境で起こる問題を全て把握しているわけではない。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Ultimate Successチームとはどのような役割ですか？</div>
+                    <div class="faq-answer">アドビのサポートチームで、エンジニアリングとの橋渡しをする。チケット提出時の複雑な回答を解釈し、適切なフォローアップを行う重要な役割を担っている。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>主な技術的課題とその解決策</h2>
+            <div class="summary">
+                <p>Real-Time CDPとJourney Optimizerの実装中に直面した主な技術的課題と、それらを解決するために採用したアプローチを紹介。</p>
+            </div>
+            
+            <h3>1. マルチID（共有デバイス）の問題</h3>
+            <ul>
+                <li>問題：同一デバイスに複数人物がログインするとプロファイルが崩壊、属性が上書きされる</li>
+                <li>解決：アドビに問題をエスカレーション、エンジニアリングチームと直接協働</li>
+                <li>結果：Shared Device Blockerという新機能が開発され、プロファイルの崩壊を防止</li>
+                <li>一時的対応：Destination SDKを使用してマルチIDをブロックするカスタムコードを開発</li>
+            </ul>
+
+            <h3>2. 重複配信の問題</h3>
+            <ul>
+                <li>問題：アイデンティティ変更のたびに配信シグナルが送信され、同じ顧客に5日間で5枚の郵便物</li>
+                <li>解決：Destination SDKでブロッカーを実装、送信済みフラグの設定</li>
+                <li>現在の要望：「各プロファイルに対して一定期間内に1回だけ配信する」機能をアドビに要望中</li>
+                <li>Journey Optimizerでのチェックも実装し、重複配信を防止</li>
+            </ul>
+
+            <h3>3. 配列データのパーソナライゼーション</h3>
+            <ul>
+                <li>問題：複数の商品（クレジットカード、口座など）を持つ顧客への最適な情報表示</li>
+                <li>解決：Journey Optimizerでセグメント論理を複製し、配列内の正しい要素を特定するロジックを開発</li>
+                <li>CDPとJourney Optimizerの連携が必須の機能</li>
+            </ul>
+
+            <h3>4. データ品質の問題</h3>
+            <ul>
+                <li>問題：ソースシステムのデータ計算方法変更により、誤ったデータが配信される事態が発生</li>
+                <li>解決：レコード数の検証、Null値チェック、主要指標の変動監視を実装中</li>
+                <li>要望中の機能：問題発生時に緊急停止できる「キルスイッチ」機能</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. マルチIDの問題が与える影響はどの程度深刻でしたか？</div>
+                    <div class="faq-answer">プロファイルが崩壊すると正確なマーケティングができなくなるため非常に深刻。2022年1月に問題を報告してから解決まで1年以上かかった。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 重複配信の問題はどのように発見されましたか？</div>
+                    <div class="faq-answer">顧客が5日間連続で同じダイレクトメールを受け取るという事態が発生し発覚。データロード時に配信シグナルが新たに発生していた。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜJourney Optimizerの導入は必須だったのですか？</div>
+                    <div class="faq-answer">配列データの扱いや複雑な条件ロジックの実装においてCDPだけでは不十分。Journey Optimizerの条件チェック機能が必要だった。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>導入前に検討すべき重要な質問</h2>
+            <div class="summary">
+                <p>Real-Time CDPとJourney Optimizer導入前に検討すべき重要な質問と、U.S.バンクが経験から学んだ教訓。</p>
+            </div>
+            
+            <ul>
+                <li>目的は<span class="highlight">マーケティングか顧客サービスか</span>？どちらを優先するか明確にする</li>
+                <li>どのような<span class="highlight">IDマネジメント戦略</span>を取るのか？既存IDを使用するかクレンジングするか</li>
+                <li><span class="highlight">リアルタイム性の要件</span>は？同一セッション内のパーソナライゼーションが必要ならWeb SDKは必須</li>
+                <li><span class="highlight">分析戦略</span>をどうするか？Customer Journey Analyticsの早期導入を検討すべき</li>
+                <li><span class="highlight">データ品質チェック</span>をどう実装するか？事前のデータクレンジングと継続的な監視が重要</li>
+            </ul>
+
+            <div class="important">「全ての顧客は異なるマーテック体験を持つ。自社に合った戦略を練ることが重要」</div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Web SDKの導入はなぜ重要なのですか？</div>
+                    <div class="faq-answer">Audience ManagerからCDPに移行すると、Web SDKがないと同一セッション内のリアルタイムセグメンテーションが15分程度遅延する。即時パーソナライゼーションには不可欠。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. U.S.バンクのIDマネジメント戦略はどのようなものでしたか？</div>
+                    <div class="faq-answer">既存のIDをそのまま活用し、事前クレンジングせずにツールに取り込み、CDPの機能で ID管理を行う戦略を採用。これは効率的だが、データ品質に依存する。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Customer Journey Analyticsはなぜ早期に導入すべきですか？</div>
+                    <div class="faq-answer">ROIの証明やオーディエンス分析において、従来のクリックストリームデータだけでは不十分。CJAがあれば包括的な顧客行動分析が可能になる。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>アドビとの効果的な関係構築</h2>
+            <div class="summary">
+                <p>アドビとの関係構築は製品活用の成功に直結する。継続的なフィードバックと積極的な参加が重要。</p>
+            </div>
+            
+            <ul>
+                <li>問題やフィードバックは<span class="underline">明確かつ継続的にアドビに伝える</span>こと</li>
+                <li>Ultimate Successチームを活用し、エンジニアリングチームとの橋渡しをしてもらう</li>
+                <li>アルファ版・ベータ版テスト、クライアントアドバイザリーボードに積極的に参加する</li>
+                <li>アドビの製品開発は<span class="highlight">「顧客からの要望が多い機能ほど優先される」</span>という原則に基づく</li>
+                <li>他のクライアントとの情報共有も重要。アドビが経験していない実際の問題を共有できる</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Ultimate Successチームはどのようにして効果的に活用できますか？</div>
+                    <div class="faq-answer">複雑な技術的問題の解釈と、アドビエンジニアリングとの効果的なコミュニケーションのために活用。チケットのフォローアップやエスカレーションの際に特に重要。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. アドビの製品開発に影響を与えるにはどうすればいいですか？</div>
+                    <div class="faq-answer">具体的なユースケースと価値を明示しながら問題を報告し、機能要望を伝える。「このために失っている金額」など金銭的価値も強調すると効果的。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. クライアントアドバイザリーボードとは何ですか？</div>
+                    <div class="faq-answer">アドビの製品開発方針に意見を述べる顧客代表のグループ。製品ロードマップや優先順位に影響を与えることができる重要な役割。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>重要な用語と解説</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>解説</th>
+                </tr>
+                <tr>
+                    <td>Real-Time CDP</td>
+                    <td>アドビのリアルタイム顧客データプラットフォーム。顧客データの統合と一元管理、セグメント作成を行う</td>
+                </tr>
+                <tr>
+                    <td>Journey Optimizer (旧Offer Decisioning)</td>
+                    <td>顧客体験を設計・自動化するツール。条件分岐やタイミング設定などが可能</td>
+                </tr>
+                <tr>
+                    <td>Destination SDK</td>
+                    <td>CDPからのデータ送信先をカスタマイズするための開発キット</td>
+                </tr>
+                <tr>
+                    <td>Web SDK</td>
+                    <td>ウェブサイトからAdobeへのデータ送信を一元化するツール。同一セッション内のリアルタイム性に影響</td>
+                </tr>
+                <tr>
+                    <td>マルチID問題</td>
+                    <td>同一デバイスに複数人物がログインした際にプロファイルが混合する問題</td>
+                </tr>
+                <tr>
+                    <td>Customer Journey Analytics (CJA)</td>
+                    <td>CDPのデータを基にした高度な顧客行動分析ツール</td>
+                </tr>
+            </table>
+        </div>
+
+        <footer>
+            <p>情報源: S902 Skill Exchange Managing the Unexpected with Real-Time CDP + Journey Optimizer</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

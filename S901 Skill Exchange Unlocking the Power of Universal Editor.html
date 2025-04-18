@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S901 Skill Exchange Unlocking the Power of Universal Editor</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .section {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .summary {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 3px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            display: inline-block;
+        }
+        .important {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .faq-container {
+            margin-top: 20px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Universal Editorのパワーを解放する</h1>
+        </header>
+
+        <div class="section">
+            <div class="summary">
+                Universal Editorは、CMSに依存せずにコンテンツを視覚的に編集できる最新のエディターです。クラウドでもAEM 6.5でも使用でき、ヘッドレスとヘッドフルの両方の実装に対応しています。
+            </div>
+            <p>
+                Adobe Experience Manager（AEM）の新しいエディターオプションとして登場したUniversal Editorは、異なるバックエンドやフロントエンドに対応し、技術的な制約を気にせずにコンテンツを視覚的に編集することができます。特にヘッドレスコンテンツ管理における従来の制限を解消し、柔軟なコンテンツ編集体験を提供します。
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Universal Editorとは</h2>
+            <div class="summary">
+                どのCMSでも使える汎用的なWYSIWYGエディターであり、バックエンドやフロントエンドを問わず使用できます。
+            </div>
+            <h3>特徴</h3>
+            <ul>
+                <li><span class="highlight">ユニバーサル設計</span>：あらゆるバックエンド、フロントエンド技術に対応</li>
+                <li><span class="underline">WYSIWYGオーサリング</span>：コンテンツフラグメント、ページコンテンツ、サービスコンテンツなど</li>
+                <li><span class="highlight">技術的制約の解消</span>：歴史的な問題点を回避した新しい設計</li>
+                <li><span class="underline">エディター統合</span>：コンテンツ作成者は技術的な詳細を気にせず編集可能</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 他のAEMエディターとの違いは何ですか？</div>
+                    <div class="faq-answer">
+                        従来のコンテンツフラグメントエディターはフォームベースで、サイトエディターはページベースでしたが、Universal Editorは両方の長所を組み合わせつつ、どのバックエンドでも動作します。また、ヘッドレス実装における複雑な技術的要件が大幅に簡素化されています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのような環境で使用できますか？</div>
+                    <div class="faq-answer">
+                        Adobe Experience Manager Cloud Serviceだけでなく、AEM 6.5（オンプレミスおよびマネージドサービス）でも利用可能です。2023年の中頃からAEM 6.5向けのバックエンドプラグインが提供され、2024年1月から正式にGA（一般提供）となりました。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Universal Editorの名前の由来は？</div>
+                    <div class="faq-answer">
+                        「ユニバーサル」という名前の通り、どのCMSを使用しているか、クラウドかAEM 6.5かを問わず使用できるという特性を強調しています。コンテンツがどこに保存されていても、コンテンツ作成者は視覚的に編集できる点が特徴です。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Universal Editorでのオーサリング</h2>
+            <div class="summary">
+                コンテンツフラグメント、ページコンポーネント、エクスペリエンスフラグメントなどをシームレスに視覚的に編集できます。
+            </div>
+            <h3>コンテンツ編集の方法</h3>
+            <ul>
+                <li><span class="highlight">インライン編集</span>：コンテンツを直接クリックして編集可能</li>
+                <li><span class="underline">プロパティパネル</span>：コンポーネントのすべてのプロパティを一括編集</li>
+                <li><span class="highlight">コンポーネントの追加・削除</span>：ドラッグ＆ドロップで簡単に配置変更</li>
+                <li><span class="underline">即時保存</span>：変更はすぐにバックエンドに反映される</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. コンテンツフラグメントの編集はどのように行いますか？</div>
+                    <div class="faq-answer">
+                        従来のコンテンツフラグメントエディターとは異なり、ページ上で直接編集できます。コンテンツをクリックしてインライン編集するか、プロパティパネルを開いて全フィールドを編集できます。変更は即座にコンテンツフラグメントに保存されます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. エクスペリエンスフラグメントの扱いは？</div>
+                    <div class="faq-answer">
+                        サイトエディターでは、エクスペリエンスフラグメントを編集するために別のエディターに移動する必要がありましたが、Universal Editorではページコンテキスト内で直接編集できます。これにより真のコンテキスト内編集が可能になります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. コンポーネントの制限はどのように設定されますか？</div>
+                    <div class="faq-answer">
+                        フィルターを使用して、どのコンポーネントがどのコンテナに追加できるかを制御します。これはAEMの編集可能テンプレートのポリシーに似ていますが、Universal Editorでは構成がより柔軟です。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>プロパティパネルとフィールドタイプ</h2>
+            <div class="summary">
+                多様なフィールドタイプをサポートし、コンポーネントプロパティの編集を柔軟に行えます。
+            </div>
+            <h3>サポートされるフィールドタイプ</h3>
+            <ul>
+                <li><span class="underline">AEM固有のフィールド</span>：タグ、参照（アセット）、AEMコンテンツ、コンテンツフラグメント参照など</li>
+                <li><span class="highlight">一般コンテンツタイプ</span>：ラジオボタン、チェックボックス、ドロップダウンリスト、日付と時刻フィールドなど</li>
+                <li><span class="underline">テキストフィールド</span>：基本テキスト（バリデーション可能）、数値、リッチテキストエディターなど</li>
+                <li><span class="highlight">グループ化フィールド</span>：コンテナ、タブなど</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 複雑なマルチフィールドはサポートされていますか？</div>
+                    <div class="faq-answer">
+                        Universal Editorは非常にフラットなデータ構造を想定しているため、従来のサイトダイアログのような複雑なマルチフィールドは直接サポートされていません。代わりに子コンポーネントを使用するか、カスタムフィールドタイプを作成することで同様の機能を実現できます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. リッチテキストエディターはカスタマイズできますか？</div>
+                    <div class="faq-answer">
+                        現時点では、リッチテキストエディターの設定をカスタマイズすることはできませんが、Universal Editorチームは数ヶ月以内にフィルターを適用して設定できるようにする機能を開発中です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. コンポーネントを設計する際の注意点は？</div>
+                    <div class="faq-answer">
+                        フラットなデータ構造を前提に設計する必要があります。複雑なデータ構造が必要な場合は、子コンポーネントに分割することを検討してください。これによりより柔軟なアプローチが可能になります。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>アーキテクチャと拡張性</h2>
+            <div class="summary">
+                フロントエンド、API、永続層の3層構造となっており、様々なバックエンドに対応できる柔軟な設計です。
+            </div>
+            <h3>アーキテクチャの特徴</h3>
+            <ul>
+                <li><span class="highlight">3層構造</span>：フロントエンド（Webアプリ＋Universal EditorのUI）、API（Universal Editorサービス＋バックエンドAPI）、永続層（AEMなどのデータストア）</li>
+                <li><span class="underline">標準化されたメッセージング</span>：フロントエンドからの変更要求を標準形式でバックエンドに伝達</li>
+                <li><span class="highlight">プラグイン方式</span>：様々なバックエンドに対応するためのプラグインシステム</li>
+                <li><span class="underline">HTMLマークアップ</span>：特別な属性を使用して編集可能領域を定義</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのように拡張できますか？</div>
+                    <div class="faq-answer">
+                        主に3つの拡張ポイントがあります：上部レール（ツールバー）の拡張、カスタムフィールドタイプの作成、カスタムサイドパネルの追加です。これらはAdobe IOアプリケーションとして実装します。例として、MSM継承管理、アイコン選択ツール、コンポーネントX線などがあります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. HTMLレベルでの実装はどうなっていますか？</div>
+                    <div class="faq-answer">
+                        主に3つの設定ファイルが使用されます：コンポーネント定義（構造を定義）、フィルター定義（配置ルールを制御）、モデル定義（プロパティを定義）です。HTMLマークアップでは、データリソースやプロパティタイプなどの属性を使用して編集可能な領域を指定します。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 複数のバックエンドを混在させることはできますか？</div>
+                    <div class="faq-answer">
+                        はい、同じページ内で複数の異なるバックエンドからのコンテンツを組み合わせることができます。Universal Editorサービスが適切なバックエンドプラグインを使用して、各コンテンツソースに対応します。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>制限事項と考慮点</h2>
+            <div class="summary">
+                いくつかの制限がありますが、多くは代替アプローチで対処可能です。
+            </div>
+            <h3>主な制限事項</h3>
+            <ul>
+                <li><span class="highlight">継承管理</span>：基本機能には含まれないが、拡張機能として提供されている</li>
+                <li><span class="underline">レイアウトモード</span>：従来のようなレイアウト編集機能はないが、コンポーネント設定で代替可能</li>
+                <li><span class="highlight">複雑なマルチフィールド</span>：直接サポートされないが、子コンポーネントで代替可能</li>
+                <li><span class="underline">リッチテキストエディターのカスタマイズ</span>：現在は制限があるが、今後対応予定</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. マルチサイト管理はどうなりますか？</div>
+                    <div class="faq-answer">
+                        Universal Editor自体にはマルチサイト管理機能は含まれていませんが、拡張機能として提供されています。これにより、AEM特有の多言語・マルチサイト管理機能をUniversal Editor内で使用できます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. レイアウト編集はどのように対応すればよいですか？</div>
+                    <div class="faq-answer">
+                        従来のブレークポイントごとの列幅指定などのレイアウト編集機能はありませんが、フロントエンドがレイアウトを制御するか、コンポーネント設定（列制御など）で対応できます。これはEdge Delivery Servicesなどの新しいアプローチと一致しています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 従来のサイトエディターからの移行は簡単ですか？</div>
+                    <div class="faq-answer">
+                        ある程度の再設計が必要になる場合があります。特にデータ構造のフラット化やコンポーネントの分割などが必要になるかもしれません。ただし、同じサイト内で一部のページはサイトエディター、一部のページはUniversal Editorというように併用することも可能です。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>導入事例と利点</h2>
+            <div class="summary">
+                実際の導入例では、短期間での開発とユーザーフレンドリーなエディター体験が実現しています。
+            </div>
+            <h3>導入のメリット</h3>
+            <ul>
+                <li><span class="highlight">フロントエンド技術に依存しない</span>：ヘッドレス・ヘッドフル問わず使用可能</li>
+                <li><span class="underline">プラグ可能なバックエンドサポート</span>：様々なバックエンドに対応</li>
+                <li><span class="highlight">WYSIWYGとインライン編集</span>：直感的な編集体験</li>
+                <li><span class="underline">拡張性</span>：カスタム機能の追加が可能</li>
+            </ul>
+
+            <div class="important">
+                「Universal Editorはその名に恥じない進化を遂げています。」
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 実際の導入にはどのくらいの期間がかかりますか？</div>
+                    <div class="faq-answer">
+                        講演者の事例では、既存のNext.jsウェブアプリに対して約1週間で動作するプロトタイプを開発できたとのことです。Universal Editorチームのサポートを受けながら、比較的短期間で実装が可能です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのような場合にUniversal Editorを検討すべきですか？</div>
+                    <div class="faq-answer">
+                        ヘッドレス実装を採用しているがWYSIWYG編集機能が必要な場合、複数のバックエンドからのコンテンツを統一的に編集したい場合、AEM 6.5で最新の編集機能を利用したい場合などに特に適しています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 開発者にとってのメリットは何ですか？</div>
+                    <div class="faq-answer">
+                        従来のSPAエディターと比較して、統合アプローチが非常にシンプルになりました。HTMLマークアップに少数の属性を追加するだけで編集機能が実現し、本番環境では不要な属性を簡単にフィルタリングできます。ドキュメントも充実しており、入門が容易です。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>主要な用語と概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>Universal Editor</td>
+                    <td>どのCMSでも使える視覚的な編集ツール。AEM CloudおよびAEM 6.5で利用可能</td>
+                </tr>
+                <tr>
+                    <td>コンテンツフラグメント</td>
+                    <td>構造化されたコンテンツを保存するためのAEMの機能。ヘッドレス実装で多用される</td>
+                </tr>
+                <tr>
+                    <td>エクスペリエンスフラグメント</td>
+                    <td>複数のページで再利用できるコンテンツとレイアウトのセット</td>
+                </tr>
+                <tr>
+                    <td>ヘッドレス実装</td>
+                    <td>CMSがコンテンツのみを提供し、表示はフロントエンドが担当する実装方法</td>
+                </tr>
+                <tr>
+                    <td>ヘッドフル実装</td>
+                    <td>CMSがコンテンツとHTMLの両方を提供する従来の実装方法</td>
+                </tr>
+                <tr>
+                    <td>プロパティパネル</td>
+                    <td>コンポーネントの全プロパティを編集するための側面パネル</td>
+                </tr>
+                <tr>
+                    <td>フィルター定義</td>
+                    <td>どのコンポーネントをどのコンテナに配置できるかを制御する設定</td>
+                </tr>
+                <tr>
+                    <td>MSM継承</td>
+                    <td>Multi Site Manager。サイト間でのコンテンツ継承を管理する機能</td>
+                </tr>
+            </table>
+        </div>
+
+        <footer>
+            <p>S901 Skill Exchange: Unlocking the Power of Universal Editor by Marty Noble, CTO of X (IBM)</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentNode;
+                    faqItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

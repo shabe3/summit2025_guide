@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S928 A Progressive Approach to Modernizing Your Adobe Commerce Implementation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .summary {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        .faq-container {
+            margin-top: 20px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 1000px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Adobe Commerce モダナイゼーションへの<span class="underline">段階的アプローチ</span></h1>
+        </header>
+
+        <section>
+            <div class="summary">
+                Adobe Commerceプラットフォームのモダナイゼーションは、大きな変革ではなく段階的に進めることができます。App Builderやエッジデリバリーサービスを活用することで、コストを抑えながらリスクを最小限に抑え、効率的に革新することが可能です。
+            </div>
+
+            <div class="important">
+                <span class="highlight">重要ポイント：アウトオブプロセス拡張・段階的アプローチ・適切なツールの活用</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Adobe Commerceの進化</h2>
+            <div class="summary">
+                Adobe Commerceは2018年のMagento買収以降、スケーラブルな企業向けプラットフォームとして進化してきました。
+            </div>
+
+            <h3>主な進化の段階</h3>
+            <ul>
+                <li><span class="underline">スケーラビリティの強化</span>：B2B、マルチリージョン、マルチブランド対応の企業向けプラットフォームの構築</li>
+                <li><span class="underline">APIファースト戦略</span>：APIのみでなく、必要な機能も提供する包括的なアプローチ</li>
+                <li><span class="underline">クラウドネイティブ拡張性</span>：クラウドネイティブアプリ、サービス、そして最新のクラウドネイティブプラットフォームの提供</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 既存のAdobe Commerceはどうなるのですか？</div>
+                    <div class="faq-answer">
+                        従来のAdobe Commerceプラットフォームはなくなりません。今回のモダナイゼーションは完全に新しいバージョンへの移行ではなく、既存システムの段階的な進化を目指しています。現在のモジュールを維持しながら、一部の機能をApp Builderに移行することが可能です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 従来のアーキテクチャにはどのような課題がありましたか？</div>
+                    <div class="faq-answer">
+                        従来のアーキテクチャでは、カスタマイズの自由度が高い反面、アップグレード時の互換性問題、パフォーマンスの低下、カスタマイズの維持コスト増大、データ共有の困難さなどの課題がありました。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 理想的なアーキテクチャとは何ですか？</div>
+                    <div class="faq-answer">
+                        理想的なアーキテクチャでは、Adobe Commerceの基盤を変更せず、バージョンアップグレードのみを行います。その上にマーチャンダイジングサービス層を配置し、カスタマイズ層はApp Builder、API Mesh、Adobe IOを通じて実現します。フロントエンドにはEdge Delivery Servicesで強化されたコマースストアフロントを使用します。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>App Builderによるモダナイゼーション</h2>
+            <div class="summary">
+                App Builderはクラウド上の開発環境であり、カスタムアプリケーションをAdobe Commerce外部で実行することができます。
+            </div>
+
+            <h3>App Builderの特徴</h3>
+            <ul>
+                <li><span class="underline">イベントベースのプラットフォーム</span>：700以上のネイティブイベントに対応</li>
+                <li><span class="underline">同期・非同期処理</span>：リアルタイム処理と非同期処理の両方に対応</li>
+                <li><span class="underline">ローコード環境</span>：JavaScript開発が容易</li>
+                <li><span class="underline">独立したデプロイ</span>：コマースプラットフォームと分離したデプロイが可能</li>
+            </ul>
+
+            <h3>利用可能なツール</h3>
+            <ul>
+                <li><span class="underline">インテグレーションスターターキット</span>：ERPやCRMなどのバックオフィス統合用テンプレート</li>
+                <li><span class="underline">API Mesh</span>：APIオーケストレーションツール</li>
+                <li><span class="underline">拡張モジュール</span>：決済・配送などの拡張用PHPモジュール</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. App Builderはどのような場合に使うべきですか？</div>
+                    <div class="faq-answer">
+                        App Builderは、ERPやCRMとの統合、サードパーティAPIとの連携、パフォーマンスに影響するカスタム機能の実装など、Adobe Commerce外部で実行したい処理に最適です。既存のモジュールをApp Builderに移行することでアップグレードの複雑さを減らし、パフォーマンスを向上させることができます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. App Builderの実装例を教えてください</div>
+                    <div class="faq-answer">
+                        例えば、注文データをERPに送信する場合、従来はカスタムモジュールを作成して注文イベントを監視し、ERPのAPIクライアントを実装する必要がありました。App Builderでは、Adobe Commerceからのネイティブイベントを受け取り、ERPとロイヤリティシステムに同時にデータを送信するアプリケーションを作成できます。また、在庫リアルタイムチェックなどの同期処理も実装可能です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. API Meshとは何ですか？</div>
+                    <div class="faq-answer">
+                        API Meshは、さまざまなAPIソースからデータを取得し、Adobe CommerceのAPIと統合して単一のGraphQLエンドポイントとして提供するツールです。例えば、商品レビューサービスのAPIをAdobe CommerceのAPIと結合し、ストアフロントから単一のAPIとして利用できるようにすることができます。これにより、フロントエンドのコード量を減らし、ビジネスロジックをバックエンドに集中させることができます。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Edge Delivery Services</h2>
+            <div class="summary">
+                Edge Delivery Servicesは、コマースとコンテンツの体験を統合するフロントエンド技術です。モジュール式のドロップインを提供し、段階的な導入が可能です。
+            </div>
+
+            <h3>主な特徴</h3>
+            <ul>
+                <li><span class="underline">コンテンツとコマースの統合</span>：Experience Managerベースの編集またはドキュメントベースの編集</li>
+                <li><span class="underline">モジュール式ドロップイン</span>：製品詳細ページ、カート、チェックアウトなどのコンポーネント</li>
+                <li><span class="underline">拡張性</span>：スロットを通じてカスタマイズが可能</li>
+                <li><span class="underline">Luma Bridge</span>：既存のLumaテーマとEdge Delivery Servicesを連携</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Edge Delivery Servicesを段階的に導入するには？</div>
+                    <div class="faq-answer">
+                        Edge Delivery Servicesは、全てのページを一度に移行する必要はありません。例えば、最初にランディングページだけをEdge Deliveryに移行し、残りのエクスペリエンスは既存のストアフロントのままにすることができます。次のフェーズでは、製品リストページや製品詳細ページを追加し、カートやチェックアウトは後で移行するという方法が可能です。Visual Comfortのウェブサイトでは、ホームページと製品リストページをEdge Deliveryで実装し、残りの部分はLumaテーマのままという実装例があります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Luma Bridgeとは何ですか？</div>
+                    <div class="faq-answer">
+                        Luma Bridgeは、現在Lumaテーマを使用しているサイトがEdge Delivery Servicesを部分的に導入する際に役立つツールです。これにより、コンテンツページ、カテゴリページ、製品ページをEdge Deliveryで実装しながら、残りのエクスペリエンスをLumaで維持することができます。例えば、ユーザーがLumaでログインした後にEdge Deliveryのページに移動しても、ユーザーコンテキスト（ログイン状態やカート情報など）を維持することができます。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>段階的アプローチの実践</h2>
+            <div class="summary">
+                モダナイゼーションは一度に全てを移行するのではなく、段階的に進めることで、リスクを最小限に抑えながら効率的に実施できます。
+            </div>
+
+            <h3>主なステップ</h3>
+            <ul>
+                <li><span class="underline">計画と設計</span>：機能マトリックスの作成、現在のカスタマイズの棚卸し、機能領域ごとのマッピング</li>
+                <li><span class="underline">優先順位付け</span>：ビジネス価値の高い機能、パフォーマンス問題のある領域、アップグレードの障害になる部分を特定</li>
+                <li><span class="underline">開発</span>：利用可能なツールの活用、新しい要件をApp Builderで開発、クイックウィンの実現</li>
+                <li><span class="underline">リリース</span>：価値を提供する機能から順次リリース、ハイブリッドアプローチでの実装</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. モダナイゼーションの主なメリットは何ですか？</div>
+                    <div class="faq-answer">
+                        モダナイゼーションの主なメリットには、コスト効率の向上（特にアップグレードコストの削減）、より迅速なイノベーション、最小限の中断（分離されたデプロイにより）、リスク軽減などがあります。段階的アプローチを取ることで、日常業務を継続しながらモダナイゼーションを進めることができます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 優先順位付けはどのように行うべきですか？</div>
+                    <div class="faq-answer">
+                        優先順位付けはビジネスニーズによって異なりますが、一般的には以下のアプローチがあります：
+                        1. 機能領域ごと（コンテンツ、チェックアウトなど）に段階的に進める
+                        2. アップグレードの障害になっている複雑な依存関係から始める
+                        3. パフォーマンス問題がある領域に焦点を当てる
+                        4. インテグレーションスターターキットを使ったクイックウィンから始める
+                        5. 新しい要件はすべてApp Builderで開発する
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. すべてのモジュールをApp Builderに移行する必要がありますか？</div>
+                    <div class="faq-answer">
+                        いいえ、すべてのモジュールをApp Builderに移行する必要はありません。段階的アプローチでは、PHP拡張とApp Builderアプリを並行して使用することができます。ただし、最終的にAdobe Commerce Cloud Services（SaaSプラットフォーム）に移行する場合は、ヘッドレス構成にし、すべてのPHPモジュールをApp Builderに移行する必要があります。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>重要な用語と概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>App Builder</td>
+                    <td>Adobe提供のクラウド開発環境。イベントベースでJavaScriptを使用し、Adobe Commerce外部でカスタムアプリケーションを実行できる</td>
+                </tr>
+                <tr>
+                    <td>Edge Delivery Services</td>
+                    <td>コマースとコンテンツの体験を統合するフロントエンド技術。モジュール式のドロップインを提供</td>
+                </tr>
+                <tr>
+                    <td>API Mesh</td>
+                    <td>様々なAPIソースからデータを取得し、単一のGraphQLエンドポイントとして提供するAPIオーケストレーションツール</td>
+                </tr>
+                <tr>
+                    <td>インテグレーションスターターキット</td>
+                    <td>ERP、CRM、ロイヤリティなどのバックオフィスシステムとの統合用テンプレート</td>
+                </tr>
+                <tr>
+                    <td>Luma Bridge</td>
+                    <td>既存のLumaテーマとEdge Delivery Servicesを連携させるツール</td>
+                </tr>
+                <tr>
+                    <td>Adobe Commerce Cloud Services</td>
+                    <td>SaaSプラットフォームとしてのAdobe Commerce。理想的なノースターアーキテクチャ</td>
+                </tr>
+                <tr>
+                    <td>Commerce Optimizer</td>
+                    <td>トランザクション機能なしでカタログとエクスペリエンスを提供するソリューション</td>
+                </tr>
+            </table>
+        </section>
+
+        <footer>
+            出典：S928 A Progressive Approach to Modernizing Your Adobe Commerce Implementation.mov.txt
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

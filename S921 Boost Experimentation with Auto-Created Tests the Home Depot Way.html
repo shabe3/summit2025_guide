@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S921 Boost Experimentation with Auto-Created Tests the Home Depot Way</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        .summary {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 2px;
+        }
+        
+        .important {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .faq-container {
+            margin: 20px 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: #fff;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Home Depot のオートテスト導入事例</h1>
+            <p>実験を自動化・分散化し効率と速度を向上させた取り組み</p>
+        </header>
+        
+        <div class="summary">
+            <h2>サマリー</h2>
+            <p>Home Depot は、実験プロセスの効率化のために「Auto Test」と呼ばれる自動化ソリューションを開発しました。この取り組みによって、テスト開発時間を<span class="highlight">86%削減</span>し、リソース要件を<span class="highlight">83%削減</span>、実験サイクルを<span class="underline">60-70日から21日</span>へと短縮しました。Adobe Work FrontとAdobe Targetを活用した分散型ワークフローにより、各部門が自律的に実験を行いながらも、中央で管理された標準とガードレールを確保しています。</p>
+        </div>
+        
+        <div class="section">
+            <h2>背景と課題</h2>
+            <p>Home Depotの実験チームは、中央集権的なアプローチの限界に直面していました。実験の数を拡大するにつれて、運用上の課題が効率と採用を妨げていました。</p>
+            
+            <h3>直面していた主な課題</h3>
+            <ul>
+                <li><span class="underline">開発の労力</span>: テストの設計と開発に多くの時間がかかり、エンジニアやデータサイエンティストとの頻繁なコミュニケーションが必要だった</li>
+                <li><span class="underline">プログラム管理</span>: 多数の承認ステップと手続きが存在し、何百ものテストがパイプラインにある状態では実験チームがボトルネックになっていた</li>
+                <li><span class="underline">学習曲線</span>: 多くのステークホルダーが実験の詳細を理解しておらず、継続的なトレーニングが必要だった</li>
+                <li><span class="underline">採用障壁</span>: 面倒で遅いプロセスのため、多くの部門が実験に消極的だった</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 実験の完全サイクルにはどれくらいの時間がかかっていましたか？</div>
+                    <div class="faq-answer">
+                        <p>改善前は、コンセプトから実験終了までの完全なサイクルには60〜70日かかっていました。改善後は21日まで短縮されました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ中央集権的なアプローチでは限界があったのですか？</div>
+                    <div class="faq-answer">
+                        <p>実験プログラムが組織全体に拡大するにつれて、中央チームがボトルネックとなり、ステークホルダーとのコミュニケーションや承認プロセスに多くの時間が費やされていました。また、各部門は独自のビジネスニーズに合わせてより多くのコントロールと柔軟性を求めていました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 自動化への移行のきっかけは何でしたか？</div>
+                    <div class="faq-answer">
+                        <p>Google Optimizeがサービス終了を発表したことで、それを使用していたチームが別のツールを求めていました。このチームは中央集権的なアプローチに適応したくなく、より自律的な方法を求めていました。これが自動化と分散化への移行のきっかけとなりました。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Auto Testソリューションの開発</h2>
+            <p>Home Depotは、実験プロセスを自動化・分散化するためのソリューションとして「Auto Test」を開発しました。これにより、各部門が自律的に実験を行いながらも、中央で管理された標準を確保することが可能になりました。</p>
+            
+            <h3>主な要件</h3>
+            <ul>
+                <li><span class="underline">自動化</span>: リソースを増やさずに実験数を拡大するため</li>
+                <li><span class="underline">ガバナンス</span>: 適切な人が適切な機能とツールにアクセスできるようにするため</li>
+                <li><span class="underline">標準化</span>: ベストプラクティスを維持し、ガードレールを確保するため</li>
+            </ul>
+            
+            <h3>主な機能</h3>
+            <ul>
+                <li><span class="highlight">自動テスト作成</span>: Adobe Work FrontからAdobe TargetへのAPI連携で、テストを自動的に作成・管理</li>
+                <li><span class="highlight">ガードレール</span>: ベストプラクティスを強制し、リスクの高いテスト（例：ホームページを100%に設定するなど）を防止</li>
+                <li><span class="highlight">重複チェック</span>: 同じページに複数のテストが重複して実行されないよう自動的に確認</li>
+                <li><span class="highlight">アクセス制御</span>: 部門ごとにアクセス権限を細かく設定可能</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. このシステムはどのように構築されましたか？</div>
+                    <div class="faq-answer">
+                        <p>Home Depotは3つのフェーズで構築を進めました：<br>
+                        1. 概念実証フェーズ - 技術的実現可能性の検証<br>
+                        2. 機能追加フェーズ - オーディエンスやオファーなどの機能を追加<br>
+                        3. ガードレール実装フェーズ - ベストプラクティスを強制するルールを実装</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 非技術系ユーザーでも使いやすいですか？</div>
+                    <div class="faq-answer">
+                        <p>はい、Adobe Work Frontの使いやすいインターフェースを維持することで、非技術系ユーザーでも簡単にテストを作成できます。ユーザーは直感的なフォームに入力するだけで、バックグラウンドではAPIを通じてAdobe Targetにテストが自動作成されます。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 他の企業でも同様のシステムを導入できますか？</div>
+                    <div class="faq-answer">
+                        <p>はい、このシステムは再利用可能な設計になっています。Target APIとFusion APIは各企業で同じであるため、Home Depotの経験から学び、短期間で少ない労力で実装できます。現在、複数の大企業が業界を超えてこのアプローチを採用し始めています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>成果と効果</h2>
+            <p>Auto Testの導入により、Home Depotは実験プログラムを大幅に改善し、効率と速度を向上させました。</p>
+            
+            <div class="important">
+                テスト開発時間を86%削減、リソース要件を83%削減
+            </div>
+            
+            <h3>主な成果</h3>
+            <ul>
+                <li><span class="underline">テスト数の増加</span>: より多くのチームが実験に参加するようになり、組織全体での実験の影響力が拡大</li>
+                <li><span class="underline">効率化されたプロセス</span>: Adobe TargetとWork Frontを行き来する必要がなくなり、コミュニケーションのオーバーヘッドが減少</li>
+                <li><span class="underline">オーナーシップの向上</span>: テスト依頼者側の責任とアカウンタビリティが向上し、テスト立ち上げが迅速化</li>
+                <li><span class="underline">リソースの再配分</span>: 人員削減ではなく、反復的なタスクから革新的なプロジェクトへリソースを再配分</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. チームメンバーは自動化に対してどのような反応でしたか？</div>
+                    <div class="faq-answer">
+                        <p>当初は「自分の仕事がなくなるのでは」という懸念がありましたが、自動化が単純作業を減らし、より価値の高い仕事に集中できることを理解すると、チームのモラルは向上しました。チームメンバーはこれを「履歴書に追加できる素晴らしい経験」と評価しています。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. リソース要件の83%削減とは具体的に何を意味しますか？</div>
+                    <div class="faq-answer">
+                        <p>これは人員削減ではなく、繰り返しのタスクやコミュニケーションオーバーヘッドからリソースを解放し、より意味のある仕事に再配分できたことを意味します。例えば、各実験アナリストはサンプルサイズ計算ツールの改善、データ自動化の強化、新しい実験タイプの開発などの革新的なプロジェクトに取り組めるようになりました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 実験の品質は向上しましたか？</div>
+                    <div class="faq-answer">
+                        <p>はい、ガードレールと標準化により、実験の質も向上しました。以前は個々の知識と経験に依存していた部分が、システムによって強制されるベストプラクティスに置き換わり、一貫性のある高品質な実験が可能になりました。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>今後の展望</h2>
+            <p>Home Depotは「Auto Test」の成功を踏まえ、さらなる改善と拡張を計画しています。</p>
+            
+            <h3>次のステップ</h3>
+            <ul>
+                <li><span class="underline">仮説生成支援</span>: Adobe Experiment Optimizerとの連携により、良質な仮説の構築をサポート</li>
+                <li><span class="underline">機会発見</span>: パフォーマンス数値に基づいてテストの機会を発見する機能</li>
+                <li><span class="underline">部門別ビュー</span>: 45の異なる部門が独自のテストパフォーマンスビューを持てるよう分割</li>
+                <li><span class="underline">仮説検証の自動化</span>: テスト開始後に主要成功指標や仮説が変更されないよう、事前に仮説を検証</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Experiment Optimizerとは何ですか？</div>
+                    <div class="faq-answer">
+                        <p>Adobe Experiment Optimizer（JOEとも呼ばれていた）は、仮説構築を支援するAdobe製品です。テストのパフォーマンス数値から機会を発見し、良質な仮説の構築をガイドします。これはAdobe Targetに組み込まれる予定です。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ仮説検証の自動化が重要なのですか？</div>
+                    <div class="faq-answer">
+                        <p>Home Depotの経験では、ステークホルダーがテスト中に主要成功指標や仮説を変更することがあり、これが実験の整合性を損なう可能性があります。仮説検証の自動化により、テスト開始前に仮説を固定し、テスト中の変更を防止することができます。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. このアプローチは他のチャネルにも適用できますか？</div>
+                    <div class="faq-answer">
+                        <p>はい、このFusionブループリントは、Webサイトだけでなく、メール、ダイレクト広告、その他のチャネルにも適用できる可能性があります。これにより、コンテンツサプライチェーンの拡張として、Work Frontを通じて中央集権的に実験と自動化を行うことができます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>重要用語・ポイント</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>Auto Test</td>
+                    <td>Home Depotが開発した実験の自動化・分散化ツール</td>
+                </tr>
+                <tr>
+                    <td>Adobe Work Front</td>
+                    <td>プロジェクト管理ツール。Home Depotでは実験管理に使用</td>
+                </tr>
+                <tr>
+                    <td>Adobe Target</td>
+                    <td>A/Bテスト実施のためのツール</td>
+                </tr>
+                <tr>
+                    <td>ガードレール</td>
+                    <td>リスクの高いテスト設定を防止する自動チェック機能</td>
+                </tr>
+                <tr>
+                    <td>分散型ワークフロー</td>
+                    <td>各部門が自律的に実験を行いながら中央で標準を管理する方法</td>
+                </tr>
+                <tr>
+                    <td>Fusion API</td>
+                    <td>Adobe製品間の連携を可能にするAPI</td>
+                </tr>
+                <tr>
+                    <td>Experiment Optimizer</td>
+                    <td>仮説構築を支援するAdobeツール</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            <p>このドキュメントはS921 Boost Experimentation with Auto-Created Tests the Home Depot Wayに基づいています</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

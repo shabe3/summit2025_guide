@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EY エンタープライズ価値の加速化：共有プラットフォームフレームワーク</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 16px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        .summary {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 24px 0;
+            font-size: 1.1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .faq-container {
+            margin-top: 24px;
+        }
+        .faq-item {
+            margin-bottom: 12px;
+        }
+        .faq-question {
+            background-color: #f2f2f2;
+            padding: 12px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+        }
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+        .faq-answer {
+            display: none;
+            padding: 12px;
+            background-color: #f9f9f9;
+            border-radius: 0 0 4px 4px;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>EY エンタープライズ価値の加速化：共有プラットフォームフレームワーク</h1>
+        </header>
+
+        <div class="summary">
+            <h2>概要</h2>
+            <p>EYは150カ国以上、40万人以上の従業員を持つグローバル組織として、Adobeテクノロジーを活用した共有プラットフォームを構築。コスト削減、運用の中央集約化、迅速な展開、効率的なリソース活用を実現し、様々なビジネスユニットにサービスを提供しています。このプラットフォームは「ハブアンドスポーク」モデルで設計され、標準化された開発・メンテナンス実践を通じて、複数の規制コンプライアンス要件への対応も容易にしています。</p>
+        </div>
+
+        <section>
+            <h2>プラットフォーム開発の背景</h2>
+            <p>約3年前、EYはYY.comの改善を検討する中で、マーケティング部門だけでなく企業全体から一貫したテーマとリクエストが上がってきました。</p>
+            
+            <h3>主な課題</h3>
+            <ul>
+                <li>様々な部門で<span class="highlight">パーソナライズされたデジタル体験</span>の構築が求められていた</li>
+                <li>マーケティング、クライアント向け、従業員向けなど<span class="underline">異なる目的</span>でも同様のニーズがあった</li>
+                <li>各ユースケースごとに個別のポイントソリューションを構築するのは非効率</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜAdobeプラットフォームを選んだのですか？</div>
+                    <div class="faq-answer">既存のAdobeへの投資を最大限に活用し、ライセンスを複数のシステム、アプリケーション、ユースケースで使用するためです。また、セキュリティ管理の一元化や運用チームの集約化も可能になります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. このプラットフォームの開発はいつ始まりましたか？</div>
+                    <div class="faq-answer">約3年前、YY.comの改善を検討している際に、企業全体から一貫したテーマやリクエストが上がってきたことがきっかけです。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのような部門でニーズがありましたか？</div>
+                    <div class="faq-answer">マーケティング部門、クライアント向け組織、従業員エンゲージメントチーム、アラムナイ（元従業員）向けチームなど、様々な部門でデジタル体験の構築ニーズがありました。</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>プラットフォームの目的と利点</h2>
+            <p>共有プラットフォームフレームワークの主な目的は、Adobeの投資を最大化し、様々なユースケースに適用できるマイクロサービス構造を構築することです。</p>
+
+            <h3>主な利点</h3>
+            <ul>
+                <li><span class="underline">コスト削減</span>：予算が限られている中で、Adobe投資の最大活用</li>
+                <li><span class="underline">中央集権的管理</span>：セキュリティ管理の集約化、運用の効率化</li>
+                <li><span class="underline">迅速な展開</span>：インフラ構築、デプロイメントの迅速化</li>
+                <li><span class="underline">リソースの共有</span>：プロジェクト間でリソースを移動させることで、完全活用が可能</li>
+                <li><span class="underline">スケーラビリティ</span>：インフラを迅速に拡張、アプリケーションニーズに対応</li>
+            </ul>
+
+            <div class="important">「15の異なるユースケースのために15の異なるポイントソリューションを構築するのではなく、再利用・再活用できるプラットフォームを構築」</div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. プラットフォームの運用コスト削減はどのように実現されますか？</div>
+                    <div class="faq-answer">1つのインフラ・プラットフォームを維持・運用することで、標準化された実践方法を確立し、ガバナンスを強化。運用の自動化を可能な限り進め、複数の規制遵守ソースに対応する複雑さを軽減しています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのように迅速な展開を実現していますか？</div>
+                    <div class="faq-answer">中央集約的なインフラとテンプレート、再利用可能なコンポーネントにより、例えばイントラネットのリプラットフォームを16週間で完了するなど、大幅な時間短縮を実現しています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. リソース共有の具体的な例は？</div>
+                    <div class="faq-answer">中央コアチームが常にプラットフォームを運用し、各プロジェクトに応じてリソースを移動させることで、リソースの完全活用が可能になります。プロジェクトごとにリソースを立ち上げて終了させる必要がありません。</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>アーキテクチャと実装</h2>
+            <p>EYでは「ハブアンドスポーク」モデルを採用し、共通サービスをハブに配置、各ビジネスユニット（サービスライン）はスポークとして接続する構造を設計しました。</p>
+
+            <h3>ハブの構成</h3>
+            <ul>
+                <li><span class="highlight">デジタルハブ</span>：データ関連項目、デジタルアセット、キャンペーンなどの共通サービスを提供</li>
+                <li><span class="highlight">構成ハブ</span>：サービスパッケージを提供し、迅速な接続を可能に</li>
+                <li>統合プラットフォーム：統合プロファイルを構築し、様々なアプリケーションに活用</li>
+            </ul>
+
+            <h3>データフロー</h3>
+            <ul>
+                <li>各サービスラインのアプリケーションからハブにデータを継続的に提供</li>
+                <li>ハブは常に新鮮なデータで拡充され、より良いセグメントを生成</li>
+                <li>セグメント情報を各サービスラインに提供し、パーソナライゼーションに活用</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. サービスラインがハブにどのように接続しますか？</div>
+                    <div class="faq-answer">アラカルトメニューのようなサービスパッケージが用意されており、サービスラインは必要な機能（分析、パーソナライゼーション、コンテンツ管理など）を選択して接続できます。全機能を使用する必要はなく、必要な機能だけを選ぶことができます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. データソースへの接続における課題は？</div>
+                    <div class="faq-answer">データソースへの接続には、セキュリティクリアランスや地理的な制約（データの所在地）など多くの課題がありますが、ハブがこれらを一元管理することで、サービスラインはこれらの問題を心配する必要がありません。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. リソースやスキルが限られたチームはどうサポートされますか？</div>
+                    <div class="faq-answer">リソースやスキルが限られたビジネスユニットには、コンテンツ管理、ワーク管理、パーソナライゼーションなどすべてをハブから提供し、独自の環境を設定する必要がないようサポートしています。</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>実際の適用例</h2>
+            <p>EYでは様々なプロジェクトで共有プラットフォームを活用し、迅速な展開と効率的なコンテンツ再利用を実現しています。</p>
+
+            <h3>主な実装例</h3>
+            <ul>
+                <li><span class="underline">知識プラットフォーム「ディスカバー」</span>：Work Front、Marketo、Analytics、Target、ElasticSearchなどを統合</li>
+                <li><span class="underline">米国クリエイティブサービス</span>：Adobe Work FrontとFusionを使用してプロセス自動化を実現</li>
+                <li><span class="underline">イントラネットのリプラットフォーム</span>：16週間で完全再構築（従来の費用の一部で実現）</li>
+            </ul>
+
+            <h3>パーソナライゼーションの実現</h3>
+            <ul>
+                <li>ユーザーのセクターやサービスラインに基づいてコンテンツをターゲティング</li>
+                <li>複数システム間でのコンテンツ共有を実現（コピー・再アップロードの不要化）</li>
+                <li>コンテンツのライフサイクル管理と更新の一元化</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「ディスカバー」プラットフォームとは具体的に何ですか？</div>
+                    <div class="faq-answer">「ディスカバー」はEYの内部知識プラットフォームで、Work Front、Marketo、Analytics、Target、ElasticSearch、Pool Party（現在のGraph Wise）などの技術を統合し、コンテンツ管理ライフサイクル全体をサポートしています。ユーザーのセクターやサービスラインに基づいてパーソナライズされたコンテンツを提供します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. パーソナライゼーションはどのように実現されていますか？</div>
+                    <div class="faq-answer">TargetとAnalyticsを使用して、ユーザーのクライアントサービス、サービスライン、セクターなどの属性に基づいて関連コンテンツをプッシュします。例えば、戦略・取引チームのユーザーには、そのチームに関連するコンテンツが自動的に表示されます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. コンテンツの再利用はどのように行われますか？</div>
+                    <div class="faq-answer">以前はチームがデータをダウンロードして再アップロードしたり、リンクをコピーしたりしていましたが、現在はTargetを通じてコンテンツを直接表示します。これによりコンテンツがアーカイブされてもリンクが切れることがなく、常に最新のパーソナライズされた体験を提供できます。</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>用語集と重要概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>ハブアンドスポークモデル</td>
+                    <td>中央のハブに共通サービスを配置し、各ビジネスユニット（スポーク）がそれに接続する設計モデル</td>
+                </tr>
+                <tr>
+                    <td>デジタルハブ</td>
+                    <td>データ関連項目、デジタルアセット、キャンペーンなどの共通サービスを提供する中央コンポーネント</td>
+                </tr>
+                <tr>
+                    <td>構成ハブ</td>
+                    <td>サービスパッケージを提供し、ビジネスユニットの迅速な接続を可能にするコンポーネント</td>
+                </tr>
+                <tr>
+                    <td>統合プロファイル</td>
+                    <td>様々なデータソースから収集した情報を統合し、ユーザーのプロファイルを構築するシステム</td>
+                </tr>
+                <tr>
+                    <td>サービスライン</td>
+                    <td>EY内の各ビジネスユニットを指す用語</td>
+                </tr>
+                <tr>
+                    <td>サービスパッケージ</td>
+                    <td>分析、パーソナライゼーション、コンテンツ管理などの機能を提供するパッケージ</td>
+                </tr>
+            </table>
+        </section>
+
+        <footer>
+            <p>出典：EY企業技術組織 - 共有プラットフォームフレームワークプレゼンテーション</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

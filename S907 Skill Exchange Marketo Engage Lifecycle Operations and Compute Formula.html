@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S907 Skill Exchange Marketo Engage Lifecycle Operations and Compute Formula</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 2px;
+        }
+        
+        .important {
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #0f3c78;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .faq-container {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 15px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .faq-question:after {
+            content: "+";
+            font-size: 1.2rem;
+            color: #0f3c78;
+        }
+        
+        .faq-question.active:after {
+            content: "-";
+        }
+        
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #fff;
+        }
+        
+        .faq-answer.active {
+            padding: 15px;
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Marketo Engageのライフサイクル運用と計算式フロー機能</h1>
+        </header>
+        
+        <div class="summary">
+            <h2>概要</h2>
+            <p>このドキュメントでは、Adobe Championプログラムの一員であるChris WillisとJosh Arringtonによる2つの主要なMarketoスキル交換セッションの内容を紹介します。ライフサイクル運用の最適化と、セルフサービスフローステップの一つである「計算式」機能の活用方法について詳しく解説します。これらの機能を理解することで、Marketoでのマーケティング自動化をより効率的に行うことができます。</p>
+        </div>
+        
+        <section>
+            <h2>ライフサイクル運用の最適化</h2>
+            <p>Chris Willisによるセッションでは、Marketoのライフサイクル運用における一般的な課題と、その効果的な解決策について解説されました。</p>
+            
+            <h3>ライフサイクルの重要性</h3>
+            <ul>
+                <li>ライフサイクルは<span class="highlight">MQL（マーケティング適格リード）の生成エンジンではなく、レポーティングツール</span>であることが強調されました</li>
+                <li>バイヤージャーニーにおける顧客の行動を報告し、マーケティングとセールスのアラインメントを実現するツール</li>
+                <li>ビジネスストーリーを伝え、意思決定を改善するためのデータ（速度や量など）を提供</li>
+            </ul>
+            
+            <h3>現在のベストプラクティスと課題</h3>
+            <ul>
+                <li>典型的なライフサイクルプログラムは、各ステージを表すトリガーキャンペーンを持ち、「デイジーチェーン」方式で連携</li>
+                <li><span class="underline">セールスの「オーダーメイド行動」がライフサイクルのレポーティングを妨げる</span></li>
+                <li>セールスはしばしばプロセスをショートカットし、ステージをスキップしてしまう
+                    <ul>
+                        <li>例：MQLから直接オポチュニティを作成し、セールスアクセプト/セールス適格ステージをスキップ</li>
+                        <li>例：「ブルーバード」（突然現れる大きな案件）を後期ステージで作成</li>
+                    </ul>
+                </li>
+                <li>これにより日付スタンプにギャップが生じ、レポーティングデータの信頼性が損なわれる</li>
+            </ul>
+            
+            <h3>提案された解決策</h3>
+            <ul>
+                <li><span class="highlight">ライフサイクル運用を実行可能なキャンペーンに分割</span>し、監査とトラブルシューティングを容易に</li>
+                <li>セールス適格化ワークフローにMQLのファストトラックと同様のロジックを適用</li>
+                <li>「デイジーチェーン」リクエストキャンペーンを使用して、フロー制御を実現</li>
+                <li>これにより、ステージスキップの問題を解決し、各ステージが順番に処理されるようになる</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. ライフサイクルとは正確には何ですか？</div>
+                    <div class="faq-answer">ライフサイクルは、顧客がバイヤージャーニーを通じてどのように行動しているかを報告するためのレポーティングツールです。MQLの生成エンジンではなく、マーケティングとセールスのパートナーが意思決定を改善するためのビジネスストーリーを伝えるためのものです。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜセールスはステージをスキップしてしまうのですか？</div>
+                    <div class="faq-answer">セールスチームは顧客との時間を最大化し、CRMの更新に時間を費やしたくないと考えています。CRM管理者はセールスチームに多くの柔軟性を与え、その結果、セールスはプロセスをショートカットしてステージをスキップしがちです。例えば、MQLから直接オポチュニティを作成したり、「ブルーバード」案件を後期ステージで突然作成したりします。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 提案された解決策をどのように実装すればよいですか？</div>
+                    <div class="faq-answer">次の手順で実装します：1）ライフサイクルを監査して問題を特定する、2）現在のライフサイクルトリガーをクローンして新しいワークフローを作成する、3）ダウンストリームステージトリガーを追加し、次のステージを定義するスマートリストと選択肢＆リクエストキャンペーンフローステップを設定する、4）テストして有効化し、必要に応じてバックフィルしてレポーティングを調整する。</div>
+                </div>
+            </div>
+            
+            <p class="important">ライフサイクルは単なるMQL生成エンジンではなく、バイヤージャーニー全体を通じたレポーティングツールです！</p>
+        </section>
+        
+        <section>
+            <h2>セルフサービスフローステップと計算式機能</h2>
+            <p>Josh Arringtonのセッションでは、Marketoの革新的な機能である「セルフサービスフローステップ」と、特に「計算式」機能の活用方法について解説されました。</p>
+            
+            <h3>セルフサービスフローステップとは</h3>
+            <ul>
+                <li>Marketoスマートキャンペーンに<span class="highlight">追加の機能を追加できる組み込み機能</span></li>
+                <li>すべてのMarketoインスタンスに無料で含まれており、Webhooksよりも多くの利点がある</li>
+                <li>Webhooksと比較した主な利点：
+                    <ul>
+                        <li>バッチキャンペーンで実行可能</li>
+                        <li>カスタマイズ可能なフィールドと動的ルックアップが利用可能</li>
+                        <li>非同期実行でタイムアウト問題を回避</li>
+                        <li>カスタムアクティビティが自動的に作成される</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>計算式フローステップ</h3>
+            <ul>
+                <li><span class="underline">ExcelのようなFormula機能をMarketo内で直接使用可能</span></li>
+                <li>データのエクスポート、計算、インポートといった手間を省くことができる</li>
+                <li>オープンソースで、Adobe IOを通じて導入可能</li>
+                <li>導入は技術的ですが、難しくはなく30分程度で完了</li>
+            </ul>
+            
+            <h3>計算式フローステップの活用例</h3>
+            <ul>
+                <li><span class="highlight">最も高いスコアの特定：</span>複数のスコアを比較し、最も高い関心領域を返す</li>
+                <li><span class="highlight">複合スコアの作成：</span>異なるスコアを重み付けして組み合わせる</li>
+                <li><span class="highlight">ラウンドロビン割り当て：</span>リードIDを利用して営業担当者にリードを均等に割り当てる</li>
+                <li>その他の活用例：
+                    <ul>
+                        <li>テキストの大文字小文字変換</li>
+                        <li>部分的にマスクされたデータの表示</li>
+                        <li>ルックアップ機能（Excelの VLOOKUP に相当）</li>
+                        <li>データの完全性スコアの計算</li>
+                        <li>開封率とクリック率の計算</li>
+                        <li>メールアドレスからドメイン抽出</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. セルフサービスフローステップとWebhookの違いは何ですか？</div>
+                    <div class="faq-answer">セルフサービスフローステップはWebhookよりも多くの利点があります。バッチキャンペーンで実行できる、カスタマイズ可能なフィールドと動的ルックアップがある、非同期で実行されるためタイムアウト問題がない、カスタムアクティビティが自動的に作成される、などの特徴があります。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 計算式フローステップをインストールするには何が必要ですか？</div>
+                    <div class="faq-answer">インストールには以下が必要です：1）Adobe IOへのデベロッパーまたはシステム管理者アクセス、2）オープンソースコードのダウンロード（コードに触れる必要はなく、単にダウンロードするだけ）、3）Adobe IOへのアップロード、4）Marketoへのインストール。全プロセスは約30分で完了します。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 計算式フローステップでできることの具体例を挙げてください</div>
+                    <div class="faq-answer">計算式フローステップでは以下のようなことができます：1）複数のスコアを比較して最も高いものを特定する、2）異なるスコアに重み付けして複合スコアを作成する、3）リードIDを使ってラウンドロビン方式で営業担当者に割り当てる、4）テキストの大文字小文字変換、5）データの完全性スコアの計算、6）メールアドレスからドメイン抽出、など多数あります。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 計算式を作成する際のヒントはありますか？</div>
+                    <div class="faq-answer">計算式作成のヒント：1）Excelとは異なり等号（=）は使用しない、2）Marketoトークンを使用する場合、テキストトークンは単一引用符（'）で囲む、3）生成AIを活用して複雑な数式を作成できる（ただし必ずテストすること）、4）Formula.jsのウェブサイトで事前に数式をテストすることができます。</div>
+                </div>
+            </div>
+            
+            <p class="important">セルフサービスフローステップは、マーケティング自動化の可能性を大幅に拡張する最も強力な機能の一つです！</p>
+        </section>
+        
+        <section>
+            <h2>主要用語・概念解説</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>ライフサイクル</td>
+                    <td>顧客がバイヤージャーニーをどのように進行しているかを報告するためのレポーティングツール</td>
+                </tr>
+                <tr>
+                    <td>MQL（マーケティング適格リード）</td>
+                    <td>組織のリード定義に基づいて、マーケティングによって「適格」と判断されたリード</td>
+                </tr>
+                <tr>
+                    <td>セールスアクセプトリード</td>
+                    <td>セールスチームによって受け入れられたリード</td>
+                </tr>
+                <tr>
+                    <td>セールス適格リード</td>
+                    <td>セールスチームによって適格と判断されたリード</td>
+                </tr>
+                <tr>
+                    <td>オポチュニティ</td>
+                    <td>セールスファネルに入った潜在的な商談</td>
+                </tr>
+                <tr>
+                    <td>ステージスキッピング</td>
+                    <td>セールスチームがプロセスをショートカットし、特定のステージを飛ばしてしまう問題</td>
+                </tr>
+                <tr>
+                    <td>デイジーチェーン</td>
+                    <td>キャンペーンを連鎖的に実行する手法</td>
+                </tr>
+                <tr>
+                    <td>セルフサービスフローステップ</td>
+                    <td>Marketoスマートキャンペーンに追加機能を追加できる組み込み機能</td>
+                </tr>
+                <tr>
+                    <td>計算式フローステップ</td>
+                    <td>Excelのような数式機能をMarketo内で直接使用できるフローステップ</td>
+                </tr>
+                <tr>
+                    <td>Adobe IO</td>
+                    <td>Adobe製品のAPIとサービスを統合するためのプラットフォーム</td>
+                </tr>
+            </table>
+        </section>
+        
+        <footer>
+            <p>出典: S907 Skill Exchange Marketo Engage Lifecycle Operations and Compute Formula.mov.txt</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(function(question) {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
