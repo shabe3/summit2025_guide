@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S714 Brewing Hypergrowth How 7 Brew Coffee Built a Scalable Digital Foundation</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        
+        .important {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        .faq-container {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .faq-question {
+            padding: 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '−';
+        }
+        
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 500px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>7 Brew Coffeeのスケーラブルなデジタル基盤構築</h1>
+        </header>
+        
+        <div class="summary">
+            <h2>サマリー</h2>
+            <p>本ドキュメントでは、急成長中のドライブスルーコーヒーブランド「7 Brew Coffee」がどのようにデジタル基盤を構築し、ハイパーグロースの時代に対応しているかを解説します。創業からわずか数年で353店舗に拡大し、さらなる成長を目指す同社が、「思いやりを育む」という企業理念を守りながら、テクノロジーをどう活用しているかを紹介します。</p>
+        </div>
+        
+        <div class="section">
+            <h2>7 Brew Coffeeとは</h2>
+            <p>7 Brew Coffeeは、ドライブスルー専門のコーヒーショップチェーンで、コーヒーだけでなく、エナジードリンク、スムージー、シェイクなど幅広いドリンクを提供しています。</p>
+            
+            <h3>ブランドの特徴</h3>
+            <ul>
+                <li><span class="highlight">急速な成長</span>：2023年は180店舗から330店舗へと1年でほぼ倍増</li>
+                <li><span class="underline">企業理念「思いやりを育む」（Cultivating Kindness）</span>：顧客体験を重視</li>
+                <li>スピード：ドライブスルーでの素早いサービス提供</li>
+                <li>カスタマイズ：無限の組み合わせでドリンクをパーソナライズ可能</li>
+                <li>フランチャイズモデル：353店舗中330店舗がフランチャイズ</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ7 Brewは「世界で最も速く成長するレストラン」と呼ばれているのですか？</div>
+                    <div class="faq-answer">
+                        2023年だけで180店舗から330店舗に急成長し、2024年も同様のペースで拡大を続けています。この急速な店舗展開スピードが、「米国で最も速く成長するレストラン」という評価につながっています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 7 Brewのビジネスモデルの特徴は何ですか？</div>
+                    <div class="faq-answer">
+                        ドライブスルー専門のコーヒーショップで、店内での飲食スペースはありません。スピード、品質、豊富なカスタマイズオプションを提供し、顧客体験を最重視しています。また、フランチャイズモデルを活用して急速な拡大を実現しています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「思いやりを育む」とはどのような意味ですか？</div>
+                    <div class="faq-answer">
+                        顧客の時間を大切にし、高品質の製品を提供し、パーソナライズされた体験を創出するという意味です。バリスタ（店舗スタッフ）の個性を尊重し、マニュアル通りではなく自然な形で顧客と交流することを奨励しています。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>デジタル変革の背景</h2>
+            <p>CTOのダニエル・ビショフが入社した時点では、テクノロジーインフラが最小限で、IT部門はわずか2名でした。デジタル変革が必要となった背景には、いくつかの課題がありました。</p>
+            
+            <h3>直面していた課題</h3>
+            <ul>
+                <li>ウェブサイト管理の外部依存：プロモーション時の変更が迅速にできない</li>
+                <li>マーケティング資産の管理：USBメモリでのファイル共有、個人のラップトップ保存</li>
+                <li>ブランド資産の重複：効率的な管理システムの欠如</li>
+                <li>急成長に対応するシステムの不足</li>
+            </ul>
+            
+            <div class="important">
+                「我々はゼロからスタートした」
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜデジタル変革が必要だったのですか？</div>
+                    <div class="faq-answer">
+                        急速な成長に対応するためのスケーラブルなシステムが必要でした。ウェブサイトの変更が遅い、マーケティング資産の管理が非効率、ブランド資産の重複など、多くの課題が積み重なっていました。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. CTOが最初に直面した問題は何でしたか？</div>
+                    <div class="faq-answer">
+                        マーケティング担当者が外部のウェブサイト管理会社からの応答を得られず、プロモーションの変更ができなかった問題と、USBメモリを使ってマーケティング資産を共有していた非効率な状況でした。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ITチームの使命は何ですか？</div>
+                    <div class="faq-answer">
+                        「ビジネスケイパビリティの実現」がIT部門の使命です。技術のための技術ではなく、ビジネスを可能にする技術を提供することを目指しています。その際、スケーラブル、サポート可能、回復力があり、安全であるという4つの基本原則に基づいています。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>デジタル変革の戦略</h2>
+            <p>7 Brewはデジタル変革において、「一挙に全てを導入する」アプローチではなく、「這う、歩く、走る」の段階的アプローチを選択しました。</p>
+            
+            <h3>段階的アプローチの理由</h3>
+            <ul>
+                <li>変更管理の観点：一度に多くの変更を導入することは現実的でない</li>
+                <li>限られたリソース：少人数のチームで効率的に進める必要性</li>
+                <li>基盤作りの重要性：将来の拡張に備えた堅固な基盤の必要性</li>
+                <li>ビジネスケイパビリティ重視：技術ではなくビジネスニーズを優先</li>
+            </ul>
+            
+            <h3>デジタル変革の第一フェーズ</h3>
+            <ul>
+                <li><span class="highlight">ウェブエクスペリエンス</span>：Adobe Sitesを使用したウェブサイトの再構築</li>
+                <li><span class="underline">デジタルアセット管理（DAM）</span>：Adobe Assetsを使用した資産管理</li>
+                <li>顧客ジャーニー分析（CJA）：マーケティングチャネルのデータ統合</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ段階的アプローチを選んだのですか？</div>
+                    <div class="faq-answer">
+                        変更管理の観点から、一度に多くの変更を導入することは現実的ではありませんでした。少人数のチームで効率的に進めるため、ビジネスケイパビリティに基づいて優先順位をつけ、段階的に実装することを選択しました。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 最初に取り組んだ分野は何ですか？</div>
+                    <div class="faq-answer">
+                        ウェブサイトの再構築とデジタルアセット管理（DAM）が最初の取り組みでした。7 Brewの顧客はソーシャルメディアでの活動が活発で、ウェブサイトへのアクセスも多いため、この分野を優先しました。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 将来のロードマップはどのようなものですか？</div>
+                    <div class="faq-answer">
+                        マーケティングとロイヤルティプログラム、オンライン注文システム、アプリ開発などが将来のロードマップに含まれています。すべてのフェーズで顧客体験の向上に焦点を当てています。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>デジタル変革の成果</h2>
+            <p>デジタル変革の第一フェーズでは、すでに複数の成果が出ています。</p>
+            
+            <h3>ウェブサイト再構築の成果</h3>
+            <ul>
+                <li>モバイルレスポンシブスコア：<span class="highlight">30から90へ向上</span>（再設計なしでの改善）</li>
+                <li>サイト検索性：<span class="underline">3倍向上</span></li>
+                <li>資産管理効率：<span class="highlight">40%向上</span></li>
+                <li>アクセシビリティ要件への適合</li>
+            </ul>
+            
+            <h3>追加のメリット</h3>
+            <ul>
+                <li>イントラネット構築：Adobe Sitesを活用した社内情報共有</li>
+                <li>フランチャイジーポータル：フランチャイズオーナー向け情報提供サイト</li>
+                <li>アセット共有：フランチャイジー向けマーケティング資産の共有</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. ウェブサイト再構築の具体的な成果は何ですか？</div>
+                    <div class="faq-answer">
+                        モバイルレスポンシブスコアが30から90に向上し、サイト検索性が3倍向上しました。また、AMM Assetsを使用した資産管理の効率が40%向上し、アクセシビリティ要件にも適合しました。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobe Sitesをどのように活用していますか？</div>
+                    <div class="faq-answer">
+                        ウェブサイトだけでなく、イントラネットとフランチャイジーポータルの構築にも活用しています。一つのプラットフォームを複数の目的に活用することで、追加投資なしで複数のプロジェクトを実現しています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 顧客ジャーニー分析（CJA）の効果は何ですか？</div>
+                    <div class="faq-answer">
+                        マーケティング担当者が複数のプラットフォームを行き来することなく、一つのダッシュボードで広告投資の効果を確認できるようになりました。これにより、データに基づいた意思決定が容易になっています。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>デジタル変革から学んだ教訓</h2>
+            <p>7 Brewのデジタル変革から得られた主な教訓は次の通りです。</p>
+            
+            <h3>主要な学び</h3>
+            <ul>
+                <li><span class="underline">強固な基盤の構築</span>：AIなどの先進技術よりも基盤が重要</li>
+                <li><span class="highlight">ビジネスケイパビリティ優先</span>：技術ではなくビジネスニーズを優先</li>
+                <li>エコシステム全体の考慮：顧客だけでなく、バリスタ、フランチャイジー、本社も含めた全体最適</li>
+                <li>シンプルさの維持：複雑さを避け、シンプルなソリューションを目指す</li>
+            </ul>
+            
+            <div class="important">
+                「デジタル変革はテクノロジーのためではなく、人間の経験を向上させるためのもの」
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. デジタル変革で最も重要な教訓は何ですか？</div>
+                    <div class="faq-answer">
+                        強固な基盤を構築することが最も重要です。AIなどの先進技術に飛びつく前に、まずは基盤となるシステムをしっかりと構築することが重要です。また、技術のための技術ではなく、ビジネスケイパビリティを優先することも重要な教訓です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. パートナー選びの基準は何ですか？</div>
+                    <div class="faq-answer">
+                        信頼関係、過去の実績、レスポンスの速さ、思考パートナーとしての能力が重要な基準です。価格だけでなく、総所有コスト（TCO）を考慮し、長期的なパートナーシップを築けるかどうかを重視しています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. デジタル技術と人間の体験のバランスをどう取っていますか？</div>
+                    <div class="faq-answer">
+                        デジタル技術はあくまで人間の体験をサポートするためのものと位置づけています。顧客体験、バリスタの業務、フランチャイジーのサポートなど、すべての面で人間中心のアプローチを取り、テクノロジーはそれを支える役割を果たすよう設計しています。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>重要な用語・事実リスト</h2>
+            <table>
+                <tr>
+                    <th>用語/事実</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>7 Brew Coffee</td>
+                    <td>ドライブスルー専門のコーヒーショップチェーン。コーヒーだけでなく、エナジードリンク、スムージー、シェイクなども提供。</td>
+                </tr>
+                <tr>
+                    <td>Cultivating Kindness</td>
+                    <td>「思いやりを育む」という7 Brewの企業理念。顧客体験を最重視する姿勢を表している。</td>
+                </tr>
+                <tr>
+                    <td>バリスタ</td>
+                    <td>7 Brewの店舗スタッフの呼称。個性を活かした自然な顧客対応を奨励されている。</td>
+                </tr>
+                <tr>
+                    <td>Adobe Sites</td>
+                    <td>7 Brewがウェブサイト、イントラネット、フランチャイジーポータルに活用しているプラットフォーム。</td>
+                </tr>
+                <tr>
+                    <td>Adobe Assets (DAM)</td>
+                    <td>デジタルアセット管理システム。7 Brewのマーケティング資産を一元管理するのに使用。</td>
+                </tr>
+                <tr>
+                    <td>CJA (Customer Journey Analytics)</td>
+                    <td>顧客ジャーニー分析。複数のマーケティングチャネルのデータを統合し、効果測定を可能にする。</td>
+                </tr>
+                <tr>
+                    <td>フランチャイズモデル</td>
+                    <td>7 Brewの成長戦略。353店舗中330店舗がフランチャイズで、23店舗が直営。</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            <p>このドキュメントは、S714 Brewing Hypergrowth How 7 Brew Coffee Built a Scalable Digital Foundationの内容に基づいて作成されました。</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

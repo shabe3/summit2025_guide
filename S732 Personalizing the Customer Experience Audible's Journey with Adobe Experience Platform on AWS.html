@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S732 Personalizing the Customer Experience Audible's Journey with Adobe Experience Platform on AWS</title>
+    <style>
+        :root {
+            --accent-color: #0f3c78;
+            --bg-color: #f5f5f5;
+            --section-bg: #ffffff;
+            --text-color: #333;
+            --highlight-color: #fff3cd;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: var(--accent-color);
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 25px;
+        }
+        
+        .section {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .summary {
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        ul {
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 1px;
+        }
+        
+        .important {
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .faq-container {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: #eef2f8;
+            padding: 12px 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: 500;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: #f9f9f9;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 500px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #eef2f8;
+            color: var(--accent-color);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Audibleのカスタマーエクスペリエンスパーソナライゼーション：<br>Adobe Experience Platform on AWSの実装</h1>
+        
+        <div class="section">
+            <div class="summary">
+                <p>Audibleは、AWS上でAdobe Experience Platform（AEP）を導入した最初の顧客として、カスタマーエクスペリエンスをパーソナライズする画期的な取り組みを行いました。この12ヶ月間のプロジェクトでは、DeloitteとAdobeとAWSの強力なパートナーシップにより、複数チャネルでのカスタマージャーニーを統合し、パーソナライゼーションを実現しました。</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>プロジェクト概要</h2>
+            <p class="summary">Audibleは2024年1月に発見セッションを開始し、2025年1月に最初のユースケースをローンチするまで12ヶ月間の実装プロジェクトを実施しました。</p>
+            
+            <h3>主な実装フェーズ</h3>
+            <ul>
+                <li>2024年1月：ディスカバリーセッションでユースケースを特定</li>
+                <li>ユースケースをAdobeと共有し、機能・特徴の優先順位付けに活用</li>
+                <li>2024年9月：Adobe-AWS間の契約締結、プロダクト開発</li>
+                <li>2025年1月31日：最初のユースケースのゴーライブ</li>
+            </ul>
+            
+            <p class="important">通常のAEP実装とは異なり、AWS上での<span class="highlight">初めての実装</span>であったため、意図的な一時停止がありました。</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜAudibleがAEPを選んだのですか？</div>
+                    <div class="faq-answer">
+                        <p>AudibleはAmazonの一部であり、AWS環境に深く組み込まれています。従来のAdobe Analyticsなどを10年以上使用していましたが、複数のタッチポイント（Amazon、Audibleウェブ、Audibleアプリなど）を持つカスタマージャーニーを統合することが困難でした。AEPはこれらのタッチポイントを結合し、統一顧客プロファイルを作成できるため採用されました。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 実装に12ヶ月もかかった理由は何ですか？</div>
+                    <div class="faq-answer">
+                        <p>通常、AEPの実装はこれほど長くはかかりませんが、AudibleはAWS上での最初の顧客（カスタマーゼロ）であったため、製品開発とプラットフォームの準備に合わせて意図的な一時停止が必要でした。例えば、ディスカバリー中に定義されたユースケースをAdobeと共有し、それに基づいて機能と特徴の優先順位付けが行われました。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. Deloitteはどのような役割を果たしましたか？</div>
+                    <div class="faq-answer">
+                        <p>Deloitteは実装パートナーとして、ユースケースの特定から設計、実装まで主導的な役割を果たしました。特にAzure上でのAEP実装経験があり、初期導入者としての知見を活かし、Audibleが「カスタマーゼロ」として成功するための強力なサポートを提供しました。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>実装ユースケース</h2>
+            <p class="summary">Audibleは3つの主要なユースケースカテゴリに焦点を当てました：データ基盤の構築、分析とインサイト、セグメンテーションとアクティベーション。</p>
+            
+            <h3>優先されたユースケース</h3>
+            <ul>
+                <li><span class="underline">統合顧客プロファイル</span>：既知・未知のデータを統合し、完全な顧客像を把握</li>
+                <li><span class="underline">カスタマージャーニー分析</span>：異なるデバイス（サーフェス）間での顧客行動を分析</li>
+                <li><span class="underline">パーソナライゼーション</span>：未ログインユーザーを含むウェブサイト体験のカスタマイズ</li>
+                <li><span class="underline">リスニングデータの活用</span>：一時停止、再開などの詳細なリスニング行動の分析</li>
+            </ul>
+            
+            <p class="important">これらは<span class="highlight">基盤となるユースケース</span>であり、将来的に拡張するための第一歩です。</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. ユースケースはどのように選定されましたか？</div>
+                    <div class="faq-answer">
+                        <p>実装初期では「海を沸かす」アプローチは適切ではないため、適切な幅広さをカバーしつつ、P0（最優先）実装のためにプラットフォームに十分なデータを取り込むことを確保するよう慎重に選定しました。これにより、P1、P2ユースケースを迅速に展開できる基盤を構築しています。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 具体的なパーソナライゼーションの例は？</div>
+                    <div class="faq-answer">
+                        <p>例えば、初めてサイトを訪れた未ログインの顧客がSFカテゴリーページを閲覧し、いくつかのSFタイトルをクリックした後にサイトを離れた場合、そのプロファイルとSFへの関心がCDPに記録されます。数日後に再訪問した際、空白のホームページではなく、SFタイトルのカルーセルを表示したり、SFカテゴリーページに直接誘導したり、または前回閲覧していた最後の製品ページに案内するなどの摩擦を減らす体験が可能になります。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. カスタマージャーニー分析は具体的に何を明らかにしますか？</div>
+                    <div class="faq-answer">
+                        <p>例えば、顧客が一つのデバイスでタイトルの視聴を開始し、車の中で続け、自宅で再開するような体験を追跡できます。リスニングデータ（一時停止、再開タイミングなど）と使用デバイスの情報を統合することで、エンドツーエンドのジャーニーを理解し、インサイトを得られます。これにより、新しいオーディエンスセグメントを作成し、ターゲティングやパーソナライゼーションに活用できます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>AWS上のAEPの特徴と利点</h2>
+            <p class="summary">AWS上のAEPは、特にAWSエコシステム内のビジネスに向けたパフォーマンス、コスト、セキュリティの利点を提供します。</p>
+            
+            <h3>主な利点</h3>
+            <ul>
+                <li><span class="underline">高性能・耐障害性・セキュリティ</span>：Audibleのビジネス規模（数十億の顧客タッチポイント）に対応できる証明された基盤</li>
+                <li><span class="underline">相互運用性の利点</span>：AWS上の顧客データレイクとの統合によるパフォーマンス向上、コスト削減、セキュリティ強化</li>
+                <li><span class="underline">Adobe製品との連携</span>：Adobe Experience Manager、Adobe Commerce、Target、Campaign、Marketoなど他のAdobe製品との優れた相互運用性</li>
+                <li><span class="underline">AWS Connect統合</span>：コールセンターシステムの顧客プロファイルデータとの統合で完全な顧客体験の把握が可能に</li>
+                <li><span class="underline">Amazon広告との連携</span>：AEPのセグメントをAmazon広告に直接アクティベートし、広告パフォーマンスデータをAEPにフィードバック</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. AWS上のAEPは他のクラウド環境と比べてどのような違いがありますか？</div>
+                    <div class="faq-answer">
+                        <p>AWS上のAEPは、顧客データがインターネットに露出することなく、AWS環境内で移動できるため、セキュリティとパフォーマンスの利点があります。また、多くのAdobe Digital Experience技術がAWS上で実行されているため、Adobe Experience Manager、Adobe Commerce、Target、Campaign、Marketoなどの他のAdobe製品との相互運用性が優れています。これにより、AWS環境を使用する企業にとって、統合的なエクスペリエンス管理が容易になります。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. Amazon Connect統合は具体的に何をもたらしますか？</div>
+                    <div class="faq-answer">
+                        <p>Amazon Connectはオムニチャネルコールセンターシステムで、通話やチャットなどの顧客対応データを取得します。この顧客プロファイルデータをAEPの顧客プロファイルと統合することで、デジタルチャネルとカスタマーサービスチャネルの両方を含むエンドツーエンドの顧客ジャーニーの完全な可視化が可能になります。この統合データを活用して、Amazon Q connectとAEPのエージェントを使用したAI駆動型エージェントを作成し、より個別化された顧客体験を提供することができます。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. Amazon広告との連携はどのように機能しますか？</div>
+                    <div class="faq-answer">
+                        <p>Adobe ExpressやPhotoshopで広告コンテンツを作成し、AEPから直接オーディエンスセグメントをAmazon広告にアクティベートできます。さらに、パフォーマンスインサイトはAmazon Marketing Cloudを通じてAEPにフィードバックされ、広告主は広告支出のリターンをより効果的に管理できるようになります。これによりコンテンツ作成からオーディエンスターゲティング、パフォーマンス測定までの一連のプロセスがシームレスになります。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>実装の主な学び</h2>
+            <p class="summary">この初めての実装から得られた重要な教訓は、将来のAWS上のAEP実装の参考になります。</p>
+            
+            <h3>主な学び</h3>
+            <ul>
+                <li><span class="underline">データ収集の重要性</span>：WebSDKなどのデータ収集メカニズムを早期に検討する必要性</li>
+                <li><span class="underline">本番データの準備</span>：可能な限り早期に本番データを準備することの重要性</li>
+                <li><span class="underline">変革管理の必要性</span>：技術だけでなく、運用モデル、変革管理、プロセスの変更も同時に行う重要性</li>
+                <li><span class="underline">段階的な導入</span>：一度にすべてを導入するのではなく、段階的に機能を展開する戦略</li>
+                <li><span class="underline">Adobe CGAとAdobe Analyticsの差異理解</span>：見た目は似ていても、データ収集・処理方法が大きく異なる点を認識</li>
+            </ul>
+            
+            <p class="important">将来の実装では<span class="highlight">12ヶ月もかからない</span>はずです。製品が利用可能になり、ガイドラインが確立されたためです。</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. WebSDKはなぜ重要だったのですか？</div>
+                    <div class="faq-answer">
+                        <p>WebSDKは、ウェブでの行動に関するデータ収集とプラットフォームへのデータストリーミングを高速化する重要なコンポーネントでした。特にリアルタイムの要件がある場合、WebSDKはデータの頻度に関する要件を満たすために必要でした。プロジェクトの後半でこの必要性が認識されましたが、ディスカバリー段階で検討すべき重要な要素であることが学びとなりました。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ運用モデルと変革管理が重要なのですか？</div>
+                    <div class="faq-answer">
+                        <p>このような実装を純粋に技術プロジェクトとして扱うと、プラットフォームの価値を最大化するための運用モデル、変更管理、プロセスの変更を見落としがちです。技術の実装と並行して、マーケティングチームやビジネスチームと緊密に連携し、新しいプラットフォームが稼働した際の新しい運用モデルを理解させ、採用を促進するための変革管理を行うことが重要です。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobe CGAとAdobe Analyticsの主な違いは何ですか？</div>
+                    <div class="faq-answer">
+                        <p>見た目は似ていても（ワークスペースが同じように見えるなど）、データの収集方法、プラットフォームへの取り込み方法、操作方法、顧客プロファイルの設定方法、識別子の使用方法、データビューの作成方法など、実質的にはエンドツーエンドのすべてが異なります。そのため、変革管理と運用コンポーネントが重要となります。プロジェクトに直接関わる人々だけでなく、これらのツールのすべてのユーザーが影響を受けるためです。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>重要用語と説明</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>AEP (Adobe Experience Platform)</td>
+                    <td>顧客データを統合し、リアルタイムでアクティベートするためのプラットフォーム</td>
+                </tr>
+                <tr>
+                    <td>CDP (Customer Data Platform)</td>
+                    <td>AEPのコンポーネントで、顧客データの統合管理を行う</td>
+                </tr>
+                <tr>
+                    <td>CJA (Customer Journey Analytics)</td>
+                    <td>異なるチャネルを横断する顧客行動を分析するツール</td>
+                </tr>
+                <tr>
+                    <td>WebSDK</td>
+                    <td>ウェブサイトからAEPへデータをストリーミングするための開発キット</td>
+                </tr>
+                <tr>
+                    <td>カスタマーゼロ</td>
+                    <td>新しい製品やプラットフォームの最初の顧客</td>
+                </tr>
+                <tr>
+                    <td>統合顧客プロファイル</td>
+                    <td>異なるチャネルやタッチポイントからのデータを結合した単一の顧客像</td>
+                </tr>
+                <tr>
+                    <td>セグメンテーション</td>
+                    <td>顧客を類似の特性や行動に基づいてグループ化すること</td>
+                </tr>
+                <tr>
+                    <td>アクティベーション</td>
+                    <td>顧客セグメントを利用してパーソナライズされた体験を提供すること</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            <p>このドキュメントは「S732 Personalizing the Customer Experience Audible's Journey with Adobe Experience Platform on AWS.mov.txt」の内容を基に作成されています。</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentNode;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

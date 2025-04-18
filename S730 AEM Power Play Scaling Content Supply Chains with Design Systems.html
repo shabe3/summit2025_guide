@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S730 AEM Power Play Scaling Content Supply Chains with Design Systems</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 15px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .section {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin: 15px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        
+        .important {
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        .faq-container {
+            margin-top: 15px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 12px 15px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 500px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>デザインシステムを活用した<br>コンテンツサプライチェーンの拡張</h1>
+            <p>Adobe Summit 2025 - Willow TreeとBrunswick Corporationのパートナーシップ</p>
+        </header>
+        
+        <div class="section">
+            <h2>概要</h2>
+            <p>このプレゼンテーションでは、Willow TreeがBrunswick Corporationと協力して、多ブランドのコンテンツサプライチェーンを合理化した取り組みを解説します。統一されたデザインシステムとAdobe Experience Manager（AEM）クラウドサービスを活用することで、複雑な60以上のブランドデジタルエコシステムを競争優位性に変換しました。</p>
+            
+            <h3>主な成果</h3>
+            <ul>
+                <li><span class="highlight">コンポーネント削減率：94%</span>（1,000以上から54へ）</li>
+                <li><span class="highlight">単一用途コンポーネント：100%排除</span></li>
+                <li><span class="highlight">新ブランド導入期間：6ヶ月→4週間</span>に短縮</li>
+                <li><span class="highlight">マーケティングキャンペーン展開：数週間→数時間</span>に短縮</li>
+                <li>デザイン時間：<span class="highlight">40時間→6〜8時間</span>に短縮</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. このプロジェクトの目的は何ですか？</div>
+                    <div class="faq-answer">
+                        <p>Brunswickの60以上のブランドサイトが個別のコードベースで運用されていたため、開発コストが膨大で、革新的な機能の実装に時間がかかっていました。このプロジェクトでは、統一されたデザインシステムとコンポーネントライブラリを構築し、全ブランドでの再利用を可能にすることが目的でした。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Brunswick Corporationとは？</div>
+                    <div class="faq-answer">
+                        <p>Brunswickは海洋レジャー産業のリーディングカンパニーで、Mercury推進システム、Boston WhalerやSea Rayなどの14の主要ボートブランド、ナビゲーションシステム、フィッシュファインダーなどを提供しています。米国内で販売されるプレジャーボートの50%以上がBrunswickの製品です。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Willow Treeとは？</div>
+                    <div class="faq-answer">
+                        <p>Willow Treeは、エンドツーエンドのデジタルエクスペリエンスパートナーで、Adobeとの17年以上の協力関係があります。Adobe Experience Cloudエコシステムに200以上の認定資格と100以上の実装経験を持つグローバルエキスパートで構成されています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>課題分析</h2>
+            <p>デジタル変革を始める前に、Willow TreeはBrunswickの多ブランド構造に関する深い理解と現状の課題を特定するための包括的な監査を実施しました。</p>
+            
+            <h3>発見された主な問題点</h3>
+            <ul>
+                <li>60以上のブランドサイトが<span class="underline">個別のコードベース</span>で運用</li>
+                <li>1,000以上のコンポーネントと4,000以上のバリエーションが存在</li>
+                <li>コンテンツカードだけでも190種類の異なるタイプが使用</li>
+                <li>全コンポーネントの<span class="highlight">80%が単一用途</span>で再利用不可能</li>
+                <li>残りの20%のうち、10%は2回しか使用されず、<span class="highlight">90%の開発投資が一度きりの使用</span>に</li>
+                <li>複数プラットフォームでの<span class="underline">非一貫的なコンテンツ管理</span></li>
+                <li>開発のためだけに年間7桁の支出が発生</li>
+            </ul>
+            
+            <div class="important">「複雑さは障壁ではなく、機会である」</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜこのような状況になったのですか？</div>
+                    <div class="faq-answer">
+                        <p>Brunswickは常に新しいビジネスを構築し、買収を行っていたため、各ブランドは独自のデジタルエクスペリエンスとコードベースを持っていました。Adobe Experience Managerを使用していたサイトでさえ、コンポーネントがコピー＆ペーストされることで独自のコードベースに発展していました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. これはBrunswick固有の問題ですか？</div>
+                    <div class="faq-answer">
+                        <p>いいえ、多くの企業が同様の課題を抱えています。業界データによると、30%のテクノロジー投資が重複システムや冗長なソリューションにより無駄になり、82%の企業がマーケティングテクノロジースタックの統合不足による非効率性を報告しています。また、72%のマーケターが遅い実行と承認プロセスが市場機会を逃す最大の理由だと述べています。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 監査はどのように実施されましたか？</div>
+                    <div class="faq-answer">
+                        <p>Willow Treeは、Brunswickの60のデジタル資産全体に対して包括的な監査を実施しました。これは表面的なレビューではなく、実際の使用例、タグ付け、ブランド整合性に関するデータ主導のアプローチを用いて、システムがリアルタイムでどのように使用されているかを正確に把握するものでした。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>解決策：デザインシステムと統合アプローチ</h2>
+            <p>WillowTreeとBrunswickは、拡張性があり将来性のあるソリューションを構築するための戦略を4つの柱に基づいて策定しました。</p>
+            
+            <h3>戦略の4つの柱</h3>
+            <ul>
+                <li><span class="underline">構造化：</span>クラウドサービスとしてのAEMへの移行</li>
+                <li><span class="underline">標準化：</span>ブランド間で水平方向にシームレスに拡張できるシステム</li>
+                <li><span class="underline">統一：</span>「一度構築して複数展開」モデルでコンポーネントを統一</li>
+                <li><span class="underline">ガバナンス：</span>アクセシビリティ、パフォーマンス、セキュリティを確保</li>
+            </ul>
+            
+            <h3>主要な技術的解決策</h3>
+            <ul>
+                <li><span class="highlight">デザイントークン</span>によって駆動されるブランド不可知なコンポーネント</li>
+                <li>クラウド内の<span class="highlight">エンタープライズコンポーネントライブラリ</span></li>
+                <li>マーケティング、コンテンツ、開発チームの<span class="highlight">クロスチームコラボレーション</span></li>
+                <li><span class="highlight">API駆動型コンテンツサプライチェーン</span>による単一の情報源</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. デザイントークンとは何ですか？</div>
+                    <div class="faq-answer">
+                        <p>デザイントークンは、システム内のUIエレメントを制御する変数で、タイポグラフィ、色、間隔、角丸などの設計要素を一元管理します。これにより、各ブランドの独自性を保ちながら、一貫性のある設計が可能になります。ブランドブックから得られる各ブランドのデザイン要素がトークンに格納され、コンポーネント全体に適用されます。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「一度構築して複数展開」モデルとは？</div>
+                    <div class="faq-answer">
+                        <p>各ブランドごとに個別のコンポーネントを開発するのではなく、基本となるコンポーネントを一度開発し、それをデザイントークンを通じて各ブランドに合わせてスタイリングできるようにするアプローチです。これにより開発の重複が排除され、すべてのブランドが最適化されたシステムの恩恵を受けることができます。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. コンテンツカードが190種類から1つに統合できたのはなぜですか？</div>
+                    <div class="faq-answer">
+                        <p>Willow TreeとBrunswickは、すべてのコンテンツカードの使用例をマッピングし、それらが本当に独自の機能を持つのか、または単に見た目が異なるだけなのかを分析しました。多くの場合、基本的な機能は同じであり、違いはスタイルのみでした。デザイントークンを使用することで、単一のコンテンツカードコンポーネントを作成し、それぞれのブランドに合わせて異なるスタイルを適用できるようになりました。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>実装プロセスとチームコラボレーション</h2>
+            <p>このプロジェクトの成功には、技術と戦略だけでなく、WillowTreeとBrunswickの強力なチームコラボレーションが不可欠でした。</p>
+            
+            <h3>協働アプローチ</h3>
+            <ul>
+                <li>完全な<span class="highlight">アジャイルモデル</span>とデイリースクラムセレモニー</li>
+                <li>Brunswickの本社での<span class="highlight">ワークショップセッション</span>でコンポーネントをレビュー</li>
+                <li>Mercury Marine、Bayliner、Sea Rayの3ブランドをモデルケースとして使用</li>
+                <li>コンポーネント統合に関する<span class="highlight">チーム投票</span>と合意形成</li>
+                <li>開発、デザイン、製品からなる<span class="highlight">ガバナンストライアド</span>の設立</li>
+            </ul>
+            
+            <h3>技術的実装</h3>
+            <ul>
+                <li><span class="underline">SASを活用した構造化アプローチ</span>（Syntactically Awesome Style Sheets）</li>
+                <li><span class="underline">原子デザインシステム</span>とAEMコンポーネントの1対1マッピング</li>
+                <li><span class="underline">PIMシステムとのAPI統合</span>による製品情報の自動更新</li>
+                <li>CI/CDパイプラインを通じた<span class="underline">自動デプロイメント</span></li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. プロジェクトの知識移転はどのように行われましたか？</div>
+                    <div class="faq-answer">
+                        <p>Brunswickがシステムを自己管理できるよう、Willow Treeは詳細なドキュメンテーションを作成し、実践的なトレーニングセッションを実施しました。技術仕様、コンポーネントアーキテクチャ、オーサリング手順を含む包括的なWikiが作成され、新しい「エクスペリエンスマネージャー」というロールが導入されました。また、日々のコラボレーションを通じて、両チームが互いから学ぶことができました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「Archimedes（アルキメデス）」とは何ですか？</div>
+                    <div class="faq-answer">
+                        <p>「Archimedes」はBrunswickのデザインシステムの名前です。アルキメデスは浮力の法則を発見した科学者で、海洋産業との関連から選ばれました。社内では「Archie」と略されることもありますが、デザインディレクターはこの略称を好まないとのことです。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 最初に実装されたブランドは何ですか？</div>
+                    <div class="faq-answer">
+                        <p>Sea Rayが新しいデザインシステムで最初に実装されたブランドでした。Brunswickの最も高級なボートブランドとして、視覚的に豊かでエンゲージメントの高いデジタルエクスペリエンスが必要だったため、新しいデザインシステムの力を示すのに最適なブランドでした。「すべての瞬間が完璧に作り上げられる」というSea Rayのタグラインが、サイト構築の指針となりました。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>成果と今後の展望</h2>
+            <p>この変革は理論的なものではなく、すでに測定可能な成果をもたらしています。</p>
+            
+            <h3>主要な成果</h3>
+            <ul>
+                <li>コンポーネント数が<span class="highlight">1,000以上から54に削減</span>（94%削減）</li>
+                <li>単一使用コンポーネントの<span class="highlight">100%排除</span></li>
+                <li>新ブランド導入が<span class="highlight">6ヶ月から4週間に短縮</span></li>
+                <li>マーケティングキャンペーン実行が<span class="highlight">週単位から数時間に短縮</span></li>
+                <li>デザイン時間が<span class="highlight">40時間から6〜8時間に削減</span></li>
+            </ul>
+            
+            <h3>今後の展望</h3>
+            <ul>
+                <li>残りのブランドをコンポーネントライブラリとAEMクラウドに移行</li>
+                <li>標準化されたプラットフォームを活用した<span class="underline">パーソナライゼーション</span>の拡大</li>
+                <li><span class="underline">AIレディフレームワーク</span>による傾向モデリングと次のアクションの予測</li>
+                <li>集中化されたワークフローと<span class="underline">動的コンテンツ</span>によるマーケティングの効率化</li>
+            </ul>
+            
+            <div class="important">「複雑さを効率へと変え、戦略的な優位性へと転換する」</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. この変革の最も重要な教訓は何ですか？</div>
+                    <div class="faq-answer">
+                        <p>Brunswickの変革から得られた3つの主要な教訓は：1）柔軟性を持つ標準化がスピードと効率の基盤である、2）明確な所有権とプロセスを持つガバナンスが重要である、3）自動化とAIが将来の適応と拡張に不可欠である、というものです。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. コンテンツオーサリングはどのように変わりましたか？</div>
+                    <div class="faq-answer">
+                        <p>新しいコンポーネントライブラリにより、オーサーは開発チームに頼ることなくAEM内で完全なエクスペリエンスを組み立てることができるようになりました。コンポーネントは非常に柔軟で、あるブランドのコンポーネントを別のブランドにドラッグするだけで、デザイントークンのおかげでそのブランドの外観になります。これにより、Brunswickはブランドの独自性を維持しながら市場投入までの時間を短縮できるようになりました。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「エクスペリエンスマネージャー」とは何ですか？</div>
+                    <div class="faq-answer">
+                        <p>BrunswickがAEMの活用を最適化するために新たに作ったロールで、開発とマーケティングの間に位置します。エクスペリエンスマネージャーは、開発チームに依存することなくAEM内でウェブサイト全体を構築できる能力を持ち、企業レベルでブランド横断的な展開を支援します。これにより、開発チームは基本的なコンテンツ作成ではなく、革新的な機能開発に集中できるようになりました。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>主要用語解説</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>解説</th>
+                </tr>
+                <tr>
+                    <td>デザイントークン</td>
+                    <td>タイポグラフィ、色、UIエレメントを制御する変数で、一貫性を保ちながらブランド固有のカスタマイズを可能にする</td>
+                </tr>
+                <tr>
+                    <td>コンテンツサプライチェーン</td>
+                    <td>コンテンツの作成から配信までの一連のプロセスで、効率的に管理することで市場投入までの時間を短縮</td>
+                </tr>
+                <tr>
+                    <td>Adobe Experience Manager (AEM)</td>
+                    <td>デジタルエクスペリエンスを管理するためのプラットフォームで、クラウドサービスとして提供</td>
+                </tr>
+                <tr>
+                    <td>Enterprise Component Library (ECL)</td>
+                    <td>企業全体で再利用可能なコンポーネントの集合体で、開発の重複を排除</td>
+                </tr>
+                <tr>
+                    <td>PIM (Product Information Management)</td>
+                    <td>製品情報を一元管理するシステムで、APIを通じてウェブサイトに情報を自動配信</td>
+                </tr>
+                <tr>
+                    <td>原子デザイン</td>
+                    <td>デザイン要素を原子、分子、有機体などの階層に分け、再利用可能なコンポーネントを構築する方法論</td>
+                </tr>
+                <tr>
+                    <td>SASS</td>
+                    <td>Syntactically Awesome Style Sheetsの略で、CSSを拡張した言語、ブランドスタイルをより効率的に管理</td>
+                </tr>
+                <tr>
+                    <td>CI/CD</td>
+                    <td>継続的インテグレーション/継続的デリバリーの略で、コード変更を自動的にテストしデプロイするプロセス</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            <p>Adobe Summit 2025 - Willow Tree & Brunswick Corporation</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-question');
+            
+            faqItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const parent = this.parentNode;
+                    if (parent.classList.contains('active')) {
+                        parent.classList.remove('active');
+                    } else {
+                        parent.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

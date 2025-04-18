@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S801 The Future of Adobe Workfront</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .summary {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        section {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        .important {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        .faq-container {
+            margin-top: 20px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+        }
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 500px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>S801 The Future of Adobe Workfront</h1>
+        </header>
+
+        <div class="summary">
+            <h2>セッション概要</h2>
+            <p>Adobe Workfrontは企業のワークフロー管理のための「マーケティングシステム・オブ・レコード」として進化しています。本セッションでは、Richard Whitehead（プロダクトマーケティング・ディレクター）とPaul Von（製品責任者）が、コンテンツ危機時代におけるWorkfrontの将来的な機能強化について紹介しています。特に「計画」「ワークフロー実行」「自動化と統合」の3つの柱に焦点を当て、AIによる機能強化についても説明しています。</p>
+        </div>
+
+        <section>
+            <h2>1. コンテンツ危機の現状</h2>
+            <p>現代のマーケティング組織は大量のコンテンツを管理する必要があり、多くの課題に直面しています。</p>
+            
+            <h3>コンテンツの爆発的増加</h3>
+            <ul>
+                <li>単純な8製品が、<span class="highlight">チャネル、言語、バリエーションの掛け合わせで50万以上のアセット</span>に膨れ上がる例が紹介されました</li>
+                <li>2021年の47エクサバイトから2025年には155エクサバイトにまで増加するコンテンツ量</li>
+                <li>組織変更や担当者変更によるトライバル・ナレッジの喪失</li>
+            </ul>
+
+            <h3>現状の課題</h3>
+            <ul>
+                <li>ブランド基準の低い遵守率</li>
+                <li>時間のかかるレビューと承認プロセス（一つのアセットに平均20回以上のレビュー）</li>
+                <li>内部・外部チーム間の調整の断絶</li>
+                <li>手動かつ断片的なワークフロー</li>
+                <li>マーケティングテクノロジースタックの複雑さ</li>
+                <li>作成されたアセットの50%以上が未使用</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜコンテンツ量が爆発的に増えているのですか？</div>
+                    <div class="faq-answer">マルチチャネル展開、グローバル対応（多言語化）、ターゲット層ごとのバリエーション、そして頻繁な更新サイクル（月次/四半期など）により、少数の基本コンテンツから多数のバリエーションが派生するためです。たとえば8つの基本製品が、マルチチャネル、多言語対応、複数バリエーションの掛け合わせで約50万のアセットに膨れ上がる例が紹介されました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. アセットのレビュー回数が多いと何が問題なのですか？</div>
+                    <div class="faq-answer">平均して一つのアセットに20回以上のレビューが行われていることが明らかになっています。これはリソースとスピードの両面で非効率であり、市場投入までの時間を大幅に遅らせる原因になっています。効率的なレビュープロセスの構築がWorkfrontの重要な改善点の一つです。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. マーケティング組織が現在直面している最大の課題は何ですか？</div>
+                    <div class="faq-answer">中央集権的な計画の欠如、混沌としたワークプロセス、時間のかかるレビューと承認、手動ワークフロー、そして多数のツール間の連携不足が主な課題です。これらが複合的に作用し、コンテンツ危機を引き起こしています。Workfrontはこれらの課題を「インテイクからインマーケット（企画から市場投入まで）」のエンドツーエンドで解決することを目指しています。</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Workfrontの3つの柱</h2>
+            <p>WorkfrontはAdobe Gen Studioの一部として、ワークフローとプランニングの基盤となっています。以下の3つの柱から構成されています。</p>
+
+            <h3>1. 計画（Planning）</h3>
+            <ul>
+                <li>中央集権的な<span class="underline">キャンペーン管理</span>の強化</li>
+                <li>メタデータサービスによる<span class="highlight">シングルソース・オブ・トゥルース</span>の提供</li>
+                <li>キャンペーン、製品、ペルソナなどの記録を一元管理</li>
+                <li>「計画は計画担当者だけのものではなく、全員のもの」という考え方</li>
+            </ul>
+
+            <h3>2. ワークフロー実行（Workflow）</h3>
+            <ul>
+                <li>プロジェクトマネージャーからの<span class="underline">個人貢献者</span>までのニーズに対応</li>
+                <li>「Priorities」機能による個人的なタスク管理の強化</li>
+                <li>リスト表示とカレンダー表示の選択肢</li>
+                <li>「Catch Me Up」機能で休暇後の素早い状況把握</li>
+                <li>AIを活用したスマートフィルター機能</li>
+            </ul>
+
+            <h3>3. 自動化と統合（Automation & Integration）</h3>
+            <ul>
+                <li>4つの統合方法：API、ネイティブ統合、Fusion、App Builder</li>
+                <li>Adobe製品（Assets、Gen Studio for Performance Marketing、AEM Sites、Frame.io）との緊密な連携</li>
+                <li>メタデータの活用による情報の一貫性確保</li>
+                <li>レビューと承認の統一インターフェース</li>
+            </ul>
+
+            <div class="important">「ワークフロントではなく、ワークすることを重視」</div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「計画は計画担当者だけのものではない」とはどういう意味ですか？</div>
+                    <div class="faq-answer">これは組織内の全員が何らかの形で計画に関与しているという考え方です。計画機能はプランナー専用ではなく、全ての関係者がアクセスして活用できるべきものであり、Workfrontではこの考えに基づいて計画機能を設計しています。計画のデータが他のAdobe製品（Gen Studioなど）でも活用できるようになっています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「Priorities」機能とは何ですか？</div>
+                    <div class="faq-answer">個人貢献者向けに設計された、タスク管理を簡素化する新機能です。プロジェクト管理の複雑な詳細をすべて表示せず、自分に関連する重要なタスクだけを優先順位付けして表示します。さらに右側のパネルで詳細情報を確認したり、グループ分けして優先順位を付けることも可能です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Workfrontと他のAdobe製品はどのように連携していますか？</div>
+                    <div class="faq-answer">Workfrontは主に4つの方法（API、ネイティブ統合、Fusion、App Builder）で他のシステムと連携しています。特にAdobe製品（Assets、Gen Studio for Performance Marketing、AEM Sites、Frame.io）とはネイティブ統合を進めており、メタデータやレビュー・承認プロセスを共通化することで、シームレスな連携を実現しています。これにより、コンテキストスイッチングの必要性を減らし、作業効率を向上させています。</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. AIによる機能強化</h2>
+            <p>Workfrontは様々な側面でAIを活用し、ユーザー体験の向上と業務効率化を図っています。</p>
+
+            <h3>主なAI機能</h3>
+            <ul>
+                <li><span class="highlight">Project Health Advisor</span>：プロジェクトの健全性を自動分析し、改善策を提案</li>
+                <li><span class="highlight">AI Reviewer</span>：ブランドガイドラインに基づくアセットの自動チェック</li>
+                <li><span class="highlight">AI-powered Request</span>：自然言語での要求とドキュメントからのフォーム自動入力</li>
+                <li>M365 Copilotとの連携によるコンテキスト内でのWorkfront情報の表示</li>
+                <li>カスタムAIエージェントの開発可能性</li>
+            </ul>
+
+            <h3>エージェンシー向け機能強化</h3>
+            <ul>
+                <li>詳細な財務管理（細分化された請求レート、複数の為替レートなど）</li>
+                <li>リソース管理の改善とスタッフィングプランの強化</li>
+                <li>トップダウンスタッフィングによる未活用スキルの発見</li>
+                <li>非労働リソース（機材、会議室、スタジオなど）の管理</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Project Health Advisorはどのようにプロジェクトの健全性を評価しますか？</div>
+                    <div class="faq-answer">Project Health Advisorはリソース、スコープ、スケジュールなどの要素を分析して、プロジェクトの健全性スコアを算出します。例えば、プロジェクトの状態が「順調」と手動で設定されていても、スコープが拡大していたり、リソースが不足していたりすると、実際の健全性は低いと判断されます。AIは具体的な改善策（リソース再割り当てなど）を提案し、その効果を予測スコアとして示します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. AI Reviewerは具体的に何をチェックしますか？</div>
+                    <div class="faq-answer">AI Reviewerはブランドガイドラインに基づいてアセットを評価します。ブランドガイドラインをアップロードしてAIにトレーニングさせた後、プロジェクトに関連するアセットを自動でチェックし、ブランド準拠度をスコア化します。グローバル、地域、国、ターゲットオーディエンスなど、複数のレベルでのブランドレビューを自動化できるため、特にグローバルブランドで役立ちます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. トップダウンスタッフィングとは何ですか？</div>
+                    <div class="faq-answer">トップダウンスタッフィングは、組織内のリソース（人材）を最大限に活用するための新機能です。従業員の公式な役職だけでなく、持っているスキルや能力も含めて把握し、プロジェクトに必要なスキルに基づいて適切な人材を見つけられるようにします。これにより、「アニメーターが必要」という要求に対して、普段はアニメーション作業をしていない人でも、そのスキルを持っていれば見つけることができます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. AIでブリーフ（企画書）はどのように処理されますか？</div>
+                    <div class="faq-answer">AI-powered Requestでは、自然言語での要求入力や既存ドキュメントのアップロードから自動的にリクエストフォームに情報を入力できます。例えば、詳細な企画書をアップロードすると、AIがそれを解析し、関連フィールドに情報を自動入力します。これにより、静的で長すぎるブリーフをダイナミックなシステム内のレコードに変換でき、マーケティングシステム・オブ・レコードの構築に役立ちます。</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>用語集と重要概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>解説</th>
+                </tr>
+                <tr>
+                    <td>マーケティングシステム・オブ・レコード</td>
+                    <td>財務や人事と同様に、マーケティング業務の記録を一元管理するシステム。Workfrontが目指す中心的な概念</td>
+                </tr>
+                <tr>
+                    <td>Adobe Gen Studio</td>
+                    <td>Workfrontを含むAdobe製品群。ワークフローと計画、創作と制作、アセット管理、活性化、レポートとインサイトの5つの柱で構成</td>
+                </tr>
+                <tr>
+                    <td>メタデータサービス</td>
+                    <td>キャンペーン、製品、ペルソナなどの情報を一元管理し、様々なAdobe製品間で共有するためのサービス</td>
+                </tr>
+                <tr>
+                    <td>Priorities</td>
+                    <td>個人貢献者向けに設計された、シンプルで効率的なタスク管理機能</td>
+                </tr>
+                <tr>
+                    <td>Fusion</td>
+                    <td>Workfrontと他のシステムを連携させるための統合ツール。数百のコネクタを提供</td>
+                </tr>
+                <tr>
+                    <td>Project Health Advisor</td>
+                    <td>AIを活用してプロジェクトの健全性を分析し、改善策を提案する機能</td>
+                </tr>
+                <tr>
+                    <td>インテイクからインマーケット</td>
+                    <td>アイディア取り込みから市場投入までの全プロセスを指す、Marriottが使用する表現</td>
+                </tr>
+            </table>
+        </section>
+
+        <footer>
+            <p>S801 The Future of Adobe Workfront - Adobe Summit 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

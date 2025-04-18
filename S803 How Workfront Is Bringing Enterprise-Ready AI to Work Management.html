@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S803 How Workfront Is Bringing Enterprise-Ready AI to Work Management</title>
+    <style>
+        :root {
+            --accent-color: #0f3c78;
+            --bg-color: #f5f5f5;
+            --section-bg: #ffffff;
+            --text-color: #333;
+            --highlight-color: #fff3cd;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 16px;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: var(--accent-color);
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+        }
+        
+        .summary {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 2px;
+        }
+        
+        .important {
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        
+        .faq-container {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '−';
+        }
+        
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 500px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Workfrontがもたらすエンタープライズ向けAIワークマネジメント</h1>
+        
+        <div class="summary">
+            <h2>概要</h2>
+            <p>WorkfrontはAdobeの一部として、AIを活用したワークマネジメントソリューションを2025年に展開しています。このプレゼンテーションでは、WorkfrontのAI機能の概要、AIアーキテクチャ、そして具体的な機能（プロジェクトヘルスアドバイザー、AIレビュアー、Microsoftとの連携による「Adobeマーケティングエージェント」など）について説明しています。Workfrontは、AIを活用してユーザー体験を簡素化し、作業効率を高め、コンテンツの作成速度を向上させることを目指しています。</p>
+        </div>
+        
+        <div class="section">
+            <h2>WorkfrontのAIアーキテクチャ</h2>
+            <p>WorkfrontのAIアーキテクチャは、マイクロフロントエンドと連携したスキルベースのシステムとして設計されています。</p>
+            
+            <h3>主な特徴</h3>
+            <ul>
+                <li>マイクロフロントエンドを通じて<span class="underline">UIのどこからでもAI機能にアクセス可能</span></li>
+                <li>AIはUIに表示されている情報を認識して<span class="highlight">コンテキストを理解</span>し、適切な解決策を提供</li>
+                <li>単一の大きなLLMではなく、<span class="underline">特定のタスクに特化した複数のマイクロスキル</span>を活用</li>
+                <li>各スキルは特定のタスクを高速かつ正確に実行するよう訓練されている</li>
+                <li>ユーザーのデータがAIの訓練に使用されることはない（プライバシー保護）</li>
+                <li>AIはWorkfront内に設定された<span class="highlight">ロールと権限を尊重</span>する（セキュリティ確保）</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. WorkfrontのAIは顧客データを学習に使用しますか？</div>
+                    <div class="faq-answer">いいえ、Adobeはユーザーのデータを使用してAIを訓練することはありません。あるお客様のデータが他のお客様に共有されることはありません。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. AIアシスタントはWorkfrontの権限設定を無視できますか？</div>
+                    <div class="faq-answer">いいえ、WorkfrontのAIはシステム内に設定されている個々のロールと権限を尊重します。AIを使用しても、通常のシステム内でアクセスできない操作はできません。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. マイクロスキルとは何ですか？</div>
+                    <div class="faq-answer">マイクロスキルとは、特定のタスクを高性能かつ正確に実行するために訓練された小さなAI機能です。これにより、幅広いユースケースに対応でき、より少ない「ハルシネーション（誤った情報生成）」で正確な結果を提供します。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>主要なAI機能</h2>
+            <p>Workfrontは様々なAI駆動機能を提供し、ユーザー体験を簡素化し、効率を向上させています。</p>
+            
+            <h3>取り込み・管理機能</h3>
+            <ul>
+                <li><span class="underline">AI駆動のインテイク提案</span>：自然言語を使用して適切なフォームを特定</li>
+                <li><span class="highlight">非構造化ドキュメントからの情報抽出</span>：Word、PowerPoint、PDFなどからリクエストフォームへの自動入力</li>
+                <li><span class="underline">スマートフィルター</span>：自然言語でタスクを検索（例：「期限切れの作業を表示」「リーダーシップチームに関連する作業を表示」）</li>
+                <li><span class="highlight">キャッチミーアップ</span>：不在時の変更内容を要約し、新しいアクションアイテムや更新内容を把握</li>
+            </ul>
+            
+            <h3>カスタムスキル</h3>
+            <ul>
+                <li>組織固有のニーズに合わせて<span class="underline">カスタムスキルを作成可能</span></li>
+                <li>自然言語で望む結果を入力すると、複数のスキルを連携させて対応</li>
+                <li>Fusionを活用して、Workfront内外のシステムとスキルを接続</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. スマートフィルターはどのように使用しますか？</div>
+                    <div class="faq-answer">スマートフィルターでは、「期限切れの作業を表示」や「リーダーシップチームに関連する作業を表示」などの自然言語で検索したい内容を入力するだけで、関連するタスクが表示されます。事前に設定されたフィルターを探す手間を省きます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. キャッチミーアップ機能の利点は何ですか？</div>
+                    <div class="faq-answer">キャッチミーアップ機能は、不在時に発生したタスクの変更内容を自動的に要約します。新しいアクションアイテム、更新内容、追加されたドキュメントなどを簡潔にまとめることで、作業に素早く戻ることができます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. カスタムスキルは組織固有のニーズにどう対応しますか？</div>
+                    <div class="faq-answer">カスタムスキルを使用すると、組織特有のワークフローやニーズに合わせたAI機能を作成できます。自然言語で望む結果を入力すると、システムが複数のスキルを連携させて対応します。さらにFusionを活用することで、Workfront外のシステムとも連携可能です。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>プロジェクトヘルスアドバイザー</h2>
+            <p>プロジェクトヘルスアドバイザーは、プロジェクトのリスクを評価し、一貫したスコアを提供することで、迅速な対応と意思決定を可能にします。</p>
+            
+            <h3>主な機能</h3>
+            <ul>
+                <li>プロジェクトやキャンペーンの<span class="highlight">健全性スコア</span>を自動的に計算</li>
+                <li><span class="underline">スコープ、リソース、スケジュール</span>の3つの主要領域を評価</li>
+                <li>組織やチームごとに<span class="underline">カスタマイズ可能</span>なリスク評価</li>
+                <li>問題点の詳細な説明と<span class="highlight">迅速な解決のためのリンク</span>を提供</li>
+                <li>AIアシスタントを通じて<span class="underline">最も健全性の低いプロジェクト</span>をすぐに確認可能</li>
+                <li>ダッシュボードに健全性スコアを<span class="underline">ピン留め</span>して可視化</li>
+            </ul>
+            
+            <div class="important">
+                将来的には、AIが自動的に問題を検出し、解決策を提案・実行することも計画されています。
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. プロジェクトヘルススコアはどのように計算されますか？</div>
+                    <div class="faq-answer">プロジェクトヘルススコアは、スコープ、リソース、スケジュールの3つの主要領域を評価して計算されます。組織固有の作業開始方法、終了方法、作業測定方法などをカスタマイズでき、カスタムフィールドも含めることができます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. プロジェクトヘルスアドバイザーはレポート作成の必要性をなくしますか？</div>
+                    <div class="faq-answer">はい、プロジェクトヘルスアドバイザーは多くのレポート作成の手間を省きます。これまでは個々のレポートを作成し、主観的に情報を評価してリスクを特定していましたが、このツールは一貫したスコアリング方法でリスクを自動的に評価し、解決策も提案します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. チームごとに異なるリスク評価基準を設定できますか？</div>
+                    <div class="faq-answer">はい、各チーム（マーケティング、開発、IT PMO、法務など）ごとに異なるエージェントを作成し、それぞれに適したリスク評価基準を設定できます。これにより、組織全体だけでなく各チームのニーズに合わせたリスク評価が可能になります。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>AIレビュアー</h2>
+            <p>AIレビュアーは、ブランドガイドラインに基づいてコンテンツを自動的に評価し、レビュープロセスを数日から数秒に短縮します。</p>
+            
+            <h3>主な機能</h3>
+            <ul>
+                <li>ブランドガイドラインに基づく<span class="highlight">画像の自動評価</span></li>
+                <li>人間のレビュアーと同様に<span class="underline">承認ワークフローに統合</span></li>
+                <li>ガイドラインとの<span class="underline">一致率をスコア化</span>し、詳細なフィードバックを提供</li>
+                <li>承認テンプレートに<span class="highlight">AI reviewersを追加</span>可能</li>
+                <li>マルチステージ承認で<span class="underline">AI review後に人間のレビュー</span>を行うプロセスも構築可能</li>
+            </ul>
+            
+            <h3>リリース計画</h3>
+            <ul>
+                <li><span class="highlight">フェーズ1（2025年5〜7月）</span>：画像ガイドライン（JPEG、PNG、WebP、非アニメーションGIF）</li>
+                <li><span class="underline">フェーズ2</span>：コピーガイドライン（テキストの抽出と評価）</li>
+                <li><span class="underline">フェーズ3</span>：追加のコンプライアンスガイドライン、拡張ファイルタイプ、ビデオ、スペルチェック、色のHEXレビュー、コンテンツ真正性</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. AIレビュアーを使用するには何が必要ですか？</div>
+                    <div class="faq-answer">AIレビュアーを使用するには、新しい承認サービスを有効にする必要があります。現在、約半数の顧客がこのサービスを利用しています。有効になっているかどうかは、ドキュメントサマリーに「追加」ボタンがあり、クリックするとモーダルが表示されるかどうかで確認できます。アカウントマネージャーに連絡して有効化を依頼することもできます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. プルーフィング機能は廃止されますか？</div>
+                    <div class="faq-answer">いいえ、プルーフィングはWorkfrontの機能として残ります。将来的には、プルーフィング技術はこの新しい承認エンジンを活用し、AIレビュアーによるコンテキストフィードバックとFrameビューアーが組み合わさったものになる予定です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ブランドガイドラインはどのように設定しますか？</div>
+                    <div class="faq-answer">Adobe Gen Studioの「ブランド」セクションでブランドガイドラインを管理できます。画像カテゴリごとに視覚的アイデンティティ、構図、照明などの詳細なガイドラインを設定できます。Workfrontユーザーは、Gen Studioがなくてもブランド管理機能にアクセスできるようになる予定です。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Microsoftとの連携：Adobeマーケティングエージェント</h2>
+            <p>WorkfrontはMicrosoftと提携し、Microsoft Copilotと統合された「Adobeマーケティングエージェント」を開発しています。これにより、ユーザーが普段使用しているMicrosoftツール内からWorkfrontの機能にアクセスできるようになります。</p>
+            
+            <h3>主な機能</h3>
+            <ul>
+                <li>Microsoft Graph（Teams、Word、PowerPointなど）と<span class="highlight">Workfrontの統合</span></li>
+                <li>Teams会議からの<span class="underline">アクションアイテム抽出と自動タスク作成</span></li>
+                <li>過去のプロジェクト情報を活用した<span class="highlight">新しいブリーフの自動作成</span></li>
+                <li>Microsoft Copilotを通じた<span class="underline">プロジェクトヘルスの確認と問題解決</span></li>
+                <li>カスタムスキルとMicrosoft Copilotの<span class="highlight">連携</span></li>
+            </ul>
+            
+            <div class="important">
+                Adobeマーケティングエージェントは2025年前半末または後半初めにベータ版がリリース予定です。
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Microsoft Graphとの連携で何ができますか？</div>
+                    <div class="faq-answer">Microsoft Graph（Teams会議の議事録、Word/PowerPointのファイル、メールなど）の情報とWorkfrontを連携させることで、会議で議論されたアクションアイテムを自動的にWorkfrontのタスクに変換したり、過去のプロジェクト情報を活用して新しいブリーフを作成したりすることができます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobeマーケティングエージェントは他のAdobe製品とも連携しますか？</div>
+                    <div class="faq-answer">はい、AdobeマーケティングエージェントはWorkfrontだけでなく、Creative Cloud、AEMなど他のAdobe製品とも連携する予定です。これはAdobeのエージェンティックフレームワークの一部で、製品間のワークフローを効率化することを目指しています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ベータ版にはどうすれば参加できますか？</div>
+                    <div class="faq-answer">Adobeマーケティングエージェントのベータ版に興味がある場合は、Workfrontのブースで担当者に伝えるか、プレゼンターに連絡して名前をリストに追加してもらうことができます。ベータ版は2025年前半末または後半初めにリリース予定です。</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>用語・概念解説</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>マイクロフロントエンド</td>
+                    <td>UIのどこからでもAI機能にアクセスできるようにするアーキテクチャ</td>
+                </tr>
+                <tr>
+                    <td>マイクロスキル</td>
+                    <td>特定のタスクに特化した小さなAI機能。高速かつ正確な処理が可能</td>
+                </tr>
+                <tr>
+                    <td>プロジェクトヘルスアドバイザー</td>
+                    <td>プロジェクトのリスクを評価し、スコア化するAIツール</td>
+                </tr>
+                <tr>
+                    <td>AIレビュアー</td>
+                    <td>ブランドガイドラインに基づいてコンテンツを自動評価するシステム</td>
+                </tr>
+                <tr>
+                    <td>Workfront Priorities</td>
+                    <td>タスクワーカーが自分の作業を整理・優先順位付けできる専用スペース</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Copilot</td>
+                    <td>MicrosoftのAIプラットフォーム。Microsoft Graph経由で情報にアクセス</td>
+                </tr>
+                <tr>
+                    <td>Adobeマーケティングエージェント</td>
+                    <td>Microsoft CopilotとWorkfrontを統合したAIアシスタント</td>
+                </tr>
+                <tr>
+                    <td>Fusion</td>
+                    <td>Workfront内外のシステムを接続する統合ツール</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            このページはS803 How Workfront Is Bringing Enterprise-Ready AI to Work Managementセッションの内容に基づいています
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

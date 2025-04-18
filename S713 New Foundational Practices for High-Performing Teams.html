@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S713 New Foundational Practices for High-Performing Teams</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .section {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .summary {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        .important {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #0f3c78;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .faq-container {
+            margin-top: 15px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            background-color: #e9ecef;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            position: relative;
+            font-weight: bold;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+        }
+        .faq-question.active::after {
+            content: '-';
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 0 0 4px 4px;
+        }
+        .faq-answer.active {
+            display: block;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>高パフォーマンスチームのための新しい基礎的実践</h1>
+        </div>
+
+        <div class="section">
+            <div class="summary">
+                アトラシアンの「Team Anywhere」アプローチは、分散型ワークの未来に対応し、高パフォーマンスチームを構築するための新しい基礎的実践を提案しています。場所よりも働き方に焦点を当て、情報の共有方法やコラボレーションの方法を根本から見直すことで、より効率的で創造的なチームワークを実現します。
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. アトラシアンの「Team Anywhere」とは何ですか？</div>
+                    <div class="faq-answer">
+                        「Team Anywhere」はアトラシアンの分散型ワークへのアプローチで、社員がどこで働くかよりも、どのように働くかを重視します。オフィスの利用は強制ではなく選択制で、行動科学者チーム「Teamwork Lab」による研究に基づいた実践を取り入れています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜアトラシアンは2020年にリモートワーク宣言をしたのですか？</div>
+                    <div class="faq-answer">
+                        アトラシアンの創業者たちは「100年企業」を目指し、世界はより分散型になるという原則に基づいて決断しました。この決断の背景には、①人材へのアクセス向上、②従業員の幸福度・エンゲージメント向上、③製品イノベーションの促進、という3つの仮説がありました。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「分散型（distributed）」と「リモート（remote）」の違いは何ですか？</div>
+                    <div class="faq-answer">
+                        「分散型」は現代の仕事がインターネット上で様々な場所から同時に行われる実態を表す言葉です。一方「リモート」はオフィスとの関係性を表す言葉で、現代の働き方を表現するには適切ではないとしています。2019年にはマイクロソフトのチームの75%が同じ場所で働いていましたが、現在は25%にまで減少しています。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>チームワークの課題と実験的アプローチ</h2>
+            <div class="summary">
+                現代のチームワークには様々な課題があります。アトラシアンは「Teamwork Lab」を通じて新しい働き方を実験・検証し、効果的な実践を発見・共有しています。
+            </div>
+
+            <h3>主なチームワークの課題</h3>
+            <ul>
+                <li><span class="highlight">コミュニケーションサイロ</span>：部門間の情報共有が不足</li>
+                <li><span class="highlight">集中力の欠如と過剰な会議</span>：65%の知識労働者は優先業務よりも通知への対応を重視</li>
+                <li><span class="highlight">情報の探索に費やす時間</span>：労働時間の約1/4（週10時間）を情報検索に費やしている</li>
+                <li><span class="highlight">クロスファンクショナルな連携の必要性</span>：98%の経営者がクロスファンクショナルな協働が不可欠と回答</li>
+            </ul>
+
+            <h3>Teamwork Labでの実験的アプローチ</h3>
+            <ul>
+                <li>5,000人のアトラシアン社員でA/Bテスト形式の実験を実施</li>
+                <li>ページ主導型会議vs従来型会議などの効果を検証</li>
+                <li>カレンダー設計の改善実験も実施</li>
+                <li>検証済みの実践は「Atlassian Playbook」で公開・共有</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Teamwork Labとは何ですか？</div>
+                    <div class="faq-answer">
+                        Teamwork Labはアトラシアン内の行動科学者チームで、現代の働き方を研究し、新しい実践方法を開発・検証しています。社内での実験と市場調査の両方を行い、効果的な働き方の知見を蓄積しています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. アトラシアンはどのように新しい働き方を探求していますか？</div>
+                    <div class="faq-answer">
+                        アトラシアンでは社内での実験的取り組みと、市場調査の両方を通じて新しい働き方を探求しています。Teamwork Labでは5,000人の社員を対象にA/Bテスト形式で様々な働き方を検証し、効果が実証された方法を「Atlassian Playbook」を通じて顧客や一般に共有しています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. チームワークの最大の課題は何ですか？</div>
+                    <div class="faq-answer">
+                        State of Teams調査によると、情報探索の非効率性が最大の課題です。チームは情報量が増えているにも関わらず十分に情報を得られておらず、週の約1/4（10時間）を情報検索に費やしています。また、56%の人が新しい情報を得るには会議をスケジュールする必要があると回答しています。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>効果的な実践方法</h2>
+            <div class="summary">
+                アトラシアンが実証した効果的な実践方法には、ページ主導型会議、情報共有の効率化、AI活用などがあります。これらの実践は時間節約と意思決定の質向上に寄与します。
+            </div>
+
+            <h3>ページ主導型会議（Page-led meetings）</h3>
+            <ul>
+                <li>会議の始めに3〜4分で読める簡潔なドキュメントを共有</li>
+                <li>参加者は静かに読んでからコメントを付け、その後討議</li>
+                <li>会議に参加していない人も同じ文脈を得ることが可能</li>
+                <li>テスト結果では85%の会議が目標を達成（従来型は30%未満）</li>
+                <li>口頭発表17分が必要な内容を5分の黙読で消化可能に</li>
+            </ul>
+
+            <h3>AIの戦略的活用</h3>
+            <ul>
+                <li>情報検索の効率化：必要な情報に即座にアクセス可能</li>
+                <li>情報サイロの打破：部門間の情報共有を促進</li>
+                <li>AIをツールではなく「戦略的パートナー」として活用</li>
+                <li>非技術者でも2週間でエージェント作成が可能（例：新入社員向けエージェント「Nora」）</li>
+            </ul>
+
+            <div class="important">
+                効果的なコミュニケーションが効率性を高める
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. ページ主導型会議の具体的なメリットは何ですか？</div>
+                    <div class="faq-answer">
+                        ページ主導型会議では、会議の始めに3〜4分で読める簡潔なドキュメントを共有し、全員が同じ情報を得た上で議論できます。テスト結果では85%の会議が目標を達成（従来型は30%未満）し、口頭発表17分の内容を5分の黙読で消化できます。また、会議に参加していない人も同じ文脈を得られ、AIツールによる要約も容易になります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. AIをどのように効果的に活用すべきですか？</div>
+                    <div class="faq-answer">
+                        AIを単なるタスク自動化ツールではなく「戦略的パートナー」として活用することが効果的です。アトラシアンの研究では、AIの超ユーザーはAIを低価値の反復作業ではなく、思考の整理や新しいスキル習得など戦略的に活用していました。また、AIの活用には企業情報をデジタル化してクラウド上でアクセス可能にすることが前提となります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 実践すべき3つの重要な習慣は何ですか？</div>
+                    <div class="faq-answer">
+                        アトラシアンが推奨する3つの重要な習慣は：①ページ主導型会議の導入、②会議は情報共有ではなく共同作業のためだけに使用、③新しい接続方法の実験（音声メモ、動画メッセージなど）です。さらに、簡潔で焦点を絞った文書コミュニケーション（Smart Brevityフレームワークなど）も重要です。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>State of Teams調査の重要知見</h2>
+            <div class="summary">
+                アトラシアンのState of Teams調査（12,000人の知識労働者と200人のフォーチュン500企業役員を対象）では、AIと情報管理に関する重要な知見が得られました。
+            </div>
+
+            <h3>主な調査結果</h3>
+            <ul>
+                <li>知識労働者は週に約10時間（労働時間の1/4）を情報検索に費やしている</li>
+                <li>チームはこれまで以上に多くの情報を持っているが、十分に情報を得られていない</li>
+                <li>56%の人が新しい情報を得るには会議をスケジュールする必要があると回答</li>
+                <li>96%の役員がチームはAIソリューションを構築/活用する準備ができていないと回答</li>
+                <li>98%の役員がクロスファンクショナルな協働が不可欠と回答</li>
+                <li>92%の役員が未来は異なる働き方を必要とすると回答</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. State of Teams調査とは何ですか？</div>
+                    <div class="faq-answer">
+                        State of Teamsはアトラシアンが毎年実施するチームワークに関する調査で、2025年の調査では12,000人の知識労働者と200人のフォーチュン500企業役員を対象に実施されました。チームが直面する課題や市場の動向を把握し、効果的な解決策を探るために行われています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 情報検索の問題をどう解決すべきですか？</div>
+                    <div class="faq-answer">
+                        情報検索の問題解決には、①企業情報をデジタル化しクラウド上でアクセス可能にする、②AIを活用して自然言語で情報を検索できる環境を整える、③会議ではなくデジタルツールを情報共有の主要手段とする、などの方法があります。アトラシアンではRovioというAIツールを活用し、社内外のツールを横断して情報検索できる環境を整えています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 今後の研究テーマは何ですか？</div>
+                    <div class="faq-answer">
+                        アトラシアンの今後の研究テーマは「測定（measurement）」です。特に①AIの効果測定（現段階では効果よりも活用度・エンゲージメントを測定すべき）、②チーム機能の測定（あらゆるコミュニケーションが測定可能になる中で、創造性の要素をどう評価するか）に注目しています。効率性だけでなく、チームの創造性を活かす測定方法の開発が課題です。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>重要用語・事実リスト</h2>
+            <table>
+                <tr>
+                    <th>用語/事実</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>Team Anywhere</td>
+                    <td>アトラシアンの分散型ワークへのアプローチ。場所よりも働き方を重視し、12のグローバルオフィスを選択制で利用可能</td>
+                </tr>
+                <tr>
+                    <td>Teamwork Lab</td>
+                    <td>アトラシアン内の行動科学者チーム。現代の働き方を研究し、新しい実践方法を開発・検証</td>
+                </tr>
+                <tr>
+                    <td>ページ主導型会議</td>
+                    <td>会議の始めに3〜4分で読める簡潔なドキュメントを共有し、全員が同じ情報を得た上で議論する方法</td>
+                </tr>
+                <tr>
+                    <td>分散型 vs リモート</td>
+                    <td>「分散型」は現代の仕事がインターネット上で様々な場所から同時に行われる実態を表す。「リモート」はオフィスとの関係性を表す言葉</td>
+                </tr>
+                <tr>
+                    <td>State of Teams</td>
+                    <td>アトラシアンが毎年実施するチームワークに関する調査。2025年は12,000人の知識労働者と200人の役員を対象に実施</td>
+                </tr>
+                <tr>
+                    <td>Rovio</td>
+                    <td>アトラシアンのAIツール。社内外のツールを横断して情報検索が可能</td>
+                </tr>
+                <tr>
+                    <td>Smart Brevity</td>
+                    <td>簡潔で焦点を絞った文書コミュニケーションのフレームワーク</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer">
+            Source: S713 New Foundational Practices for High-Performing Teams.mov.txt
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

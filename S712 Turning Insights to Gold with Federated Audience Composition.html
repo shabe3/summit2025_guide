@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S712 Turning Insights to Gold with Federated Audience Composition</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      color: #0f3c78;
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #0f3c78;
+    }
+    
+    h2 {
+      color: #0f3c78;
+      font-size: 1.5rem;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #0f3c78;
+      margin-top: 30px;
+    }
+    
+    h3 {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      color: #0f3c78;
+    }
+    
+    .section {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .summary {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-left: 4px solid #0f3c78;
+    }
+    
+    ul, ol {
+      padding-left: 20px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+    
+    .highlight {
+      background-color: #fff3cd;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+    
+    .underline {
+      border-bottom: 2px solid #0f3c78;
+      padding-bottom: 2px;
+    }
+    
+    .important {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 25px 0;
+      color: #0f3c78;
+    }
+    
+    .faq-container {
+      margin-top: 20px;
+    }
+    
+    .faq-item {
+      margin-bottom: 10px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+    }
+    
+    .faq-question {
+      padding: 15px;
+      cursor: pointer;
+      background-color: #f9f9f9;
+      position: relative;
+      font-weight: bold;
+    }
+    
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 15px;
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-item.active .faq-question::after {
+      content: '−';
+    }
+    
+    .faq-answer {
+      padding: 0 15px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .faq-item.active .faq-answer {
+      padding: 15px;
+      max-height: 500px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #0f3c78;
+      color: white;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>S712 Turning Insights to Gold with Federated Audience Composition</h1>
+    
+    <div class="section">
+      <div class="summary">
+        Microsoft FabricとAdobeのReal-time CDPの統合により、データから意味のあるインサイトを取得し、それをマーケティングアクションに変換する方法を紹介するセッションです。データの分断問題を解決し、AIの力でインサイトを得て、顧客体験の向上につなげます。
+      </div>
+      
+      <h2>問題定義と解決策</h2>
+      <p>マーケターは今日、大量のデータに溺れていますが、そこから意味のあるインサイトを得ることが困難です。</p>
+      
+      <ul>
+        <li>ウェブサイト、メール、広告、ソーシャルメディアなど様々なソースから顧客データが流入</li>
+        <li>生データを意味のあるAI駆動のインサイトに変換するのが困難</li>
+        <li><span class="highlight">Microsoft FabricとAdobeの統合</span>により、単一のデータレイクでデータを統合し、自然言語でデータと対話して、リアルタイムのインサイトを得ることが可能に</li>
+      </ul>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. マーケターが直面しているデータに関する主な課題は何ですか？</div>
+          <div class="faq-answer">
+            マーケターは膨大な量のデータを持っていますが、それらが分断され、異なるツールやシステムに点在しているため、統合的なインサイトを得ることが困難です。さらに、これらのデータを分析して実用的なインサイトに変換するためのツールが複雑であるという問題もあります。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. Microsoft FabricとAdobeの統合はどのような価値を提供しますか？</div>
+          <div class="faq-answer">
+            この統合により、データの統合、AIを活用したインサイトの生成、そしてそれらのインサイトを実際のマーケティングアクションに変換するプロセスがシームレスになります。データ移動なしでFabricのデータウェアハウスに接続し、オーディエンスを作成・洗練させ、Adobeで活性化させることができます。
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Microsoft Fabricとは</h2>
+      <div class="summary">
+        Microsoft Fabricは、分析のためのOfficeとも言えるもので、Microsoftの様々な分析サービスを統一されたマナーで提供します。AI駆動の洞察を得るための統合データプラットフォームです。
+      </div>
+      
+      <h3>Fabricの主な特徴</h3>
+      <ul>
+        <li><span class="underline">統一されたエクスペリエンス</span>：個々のアプリではなく、共通のインターフェース、コラボレーションツール、統一されたアーキテクチャを提供</li>
+        <li><span class="underline">One Lake</span>：すべてのワークロードの基盤となる統一されたデータレイク</li>
+        <li><span class="highlight">AI統合</span>：後付けではなく、深く統合されたAI機能</li>
+        <li>サーバーレス：VMやクラスターの管理不要、すべてのワークロードが単一のコンピュートプールから計算リソースを使用</li>
+        <li>拡張性：業界ソリューションやISVパートナーによる拡張が可能</li>
+      </ul>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. FabricとOfficeの類似点は何ですか？</div>
+          <div class="faq-answer">
+            Officeが生産性ツールのスイートであるように、Fabricは分析ツールのスイートです。Officeが異なるタスク向けに最適化されたツール（Word、PowerPoint、Excel）を提供しながらも、共通のエクスペリエンス、統一されたアーキテクチャ、統一されたストレージ、セキュリティフレームワークを持つように、Fabricも異なる分析サービスを統一された方法で提供します。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. FabricはAIとどのように統合されていますか？</div>
+          <div class="faq-answer">
+            FabricはGenAI時代に生まれたため、AIは単なる追加機能ではなく、すべてのFabricエクスペリエンスに深く統合されています。Copilotが全体に組み込まれており、自然言語を使ってSQLクエリの作成、データパイプラインの作成、Sparkコードの記述などを支援します。また、AIスキルを使って特定のデータセットに対して自然言語で質問できる機能も提供しています。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. Fabricはどのようにデータガバナンスを処理しますか？</div>
+          <div class="faq-answer">
+            FabricはMicrosoft Purviewと統合されており、データの系統（lineage）とトラッキングをすぐに利用できます。これにより、データの流れを追跡し、データの感度レベルやセキュリティが下流のすべてのアーティファクトに流れるようになっています。
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>One Lakeについて</h2>
+      <div class="summary">
+        One Lakeはすべてのワークロードの基盤となる統一されたデータレイクで、オープンソースのApache Deltaパーケットフォーマットに基づいています。様々なソースからデータを取り込み、データ移動なしで参照することができます。
+      </div>
+      
+      <h3>データを取り込む方法</h3>
+      <ul>
+        <li><span class="underline">Data Factory</span>：数百のコネクタを提供し、オンプレミス、他のクラウド、他のデータプロバイダーからデータを移動・変換</li>
+        <li><span class="underline">ショートカット</span>：データ移動なしで外部データを参照するバーチャルリンク。Amazon S3、Google Cloud Storage、S3 API対応のファイルシステムをサポート</li>
+        <li><span class="underline">ミラーリング</span>：ETL不要でデータベースのレプリカを作成・維持。無料で提供され、ストレージコストもMicrosoftが負担</li>
+        <li>REST API：バッチまたはリアルタイムデータをOne Lakeにプッシュ</li>
+        <li>データ共有：異なるFabricテナント間でデータを安全に共有</li>
+      </ul>
+      
+      <div class="important">
+        One Lakeの目標：データがどこにあっても統一し、最高の分析ツールを適用することです
+      </div>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. ショートカットとはどのようなものですか？</div>
+          <div class="faq-answer">
+            ショートカットは、Fabric外のデータへの仮想リンクです。これにより、データを移動せずに参照できます。WindowsやLinuxのショートカットと同じ概念で、データがネイティブにそこにあるように見せますが、実際にはリモートの場所から参照しています。マルチクラウドのショートカットは、企業が既にFabric外に大規模なデータレイクを持っている場合に特に重要です。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. データベースミラーリングの利点は何ですか？</div>
+          <div class="faq-answer">
+            従来のETLアプローチでは、ETLパイプラインの管理、コンピュートの管理、レプリカの最新状態の維持、ネットワーク統合のコストなどが必要でした。ミラーリングではこれらすべてがカバーされ、ユーザー側でのETLは不要です。さらに無料で提供され、MicrosoftがレプリカのストレージコストもSKUに基づいて一定範囲内で負担します。
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>AIの民主化とインサイトの活用</h2>
+      <div class="summary">
+        Fabricでは、Copilotの統合とAIスキルの作成により、すべてのユーザーがAIを活用できるようになっています。さらに、Adobe Experience Platformとの統合により、インサイトをマーケティングアクションに変換できます。
+      </div>
+      
+      <h3>AIの活用方法</h3>
+      <ul>
+        <li><span class="highlight">Copilot統合</span>：すべてのFabricエクスペリエンスに統合され、特定のタスクに最適化されたAIアシスタント</li>
+        <li><span class="highlight">AIスキル</span>：特定のデータセットに対して自然言語で質問できる仕組み。ビジネス用語や業界データに関する知識も活用可能</li>
+        <li><span class="underline">Adobe統合</span>：Fabricデータウェアハウスに接続し、オーディエンスを作成・洗練させ、データ移動なしでAdobeで活性化</li>
+      </ul>
+      
+      <h3>Adobe Real-time CDPとの統合</h3>
+      <ul>
+        <li>フェデレーションとストリーミング機能を提供し、マーケティングチームとデータエンジニアリングチームのニーズに対応</li>
+        <li>リアルタイムエクスペリエンスのユースケースをサポート</li>
+        <li>データ移動と重複を最小限に抑える</li>
+        <li>経験主導のワークフローとチャネル間でのアクティベーションのための単一システム</li>
+      </ul>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Q. AIスキルとはどのようなものですか？</div>
+          <div class="faq-answer">
+            AIスキルは、特定のデータドメインにグラウンディングされたカスタムAIを簡単に作成する方法です。これにより、自然言語で質問するだけで、データから洞察を得ることができます。質問はSQL APIを使用して変換され、実行されます。また、指示やサンプルクエリを提供することで、AIをさらに調整することもできます。
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Q. フェデレーテッドオーディエンスコンポジションとは何ですか？</div>
+          <div class="faq-answer">
+            フェデレーテッドオーディエンスコンポジションは、Adobeの機能で、Microsoft Fabricなどのデータソースに接続し、そのデータを使用してオーディエンスを構築できるようにするものです。データはソースに残ったまま、Adobe Experience Platformでオーディエンスを定義し、アクティベーションに使用することができます。
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>主な用語と技術の解説</h2>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>説明</th>
+        </tr>
+        <tr>
+          <td>Microsoft Fabric</td>
+          <td>Microsoftの統合データ・分析プラットフォーム。様々な分析サービスを統一されたマナーで提供し、AIが深く統合されている。</td>
+        </tr>
+        <tr>
+          <td>One Lake</td>
+          <td>Fabricの基盤となる統一データレイク。オープンソースのApache Deltaパーケットフォーマットに基づいており、ベンダーロックインなし。</td>
+        </tr>
+        <tr>
+          <td>Copilot</td>
+          <td>Fabricの全エクスペリエンスに統合されたAIアシスタント。各エクスペリエンスに最適化され、自然言語でタスクを支援。</td>
+        </tr>
+        <tr>
+          <td>ショートカット</td>
+          <td>データ移動なしで外部データを参照する仮想リンク。マルチクラウド環境で特に有用。</td>
+        </tr>
+        <tr>
+          <td>ミラーリング</td>
+          <td>ETL不要でデータベースのレプリカを作成・維持する機能。無料で提供され、特定範囲内のストレージコストはMicrosoftが負担。</td>
+        </tr>
+        <tr>
+          <td>AIスキル</td>
+          <td>特定のデータセットに対して自然言語で質問できる仕組み。ビジネス用語や業界データに関する知識も活用可能。</td>
+        </tr>
+        <tr>
+          <td>Adobe Real-time CDP</td>
+          <td>顧客データを統合し、統一されたプロファイルを作成してパーソナライゼーションに活用するためのプラットフォーム。</td>
+        </tr>
+        <tr>
+          <td>フェデレーテッドオーディエンスコンポジション</td>
+          <td>データ移動なしでFabricなどのデータソースからオーディエンスを構築・活用するAdobeの機能。</td>
+        </tr>
+      </table>
+    </div>
+    
+    <footer>
+      © 2025 Microsoft & Adobe Session S712
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

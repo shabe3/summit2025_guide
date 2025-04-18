@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S718 How the Bungie Store Boosted Speed and Scale with Adobe Experience Manager</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 15px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .summary {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0f3c78;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin: 15px 0 10px;
+            color: #0f3c78;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 2px;
+        }
+        
+        .important {
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .faq-container {
+            margin-top: 15px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 12px 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            background-color: #fff;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bungie StoreがAdobe Experience Managerで実現した速度と拡張性の向上</h1>
+        </header>
+        
+        <div class="summary">
+            <h2>サマリー</h2>
+            <p>Bungieは、Adobe Experience Manager(AEM)とEdge Delivery Services(EDS)を活用して、オンラインストアの大幅な改善を実現しました。この90日間のプロジェクトでは、ユーザー体験の向上、パフォーマンスの大幅な改善、そして著しい売上の向上を達成しました。特に、ページの読み込み速度が向上したことで、顧客の滞在時間が33%増加し、カートへの商品追加が29%増加するなど、ビジネス成果に直結する改善が見られました。</p>
+        </div>
+        
+        <section>
+            <h2>プロジェクトの背景と目的</h2>
+            <p>Bungieは、Halo、Destinyなどの人気ゲームで知られるビデオゲーム開発会社です。同社は2020年にAdobe Commerceを導入しましたが、5年間大きなUX/UI更新やインフラ改善がなかったため、リフレッシュが必要でした。</p>
+            
+            <h3>主な目的</h3>
+            <ul>
+                <li>顧客体験とBungie Rewards（ゲーム内実績に連動した特典）の改善</li>
+                <li>コンバージョン率の最適化（UX/UI機能の改良）</li>
+                <li>スケーラビリティの向上（短時間に最大23,000件の注文処理に対応）</li>
+                <li>所有コストの効率的な管理</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Bungie Rewardsとは何ですか？</div>
+                    <div class="faq-answer">ゲーム内のプレイヤーデータと顧客アカウントを統合し、ゲーム内で達成した実績に基づいて特別な商品を購入できるようにするプログラムです。ゲームプレイと購買体験を結びつける重要な機能です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ5年間更新されなかったのですか？</div>
+                    <div class="faq-answer">具体的な理由は説明されていませんが、多くの企業ではリソースの制約やビジネス優先事項の変化により、大規模なリニューアルが遅れることがあります。Bungieの場合、ゲーム開発が主要事業であるため、ストアは二次的な優先順位だった可能性があります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobe Commerceはどのような役割を果たしていたのですか？</div>
+                    <div class="faq-answer">Adobe Commerceは、Bungieストアのeコマース機能を提供し、カートやチェックアウト処理、カタログ管理、Bungie Rewardsプログラムなどの機能をサポートしていました。特に、ゲーム内プレイヤーデータと顧客アカウントを統合する能力が重要でした。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>採用した技術ソリューション</h2>
+            <p>プロジェクトでは、<span class="highlight">Edge Delivery Services（EDS）</span>を中心に、複数のAdobeテクノロジーを統合しました。これにより顧客に最高のスピードと体験を提供するとともに、作成者にとっても優れたオーサリング環境を実現しました。</p>
+            
+            <h3>活用したテクノロジー</h3>
+            <ul>
+                <li><span class="underline">Edge Delivery Services（EDS）</span>：Adobeの最新フロントエンド技術で、エッジで実行される高速なコンテンツ配信</li>
+                <li><span class="underline">Adobe Commerce</span>：トランザクション処理やカート、チェックアウト機能を担当</li>
+                <li><span class="underline">Universal Editor</span>：コンテキスト内での編集を可能にする新しいツール</li>
+                <li><span class="underline">Adobe Experience Manager（AEM）</span>：コンテンツ管理とオーサリングの基盤</li>
+                <li><span class="underline">カタログサービス</span>：商品検索、商品リスト、商品詳細の要素を駆動</li>
+                <li><span class="underline">Adobe Live Search</span>：AI検索プラットフォームで、パーソナライズされた検索結果を提供</li>
+            </ul>
+            
+            <div class="important">プロジェクトは90日間で完了し、予定通りの納期を達成</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Edge Delivery Services（EDS）の主なメリットは何ですか？</div>
+                    <div class="faq-answer">EDSの主なメリットは、サーバーサイドではなくエッジで実行されることによる「圧倒的な速度」です。これにより、ページ読み込み時間が大幅に短縮され、顧客体験が向上します。また、迅速な実装が可能で、新機能の市場投入スピードも向上します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Universal Editorとは何ですか？</div>
+                    <div class="faq-answer">Universal Editorは、Adobeの新しいコンテキスト内編集ツールで、様々なソースからのコンテンツを編集できます。Bungieの場合はAEMで作成されたコンテンツをUniversal EditorでEDSに公開しています。これにより、コンテンツ作成者はより直感的にサイトを更新できるようになりました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「スプリットグラス」アーキテクチャとは何ですか？</div>
+                    <div class="faq-answer">プロジェクトで採用されたアーキテクチャで、EDSがコンテンツページ、ヘッダー、フッター、ミニカート、検索、商品リスト、商品詳細を管理し、Adobe Commerceがログイン、マイアカウント、カート、チェックアウトなどのトランザクション処理を担当するというハイブリッド方式です。これにより、両方のシステムの強みを活かしつつ、迅速な実装が可能になりました。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>実装の流れと設計変更</h2>
+            <p>プロジェクトは2023年12月中旬に開始し、90日間のスケジュールで実施されました。初期段階ではコア技術要素の実装に焦点を当て、年明けからデザインイニシアチブが始まりました。</p>
+            
+            <h3>主な実装フェーズ</h3>
+            <ul>
+                <li>初期フェーズ（12月）：Commerceのアップグレード、カタログサービスとLive Searchの有効化、EDSの設定</li>
+                <li>デザインフェーズ（1月）：新しいビジュアル体験と顧客体験の設計</li>
+                <li>開発フェーズ（1-2月）：EDSブロックの拡張、報酬製品カルーセルの開発、Commerce側のバックエンドログインフロー改善</li>
+                <li>最終調整（2-3月）：顧客体験の微調整、ハンドオフ部分の確認、報酬テスト</li>
+            </ul>
+            
+            <h3>デザイン変更のポイント</h3>
+            <ul>
+                <li>ダークテーマの採用（ゲームプレイヤーの期待に合わせた設計）</li>
+                <li>ターゲットエリアの拡大、テキストの拡大</li>
+                <li>報酬や達成要件の明確化</li>
+                <li>購入プロセスの合理化（カートボタンの位置変更、モバイルでの固定表示）</li>
+                <li>ログインフローの最適化（ゲームプレイアカウントとの連携強化）</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜダークテーマを採用したのですか？</div>
+                    <div class="faq-answer">ダークテーマは、ゲームプレイヤーが期待する視覚的デザインに合わせたものです。多くのゲーマーは開発環境やゲーム内でダークモードに慣れており、この親しみのあるデザインがユーザー体験を向上させます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 報酬テストはどのように行われましたか？</div>
+                    <div class="faq-answer">実際のゲームプレイAPIと連携する必要があったため、Right PointとBungieの両社から実際のゲームプレイヤーが参加してテストを行いました。彼らは自分が獲得した報酬を確認し、すべてのユースケースがカバーされているか検証しました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ログインフローの最適化の具体的な内容は？</div>
+                    <div class="faq-answer">Bungieアカウント（ゲームプレイアカウント）とストアアカウントの連携を強化し、ユーザーがメールを入力するとリンクされたアカウントを確認し、Bungieアカウントでのログインを促す仕組みを導入しました。これにより、ゲームプレイによって解除された報酬商品へのアクセスがスムーズになりました。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>EDSの実装における教訓と推奨事項</h2>
+            <p>プロジェクト実施中に得られた重要な知見と、今後EDSを実装する際の推奨事項です。</p>
+            
+            <h3>主なポイント</h3>
+            <ul>
+                <li><span class="highlight">EDSモデルの理解</span>：AEMとは異なるパラダイムであることを認識（ネスト構造なし、フラットな構造）</li>
+                <li><span class="highlight">ブロック定義の計画</span>：開発チームとの連携、コードの再利用性を考慮</li>
+                <li><span class="highlight">Lighthouseスコアのモニタリング</span>：パフォーマンスを意識した開発、早期の問題修正</li>
+                <li><span class="highlight">レンダリングの理解</span>：EDSの描画順序やレイアウトシフト対策の把握</li>
+                <li><span class="highlight">最新情報のキャッチアップ</span>：EDSは進化が早いため、Adobeとのコミュニケーションを維持</li>
+            </ul>
+            
+            <div class="important">「EDSは新しいパブリッシュインスタンスではない」ことを理解することが重要</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. AEMとEDSの主な違いは何ですか？</div>
+                    <div class="faq-answer">AEMは階層的な構造でコンポーネントのネスト（入れ子）が可能ですが、EDSはドキュメントベースの編集プラットフォームで、フラットな構造になっています。EDSではカルーセル内に異なるコンポーネントを配置して描画するような概念はなく、コンテンツの管理方法が根本的に異なります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Lighthouseスコアのモニタリングが重要な理由は？</div>
+                    <div class="faq-answer">EDSの最大の価値はパフォーマンスです。しかしEDSを導入するだけで自動的に高いパフォーマンスが得られるわけではなく、継続的なモニタリングと最適化が必要です。GitHub Actionsのツールを活用して各ブランチのLighthouseスコアをチェックし、問題を早期に修正することが重要です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. EDSのレンダリング順序でなぜヘッダーが最後に読み込まれるのですか？</div>
+                    <div class="faq-answer">EDSのデフォルト設定では、ヘッダーはすべてのボディコンテンツの後に読み込まれます。これはAPIコールを行うページで特に顕著になり、ページ本体が読み込まれた後にヘッダーが突然表示されるという体験の不連続感を生じさせる可能性があります。この問題を理解し、適切に対処することが重要です。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>プロジェクトの成果</h2>
+            <p>実装後わずか1週間で、既に大きな成果が見られました。特にパフォーマンスと顧客エンゲージメントの向上が顕著です。</p>
+            
+            <h3>主な成果指標</h3>
+            <ul>
+                <li><span class="underline">顧客体験の向上</span>：デザインパフォーマンスが37ポイント（62%）向上、アクセシビリティが30ポイント向上</li>
+                <li><span class="underline">モバイルパフォーマンスの飛躍</span>：60ポイントの驚異的な向上</li>
+                <li><span class="underline">顧客行動の変化</span>：商品リストページの閲覧が65%増加、商品詳細ページの閲覧が20%増加</li>
+                <li><span class="underline">サイト滞在時間</span>：33%増加（当初の予想に反する結果）</li>
+                <li><span class="underline">カート追加</span>：29%増加</li>
+                <li><span class="underline">エンゲージメント</span>：13%向上</li>
+                <li><span class="underline">スケーラビリティ</span>：現在のピーク負荷の45倍までエラー率はわずか0.01%</li>
+            </ul>
+            
+            <div class="important">高速化したことで予想外にユーザーの滞在時間が33%増加</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜサイト滞在時間の増加は予想外だったのですか？</div>
+                    <div class="faq-answer">一般的に、サイトが高速化すると、ユーザーは必要なものをすぐに見つけて離脱する傾向があると想定されていました。しかし実際には、高速なページ読み込みによって、ユーザーはより多くの製品を閲覧し、サイト内での探索を増やす結果となりました。これは、良好なユーザー体験が深いエンゲージメントを促進することを示しています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. スケーラビリティテストはどのように実施されましたか？</div>
+                    <div class="faq-answer">現在のピーク負荷の15倍、30倍、45倍の負荷テストを実施しました。45倍の負荷まではエラー率がゼロを維持し、45倍の負荷でもエラー率はわずか0.01%に抑えられました。また、15倍の負荷でも1秒未満の読み込み時間を維持できることが確認されました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 今後の展開計画は？</div>
+                    <div class="faq-answer">Bungieでは、欧州地域サイトへのEDS導入、トランザクションページ（カート、チェックアウトなど）のEDS統合の検討、組織内の他の領域でのEDSの活用拡大などが計画されています。初期の成功を踏まえ、EDSの活用範囲を拡大していく方針です。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>重要な用語・概念リスト</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>Edge Delivery Services（EDS）</td>
+                    <td>Adobeの最新フロントエンド技術。エッジで実行されることで高速な表示を実現。サーバー不要。</td>
+                </tr>
+                <tr>
+                    <td>Universal Editor</td>
+                    <td>Adobeの新しいコンテキスト内編集ツール。様々なソースからのコンテンツを編集可能。</td>
+                </tr>
+                <tr>
+                    <td>Adobe Experience Manager（AEM）</td>
+                    <td>コンテンツ管理システム。デジタルアセットリポジトリとしても機能。</td>
+                </tr>
+                <tr>
+                    <td>Adobe Commerce</td>
+                    <td>eコマースプラットフォーム。カタログ、カート、チェックアウト機能を提供。</td>
+                </tr>
+                <tr>
+                    <td>カタログサービス</td>
+                    <td>商品検索、商品リスト、商品詳細に関するデータを提供するサービス。</td>
+                </tr>
+                <tr>
+                    <td>Adobe Live Search</td>
+                    <td>AI検索プラットフォーム。パーソナライズされた検索結果を提供。</td>
+                </tr>
+                <tr>
+                    <td>Bungie Rewards</td>
+                    <td>ゲーム内の実績に基づいて特別な商品を購入できるようにするプログラム。</td>
+                </tr>
+                <tr>
+                    <td>スプリットグラス</td>
+                    <td>EDSとCommerceを使い分けるハイブリッドアーキテクチャ。ブラウズと検索はEDS、トランザクションはCommerce。</td>
+                </tr>
+                <tr>
+                    <td>Lighthouse</td>
+                    <td>ウェブサイトのパフォーマンス、アクセシビリティ、SEOなどを測定するツール。</td>
+                </tr>
+            </table>
+        </section>
+        
+        <footer>
+            <p>© 2025 Bungie & Adobe</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

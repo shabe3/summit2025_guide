@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S733 Building Personalized Connections at Scale T-Mobile's Adobe Journey</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #0f3c78;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 2px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .faq-container {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        
+        .faq-question {
+            background-color: #f2f2f2;
+            padding: 10px 15px;
+            cursor: pointer;
+            position: relative;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .faq-question.active::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            background-color: #fff;
+            border-left: 3px solid #0f3c78;
+            margin-top: 5px;
+        }
+        
+        .faq-question.active + .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>T-Mobileのパーソナライゼーション革命：<br>Adobeを活用した顧客体験の変革</h1>
+    </header>
+    
+    <div class="summary">
+        <p>T-Mobileは、15年以上にわたるAdobe、VMLとのパートナーシップを通じて、複数の異なるマーケティングシステムを統合し、顧客体験を革新しました。このプレゼンテーションでは、T-MobileのCRMオペレーションチームが、どのようにAdobe Experience Cloudを活用して、顧客データの統合、運用効率の向上、そして最終的には個別化された顧客体験の実現に成功したかを紹介します。</p>
+    </div>
+    
+    <section>
+        <h2>パートナーシップの背景</h2>
+        <p>T-Mobileは、Adobeおよび代理店VMLと長期的な関係を構築し、マーケティング戦略を一貫して進化させてきました。</p>
+        
+        <h3>パートナーシップの特徴</h3>
+        <ul>
+            <li>T-MobileとAdobeの<span class="highlight">15年以上</span>にわたるパートナーシップ</li>
+            <li>VMLとAdobeの<span class="highlight">20年以上</span>のパートナーシップ</li>
+            <li>T-MobileとVMLの<span class="underline">2009年からの協力関係</span></li>
+            <li>クリエイティブ開発、CRMオペレーション、技術、キャンペーン展開、レポーティングまでの総合的サポート</li>
+        </ul>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Q. T-Mobileの市場におけるポジションはどのように変化しましたか？</div>
+                <div class="faq-answer">T-Mobileは長い間「チャレンジャーブランド」でしたが、現在では「チャンピオン」となっています。そのため、運営方法も変化しており、顧客中心、データ活用、AI活用、デジタルファーストの企業を目指しています。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q. VMLはT-Mobileにどのようなサービスを提供していますか？</div>
+                <div class="faq-answer">VMLは、クリエイティブ開発からCRMオペレーション、技術サポート、キャンペーン展開、レポーティングに至るまでの包括的なサービスを提供しています。また、ポストペイド、プリペイド、ビジネス部門、Metro、ホームインターネットなど、T-Mobileのあらゆる事業部門をサポートしています。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q. Adobeが提供しているサービスは何ですか？</div>
+                <div class="faq-answer">AdobeはT-Mobileに対して、Adobe Experience Manager (AEM)、Campaign、Target、Analyticsなど、Experience Cloudの全製品スイートを提供しています。また、プロフェッショナルサービスとアルティメイトサポートチームが、プロセスや人材の構成をITの機能と合わせて構築するための戦略的サポートも行っています。</div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>変革への旅</h2>
+        <p>T-MobileのCRMオペレーションチームは、分散したマーケティング技術と顧客データを統合して、より効率的で効果的な顧客体験を実現するための変革を進めました。</p>
+        
+        <h3>スタート地点の課題</h3>
+        <ul>
+            <li>各事業部門が<span class="highlight">独自のマーケティング技術やデータエコシステム</span>を持つ分散状態</li>
+            <li>約<span class="underline">10以上のシステム</span>を使って運用していた状況</li>
+            <li>2024年には<span class="highlight">1,000以上のキャンペーン</span>を複数チャネルで実施</li>
+        </ul>
+        
+        <h3>変革の方法論</h3>
+        <ul>
+            <li><span class="underline">10週間の戦略的エンゲージメント</span>を通じて、実行可能な変革プログラムを設計</li>
+            <li>運用モデル、ガバナンス、マーケティングCRM、分析の4つの主要領域を評価</li>
+            <li>プラットフォーム移行、変革への移行、変革のスケーリングの<span class="highlight">3段階アプローチ</span>で実施</li>
+        </ul>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Q. 変革の主な目標は何でしたか？</div>
+                <div class="faq-answer">CRMオペレーションの統合、運用効率の向上、マーケティング効果の強化、そして高度な顧客体験の実現が主な目標でした。分散したシステムとデータを統合することで、より一貫性のあるエコシステムを構築することを目指していました。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q. プラットフォーム移行の課題は何でしたか？</div>
+                <div class="faq-answer">移行可能なコンテンツや資産がほとんどなかったため、オーディエンスやHTMLを一から再構築する必要がありました。そのため、移行には6か月の期間が設けられました。また、チームのスキルアップと知識移転も並行して行われました。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q. どのようにして事業の継続性を確保しましたか？</div>
+                <div class="faq-answer">段階的な移行アプローチを採用し、既存のツールでの業務を継続しながら、徐々にAdobeへの移行を進めました。一部のチームは既存ツールに集中し、別のチームがAdobe移行に取り組むという並行作業体制を取りました。</div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>実装プロセスと成果</h2>
+        <p>T-Mobileは、Adobe Professional ServicesとVMLのサポートを受けながら、構造化されたアプローチでプラットフォームの移行と統合を実現しました。</p>
+        
+        <h3>実装の段階</h3>
+        <ul>
+            <li><span class="underline">計画段階</span>：ビジネス要件の構築、データエコシステムの理解、インフラ要件の特定</li>
+            <li><span class="highlight">構築段階</span>：Adobeによる「魚の釣り方を教える」アプローチでのトレーニング</li>
+            <li><span class="underline">テスト段階</span>：データフローの検証とQA</li>
+            <li><span class="highlight">本番稼働</span>：段階的な事業部門ごとの移行</li>
+            <li><span class="underline">最適化</span>：体験とワークフローの継続的改善</li>
+        </ul>
+        
+        <h3>技術的実装</h3>
+        <ul>
+            <li>Adobe Experience Platform（AEP）による<span class="highlight">統合顧客プロファイル</span>の構築</li>
+            <li>第1フェーズ：バッチキャンペーン用のCampaign（V8）の導入</li>
+            <li>第2フェーズ：リアルタイムメッセージング用のCampaign Agileの導入</li>
+            <li>最終フェーズ：データ移行の完了とガバナンスの確立</li>
+        </ul>
+        
+        <h3>主要な成果</h3>
+        <ul>
+            <li>21の異なるデータソースを統合して<span class="highlight">統合顧客プロファイル</span>を構築</li>
+            <li>複数のメッセージングプラットフォームをCampaignとAgileに<span class="underline">統合</span></li>
+            <li>キャンペーン構築と展開の労力を<span class="highlight">40%削減</span></li>
+            <li>技術ライセンスとメンテナンス費用の<span class="underline">大幅削減</span></li>
+        </ul>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Q. どのようにしてトレーニングと知識移転を行いましたか？</div>
+                <div class="faq-answer">「ハンドオーバー」と呼ばれるハンズオントレーニングアプローチを採用しました。最初はAdobeのチームがキャンペーンを構築し、T-MobileとVMLのチームが見学。次に、T-MobileとVMLのチームがキャンペーンを構築し、Adobeがサイドコーチングを行うという段階的なアプローチを取りました。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q. どのように成功を測定し、経営陣に報告しましたか？</div>
+                <div class="faq-answer">成功指標を3つのカテゴリに分類して追跡しました：プラットフォームの廃止（技術の削減）、運用効率（時間と費用の節約）、そして最新マーケティングの実現（高度な機能の導入）。各事業部門が移行するごとに、これらの指標を更新し、経営陣と共有しました。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q. Network Passプログラムの改善はどのように実現しましたか？</div>
+                <div class="faq-answer">以前は手動のバッチ処理だったNetwork Passプログラムを、マルチチャネルで完全に自動化されたジャーニーに変革しました。高度なif-thenロジックに基づき、顧客の行動に応じて異なる体験を提供。その結果、アカウント獲得の向上、特に農村部での関心増加、デジタルでの顧客コンバージョン向上などの成果を上げました。</div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>課題と学び</h2>
+        <p>大規模な変革プロジェクトでは、予期せぬ課題に直面することがありますが、T-Mobileはこれらを乗り越え、重要な教訓を得ました。</p>
+        
+        <h3>直面した課題</h3>
+        <ul>
+            <li><span class="highlight">データの検証と標準化</span>が予想以上に複雑</li>
+            <li>各事業部門からの<span class="underline">データフォーマットの違い</span>への対応</li>
+            <li>技術は統合できても<span class="highlight">人間の働き方</span>の変更は困難</li>
+            <li>既存システムへの<span class="underline">慣れ</span>からくる抵抗</li>
+        </ul>
+        
+        <h3>重要な学び</h3>
+        <ul>
+            <li><span class="highlight">人間の側面</span>を軽視しない</li>
+            <li>チーム間の<span class="underline">一貫したビジョン</span>の重要性</li>
+            <li>小さな<span class="highlight">成功を祝う</span>ことでモチベーションを維持</li>
+            <li>失敗を恐れない<span class="underline">文化</span>の醸成</li>
+        </ul>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Q. チームの抵抗にどのように対処しましたか？</div>
+                <div class="faq-answer">コーチングと励まし、失敗しても大丈夫という環境作りを重視しました。チームがV8に慣れるのに約1年かかりましたが、今ではAgileの複雑な機能にも挑戦しています。変化への抵抗は自然なことであり、パートナーと協力して一緒に乗り越えることが重要でした。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q. 他の組織へのアドバイスは何ですか？</div>
+                <div class="faq-answer">人間の側面を軽視しないことが最も重要です。技術の変更は比較的容易ですが、人間の働き方や慣れ親しんだシステムからの移行は大きな挑戦です。一貫したビジョンとチーム間の協力、そして小さな成功を祝うことで、長期的な変革を成功させることができます。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q. T-Mobileの次のステップは何ですか？</div>
+                <div class="faq-answer">最後の事業部門の移行を完了すると同時に、AIを活用した意思決定プロセスの強化など、より高度な機能の実装に取り組んでいます。また、顧客体験のさらなる最適化とパーソナライゼーションにも注力していく予定です。</div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>主要な用語と解説</h2>
+        <table>
+            <tr>
+                <th>用語</th>
+                <th>解説</th>
+            </tr>
+            <tr>
+                <td>CRM運用（CRM Operations）</td>
+                <td>顧客関係管理のための通信や活動を計画・実行・管理するチーム</td>
+            </tr>
+            <tr>
+                <td>Adobe Experience Platform（AEP）</td>
+                <td>顧客データを統合し、リアルタイムの顧客プロファイルを構築するためのプラットフォーム</td>
+            </tr>
+            <tr>
+                <td>統合顧客プロファイル（Unified Customer Profile）</td>
+                <td>複数のデータソースから収集した顧客情報を1つにまとめた包括的なプロファイル</td>
+            </tr>
+            <tr>
+                <td>Campaign V8</td>
+                <td>バッチ処理によるマーケティングキャンペーン管理のためのAdobeツール</td>
+            </tr>
+            <tr>
+                <td>Campaign Agile</td>
+                <td>リアルタイムの1対1パーソナライズメッセージングを可能にするAdobeツール</td>
+            </tr>
+            <tr>
+                <td>ポストペイド（Postpaid）</td>
+                <td>後払い方式の携帯電話契約サービス</td>
+            </tr>
+            <tr>
+                <td>プリペイド（Prepaid）</td>
+                <td>前払い方式の携帯電話サービス（MetroやMagenta Prepaidなど）</td>
+            </tr>
+            <tr>
+                <td>Network Pass</td>
+                <td>見込み客がT-Mobileのネットワークを90日間試用できるプログラム</td>
+            </tr>
+        </table>
+    </section>
+    
+    <footer>
+        <p>© 2024 資料に基づく情報整理</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    question.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

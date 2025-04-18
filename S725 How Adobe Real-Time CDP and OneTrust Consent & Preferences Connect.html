@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S725 How Adobe Real-Time CDP and OneTrust Consent & Preferences Connect</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #0f3c78;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .summary {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        .important {
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .faq-container {
+            margin-top: 15px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            background-color: #f2f2f2;
+            padding: 10px;
+            cursor: pointer;
+            position: relative;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        .faq-question.active::after {
+            content: '-';
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 0 0 4px 4px;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Adobe Real-Time CDP とOneTrust の同意・設定管理の連携</h1>
+        
+        <div class="section">
+            <div class="summary">
+                現代のビジネスにおいてデータは中核的な役割を果たしていますが、プライバシー規制の増加とデータ品質の変化により、消費者の同意と設定を適切に管理することが重要になっています。OneTrustの同意・設定管理ソリューションとAdobeのReal-Time CDPの統合により、規制遵守とデータ活用の最大化を同時に実現できます。
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>データ活用とプライバシー規制の関係</h2>
+            <div class="summary">
+                ビジネスはデータを活用して収益化や顧客エンゲージメントを推進していますが、拡大する規制環境はこれと直接的に衝突しています。
+            </div>
+            
+            <h3>現代のデータ活用の課題</h3>
+            <ul>
+                <li>2025年においても<span class="highlight">プライバシー規制は拡大・加速</span>している</li>
+                <li>データソースと品質に大きな変化が起きている</li>
+                <li>消費者はパーソナライゼーションへの期待を変えていない</li>
+                <li>規制はビジネスにとってリスクであると同時に<span class="underline">新しい機会</span>でもある</li>
+            </ul>
+
+            <h3>規制の種類</h3>
+            <ul>
+                <li><span class="underline">プライバシー規制</span>：国家・州・地方レベルの法律</li>
+                <li><span class="underline">消費者保護法</span>：米国のTCPA、カナダのCASLなど</li>
+                <li><span class="underline">セクター別の法律</span>：特定業界向けの規制</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. プライバシー法の歴史的背景は？</div>
+                    <div class="faq-answer">
+                        突然世界がプライバシー重視になったわけではなく、消費者が自分のデータがどのように収集・使用されているかについての理解を深めるようになったことから、消費者保護のメカニズムとして法律が制定されました。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 消費者保護法とプライバシー法の違いは？</div>
+                    <div class="faq-answer">
+                        消費者保護法（TCPAやCASLなど）はプライバシー法よりも古く、「着信拒否」のような明確な適用基準を持っており、複雑なプライバシー規制よりも理解と適用が容易です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 顧客との各接触はなぜ重要か？</div>
+                    <div class="faq-answer">
+                        顧客とのすべての接触、特にデータを収集・使用する際の接触は、リスクと機会の両方を表しています。規制を遵守する義務があるリスクですが、同時に透明性と選択肢を通じて顧客との関係を改善し、より多くのデータを収集して独自のデータ資産を構築する機会でもあります。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>同意と設定管理の重要性</h2>
+            <div class="summary">
+                顧客旅程において「未知」から「既知」の段階への移行に伴い、より詳細な同意と設定を収集することの重要性が高まっています。
+            </div>
+            
+            <h3>同意管理の範囲</h3>
+            <ul>
+                <li><span class="highlight">未知の段階</span>：クッキーバナーなど、未認証訪問者からの許可取得</li>
+                <li><span class="highlight">既知の段階</span>：認証後のマーケティング設定、購読設定など</li>
+                <li>市場では認証を早期に促進する傾向が強まっている</li>
+                <li>「販売しない・共有しない」などの選択を継続的に尊重する必要がある</li>
+            </ul>
+
+            <h3>有効な同意の要件</h3>
+            <ul>
+                <li><span class="underline">情報に基づいた選択</span>：何に同意しているかを理解している</li>
+                <li><span class="underline">取り消し可能</span>：いつでも変更できる</li>
+                <li><span class="underline">具体的</span>：広範な単一チェックボックスの時代は終わり</li>
+                <li>透明性が高いほど、オプトイン率が向上する</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 未知の段階から既知の段階への移行をどう促進するか？</div>
+                    <div class="faq-answer">
+                        市場では認証を早期に促す傾向が強まっています。これにより、より詳細なマーケティング設定や購読設定を取得し、顧客とのより価値のある関係を構築できます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「販売しない・共有しない」の要件はどう解釈すべきか？</div>
+                    <div class="faq-answer">
+                        多くの企業は、未知の訪問をその後の永続的なプロファイルにリンクできる場合、その選択をダウンストリームでも尊重すべきだと解釈しています。多くの組織はログインしていなくても誰かを特定できる技術を持っているため、この問題は全体的に取り組む必要があります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. AIデータ利用の同意取得はどうすべきか？</div>
+                    <div class="faq-answer">
+                        AIでデータを使用する場合など、データの使用方法を適切に伝えることが重要です。透明性とより詳細な許可設定により、オプトイン率が高まります。過度に詳細な説明や多すぎる選択肢は必要ありませんが、適切な透明性と選択肢の粒度が最高のオプトイン率をもたらします。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>執行可能な同意シグナルの作成</h2>
+            <div class="summary">
+                CDPで同意シグナルを実行可能にするためには、誰が同意したか、どのような選択をしたか、その状態、出所などを明確に記録する必要があります。
+            </div>
+            
+            <h3>同意記録の必須要素</h3>
+            <ul>
+                <li><span class="highlight">誰が同意したか</span>：識別子（既知・未知両方）</li>
+                <li><span class="highlight">目的構造</span>：データ使用の意図を定義</li>
+                <li><span class="highlight">選択の状態</span>：静的データポイントではなく常に進化</li>
+                <li><span class="highlight">出所</span>：規制防衛のために重要</li>
+                <li>タイムスタンプとバージョン情報</li>
+            </ul>
+
+            <h3>OneTrustでの仕組み</h3>
+            <ul>
+                <li><span class="underline">収集ポイント</span>：顧客とのすべての接触点</li>
+                <li><span class="underline">データ主体プロファイル</span>：すべての選択の保存場所</li>
+                <li><span class="underline">識別子の連携</span>：IDに依存するシステムへの強制に重要</li>
+                <li>顧客旅程の進行に伴う選択の継続的更新</li>
+                <li>ファーストパーティデータ収集の好機</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 規制当局からの問い合わせにどう対応すべきか？</div>
+                    <div class="faq-answer">
+                        規制当局は単に「この人の同意はありましたか？」と尋ねるのではなく、それを証明するよう求め、さらにその同意が規制要件を満たしているかを確認します。同意が得られた日時、ウェブサイト、当時のプライバシーポリシーバージョン、表示された文言などの記録証跡を提示できることが重要です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. OneTrustはIDをどう管理しているか？</div>
+                    <div class="faq-answer">
+                        OneTrustはID解決を行いませんが、識別子をリンクする機能を持っています。これは同意収集の目的と、下流での同意シグナルの強制の両方に重要です。顧客は自分に関連する複数のIDを知りませんが、マーケティング技術はすべてが内向きに設計されており、特定の方法でIDを通信する必要があります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ファーストパーティデータ収集との関連性は？</div>
+                    <div class="faq-answer">
+                        設定管理は、コンテキスト的に関連性のあるファーストパーティデータ収集の絶好の機会となります。例えば、あるクライアントは設定センターを立ち上げた際の初期投資収益として、特定のチャネルにオプトインする際の連絡先要素を検証していました。メールにオプトインする場合、正しいメールアドレスを確認したり、複数のメールがある場合に優先メールを確認するのに最適なタイミングとなります。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>下流システムへの統合</h2>
+            <div class="summary">
+                OneTrustで収集・管理された同意と設定の真の価値は、Real-Time CDPなどの下流システムに統合し、活用できることにあります。
+            </div>
+            
+            <h3>統合のメリット</h3>
+            <ul>
+                <li>各システムに<span class="highlight">関連する識別子</span>を使用</li>
+                <li>システムが<span class="highlight">消費可能な形式</span>でシグナルを送信</li>
+                <li>選択が更新されるたびに<span class="highlight">差分更新</span>を提供</li>
+                <li>CDPなどの既存投資を最大限活用</li>
+                <li>キャンペーンやプログラムに関する<span class="underline">より高い俊敏性</span>を実現</li>
+            </ul>
+
+            <h3>Adobe統合の仕組み</h3>
+            <ul>
+                <li>プロファイルに直接統合</li>
+                <li>データガバナンスメカニズムがすでに設定されている場合はデータ使用ラベルに通信</li>
+                <li>CDPでの異なるデータグループの活性化を加速</li>
+                <li>コンプライアンスは、信頼できるデータ駆動型の顧客関係を最大化する副産物に</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. CDPでの同意適用の具体的なメリットは？</div>
+                    <div class="faq-answer">
+                        CDPに同意シグナルを統合することで、「このメッセージを送信してもよいか」というような最終チェックを行う必要がなくなります。エンゲージメントの許可がデータに内在するようになり、イノベーションのスピードが向上し、コンプライアンスは付随的な利益として得られます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobeとの統合は具体的にどう行われるか？</div>
+                    <div class="faq-answer">
+                        OneTrustはAdobeのプロファイルに直接統合します。データガバナンスメカニズムがすでに設定されている場合は、データ使用ラベリングに通信し、CDPでのさまざまなデータグループのアクティベーションを加速します。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 同意管理の導入で市場ターゲットは減少するのか？</div>
+                    <div class="faq-answer">
+                        一般的に企業は同意管理プログラムを導入すると、アドレス可能な市場が縮小すると予想しますが、必ずしもそうではありません。より多くの選択肢を提供することで、実際にはSMSやメールマーケティングへのオプトイン率が高まることがあります。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>顧客事例とROI</h2>
+            <div class="summary">
+                OneTrustを導入した企業は、規制遵守だけでなく、マーケティングリストの拡大、パーソナライゼーションの向上、UX改善などの成果を得ています。
+            </div>
+            
+            <h3>ファッション小売業の事例</h3>
+            <ul>
+                <li>複数のプライバシー法への対応</li>
+                <li><span class="highlight">マーケティングリストの拡大</span>（詳細な選択肢で高いオプトイン率）</li>
+                <li>コンプライアンスの自動化によるFTE削減</li>
+                <li>コンテンツや頻度などの<span class="underline">詳細な設定</span>によるパーソナライゼーション向上</li>
+            </ul>
+
+            <h3>大手メディア企業の事例</h3>
+            <ul>
+                <li>複数の体験・ブランドにわたる同意管理</li>
+                <li><span class="highlight">「ローカルに考え、グローバルに行動する」</span>アプローチ</li>
+                <li>デバイス間・ドメイン間の同意によるUX改善</li>
+                <li>世界中の複雑な規制への対応</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. OneTrustの規模はどのくらいか？</div>
+                    <div class="faq-answer">
+                        OneTrustは世界最大の同意・設定管理プロバイダーであり、60億以上のデータ主体プロファイルを管理しています。この規模により、世界中のさまざまな要件や変化に対応する強力な製品開発が可能になっています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 同意ツールのROIはどのように測定すべきか？</div>
+                    <div class="faq-answer">
+                        同意ツールの投資収益率は、規制遵守だけでなく、パーソナライゼーションの開放、より良いエンゲージメントの促進、特定のマーケティングチャネルでのパフォーマンス向上など、ビジネス機会の観点から評価すべきです。これは機会志向のイニシアチブであるべきです。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. OneTrustはどのような大規模実装事例があるか？</div>
+                    <div class="faq-answer">
+                        OneTrustは世界最大かつ最も消費者重視のブランドと協力しています。スーパーボウルのインタラクティブ広告、スマートTVの設定、一般的なストリーミングサービスなど、多くの消費者体験をサポートしています。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>重要な用語と概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>Real-Time CDP</td>
+                    <td>Adobeのリアルタイム顧客データプラットフォーム。顧客データを統合し、リアルタイムでのパーソナライゼーションを可能にする</td>
+                </tr>
+                <tr>
+                    <td>同意管理</td>
+                    <td>顧客からの許可を収集、保存、管理、適用するプロセス</td>
+                </tr>
+                <tr>
+                    <td>設定管理</td>
+                    <td>顧客のコミュニケーション設定（チャネル、頻度、内容など）を管理するプロセス</td>
+                </tr>
+                <tr>
+                    <td>データ主体プロファイル</td>
+                    <td>個人の同意と設定のすべてを保存する場所</td>
+                </tr>
+                <tr>
+                    <td>目的構造</td>
+                    <td>データを使用する意図を定義する枠組み（GDPRで導入された概念）</td>
+                </tr>
+                <tr>
+                    <td>データガバナンス</td>
+                    <td>データの使用方法に関するルールと制限を管理する仕組み</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="important">
+            同意管理は単なる規制遵守ではなく、より良い顧客関係と価値創造のための<span class="highlight">戦略的機会</span>です
+        </div>
+
+        <footer>
+            出典：Adobe Summit 2025 - S725 セッション（スピーカー：Neil Tolbert、OneTrust）
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const item = this.parentNode;
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all items
+                    document.querySelectorAll('.faq-item').forEach(faqItem => {
+                        faqItem.classList.remove('active');
+                        faqItem.querySelector('.faq-question').classList.remove('active');
+                    });
+                    
+                    // If clicked item wasn't active, open it
+                    if (!isActive) {
+                        item.classList.add('active');
+                        this.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

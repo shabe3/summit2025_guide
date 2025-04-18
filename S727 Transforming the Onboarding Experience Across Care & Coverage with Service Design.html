@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S727 Transforming the Onboarding Experience Across Care & Coverage with Service Design</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 16px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+        }
+        .important {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 16px 0;
+            font-weight: bold;
+        }
+        .faq-container {
+            margin-top: 16px;
+        }
+        .faq-item {
+            margin-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 8px 0;
+            position: relative;
+        }
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 8px;
+            transition: transform 0.3s;
+        }
+        .faq-question.active::after {
+            content: "-";
+        }
+        .faq-answer {
+            display: none;
+            padding: 8px 0 16px;
+        }
+        .faq-question.active + .faq-answer {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f0f5ff;
+            color: #0f3c78;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-top: 32px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kaiser Permanente オンボーディング体験変革プロジェクト</h1>
+        </header>
+
+        <div class="summary">
+            <p>Kaiser Permanente（KP）は新規会員の離脱率が高いという課題に直面していました。そこで、KPはデジタルマーケティングの専門家チームと協力し、サービスデザイン手法を用いて新会員のオンボーディング体験を根本から変革しました。このプロジェクトではCDPを活用したパーソナライズされたコミュニケーション、マジックリンク認証、行動ベースの自動化などを実装し、わずか4か月という短期間で登録率を59%向上させ、エンゲージメントを12倍に増加させることに成功しました。</p>
+        </div>
+
+        <div class="section">
+            <h2>プロジェクト概要と課題</h2>
+            <p>Kaiser Permanente（KP）は統合ケア提供モデルを持つ非営利組織で、病院、医師、看護師、臨床医などを自社で所有する閉鎖型ネットワークを運営しています。しかし、新規会員のオンボーディング体験には多くの課題がありました。</p>
+            
+            <h3>直面していた主な課題</h3>
+            <ul>
+                <li><span class="highlight">新規会員の異常に高い離脱率</span>（1年目の会員）が悪化傾向</li>
+                <li>NPSスコアが目標より低く、会員満足度が期待を下回っていた</li>
+                <li><span class="underline">新規会員の46%</span>が最初の90日以内にアカウント登録をしていなかった</li>
+                <li>会員とのコミュニケーションが一方通行で、同じメッセージを全員に送信していた</li>
+                <li>タスクベースのオンボーディングで、パーソナライズされていなかった</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Kaiser Permanenteとは何ですか？</div>
+                    <div class="faq-answer">Kaiser Permanenteは、医療提供者と保険者が統合された非営利のヘルスケア組織です。自社の病院、医師、看護師、薬局などを持ち、予防医療と健康増進に焦点を当てています。閉鎖型ネットワークで、会員はKPの施設とサービスにアクセスできます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. プロジェクトの目標は何だったのですか？</div>
+                    <div class="faq-answer">このプロジェクトの目標は、新規会員の経験を根本から変革し、1年目の会員維持率を向上させることでした。「100%の会員維持率」という野心的な目標を掲げ、会員が必要な時に必要なものを得られるよう、パーソナライズされた双方向のコミュニケーションを構築することを目指しました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. このプロジェクトはどのように始まったのですか？</div>
+                    <div class="faq-answer">このプロジェクトは当初、新規会員向けのメールコミュニケーションの改善という依頼から始まりました。しかし、調査を進めるうちに、メールだけでは不十分で、マルチチャネルのソリューションが必要だということが明らかになりました。それによって、より包括的な変革プロジェクトへと発展していきました。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>サービスデザイン手法の導入</h2>
+            <p>プロジェクトチームは従来のカスタマージャーニーマッピングだけでなく、サービスデザイン手法を採用し、顧客体験とそれを支える内部プロセス・技術・データの両方を設計しました。</p>
+            
+            <h3>サービスデザインの特徴</h3>
+            <ul>
+                <li>顧客に見える部分（フロントステージ）と見えない部分（バックステージ）の両方を設計</li>
+                <li>「劇場のメタファー」：舞台前面だけでなく、舞台裏も緻密に調整することで魔法のような体験を提供</li>
+                <li>失敗が起きた際の迅速なリカバリー計画も含めた総合的なデザイン</li>
+                <li>サービスデザイン・ブループリントを作成し、すべてのタッチポイントとバックエンドプロセスを可視化</li>
+            </ul>
+            
+            <div class="important">「舞台上の魔法は、舞台裏の緻密な調整から生まれる」</div>
+            
+            <h3>具体的な改善例</h3>
+            <ul>
+                <li><span class="underline">登録放棄の追跡と介入</span>：アカウント登録を途中で放棄した会員を追跡し、その理由を尋ねるコミュニケーションを自動化</li>
+                <li><span class="highlight">介護者-被介護者関係のマッピング</span>：家族間の関係性をCDPに構築し、適切な情報共有を実現</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. サービスデザインとは何ですか？</div>
+                    <div class="faq-answer">サービスデザインとは、顧客に見える部分（フロントステージ）と見えない部分（バックステージ）の両方を考慮した総合的なデザイン手法です。劇場に例えると、観客が見る舞台上の魔法的な体験だけでなく、それを可能にする舞台裏の調整や準備も含めて設計します。何か問題が起きた際の迅速なリカバリー方法も計画に含まれます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ従来のカスタマージャーニーマッピングだけでは不十分だったのですか？</div>
+                    <div class="faq-answer">従来のカスタマージャーニーマッピングは顧客体験のみに焦点を当てますが、このプロジェクトでは多くの動く部品（データ、内部リソース、プロセス、技術）があり、それらすべてを調整する必要がありました。サービスデザインは顧客体験とそれを支えるバックエンドプロセスの両方を包括的に設計できるため採用されました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「介護者-被介護者関係のマッピング」とは具体的に何ですか？</div>
+                    <div class="faq-answer">これは家族間の関係性をCDPに構築する機能です。例えば、夫が妻の予約を取った場合、その情報を両者に適切に通知し、誰が予約を取ったのか、予約が実際に行われたのかなどの情報を共有します。関係性は固定ではなく、状況によって変化するため、その柔軟性も考慮されています。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>実装されたソリューション</h2>
+            <p>2022年12月に最初のイテレーションをローンチし、行動ベースの自動化されたコミュニケーションを実現しました。ソリューションは3つの主要コンポーネントから構成されています。</p>
+            
+            <h3>主要コンポーネント</h3>
+            <ul>
+                <li><span class="highlight">マジックリンク認証</span>：ワンクリックでアカウント作成を完了できる仕組み</li>
+                <li><span class="highlight">パーソナライズドオンボーディング</span>：セグメントに基づくカスタマイズされた体験</li>
+                <li><span class="highlight">行動ベースのコミュニケーション</span>：会員の行動（アクティブ、停滞、中断）に応じたリアルタイムでの対応</li>
+            </ul>
+            
+            <h3>技術的実装</h3>
+            <ul>
+                <li><span class="underline">統合コンシューマープロファイル（CDP）</span>を構築し、すべてのデータを一元管理</li>
+                <li>Marketo、Adobe製品、Usherなど複数のテクノロジーを統合</li>
+                <li>Qualtrics調査ツールを活用した継続的なフィードバックループの構築</li>
+                <li>Velocity scriptingを使用した100以上のバリエーションのメールをわずか4テンプレートで実現</li>
+            </ul>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. マジックリンクとは何ですか？</div>
+                    <div class="faq-answer">マジックリンクは、ユーザーがパスワードを入力せずにワンクリックでアカウントにログインまたは作成できる認証方法です。KPの場合、新規会員がすでに提供している情報を活用し、再度同じ情報の入力を求めるのではなく、メールのリンクをクリックするだけでアカウントを設定できるようにしました。これにより登録プロセスが大幅に簡素化されました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. CDPとは何ですか？その役割は？</div>
+                    <div class="faq-answer">CDP（Customer Data Platform）は、顧客データを一元管理するプラットフォームです。KPの場合、これにより会員の360度ビューを作成し、すべてのチャネルで一貫したパーソナライズされた体験を提供することが可能になりました。以前は複数のシステムからデータを手動で集めていたのに対し、CDPによってプロセスが自動化され、リアルタイムで次のベストアクションを決定できるようになりました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. プロジェクトはどのくらいの期間で実施されましたか？</div>
+                    <div class="faq-answer">このプロジェクトは非常に短期間で実施されました。当初の計画では翌年6月か7月の完了を予定していましたが、実際には4ヶ月という短期間で2022年12月19日にローンチしました。これは強力な経営陣のサポート、明確な目標設定、効率的な意思決定プロセス、そして事前に構築されたデータ構造などが成功の要因でした。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>成果と今後の展望</h2>
+            <p>プロジェクトの成果は短期間で顕著な結果を示し、今後さらなる展開が計画されています。</p>
+            
+            <h3>主な成果</h3>
+            <ul>
+                <li><span class="highlight">登録率59%向上</span>（前年同期比）</li>
+                <li><span class="highlight">エンゲージメント12倍増加</span>（開封率とクリック率の向上）</li>
+                <li>オートメーション化によるチーム作業の効率化</li>
+                <li>リアルタイムでのデータ分析と意思決定が可能に</li>
+            </ul>
+            
+            <h3>今後の展望</h3>
+            <ul>
+                <li>「<span class="underline">馬鹿げるほどシンプル</span>」な体験の追求</li>
+                <li>ケアとカバレッジを横断する一貫した体験の構築</li>
+                <li>オムニチャネル能力の継続的拡張</li>
+                <li>組織全体への展開と規模拡大</li>
+            </ul>
+            
+            <div class="important">「変革は目的地ではなく、旅である」 - エマーソン</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「100%の会員維持率」という目標は現実的なのですか？</div>
+                    <div class="faq-answer">プレゼンテーションでは、100%という数字は「妥協のない目標」として設定されていると説明されています。実際に100%達成できるかどうかよりも、そこに向かって大きく前進することが重要だと考えられています。段階的な改善ではなく、大幅な改善を目指すことで、組織の変革を推進するアプローチをとっています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. このプロジェクトの成功要因は何でしたか？</div>
+                    <div class="faq-answer">このプロジェクトの成功要因としては、1) 強力な経営陣のサポート、2) 明確な目標設定と意思決定構造、3) 多職種チームの効果的なコラボレーション、4) 事前に構築されていたデータ構造の活用、5) 「完璧は良いの敵」ではなく「完璧を追求して優秀さを達成する」という姿勢が挙げられます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「馬鹿げるほどシンプル」な体験とは具体的にどういうことですか？</div>
+                    <div class="faq-answer">「馬鹿げるほどシンプル」（ridiculously simple）という表現は、単に使いやすいだけでなく、ユーザーが考える必要がないほど直感的で障壁のない体験を意味しています。マジックリンクによるワンクリック登録はその一例で、ユーザーにとって最小限の労力で最大の価値を提供することを目指しています。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>重要用語・概念一覧</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>サービスデザイン</td>
+                    <td>顧客体験（フロントステージ）と内部プロセス（バックステージ）の両方を設計する総合的なアプローチ</td>
+                </tr>
+                <tr>
+                    <td>CDP</td>
+                    <td>Customer Data Platform。顧客データを一元管理し、統合されたプロファイルを構築するプラットフォーム</td>
+                </tr>
+                <tr>
+                    <td>マジックリンク</td>
+                    <td>パスワード入力なしでワンクリックでログインやアカウント作成ができる認証方法</td>
+                </tr>
+                <tr>
+                    <td>行動ベースコミュニケーション</td>
+                    <td>ユーザーの行動（アクティブ、停滞、中断）に基づいてリアルタイムでコミュニケーションを調整する方法</td>
+                </tr>
+                <tr>
+                    <td>統合ケア提供モデル</td>
+                    <td>医療提供者（病院、医師）と保険者が統合された医療サービスモデル</td>
+                </tr>
+            </table>
+        </div>
+
+        <footer>
+            <p>出典: S727 Transforming the Onboarding Experience Across Care & Coverage with Service Design.mov.txt</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

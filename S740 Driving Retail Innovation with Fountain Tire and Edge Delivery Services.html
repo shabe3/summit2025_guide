@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S740 Driving Retail Innovation with Fountain Tire and Edge Delivery Services</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 2px;
+        }
+        
+        .important {
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .faq-container {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 12px 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+        }
+        
+        .faq-question:after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+        }
+        
+        .faq-item.active .faq-question:after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Fountain Tireのデジタル変革と<br>Adobe Edge Delivery Services</h1>
+        </header>
+        
+        <div class="summary">
+            <h2>セッション概要</h2>
+            <p>このセッションでは、カナダの自動車サービス企業Fountain Tireが、Adobe Edge Delivery Servicesを活用してデジタル変革を実現した事例が紹介されました。古いシステムや技術的負債に悩まされていたFountain Tireは、Volvic（Advantech）と提携し、ヘッドレスフロントエンドと組み合わせ可能なアーキテクチャを採用。これにより、パフォーマンスの向上、コンテンツ管理の効率化、ビジネス成果の向上を実現しました。</p>
+        </div>
+        
+        <div class="section">
+            <h2>ビジネス課題とドライバー</h2>
+            <p>Fountain Tireが直面していた課題と、デジタル変革を推進した要因について解説します。</p>
+            
+            <h3>主な課題</h3>
+            <ul>
+                <li>複数の<span class="highlight">旧式システム</span>とバックエンドの<span class="highlight">技術的負債</span></li>
+                <li>ファネル上部での<span class="highlight">顧客離脱</span>の多さ</li>
+                <li>外部エージェンシーへの<span class="highlight">依存度が高く</span>、アクセス権や理解が限られていた</li>
+                <li><span class="highlight">コスト高</span>と<span class="highlight">市場投入までの時間の長さ</span></li>
+                <li>コンテンツ更新の<span class="highlight">制約</span>と<span class="highlight">複雑さ</span></li>
+            </ul>
+            
+            <div class="important">
+                「セールスチームが『古いウェブサイトは恥ずかしい』と言っていた」
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜERPトランスフォーメーションと並行してデジタル変革を進めたのか？</div>
+                    <div class="faq-answer">
+                        ERPトランスフォーメーションによってより多くのことを可能にするために、フロントエンドのツールも同様に強化する必要がありました。また、ビジネスは2年間ウェブサイトの更新をせずに待つことはできず、競合他社に対して不利になるため、コンテンツから始めて段階的に進める戦略を採用しました。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのようなステークホルダーが関与したか？</div>
+                    <div class="faq-answer">
+                        ビジネスステークホルダー、セールス、運用、ITセキュリティ、情報アーキテクチャ、マーケティングチーム、法務などが参加しました。特に、ウェブサイトを営業ツールとして使用する営業チームが重要なステークホルダーでした。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 発見プロセスにはどれくらいの時間がかかったか？</div>
+                    <div class="faq-answer">
+                        プロジェクトの立ち上げ前の議論は約12ヶ月続きましたが、実際の発見プロセス自体は約8週間でした。その後、実装から本番稼働までは約4ヶ月で、合計6ヶ月程度で完了しました。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>技術的ソリューション</h2>
+            <p>Adobe Edge Delivery Servicesを中心とした技術ソリューションがどのように課題を解決したか解説します。</p>
+            
+            <h3>採用された技術</h3>
+            <ul>
+                <li><span class="underline">Adobe Edge Delivery Services</span>：ヘッドレスフロントエンドと組み合わせ可能なアーキテクチャ</li>
+                <li><span class="underline">SaaS API</span>：カタログサービス、サーチサービス、製品レコメンデーションなど</li>
+                <li><span class="underline">SharePoint</span>：コンテンツ管理システムとして活用</li>
+                <li><span class="underline">App Builder</span>：コアシステムの外部での拡張性と統合</li>
+            </ul>
+            
+            <div class="important">
+                「ページ読み込み時間が5秒の場合、離脱率は35%。1秒に短縮すると7%に激減」
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Edge Delivery Servicesの主な利点は？</div>
+                    <div class="faq-answer">
+                        パフォーマンスの大幅な向上（Lighthouseスコアが30未満から100に）、コンテンツ管理の効率化、APIコールの削減によるサブ秒単位の読み込み時間、拡張性や安定性の向上などが主な利点です。ホームページは0.7秒で読み込まれるようになりました。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ比較的新しい技術を採用したのか？</div>
+                    <div class="faq-answer">
+                        Edge Delivery Servicesは、マルチイヤーの変革プロジェクトにおいて長期的な成功を保証する堅固な基盤を提供します。モノリシックなアプローチではなく、よりアジャイルで将来性のある技術を選択しました。また、ROI計算機を用いてパフォーマンス向上によるコンバージョン率や注文額の増加を予測できました。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. サイトのパフォーマンスはどれだけ向上したか？</div>
+                    <div class="faq-answer">
+                        Lighthouseスコアが30未満（赤い表示）から100（緑の表示）に向上しました。ホームページの読み込み時間は0.7秒になり、すべてのページがサブ秒単位での読み込みを実現しています。これにより、SEOパフォーマンスやアクセシビリティも向上しました。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>ビジネスインパクト</h2>
+            <p>デジタル変革がFountain Tireのビジネスにもたらした具体的な成果について紹介します。</p>
+            
+            <h3>主な成果</h3>
+            <ul>
+                <li>セールスチームが<span class="highlight">誇りを持って</span>ウェブサイトを営業ツールとして活用</li>
+                <li>マーケターが<span class="highlight">迅速に</span>コンテンツを更新できるようになった</li>
+                <li>ステークホルダーからの<span class="highlight">信頼獲得</span>と新しいアイデアの提案増加</li>
+                <li>コンテンツ戦略に基づく<span class="highlight">情報と教育</span>の提供が可能に</li>
+                <li>ストアへの<span class="highlight">トラフィック増加</span>を測定可能に（電話、メール、店舗への道順クリックなど）</li>
+                <li>ITチームからの<span class="highlight">信頼向上</span>（ボタン変更に週単位の承認プロセスが必要だった状態から脱却）</li>
+            </ul>
+            
+            <div class="important">
+                「ステークホルダーとのミーティング中にリアルタイムで更新して公開できるようになった」
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 今後の展開は？</div>
+                    <div class="faq-answer">
+                        次のステップは小売ウェブサイトの移行、B2CおよびB2B向けポータルの構築、卸売部門のAdobe platforms統合、CRMとマーケティング自動化の強化、B2B側でのサービス後や現場メンテナンスなどの「真実の瞬間」でのカスタマーエクスペリエンス向上などを計画しています。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. パートナーシップの重要性は？</div>
+                    <div class="faq-answer">
+                        Fountain Tireにとってパートナーシップは基本的な価値です。167の地元店舗と50-50のパートナーシップを持ち、Goodyearとも財政的パートナーシップを結んでいます。Volvicとの協業では、「私たちの言葉を正確に理解しているか」と何度も確認してくれる姿勢が信頼関係構築の鍵となりました。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobe Commerceの将来のSaaSモデルへの移行はどうなるか？</div>
+                    <div class="faq-answer">
+                        12ヶ月前にEdge Delivery Servicesを採用したことで、新しいAdobe Commerce as a Cloud Serviceへの移行は比較的シンプルになります。カスタマイズのレベルを低く保ち、App Builderを活用したことで、フロントエンドエクスペリエンスはそのまま再利用可能です。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>用語集・重要ポイント</h2>
+            <table>
+                <tr>
+                    <th>用語/概念</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>Edge Delivery Services</td>
+                    <td>Adobeが提供するヘッドレスフロントエンドソリューション。高速なパフォーマンスと柔軟なコンテンツ管理を実現</td>
+                </tr>
+                <tr>
+                    <td>ヘッドレスフロントエンド</td>
+                    <td>バックエンドシステムから切り離されたフロントエンド。柔軟性とパフォーマンスの向上を実現</td>
+                </tr>
+                <tr>
+                    <td>組み合わせ可能なアーキテクチャ</td>
+                    <td>異なるサービスやコンポーネントを組み合わせて構築する柔軟なシステム設計アプローチ</td>
+                </tr>
+                <tr>
+                    <td>App Builder</td>
+                    <td>コアシステムの外部で拡張機能や統合機能を開発するためのAdobe提供ツール</td>
+                </tr>
+                <tr>
+                    <td>SaaS API</td>
+                    <td>Software as a Serviceとして提供されるAPI。カタログサービス、検索サービスなど</td>
+                </tr>
+                <tr>
+                    <td>Lighthouse スコア</td>
+                    <td>Googleが提供するウェブページの品質測定ツール。パフォーマンス、アクセシビリティ、SEOなどを評価</td>
+                </tr>
+                <tr>
+                    <td>技術的負債</td>
+                    <td>短期的な解決策を採用することで将来的に発生する追加作業や制約</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            <p>セッション：S740 Driving Retail Innovation with Fountain Tire and Edge Delivery Services</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentNode;
+                    faqItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
