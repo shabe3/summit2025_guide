@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S952 Scale Content for Your Brand with Firefly Services & Custom Models</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0f3c78;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .important {
+            font-size: 1.1rem;
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            display: inline-block;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .faq-container {
+            margin-top: 20px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+            cursor: pointer;
+            position: relative;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+        .faq-question.active::after {
+            content: '-';
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px 15px;
+            border-left: 2px solid #0f3c78;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-top: 30px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Firefly Services & Custom Modelsでブランドコンテンツをスケール化</h1>
+        </header>
+
+        <div class="summary">
+            <h2>概要</h2>
+            <p>Adobe Fireflyの生成AIサービスとカスタムモデルを活用することで、ブランドのコンテンツ作成をスケール化し、パーソナライゼーションを実現できます。本セッションでは、Fireflyカスタムモデルの機能と活用方法、Fireflyサービスを使った自動化、実際の導入事例について解説します。</p>
+        </div>
+
+        <div class="section">
+            <h2>1. Fireflyカスタムモデル</h2>
+            <p>Fireflyカスタムモデルは、ブランド独自のスタイルやキャラクターなどの視覚的要素を学習させ、一貫したコンテンツを大量生成できる機能です。</p>
+            
+            <h3>主な特徴</h3>
+            <ul>
+                <li>ブランドの<span class="highlight">独自スタイル</span>や<span class="highlight">IP</span>を学習させた専用モデルを作成</li>
+                <li>様々なキャンペーンやシーズン向けのブランドアセットを活用可能</li>
+                <li>組織内のクリエイティブチームや他部門でも一貫したスタイルを維持</li>
+                <li>Adobe ExpressなどのCreative Cloudアプリケーションに統合</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. カスタムモデルの学習に必要な画像数は？</div>
+                    <div class="faq-answer">15〜30枚の画像をアップロードして学習させます。カスタムモデルは、スタイルとしても特定の被写体としても学習させることができます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのような種類のモデルが作成できますか？</div>
+                    <div class="faq-answer">ブランドスタイル、キャラクター（マスコットなど）、特定の視覚的コンテンツなど様々なタイプのカスタムモデルを作成できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 学習にはどのように説明を追加しますか？</div>
+                    <div class="faq-answer">AIが自動的に画像の説明（キャプション）を生成しますが、ユーザーが独自の用語を使って調整することも可能です。これによりAIが内容をより正確に理解できます。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Firefly Video生成</h2>
+            <p>静止画から動画を生成したり、既存の動画に要素を追加したりできる機能です。これにより、マーケティングチームは簡単に魅力的なアニメーションを作成できます。</p>
+            
+            <h3>主な活用方法</h3>
+            <ul>
+                <li>静止画を<span class="underline">アニメーション化</span>して動画広告を作成</li>
+                <li>Photoshopの<span class="highlight">generative expand</span>で動画のフレームを拡張</li>
+                <li>キャラクターなどの要素を動画に追加し、<span class="underline">インタラクティブな表現</span>を実現</li>
+                <li>ソーシャルメディア向けの短い動画コンテンツを素早く作成</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. 動画生成の手順はどのようなものですか？</div>
+                    <div class="faq-answer">開始フレームと終了フレームの画像をアップロードし、テキストプロンプトを入力するだけで、AIが中間のアニメーションを生成します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 既存の動画と組み合わせることはできますか？</div>
+                    <div class="faq-answer">はい、Adobe Stockの動画などと組み合わせることができます。Photoshopのgenerative expandで動画フレームを拡張したり、Fireflyで生成した要素を追加したりできます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 動画編集の専門知識は必要ですか？</div>
+                    <div class="faq-answer">特別な専門知識は必要ありません。デモでは「私はビデオエフェクトの専門家ではないが、これによって以前は作れなかったコンテンツを素早く作成できるようになった」と説明されています。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. Firefly Services</h2>
+            <p>Fireflyの生成AI技術をAPIとして提供し、コンテンツ生成の自動化や大規模なパーソナライゼーションを実現するサービスです。</p>
+            
+            <h3>主な用途</h3>
+            <ul>
+                <li><span class="highlight">キャンペーンの刷新</span>：シーズンやイベントごとに大量のアセットを自動生成</li>
+                <li><span class="highlight">ローカライズ</span>：言語や地域に合わせたコンテンツの自動変換</li>
+                <li><span class="highlight">ビデオのパーソナライズ</span>：視聴者に合わせた動画コンテンツのカスタマイズ</li>
+                <li><span class="highlight">製品のパーソナライズ</span>：Gatoradeのように個別にカスタマイズした実際の製品の作成</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのようにテンプレートを活用しますか？</div>
+                    <div class="faq-answer">Adobe InDesignやPhotoshopでテンプレートを作成し、Firefly ServicesのAPIを通じて、データに基づいて様々なバリエーションを自動生成できます。言語、地域、製品など様々な要素に基づいたカスタマイズが可能です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. ビデオの翻訳機能はどのように動作しますか？</div>
+                    <div class="faq-answer">「translate and lip sync」機能を使用して、元の動画を別の言語に翻訳し、口の動きも自然に同期させることができます。デモではスペイン語、ドイツ語などへの翻訳が紹介されました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 最終成果物はどのような形式で出力できますか？</div>
+                    <div class="faq-answer">PDF形式の印刷用ファイルだけでなく、InDesignファイルとしても出力可能です。これにより、自動生成後にクリエイティブチームが必要に応じて最終調整を加えることができます。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. The Clorox Companyの事例</h2>
+            <p>Matt Harker氏（The Clorox Company）が紹介した、実際の企業での生成AI活用方法と学んだ教訓です。</p>
+            
+            <h3>5つの重要なポイント</h3>
+            <ul>
+                <li><span class="underline">とにかく始めよう</span>：完璧を求めず、生成AIの実験を始めることが重要</li>
+                <li><span class="underline">社内と社外で異なるアプローチを</span>：内部では素早く実験、外部向けは慎重に</li>
+                <li><span class="underline">データの高速分析</span>：顧客レビューなどの非構造化データから迅速に洞察を得る</li>
+                <li><span class="underline">AIエージェントの影響</span>：エージェントが消費者行動を変えることを理解する</li>
+                <li><span class="underline">パーソナライゼーションの実現</span>：個別化されたコンテンツが統計的な効果を示している</li>
+            </ul>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. Cloroxではどのように社内での生成AI利用を促進していますか？</div>
+                    <div class="faq-answer">特定のユーザーグループに異なるツールへのアクセスを提供するTeamsチャンネルを作成し、自由に実験や共有ができる環境を整えています。これにより、生成AIへの恐怖心を取り除き、社内での普及を促進しています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. エージェントの台頭によって何が変わりますか？</div>
+                    <div class="faq-answer">消費者の代わりに買い物をするショッピングエージェントが増えると、ブランドはこれらのエージェントに対してどうマーケティングするかを考える必要があります。SEOのようにエージェント向けの最適化が重要になります。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのようにしてエンドツーエンドの変革を実現しますか？</div>
+                    <div class="faq-answer">個々のステップを改善するだけでなく、プロセス全体を見直すことが重要です。Cloroxでは「コンテンツサプライチェーン」を見直し、コンテンツ作成からさまざまなプラットフォームへの配信までの全体を最適化しています。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>用語・技術解説</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>Firefly Custom Models</td>
+                    <td>ブランド独自のスタイルやキャラクターを学習させた専用のAIモデルを作成する機能</td>
+                </tr>
+                <tr>
+                    <td>Generative Expand</td>
+                    <td>Photoshopで画像や動画の範囲を広げ、AIが自然な背景を生成する機能</td>
+                </tr>
+                <tr>
+                    <td>Firefly Services</td>
+                    <td>FireflyのAI機能をAPI経由で提供し、コンテンツ制作の自動化やスケール化を実現するサービス</td>
+                </tr>
+                <tr>
+                    <td>Translate and Lip Sync</td>
+                    <td>動画の音声を別の言語に翻訳し、口の動きも自然に合わせる機能</td>
+                </tr>
+                <tr>
+                    <td>コンテンツサプライチェーン</td>
+                    <td>コンテンツの作成から配信までの一連のプロセス全体を指す概念</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="important">
+            Adobeのファイアリーサービス＆カスタムモデルを活用して<br>
+            ブランドコンテンツをスケール化し、真のパーソナライゼーションを実現しましょう
+        </div>
+
+        <footer>
+            <p>S952 Scale Content for Your Brand with Firefly Services & Custom Models</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+                question.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
