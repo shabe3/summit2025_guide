@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S709 Unlocking Digital Growth Marriott's Success with Adobe Experience Manager</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 16px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        
+        h1 {
+            color: #0f3c78;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        
+        .summary {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #0f3c78;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #0f3c78;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        
+        .underline {
+            border-bottom: 2px solid #0f3c78;
+            display: inline-block;
+        }
+        
+        .important {
+            text-align: center;
+            font-weight: bold;
+            margin: 16px 0;
+            font-size: 1.1rem;
+        }
+        
+        .faq-container {
+            margin-top: 16px;
+        }
+        
+        .faq-item {
+            margin-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            padding: 10px;
+            position: relative;
+            font-weight: bold;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 0 10px 10px;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>マリオットのデジタル革新：<br>Adobe Experience Managerを活用した成功事例</h1>
+        </header>
+        
+        <div class="summary">
+            <h2>概要</h2>
+            <p>マリオット・インターナショナルは、モノリシックなアーキテクチャから、クラウドネイティブで高性能なデジタルコマースプラットフォームへの移行を実現しました。この変革により、コンテンツデプロイの時間短縮、パフォーマンス向上、マーケターの権限強化が達成されました。Adobe Experience Manager（AEM）を活用した新アーキテクチャは、アイソモーフィックデザイン、マイクロフロントエンド、イベント駆動型データレイヤーモデルなどの先進技術パターンを採用しています。</p>
+        </div>
+        
+        <section>
+            <h2>マリオットのデジタルトランスフォーメーション</h2>
+            <p>マリオットは膨大なコンテンツ（200GB以上、1000万以上のアセット）を管理し、大規模なデジタルプラットフォームを運用しています。従来のモノリシックアーキテクチャでは現代の顧客需要を満たせなくなり、段階的なアプローチで新たなデジタルプラットフォームを構築しました。</p>
+            
+            <h3>変革の過程</h3>
+            <ul>
+                <li>8,500のプロパティ向けに8万5千ページの静的ページを構築</li>
+                <li>グローバル言語へのスケーリング</li>
+                <li>既存のモノリス型アーキテクチャとの統合を試みたが限界に直面</li>
+                <li>大胆な決断：アーキテクチャを一から再設計</li>
+            </ul>
+            
+            <div class="important">「既存アーキテクチャへの対症療法ではなく、<span class="highlight">未来に対応できる設計へ</span>の抜本的見直しを決断」</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜマリオットは新しいデジタルプラットフォームを構築する必要があったのですか？</div>
+                    <div class="faq-answer">従来のモノリシックアーキテクチャでは、現代の顧客が求める高いパフォーマンスとシームレスな体験を提供できなくなっていました。顧客の期待に応え、より素早くコンテンツをデプロイし、スケーラビリティを高めるために新たなプラットフォームが必要でした。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. AEMを導入した初期段階ではどのような取り組みを行いましたか？</div>
+                    <div class="faq-answer">8,500のプロパティそれぞれに10ページ、合計8万5千ページの静的ページを構築し、英語から始めて複数の言語にスケールしました。また、Adobe Cloud Managerを活用してマルチテナント方式のコードデプロイを実現しました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜ既存のアーキテクチャとAEMの組み合わせでは不十分だったのですか？</div>
+                    <div class="faq-answer">既存のモノリスアーキテクチャにAEMを統合する「対症療法」的アプローチでは、求めるスケールと俊敏性を実現できませんでした。そのため、未来を見据えた基盤から再設計する大胆な決断を下しました。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>エンジニアリングパターンと原則</h2>
+            <p>マリオットは宇宙ステーション建設の段階的アプローチに例えられる設計思想を採用し、チーム間の協働を可能にするエンジニアリングパターンを確立しました。</p>
+            
+            <h3>採用した主要原則</h3>
+            <ul>
+                <li><span class="underline">適切なツールセット</span>：Adobe Experience Managerを基盤に選択</li>
+                <li><span class="underline">シームレスな統合パターン</span>：デカップルされた容易に協働できるアーキテクチャ</li>
+                <li><span class="underline">アイソモーフィックアーキテクチャ</span>：サーバーサイドとクライアントサイドレンダリングの利点を併用</li>
+                <li><span class="underline">クラウドネイティブ</span>：ステートレスな設計でスケーラビリティを確保</li>
+                <li><span class="underline">マイクロフロントエンド</span>：製品チームが並行して開発・デプロイ可能な構造</li>
+            </ul>
+            
+            <div class="important">「エンジニアリングは<span class="highlight">運用モデルに影響</span>を与え、<span class="highlight">チーム協働</span>を実現する基盤となる」</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. アイソモーフィックアーキテクチャとはどのようなものですか？</div>
+                    <div class="faq-answer">アイソモーフィックアーキテクチャは、同じコードベースでサーバーサイドレンダリング（SSR）とクライアントサイドレンダリング（CSR）の両方を実現する設計です。マーケティングページにはSEO対策に有利なSSRを、データを多く扱うコマースページにはCSRを適用するなど、ユースケースに応じた最適なレンダリング方式を選択できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. マイクロフロントエンドがもたらすメリットは何ですか？</div>
+                    <div class="faq-answer">マイクロフロントエンドアプローチにより、予約フロー、ユーザープロファイルなど各製品チームが独立して開発・デプロイできるようになります。各チームは自身のテンプレートとコンポーネントを持ち、他チームを待つことなくリリースできるため、市場投入時間が短縮されます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. なぜクラウドネイティブ設計が重要なのですか？</div>
+                    <div class="faq-answer">単にアプリケーションをクラウドにデプロイするだけでなく、ステートレスな設計により真のスケーラビリティを実現できます。これにより負荷に応じて柔軟にスケールでき、パフォーマンスを維持しながら成長できます。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>テクニカル実装の詳細</h2>
+            <p>マリオットは複数のレイヤーに分解された、クラウドネイティブな実装を行いました。特にパフォーマンスを重視し、エッジキャッシングとイベント駆動型データレイヤーを活用しています。</p>
+            
+            <h3>主要テクニカル要素</h3>
+            <ul>
+                <li><span class="underline">AEMリモートSPA</span>：動的ページのリアルタイムプレビュー機能</li>
+                <li><span class="underline">ヘッドレスパターン</span>：小さなReactコンポーネントに分解された構成</li>
+                <li><span class="underline">Next.jsフレームワーク</span>：アイソモーフィックレンダリングの実現</li>
+                <li><span class="underline">エッジキャッシング</span>：ステートレスなページ設計でパフォーマンス向上</li>
+                <li><span class="underline">Adobe Client Data Layer（ACDL）</span>：イベント駆動型データモデルの実装</li>
+            </ul>
+            
+            <div class="important">「<span class="highlight">パフォーマンス</span>は常に最重要課題：ユーザーの注目スパンは非常に短い」</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. イベント駆動型データレイヤーモデルとは何ですか？</div>
+                    <div class="faq-answer">従来のデータレイヤーはページのレンダリングをブロックし、キャッシュ効率が低下していました。Adobe Client Data Layer（ACDL）を使用したイベント駆動型モデルでは、Reactコンポーネントにイベントをアタッチし、ページ読み込み後にデータをプッシュできます。これによりページをステートレスにし、エッジでのキャッシュが可能になりました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. AEMリモートSPAの役割は何ですか？</div>
+                    <div class="faq-answer">AEMリモートSPA（Single Page Application）機能により、静的ページだけでなく動的ページも含めて、バックエンドに接続したリアルタイムのプレビューが可能になります。これによりマーケターやコンテンツ作成者は、実際のページ外観を確認しながら作業できます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. マリオットのパフォーマンス向上の秘訣は何ですか？</div>
+                    <div class="faq-answer">マリオットは2つの重要な側面に焦点を当てました：1) ページをステートレスにすること、2) エッジでページをキャッシュすること。マイクロフロントエンドとReactのヘッドレスパターンにより、各コンポーネントが独立してレンダリングでき、イベント駆動型データレイヤーモデルによりページ全体をキャッシュ可能にしました。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>マーケティング機能の強化</h2>
+            <p>マリオットは、マーケターがより迅速に経験を作成・展開できるよう、組織を3つの役割に分け、それぞれが専門分野に集中できる体制を構築しました。</p>
+            
+            <h3>組織的アプローチと実装</h3>
+            <ul>
+                <li><span class="underline">マーケター</span>：エクスペリエンスの定義</li>
+                <li><span class="underline">マーチャンダイザー</span>：エクスペリエンスとセグメントのルール定義</li>
+                <li><span class="underline">データ/ITチーム</span>：データレイヤーと分析からのデータ収集とセグメント作成</li>
+                <li><span class="underline">クライアントとサーバーサイドのセグメンテーション</span>：ユースケースに応じた使い分け</li>
+                <li><span class="underline">Adobe Target</span>：ルールとセグメントアクションの作成</li>
+            </ul>
+            
+            <div class="important">「<span class="highlight">一人ですべてを行うことは不可能</span>：専門分野に応じた役割分担が鍵」</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. マーケターの権限をどのように強化しましたか？</div>
+                    <div class="faq-answer">マーケターがエクスペリエンスを定義し、マーチャンダイザーがルールを設定し、データチームがセグメントを作成するという役割分担を確立しました。この3つの専門チームの協働により、長い開発サイクルを待つことなく、迅速にエクスペリエンスを展開できるようになりました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. クライアントサイドとサーバーサイドのセグメンテーションをどのように使い分けていますか？</div>
+                    <div class="faq-answer">単一のアプローチですべてのケースに対応することはできないため、ページや提供したいエクスペリエンスの種類に基づいて両方のパターンを適用しています。複雑なオーケストレーションが必要な場合はサーバーサイド、即時のパーソナライゼーションにはクライアントサイドを活用しています。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Adobe Targetはどのように活用されていますか？</div>
+                    <div class="faq-answer">Adobe Targetを使用して、セグメントに基づくルールとアクションを作成し、ウェブページ上でエクスペリエンスを提供しています。Adobe Client Data Layer（ACDL）からのデータをTargetと連携させることで、よりパーソナライズされたエクスペリエンスを実現しています。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>成果と今後の展望</h2>
+            <p>マリオットは新アーキテクチャの導入により、顕著なパフォーマンス向上とデプロイサイクルの短縮を実現しました。現在はAIを活用したさらなる進化を目指しています。</p>
+            
+            <h3>主な成果と将来の取り組み</h3>
+            <ul>
+                <li><span class="underline">パフォーマンスの向上</span>：1年前と比較して大幅に改善</li>
+                <li><span class="underline">デプロイサイクルの短縮</span>：より迅速なリリースが可能に</li>
+                <li><span class="underline">マルチチャネル対応</span>：ウェブだけでなくモバイルアプリも同じコンテンツフラグメントで実現</li>
+                <li><span class="underline">ハイパーパーソナライゼーション</span>：ユーザーの意図を理解した最適な体験の提供</li>
+                <li><span class="underline">生成AI（GenAI）の活用</span>：コンテンツ生成やコンポーネント構築の効率化</li>
+                <li><span class="underline">デザインからコードへの自動変換</span>：Figmaから直接トークン化しコンポーネントへ</li>
+            </ul>
+            
+            <div class="important">「<span class="highlight">テクノロジーは常に進化</span>：変革は一度きりではなく<span class="highlight">継続的なプロセス</span>」</div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのような成果が得られましたか？</div>
+                    <div class="faq-answer">新アーキテクチャにMariott.comを完全に移行し、1年前と比較してパフォーマンスが向上し、デプロイサイクルが短縮されました。また、マーケターに柔軟性を提供し、ウェブだけでなくモバイルアプリも同じコンテンツフラグメントを活用できるようになりました。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 生成AI（GenAI）をどのように活用していますか？</div>
+                    <div class="faq-answer">マリオットはGenAIを複数の分野で活用しています。コンテンツ生成を効率化し、開発効率を高めるためにGenAIを使ったコンポーネント構築にも取り組んでいます。将来的にはパーソナライゼーションの強化にもAIを活用する計画です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 「デザインからコード」とはどのような取り組みですか？</div>
+                    <div class="faq-answer">FigmaなどのUXツールで作成されたデザインを、多くの開発者が手を加えることなく、直接AEMコンポーネントに変換する取り組みです。デザインをトークン化し、自動的にコンポーネントへと変換することで、開発効率の向上を目指しています。</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>重要用語と概念</h2>
+            <table>
+                <tr>
+                    <th>用語</th>
+                    <th>説明</th>
+                </tr>
+                <tr>
+                    <td>AEM (Adobe Experience Manager)</td>
+                    <td>Adobeのコンテンツ管理システム。マリオットのデジタルプラットフォームの基盤</td>
+                </tr>
+                <tr>
+                    <td>アイソモーフィックアーキテクチャ</td>
+                    <td>サーバーサイドレンダリングとクライアントサイドレンダリングの両方を同じコードベースで実現する設計</td>
+                </tr>
+                <tr>
+                    <td>マイクロフロントエンド</td>
+                    <td>フロントエンドアプリケーションを独立して開発・デプロイ可能な小さな部分に分割する設計パターン</td>
+                </tr>
+                <tr>
+                    <td>ヘッドレスパターン</td>
+                    <td>バックエンドとフロントエンドを分離し、APIを通じてコンテンツを配信する設計</td>
+                </tr>
+                <tr>
+                    <td>ACDL (Adobe Client Data Layer)</td>
+                    <td>ページのパフォーマンスを向上させるイベント駆動型のデータ管理レイヤー</td>
+                </tr>
+                <tr>
+                    <td>クラウドネイティブ</td>
+                    <td>クラウド環境に最適化された設計原則に基づくアプリケーション開発アプローチ</td>
+                </tr>
+                <tr>
+                    <td>エッジキャッシング</td>
+                    <td>ユーザーに近いエッジサーバーでコンテンツをキャッシュしてパフォーマンスを向上させる技術</td>
+                </tr>
+                <tr>
+                    <td>ステートレス設計</td>
+                    <td>サーバーが状態を保持せず、スケーラビリティを高める設計手法</td>
+                </tr>
+            </table>
+        </section>
+        
+        <footer>
+            <p>S709 Unlocking Digital Growth Marriott's Success with Adobe Experience Manager</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentNode;
+                    faqItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
